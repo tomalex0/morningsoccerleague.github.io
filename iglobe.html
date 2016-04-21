@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>iCare</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/prefixfree.min.js"></script>
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+  <script>
+    w3IncludeHTML();
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style type="text/css">
+    html {
+      height: 100%;
+    }
+
+    #currentInfo {
+      width: 270px;
+      position: absolute;
+      left: 0px;
+      top: 63px;
+      background-color: rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255,255,255,0.4);
+      padding: 10px;
+    }
+
+    a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .bull {
+      padding: 0 5px;
+      color: #555;
+    }
+
+    #title {
+      position: absolute;
+      top: 20px;
+      width: 270px;
+      left: 20px;
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 3px;
+      font: 20px Georgia;
+      padding: 10px;
+    }
+
+    .year {
+      font: 16px Georgia;
+      line-height: 26px;
+      height: 30px;
+      text-align: center;
+      float: left;
+      width: 90px;
+      color: rgba(255, 255, 255, 0.4);
+
+      cursor: pointer;
+      -webkit-transition: all 0.1s ease-out;
+    }
+
+    .year:hover, .year.active {
+      font-size: 23px;
+      color: #fff;
+    }
+
+    #ce span {
+      display: none;
+    }
+
+    #ce {
+      width: 107px;
+      height: 55px;
+      display: block;
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+      background: url(ce.png);
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#featured"><h1>iCare <span class="subhead">Fund healthcare for people around the world</span></h1></a>
+      </div><!-- navbar-header -->
+      <div class="collapse navbar-collapse" id="collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="http://juechemparathy.github.io/">Home</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#statistics">Statistics</a></li>
+          <li><a href="#patients">Patients</a></li>
+          <li><a href="#staff">Team</a></li>
+        </ul>        
+      </div><!-- collapse navbar-collapse -->
+    </div><!-- container -->
+  </nav>
+</header>
+
+<div class="main">
+  <div class="page" id="mission">
+    <div class="content container">
+      <h2>Mission</h2>
+      <div class="row">
+        <p class="col-md-5 col-md-offset-1">Our mission is to fund low-cost, high-impact healthcare. While we would like to eventually work in the United States, we currently focus our efforts in low income countries because it’s more frequently the case that a relatively small amount of money stands in the way of someone receiving life-changing care.</p>
+        <p class="col-md-5">We take patient privacy very seriously. It’s important to us that every patient posted on iCare understands what iCare is and how it works. Our Medical Partners are responsible for ensuring that every patient understands Watsi and explicitly wishes to participate in the program.</p>
+      </div><!-- row -->
+    </div><!-- content container -->
+  </div><!-- mission page -->
+
+  <div class="page" id="patients">
+    <div class="container-fluid">
+      <h2>Statistics</h2>
+      <div class="row">
+        <article class="statistics col-md-4 col-sm-6 col-xs-12">
+          <h1 class="stats">200000</h1>
+          <h3>$$ Raised</h3>
+          <p>Stats details</p>
+        </article>
+
+        <article class="statistics col-md-4 col-sm-6 col-xs-12">
+          <h1 class="stats">1345</h1>
+          <h3>Projects</h3>
+          <p>Stats details</p>
+        </article>
+
+        <article class="statistics col-md-4 col-sm-6 col-xs-12">
+          <h1 class="stats">45678</h1>
+          <h3>Users</h3>
+          <p>Stats details</p>
+        </article>
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- patients page -->
+
+  <div class="page" id="globe">
+    <div class="container-fluid" id="container">
+      <div class="row">
+
+
+ <!--  globe -->
+        <div id="container"></div>
+        <div id="currentInfo">
+          <span id="year1990" class="year">1990</span>
+          <span id="year1995" class="year">1995</span>
+          <span id="year2000" class="year">2000</span>
+        </div>
+
+        <div id="title">
+          iCare Patient Distribution
+        </div>
+        <!--  globe end -->
+
+      </div>
+    </div><!-- container -->
+  </div><!-- patients page -->
+
+</div><!-- main -->
+
+<footer>
+  <div class="content container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <p>Call us toll-free at <span class="phone">+1 800-ICARE-01</span></p>
+        <p>All contents &copy; 2016 <a href="http://icare.com">icare.com</a>. All rights reserved.</p>
+      </div><!-- col-sm-6 -->
+      <div class="col-sm-6">
+        <nav class="navbar navbar-default" role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </nav>        
+      </div><!-- col-sm-6 -->
+    </div><!-- row -->
+  </div><!-- content container -->
+</footer>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="js/myscript.js"></script>
+<script type="text/javascript" src="third-party/Detector.js"></script>
+<script type="text/javascript" src="third-party/three.min.js"></script>
+<script type="text/javascript" src="third-party/Tween.js"></script>
+<script type="text/javascript" src="globe.js"></script>
+<script type="text/javascript">
+
+  if(!Detector.webgl){
+    Detector.addGetWebGLMessage();
+  } else {
+
+    var years = ['1990','1995','2000'];
+    var container = document.getElementById('container');
+    var globe = new DAT.Globe(container);
+
+    console.log(globe);
+    var i, tweens = [];
+
+    var settime = function(globe, t) {
+      return function() {
+        new TWEEN.Tween(globe).to({time: t/years.length},500).easing(TWEEN.Easing.Cubic.EaseOut).start();
+        var y = document.getElementById('year'+years[t]);
+        if (y.getAttribute('class') === 'year active') {
+          return;
+        }
+        var yy = document.getElementsByClassName('year');
+        for(i=0; i<yy.length; i++) {
+          yy[i].setAttribute('class','year');
+        }
+        y.setAttribute('class', 'year active');
+      };
+    };
+
+    for(var i = 0; i<years.length; i++) {
+      var y = document.getElementById('year'+years[i]);
+      y.addEventListener('mouseover', settime(globe,i), false);
+    }
+
+    var xhr;
+    TWEEN.start();
+
+
+    xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://raw.githubusercontent.com/dataarts/webgl-globe/master/globe/population909500.json', true);
+    xhr.onreadystatechange = function(e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          var data = JSON.parse(xhr.responseText);
+          window.data = data;
+          for (i=0;i<data.length;i++) {
+            globe.addData(data[i][1], {format: 'magnitude', name: data[i][0], animated: true});
+          }
+          globe.createPoints();
+          settime(globe,0)();
+          globe.animate();
+          document.body.style.backgroundImage = 'none'; // remove loading
+        }
+      }
+    };
+    xhr.send(null);
+  }
+
+</script>
+</body>
+</html>
