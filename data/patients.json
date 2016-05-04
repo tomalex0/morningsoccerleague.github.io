@@ -129,5 +129,17 @@
     "story":"SomeStory",
     "amountReceived":"200",
     "targetAmount":"500"
+  },
+  {
+    "image":"images/1.jpg",
+    "story":"SomeStory",
+    "amountReceived":"200",
+    "targetAmount":"500"
+  },
+  {
+    "image":"images/1.jpg",
+    "story":"SomeStory",
+    "amountReceived":"200",
+    "targetAmount":"500"
   }
 ]
