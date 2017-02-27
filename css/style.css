@@ -268,42 +268,12 @@ and (max-width: 768px) {
 }
 
 #patients #patient1 {
-  background: url(../images/p1.JPG) no-repeat center center;
+  background: url(../images/f1.JPG) no-repeat center center;
   background-size: cover;
 }
 
 #patients #patient2 {
-  background: url(../images/p2.JPG) no-repeat center center;
-  background-size: cover;
-}
-
-#patients #patient3 {
-  background: url(../images/p3.JPG) no-repeat center center;
-  background-size: cover;
-}
-
-#patients #patient4 {
-  background: url(../images/p4.JPG) no-repeat center center;
-  background-size: cover;
-}
-
-#patients #patient5 {
-  background: url(../images/p5.JPG) no-repeat center center;
-  background-size: cover;
-}
-
-#patients #patient6 {
-  background: url(../images/p6.JPG) no-repeat center center;
-  background-size: cover;
-}
-
-#patients #patient7 {
-  background: url(../images/p7.jpg) no-repeat center center;
-  background-size: cover;
-}
-
-#patients #patient8 {
-  background: url(../images/p8.JPG) no-repeat center center;
+  background: url(../images/p1.JPG) no-repeat center center;
   background-size: cover;
 }
 
