@@ -284,7 +284,7 @@ and (max-width: 768px) {
 }
 
 
-#patients .quote .more, #patients .customer {
+#teams .quote .more, #teams .customer {
   opacity: 0;
   font-size: 0;
   line-height: 0;
@@ -292,7 +292,7 @@ and (max-width: 768px) {
 }
 
 
-#patients .quote:hover .more {
+#teams .quote:hover .more {
   font-family: "Open Sans", sans-serif;
   font-weight: 100;
   display: block;
@@ -301,17 +301,17 @@ and (max-width: 768px) {
   line-height: 120%;
 }
 
-#patients .quote:hover .customer {
+#teams .quote:hover .customer {
   display: block;
   font-size: .7em;
   text-align: right;
 }
 
-#patients .quote .intro::after {
+#teams .quote .intro::after {
   content: '...';
 }
 
-#patients .quote:hover .intro::after {
+#teams .quote:hover .intro::after {
   content: '';
 }
 
