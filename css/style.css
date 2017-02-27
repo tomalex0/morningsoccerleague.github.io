@@ -268,12 +268,12 @@ and (max-width: 768px) {
 }
 
 #teams #team1 {
-  background: url(../images/f1.JPG) no-repeat center center;
+  background: url(../images/f1.jpg) no-repeat center center;
   background-size: cover;
 }
 
 #teams #team2 {
-  background: url(../images/p1.JPG) no-repeat center center;
+  background: url(../images/p1.jpg) no-repeat center center;
   background-size: cover;
 }
 
