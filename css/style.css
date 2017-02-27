@@ -277,6 +277,11 @@ and (max-width: 768px) {
   background-size: cover;
 }
 
+#teams #teammember1 {
+  background: url(../images/players.jpg) no-repeat center center;
+  background-size: cover;
+}
+
 #teams .quote {
   font-size: 1.2em;
   line-height: 110%;
