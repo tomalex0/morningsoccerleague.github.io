@@ -237,15 +237,15 @@ and (max-width: 768px) {
 
 /**  Page -- Testimonials **/
 
-#patients {
+#teams {
   padding: 0;
 }
 
-#patients h2 {
+#teams h2 {
   display: none;
 }
 
-#patients blockquote {
+#teams blockquote {
   margin: 0;
   padding: 0;
   border-left: none;
@@ -253,7 +253,7 @@ and (max-width: 768px) {
   position: relative;
 }
 
-#patients blockquote .quote {
+#teams blockquote .quote {
   background-color: rgba(255,255,255,.6);
   padding: 20px 5%;
   position: absolute;
@@ -263,21 +263,21 @@ and (max-width: 768px) {
   border-radius: 0 50px 0 0;
 }
 
-#patients blockquote .quote:hover {
+#teams blockquote .quote:hover {
   background-color: rgba(239,240,196,.9);
 }
 
-#patients #patient1 {
+#teams #team1 {
   background: url(../images/f1.JPG) no-repeat center center;
   background-size: cover;
 }
 
-#patients #patient2 {
+#teams #team2 {
   background: url(../images/p1.JPG) no-repeat center center;
   background-size: cover;
 }
 
-#patients .quote {
+#teams .quote {
   font-size: 1.2em;
   line-height: 110%;
   font-weight: 400;
