@@ -55,7 +55,6 @@ header .navbar-brand {
   background: url(../images/logo1.svg);
   background-repeat: no-repeat;
   background-position: 15px 0;
-  z-index: 99
   height: auto;
   padding: 5px;
 }
@@ -65,7 +64,6 @@ header .navbar-brand h1 {
   margin: 0;
   font-size: 1.8em;
   font-weight: 400;
-  padding-top: 60px;
   padding-left: 10px;
 }
 
