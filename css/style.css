@@ -363,14 +363,11 @@ footer .navbar-nav>li a {
 }
 
 header .navbar-brand {
-   background: white;
+   background: white !important;
    border-radius: 50%;
    margin-left: 20px;
 }
 
-.navbar-brand:hover {
-  background: white;
-}
 
 .navbar-brand img {
    width : 200px;
