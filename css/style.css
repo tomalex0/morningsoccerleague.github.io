@@ -368,7 +368,7 @@ header .navbar-brand {
    margin-left: 20px;
 }
 
-header .navbar-brand:hover {
+.navbar-brand:hover {
   background: white;
 }
 
