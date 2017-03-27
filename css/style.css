@@ -362,7 +362,7 @@ footer .navbar-nav>li a {
   color: #EEC856 !important;
 }
 
-.navbar-brand {
+header .navbar-brand {
    background: white;
    border-radius: 50%;
    margin-left: 20px;
