@@ -378,7 +378,7 @@ header .navbar-brand {
 }
 .small-logo {
   width :  75px;
-  display:none;
+  display:none !important;
 }
 .inbody .small-logo{
   display:block;
