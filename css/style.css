@@ -381,7 +381,7 @@ header .navbar-brand {
   display:none !important;
 }
 .inbody .small-logo{
-  display:block;
+  display:block !important;
  
 }
 
