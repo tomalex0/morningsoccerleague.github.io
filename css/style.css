@@ -376,8 +376,13 @@ header .navbar-brand {
 .inbody .big-logo{
    display : none;
 }
+
+.inbody .navbar-brand {
+    background : none !important;
+}
+
 .small-logo {
-  width :  75px;
+  width :  75px !important;
   display:none !important;
 }
 .inbody .small-logo{
