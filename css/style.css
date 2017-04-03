@@ -373,4 +373,17 @@ header .navbar-brand {
    width : 200px;
 }
 
+.inbody .big-logo{
+   display : none;
+}
+.small-logo {
+  width :  75px;
+  display:none;
+}
+.inbody .small-logo{
+  display:block;
+ 
+}
+
+
 .stats { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: left; }
