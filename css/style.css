@@ -382,7 +382,7 @@ header .navbar-brand {
     position: absolute;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: 0 auto !important;
     width: 75px;
     top: -10px;
 }
