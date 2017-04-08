@@ -202,7 +202,7 @@ header .inbody .navbar-brand span.subhead {
   margin-bottom: 10px;
 }
 
-@media only screen 
+@media only screen
 and (min-width: 450px)
 and (max-width: 768px) {
   .service p {
@@ -360,6 +360,51 @@ footer .navbar-nav>li a {
   padding-bottom: 0;
   text-decoration: underline;
   color: #EEC856 !important;
+}
+
+header .navbar-brand {
+  background: white !important;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+
+.navbar-brand img {
+  width : 200px;
+}
+
+.inbody .big-logo{
+  display : none;
+}
+
+.inbody .navbar-brand {
+  background : none !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto !important;
+  width: 75px;
+  top: -10px;
+}
+@media only screen
+and (min-width: 768px) {
+  .inbody .navbar-brand  {
+    margin-left: 15px !important;
+  }
+}
+@media only screen
+and (min-width: 1250px) {
+  .inbody .navbar-brand  {
+    margin: 0 auto !important;
+  }
+}
+.small-logo {
+  width :  75px !important;
+  display:none !important;
+}
+.inbody .small-logo{
+  display:block !important;
+
 }
 
 .stats { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: left; }
