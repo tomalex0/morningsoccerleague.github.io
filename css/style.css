@@ -279,12 +279,12 @@ and (max-width: 768px) {
 }
 
 #teams #team3 {
-  background: url(../images/onetouchables.jpeg) no-repeat center center;
+  background: url(../images/rabonafc.jpeg) no-repeat center center;
   background-size: cover;
 }
 
 #teams #team4 {
-  background: url(../images/rabonafc.jpeg) no-repeat center center;
+  background: url(../images/onetouchables.jpeg) no-repeat center center;
   background-size: cover;
 }
 
