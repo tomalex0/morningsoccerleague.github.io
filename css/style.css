@@ -393,7 +393,7 @@ header .navbar-brand {
   width : 200px;
 }
 
-.inbody .big-logo{
+.inbody .big-logo, .big-logo{
   display : none;
 }
 
@@ -411,11 +411,17 @@ and (min-width: 768px) {
   .inbody .navbar-brand  {
     margin-left: 15px !important;
   }
+  .big-logo {
+    display: block;
+  }
 }
 @media only screen
 and (min-width: 1250px) {
   .inbody .navbar-brand  {
-    margin: 0 auto !important;
+    //margin: 0 auto !important;
+  }
+  .big-logo {
+    display: block;
   }
 }
 .small-logo {
@@ -431,6 +437,6 @@ and (min-width: 1250px) {
 
 
 body > .container {
-  padding-top: 150px;
+  padding-top: 80px;
 
 }
