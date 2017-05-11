@@ -36,11 +36,87 @@
     </div><!-- container  -->
   </nav>
 </header>
-<center>
-<iframe src="https://docs.google.com/document/d/1z3NqZvyAH-R_2yLkRFkXUKydOv1cagcQVrOmYqUIqqI/pub?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-</center>
+<div class="container">
+  <div>
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>Week</th>
+        <th>Date</th>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Referee Team</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="js/myscript.js"></script>
+<script>
+  $(document).ready(function () {
+
+    loadTeams(loadSchedule)
+
+
+  });
+
+  function getTeamName (teamsArr, teamId) {
+    return _.where(teamsArr,{id : teamId})[0].teamName;
+  }
+
+  function  loadTeams (callback){
+    $.getJSON('./data/teams.json',function(json){
+        callback(json)
+    });
+  }
+
+  function buildTableData (teamsArr, scheduleArr){
+
+    var scheduleArrFormatted = [];
+    _.each(scheduleArr,function(item, index){
+      var newItem = JSON.parse(JSON.stringify(item));
+      // console.log(item, _.where(teamsArr,{id : item.home_team})[0].teamName)
+      var homeTeam = getTeamName(teamsArr, item.home_team);
+      var awayTeam = getTeamName(teamsArr, item.away_team);
+      var ref_team1 = getTeamName(teamsArr, item.referee_team[0]);
+      var ref_team2 = getTeamName(teamsArr, item.referee_team[1]);
+
+      newItem.home_team =  homeTeam;
+      newItem.away_team =  awayTeam;
+      newItem.referee_team = [ref_team1,ref_team2].sort().join(" & ");
+      scheduleArrFormatted.push(newItem)
+    });
+
+    return scheduleArrFormatted;
+
+  }
+
+  function  renderTable (scheduleData){
+    var json = scheduleData;
+    var tr;
+    for (var i = 0; i < json.length; i++) {
+      tr = $('<tr/>');
+      tr.append("<th scope='row'>" + (i+1) + "</th>");
+      tr.append("<td>" + json[i].scheduled_date + "</td>");
+      tr.append("<td>" + json[i].home_team + "</td>");
+      tr.append("<td>" + json[i].away_team + "</td>");
+      tr.append("<td>" + json[i].referee_team + "</td>");
+      $('tbody').append(tr);
+    }
+  }
+  function  loadSchedule(teamsArr){
+    $.getJSON('./data/schedule.json',function(json){
+        var scheduleData = buildTableData(teamsArr, json);
+        renderTable(scheduleData);
+    });
+
+  }
+</script>
 </body>
 </html>
