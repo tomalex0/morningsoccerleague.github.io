@@ -5,6 +5,7 @@
   <title>Morning Soccer League</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/team.css">
   <script src="js/prefixfree.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </header>
@@ -38,9 +39,9 @@
 </header>
 <div class="container">
   <div>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered ">
       <thead>
-      <tr>
+      <tr class="team-table-header">
         <th>Week</th>
         <th>Date</th>
         <th>Home Team</th>
@@ -67,7 +68,7 @@
   });
 
   function getTeamName (teamsArr, teamId) {
-    return _.where(teamsArr,{id : teamId})[0].teamName;
+    return _.where(teamsArr,{id : teamId})[0];
   }
 
   function  loadTeams (callback){
@@ -87,9 +88,14 @@
       var ref_team1 = getTeamName(teamsArr, item.referee_team[0]);
       var ref_team2 = getTeamName(teamsArr, item.referee_team[1]);
 
+      var ref_team1name = "<strong class='"+ref_team1.teamCls+"'>"+ref_team1.teamName+"</strong>";
+      var ref_team2name = "<strong class='"+ref_team2.teamCls+"' >"+ref_team2.teamName+"</strong>";
+
+      console.log([ref_team1.teamName,ref_team2.teamName].sort())
+
       newItem.home_team =  homeTeam;
       newItem.away_team =  awayTeam;
-      newItem.referee_team = [ref_team1,ref_team2].sort().join(" & ");
+      newItem.referee_team = [ref_team1name,ref_team2name].sort().join(" & ");
       scheduleArrFormatted.push(newItem)
     });
 
@@ -102,10 +108,10 @@
     var tr;
     for (var i = 0; i < json.length; i++) {
       tr = $('<tr/>');
-      tr.append("<th scope='row'>" + (i+1) + "</th>");
-      tr.append("<td>" + json[i].scheduled_date + "</td>");
-      tr.append("<td>" + json[i].home_team + "</td>");
-      tr.append("<td>" + json[i].away_team + "</td>");
+      tr.append("<th scope='row' class='event-week'>" + (i+1) + "</th>");
+      tr.append("<td class='event-week'>" + json[i].scheduled_date + "</td>");
+      tr.append("<td class='"+json[i].home_team.teamCls+"'><strong>" + json[i].home_team.teamName + "</strong></td>");
+      tr.append("<td class='"+json[i].away_team.teamCls+"'><strong>" + json[i].away_team.teamName + "</strong></td>");
       tr.append("<td>" + json[i].referee_team + "</td>");
       $('tbody').append(tr);
     }

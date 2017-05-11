@@ -2,6 +2,7 @@
   {
     "id": 1,
     "teamName": "1Touchables",
+    "teamCls" : "team-gray",
     "members" : [{
       "name" : "Georgy Varghese"
     },{
@@ -31,6 +32,7 @@
   {
     "id": 2,
     "teamName": "Atletico Vista",
+    "teamCls" : "team-red",
     "members" : [{
       "name" : "Aneesh Padmanabhan",
       "owner" : true
@@ -60,6 +62,7 @@
   {
     "id": 3,
     "teamName": "Benchwarmers FC",
+    "teamCls" : "team-beige",
     "members" : [{
       "name" : "Dinesh Palanivelu"
     },{
@@ -89,6 +92,7 @@
   {
     "id": 4,
     "teamName": "Early Risers",
+    "teamCls" : "team-orange",
     "members" : [{
       "name" : "Gursewak Gill"
     },{
@@ -118,6 +122,7 @@
   {
     "id": 5,
     "teamName": "Rabona FC",
+    "teamCls" : "team-brown",
     "members" : [{
       "name" : "Kartik Pisupati"
     },{
