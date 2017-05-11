@@ -1,0 +1,33 @@
+.team-orange {
+    color: #FB7712;
+
+}
+
+.team-red {
+    color: #890018;
+
+}
+
+.team-gray {
+    color: #3C4353;
+
+}
+
+.team-brown {
+    color: #370001;
+
+}
+
+.team-beige {
+    color: #E7975C;
+
+}
+
+.team-table-header {
+    background: #353530;
+    color : white;
+}
+.event-week {
+    background: #A07451;
+    color : white;
+}

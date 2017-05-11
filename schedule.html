@@ -1,0 +1,140 @@
+
+<html>
+<header>
+
+  <title>Morning Soccer League</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/team.css">
+  <script src="js/prefixfree.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <META HTTP-EQUIV="Expires" CONTENT="-1">
+
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+  <meta name="apple-mobile-web-app-title" content="Hub"/>
+  <meta name="theme-color" content="#006efc">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+</header>
+<body>
+
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#featured">
+          <img src="images/msl2.svg" class="big-logo" />
+          <img src="images/msl_logo.svg" class="small-logo" />
+        </a>
+      </div><!-- navbar-header -->
+      <div class="collapse navbar-collapse" id="collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li ><a href="index.html#featured">Home</a></li>
+          <li class="active"><a href="schedule.html">Schedule</a></li>
+          <li><a href="index.html#mission">Mission</a></li>
+          <li><a href="index.html#teams">Tournament</a></li>
+          <li><a href="registration.html">Register</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="index.html#staff">Contacts</a></li>
+        </ul>
+      </div><!-- collapse navbar-collapse -->
+    </div><!-- container  -->
+  </nav>
+</header>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr class="team-table-header">
+        <th>Week</th>
+        <th>Date</th>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Referee Team</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="js/myscript.js"></script>
+<script>
+  $(document).ready(function () {
+
+    loadTeams(loadSchedule)
+
+
+  });
+
+  function getTeamName (teamsArr, teamId) {
+    return _.where(teamsArr,{id : teamId})[0];
+  }
+
+  function  loadTeams (callback){
+    $.getJSON('./data/teams.json',function(json){
+        callback(json)
+    });
+  }
+
+  function buildTableData (teamsArr, scheduleArr){
+
+    var scheduleArrFormatted = [];
+    _.each(scheduleArr,function(item, index){
+      var newItem = JSON.parse(JSON.stringify(item));
+      // console.log(item, _.where(teamsArr,{id : item.home_team})[0].teamName)
+      var homeTeam = getTeamName(teamsArr, item.home_team);
+      var awayTeam = getTeamName(teamsArr, item.away_team);
+      var ref_team1 = getTeamName(teamsArr, item.referee_team[0]);
+      var ref_team2 = getTeamName(teamsArr, item.referee_team[1]);
+
+      var ref_team1name = "<strong class='"+ref_team1.teamCls+"'>"+ref_team1.teamName+"</strong>";
+      var ref_team2name = "<strong class='"+ref_team2.teamCls+"' >"+ref_team2.teamName+"</strong>";
+
+      console.log([ref_team1.teamName,ref_team2.teamName].sort())
+
+      newItem.home_team =  homeTeam;
+      newItem.away_team =  awayTeam;
+      newItem.referee_team = [ref_team1name,ref_team2name].sort().join(" & ");
+      scheduleArrFormatted.push(newItem)
+    });
+
+    return scheduleArrFormatted;
+
+  }
+
+  function  renderTable (scheduleData){
+    var json = scheduleData;
+    var tr;
+    for (var i = 0; i < json.length; i++) {
+      tr = $('<tr/>');
+      tr.append("<th scope='row' class='event-week'>" + (i+1) + "</th>");
+      tr.append("<td class='event-week'>" + json[i].scheduled_date + "</td>");
+      tr.append("<td class='"+json[i].home_team.teamCls+"'><strong>" + json[i].home_team.teamName + "</strong></td>");
+      tr.append("<td class='"+json[i].away_team.teamCls+"'><strong>" + json[i].away_team.teamName + "</strong></td>");
+      tr.append("<td>" + json[i].referee_team + "</td>");
+      $('tbody').append(tr);
+    }
+  }
+  function  loadSchedule(teamsArr){
+    $.getJSON('./data/schedule.json',function(json){
+        var scheduleData = buildTableData(teamsArr, json);
+        renderTable(scheduleData);
+    });
+
+  }
+</script>
+</body>
+</html>
