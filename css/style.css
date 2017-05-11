@@ -269,12 +269,32 @@ and (max-width: 768px) {
 }
 
 #teams #team1 {
-  background: url(../images/f1.jpg) no-repeat center center;
+  background: url(../images/atletico.jpeg) no-repeat center center;
   background-size: cover;
 }
 
 #teams #team2 {
-  background: url(../images/players.jpg) no-repeat center center;
+  background: url(../images/benchwarmers.jpeg) no-repeat center center;
+  background-size: cover;
+}
+
+#teams #team3 {
+  background: url(../images/rabonafc.jpeg) no-repeat center center;
+  background-size: cover;
+}
+
+#teams #team4 {
+  background: url(../images/onetouchables.jpeg) no-repeat center center;
+  background-size: cover;
+}
+
+#teams #team5 {
+  background: url(../images/earlyrisers.jpeg) no-repeat center center;
+  background-size: cover;
+}
+
+#teams #team6 {
+  background: url(../images/f1.jpg) no-repeat center center;
   background-size: cover;
 }
 
