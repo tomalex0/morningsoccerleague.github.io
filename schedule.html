@@ -159,7 +159,7 @@
 <script src="js/myscript.js"></script>
 <script>
 
-
+  var datetime = Math.round(new Date().getTime() / 1000);
 
   var players = [];
   var cautions = [];
@@ -209,18 +209,18 @@
   }
 
   function  loadTeams (callback){
-    $.getJSON('./data/teams.json',function(json){
+    $.getJSON('./data/teams.json?time='+datetime,function(json){
         callback(json)
     });
   }
   function  loadPlayers (){
-    $.getJSON('./data/players.json',function(json){
+    $.getJSON('./data/players.json?time='+datetime,function(json){
       players = json;
     });
   }
 
   function  loadCautions (){
-    $.getJSON('./data/caution.json',function(json){
+    $.getJSON('./data/caution.json?time='+datetime,function(json){
       cautions = json;
     });
   }
@@ -269,7 +269,7 @@
 
   }
   function  loadSchedule(teamsArr){
-    $.getJSON('./data/schedule.json',function(json){
+    $.getJSON('./data/schedule.json?time='+datetime,function(json){
         var scheduleData = buildTableData(teamsArr, json);
         renderTable(scheduleData);
     });
