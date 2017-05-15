@@ -3,6 +3,21 @@
     "scheduled_date": "5/12/2017",
     "home_team": 5,
     "away_team": 2,
+    "stats" : {
+      "home" :  {
+        "goals" : [],
+        "cautions" : []
+      },
+      "away" :  {
+        "goals" : [],
+        "cautions" : [{
+          "caution_id" : 1,
+          "player" : 18,
+          "minute" : 25
+        }]
+      },
+      "mom"  : [19]
+    },
     "referee_team": [1,3]
   },
   {
