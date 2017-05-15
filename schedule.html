@@ -28,7 +28,10 @@
         <td class="home-team-cls">
           <table width="100%">
             <tr>
-              <td class="{{home_team.teamCls}}"><strong>{{home_team.teamName}}</strong></td>
+              <td class="{{home_team.teamCls}}">
+                <img  src="images/teams/{{home_team.id}}.png" />
+                <strong>{{home_team.teamName}}</strong>
+              </td>
             </tr>
             {{#if stats.home}}
             <tr>
@@ -63,7 +66,11 @@
         <td class="away-team-cls">
           <table width="100%">
             <tr>
-              <td class="{{away_team.teamCls}} text-right"><strong>{{away_team.teamName}}</strong></td>
+              <td class="{{away_team.teamCls}} text-right">
+                <strong>{{away_team.teamName}}</strong>
+                <img  src="images/teams/{{away_team.id}}.png" />
+
+              </td>
             </tr>
             {{#if stats.away}}
             <tr>
@@ -250,7 +257,7 @@
       newItem.home_goals = (item.stats) ? getGoals(item.stats.home) : [];
       newItem.away_goals = (item.stats) ?  getGoals(item.stats.away) : [];
 
-      //console.log(newItem,'0---------------')
+      console.log(newItem,'0---------------')
       scheduleArrFormatted.push(newItem)
     });
 

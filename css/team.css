@@ -28,8 +28,11 @@
     color : white;
 }
 .event-week {
-    background: #A07451;
     color : white;
+    background: #3c3a3b;
+    border-color: #54544c!important;
+    text-align: center;
+    vertical-align: middle !important;
 }
 
 .home-team-cls {
@@ -53,7 +56,7 @@
     content: "VS";
     position: absolute;
     right: -13px;
-    top: 4px;
+    top: 20px;
     background: #640712;
     border-radius: 100%;
     padding: 5px;
@@ -125,4 +128,8 @@
     width: 16px;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABFElEQVQ4T6WTbU1DQRBFTxUADkABoABQACigdVAJWEABoABQACgoOMABVEGb8zKXbF7fywthkv2xH3Pmzt3dGf+M2UD+OXADXAH7wA/wDDwCb/3zfcADIOADuGwOvwAnwCuwaCEtwOTDqmzVOXBbwz3VqGDVQgKwqnRlmjgWgmzvIu0EYI9KVvppZQu9r2rp3f3jtlAASt4DPqtXDXxqZFyXkQF8AUfuB7CpZKsKGwPEB1V0ua0CXZaciKp1GZh1z9myhv8CXHBo0lRosko7s9tbMFkflPlehwLTxLOaqExPOmP778ArShyUHwK/m/U7YJn50EsMJHedN2LOzjsZ+wv2503YkibGn8m/MGXgzv6Qgj9Btq0CPREp3sZwAAAAAElFTkSuQmCC");
 
+}
+
+tr.team-table-header th {
+    border-color: #54544c !important;
 }
