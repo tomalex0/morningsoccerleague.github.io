@@ -24,6 +24,21 @@
     "scheduled_date": "5/19/2017",
     "home_team": 3,
     "away_team": 4,
+    "stats" : {
+      "home" :  {
+        "goals" : [],
+        "cautions" : []
+      },
+      "away" :  {
+        "goals" : [{
+          "player" : 18
+        },{
+          "player" : 18
+        }],
+        "cautions" : []
+      },
+      "mom"  : [19]
+    },
     "referee_team": [5,2]
   },
   {
