@@ -31,10 +31,10 @@
       },
       "away" :  {
         "goals" : [{
-          "player" : 28,
+          "player" : 41,
           "minute" : 20
         },{
-          "player" : 28,
+          "player" : 32,
           "minute" : 45
         }],
         "cautions" : []
