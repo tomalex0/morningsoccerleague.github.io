@@ -82,7 +82,7 @@
 
                 <ul class="goal-section">
                   {{#each away_goals}}
-                  <li class="goal-cls text-right">{{player.name}} <strong>{{minute}}"</strong></li>
+                  <li class="goal-cls text-right">{{player.name}} <strong>{{minute}}"</strong> {{#if owngoal}}  (OG) {{/if}}</li>
                   {{/each}}
                 </ul>
 
@@ -93,7 +93,7 @@
 
                 <ul class="caution-cls">
                   {{#each away_cautions}}
-                  <li class="{{card.cls}} text-right">{{player.name}}, <strong>{{minute}}"</strong></li>
+                  <li class="{{card.cls}} text-right">{{player.name}}, <strong>{{minute}}"</strong> {{#if owngoal}}  (OG) {{/if}}</li>
                   {{/each}}
                 </ul>
 
