@@ -35,7 +35,8 @@
           "minute" : 20
         },{
           "player" : 32,
-          "minute" : 45
+          "minute" : 45,
+          "owngoal" : true
         }],
         "cautions" : []
       },
