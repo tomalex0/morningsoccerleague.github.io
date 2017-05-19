@@ -209,7 +209,8 @@
       goals = _.map(stats.goals, function(item){
         return {
           player : playerobj[item['player']][0],
-          minute : item.minute
+          minute : item.minute,
+          owngoal : item.owngoal
         }
       })
     }
