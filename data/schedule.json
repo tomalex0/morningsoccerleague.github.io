@@ -31,9 +31,11 @@
       },
       "away" :  {
         "goals" : [{
-          "player" : 18
+          "player" : 28,
+          "minute" : 20
         },{
-          "player" : 18
+          "player" : 28,
+          "minute" : 45
         }],
         "cautions" : []
       },
