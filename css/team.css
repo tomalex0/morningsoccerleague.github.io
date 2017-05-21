@@ -114,8 +114,6 @@
 .goal-cls:before {
 
     content: '\00a0';
-    width: 15px;
-    height: 19px;
     display: inline-block;
     transform: rotate(25deg);
     position: absolute;
@@ -133,3 +131,13 @@
 tr.team-table-header th {
     border-color: #54544c !important;
 }
+
+.mom-cls {
+  position: relative;
+}
+.mom-cls span {
+    font-weight: bold;
+}
+
+
+

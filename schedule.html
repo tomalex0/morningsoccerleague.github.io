@@ -33,7 +33,7 @@
                 <strong>{{home_team.teamName}}</strong>
               </td>
             </tr>
-            {{#if stats.home}}
+            {{#if stats.completed}}
             <tr>
               <td class="text-right team-score score-sep">{{stats.home.goals.length}}</td>
             </tr>
@@ -60,7 +60,16 @@
 
               </td>
             </tr>
+            <tr>
+              <td>
+                <ul >
+                  {{#each home_mom}}
+                  <li class="list-unstyled text-left mom-cls"><span>{{name}}</span></li>
+                  {{/each}}
+                </ul>
 
+              </td>
+            </tr>
           </table>
         </td>
         <td class="away-team-cls">
@@ -72,7 +81,7 @@
 
               </td>
             </tr>
-            {{#if stats.away}}
+            {{#if stats.completed}}
             <tr>
               <td class="text-left team-score">{{stats.away.goals.length}}</td>
             </tr>
@@ -99,13 +108,24 @@
 
               </td>
             </tr>
+            <tr>
+              <td>
+                <ul >
+                  {{#each away_mom}}
+                  <li class="list-unstyled text-right mom-cls"><img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-32.png"/> <span>{{name}}</span></li>
+                  {{/each}}
+                </ul>
+
+              </td>
+            </tr>
           </table>
           </strong></td>
         <td>
-          {{#each referee_team}}
-                <strong class="{{teamCls}}">{{teamName}}</strong>
-                {{#if @index}} {{else}} &  {{/if}}
+          <ul>
+          {{#each referees}}
+                <li class="list-unstyled text-left {{team.teamCls}}"><strong >{{team.teamName}}</strong> {{#if player}} -  <strong >{{player.name}}</strong>{{/if}}</li>
           {{/each}}
+          </ul>
         </td>
     </tr>
   {{/each}}
@@ -188,8 +208,10 @@
     return _.where(teamsArr,{id : teamId})[0];
   }
 
+
+
   function getPlayer (item){
-      return playerobj[item['player']][0]
+      return playerobj[item['player']][0];
   }
 
   function getCautions (stats) {
@@ -249,20 +271,34 @@
     _.each(scheduleArr,function(item, index){
       var newItem = JSON.parse(JSON.stringify(item));
 
-      var ref_team1 = getTeamName(teamsArr, item.referee_team[0]);
-      var ref_team2 = getTeamName(teamsArr, item.referee_team[1]);
+
+      newItem.referees = _.map(item.referees,function(itemObj){
+
+          return {
+            team :  getTeamName(teamsArr, itemObj.team),
+            player :  (itemObj.player) ? getPlayer(itemObj) : undefined
+          };
+
+      });
 
 
-      newItem.home_team =  getTeamName(teamsArr, item.home_team);
-      newItem.away_team =  getTeamName(teamsArr, item.away_team);
-      newItem.referee_team = [ref_team1,ref_team2];
+      newItem.home_team =  getTeamName(teamsArr, item.stats.home.team);
+      newItem.away_team =  getTeamName(teamsArr, item.stats.away.team);
+
+      newItem.home_mom = _.map(item.stats.home.mom,function(itemobj){
+        return  getPlayer(itemobj)
+      });
+      newItem.away_mom =  _.map(item.stats.away.mom,function(itemobj){
+        return  getPlayer(itemobj)
+      });
+
       newItem.home_cautions = (item.stats) ? getCautions(item.stats.home) : [];
       newItem.away_cautions = (item.stats) ?  getCautions(item.stats.away) : [];
 
-      newItem.home_goals = (item.stats) ? getGoals(item.stats.home) : [];
-      newItem.away_goals = (item.stats) ?  getGoals(item.stats.away) : [];
+      newItem.home_goals = (item.stats) ? getGoals(item.stats.home) : undefined;
+      newItem.away_goals = (item.stats) ?  getGoals(item.stats.away) : undefined;
 
-      console.log(newItem,'0---------------')
+      //console.log(newItem,'0---------------')
       scheduleArrFormatted.push(newItem)
     });
 
@@ -280,9 +316,10 @@
     $('tbody').html(schedule_html);
 
   }
+  var scheduleData
   function  loadSchedule(teamsArr){
     $.getJSON('./data/schedule.json?time='+datetime,function(json){
-        var scheduleData = buildTableData(teamsArr, json);
+        scheduleData = buildTableData(teamsArr, json);
         renderTable(scheduleData);
     });
 
