@@ -188,13 +188,16 @@
     return _.where(teamsArr,{id : teamId})[0];
   }
 
+  function getPlayer (item){
+      return playerobj[item['player']][0]
+  }
 
   function getCautions (stats) {
     var cautions = []
     if(stats.cautions) {
       cautions = _.map(stats.cautions, function(item){
           return {
-             player : playerobj[item['player']][0],
+             player : getPlayer(item),
              card   : cautionobj[item['caution_id']][0],
              minute : item.minute
           }
@@ -208,7 +211,7 @@
     if(stats.goals) {
       goals = _.map(stats.goals, function(item){
         return {
-          player : playerobj[item['player']][0],
+          player : getPlayer(item),
           minute : item.minute
         }
       })
