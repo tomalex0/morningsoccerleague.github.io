@@ -8,8 +8,8 @@
       "team" :  3,
       "player" :  9
     }],
+    "completed" : true,
     "stats" : {
-      "completed" : true,
       "home" :  {
         "team" : 5,
         "goals" : [],
@@ -38,8 +38,8 @@
       "team" :  2,
       "player" :  19
     }],
+    "completed" : true,
     "stats" : {
-      "completed" : true,
       "home" :  {
         "team" : 3,
         "goals" : [],

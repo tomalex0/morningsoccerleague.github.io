@@ -1,0 +1,32 @@
+thead {
+    background-color: #16114b;
+    color: white;
+    border-top: solid 6px #FF3030;
+}
+.table td {
+    vertical-align: middle !important;
+}
+.table>tbody>tr{
+    color: #0f133b;
+    background: #e6e6e6;
+    font-weight: bold;
+
+}
+.table>tbody>tr:nth-of-type(odd) {
+    background: #f1f1f1;
+}
+.table>tbody>tr:first-child{
+    background: rgba(211,196,156,0.5);
+}
+
+.stats-pos {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.stats-logo {
+    width: 42px;
+    height: 42px;
+}
