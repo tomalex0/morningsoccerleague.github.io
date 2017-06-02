@@ -3,10 +3,10 @@
     "scheduled_date": "5/12/2017",
     "referees" : [{
       "team" :  1,
-      "player" :  32
+      "player" :  9
     },{
       "team" :  3,
-      "player" :  9
+      "player" :  32
     }],
     "completed" : true,
     "stats" : {
