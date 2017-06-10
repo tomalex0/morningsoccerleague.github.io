@@ -44,7 +44,7 @@
 
                 <ul class="goals-section">
                   {{#each home_goals}}
-                    <li class="goal-cls">{{player.name}}<strong>{{minute}}"</strong></li>
+                    <li class="goal-cls">{{player.name}} <strong>{{minute}}"</strong> {{#if owngoal}}  (OG) {{/if}}</li>
                   {{/each}}
                 </ul>
 
