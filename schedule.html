@@ -2,10 +2,10 @@
 <html>
 <header>
 
-  <title>Morning Soccer League</title>
+  <title>Morning Soccer League - Schedule</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="css/schedule.css">
   <script src="js/prefixfree.min.js"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta charset="utf-8">
@@ -44,7 +44,7 @@
 
                 <ul class="goals-section">
                   {{#each home_goals}}
-                    <li class="goal-cls">{{player.name}} <strong>{{minute}}"</strong> {{#if owngoal}}  (OG) {{/if}}</li>
+                    <li class="goal-cls"><span>{{player.name}}</span> <strong>{{minute}}"</strong> {{#if owngoal}}  (OG) {{/if}}</li>
                   {{/each}}
                 </ul>
 
@@ -91,7 +91,7 @@
 
                 <ul class="goal-section">
                   {{#each away_goals}}
-                  <li class="goal-cls text-right">{{player.name}} <strong>{{minute}}"</strong> {{#if owngoal}}  (OG) {{/if}}</li>
+                  <li class="goal-cls text-right"><span>{{player.name}}</span> <strong>{{minute}}"</strong> {{#if owngoal}}  (OG) {{/if}}</li>
                   {{/each}}
                 </ul>
 
@@ -152,9 +152,9 @@
         <ul class="nav navbar-nav navbar-right">
           <li ><a href="index.html#featured">Home</a></li>
           <li ><a href="stats.html">Stats</a></li>
+          <li ><a href="teams.html">Teams</a></li>
           <li class="active"><a href="schedule.html">Schedule</a></li>
           <li><a href="index.html#mission">Mission</a></li>
-          <li><a href="index.html#teams">Tournament</a></li>
           <li><a href="registration.html">Register</a></li>
           <li><a href="rules.html">Rules</a></li>
           <li><a href="index.html#staff">Contacts</a></li>

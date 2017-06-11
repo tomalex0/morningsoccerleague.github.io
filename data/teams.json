@@ -2,151 +2,26 @@
   {
     "id": 1,
     "teamName": "1Touchables",
-    "teamCls" : "team-gray",
-    "members" : [{
-      "name" : "Georgy Varghese"
-    },{
-      "name" : "Chinmay Bhawe"
-    },{
-      "name" : "Christie Joseph"
-    },{
-      "name" : "Luis De La O"
-    },{
-      "name" : "Mayur Reddy",
-      "owner" : true
-    },{
-      "name" : "Naveen Birru"
-    },{
-      "name" : "Priyesh Valsan kaniyankandy"
-    },{
-      "name" : "Shrinidhi Bhat"
-    },{
-      "name" : "Tushar Humbe",
-      "owner" : true
-    },{
-      "name" : "Aniket Bothe"
-    },{
-      "name" : "Mohit Kudalkar"
-    }]
+    "teamCls" : "team-gray"
   },
   {
     "id": 2,
     "teamName": "Atletico Vista",
-    "teamCls" : "team-red",
-    "members" : [{
-      "name" : "Aneesh Padmanabhan",
-      "owner" : true
-    },{
-      "name" : "Abhilash Ajayakumar"
-    },{
-      "name" : "Arjun Suresh"
-    },{
-      "name" : "Jiji Antony"
-    },{
-      "name" : "Jue Chemparathy"
-    },{
-      "name" : "Nizar Mankulangara",
-      "owner" : true
-    },{
-      "name" : "Noufal Kappachali"
-    },{
-      "name" : "Praveen P N"
-    },{
-      "name" : "Suresh Koppisetty"
-    },{
-      "name" : "Thomas Alexander"
-    },{
-      "name" : "Tiju Jose"
-    }]
+    "teamCls" : "team-red"
   },
   {
     "id": 3,
     "teamName": "Benchwarmers FC",
-    "teamCls" : "team-beige",
-    "members" : [{
-      "name" : "Dinesh Palanivelu"
-    },{
-      "name" : "Shriram Ravikuma"
-    },{
-      "name" : "Subin Poolat"
-    },{
-      "name" : "Anoop Radhakrishnan"
-    },{
-      "name" : "Bonnie Varghese"
-    },{
-      "name" : "Geen George"
-    },{
-      "name" : "Santosh Kumar"
-    },{
-      "name" : "Prince Mathew",
-      "owner" : true
-    },{
-      "name" : "Shyam Sivakumar"
-    },{
-      "name" : "Sunil Mohan",
-      "owner" : true
-    },{
-      "name" : "Vinayak Bhakta"
-    }]
+    "teamCls" : "team-beige"
   },
   {
     "id": 4,
     "teamName": "Early Risers",
-    "teamCls" : "team-orange",
-    "members" : [{
-      "name" : "Gursewak Gill"
-    },{
-      "name" : "Kunal Sanghavi",
-      "owner" : true
-    },{
-      "name" : "Akshay Kumar"
-    },{
-      "name" : "Harsh Barot",
-      "owner" : true
-    },{
-      "name" : "Jacob Matthews (Shanthan)"
-    },{
-      "name" : "Joju Joseph"
-    },{
-      "name" : "Rahul Narendra"
-    },{
-      "name" : "Rohit Kulkarni"
-    },{
-      "name" : "Rounak Lokare"
-    },{
-      "name" : "Shreeram Gopalakrishnan"
-    },{
-      "name" : "Tanvir Kekan"
-    }]
+    "teamCls" : "team-orange"
   },
   {
     "id": 5,
     "teamName": "Rabona FC",
-    "teamCls" : "team-brown",
-    "members" : [{
-      "name" : "Kartik Pisupati"
-    },{
-      "name" : "Ajay Jain",
-      "owner" : true
-    },{
-      "name" : "Ashoksankar Hariharasubramony"
-    },{
-      "name" : "Bobby Thomas"
-    },{
-      "name" : "Chetan mer"
-    },{
-      "name" : "Druvadilipkumar Pappireddypalli"
-    },{
-      "name" : "Francy Varghese"
-    },{
-      "name" : "Sanjeev Suresh"
-    },{
-      "name" : "Suhas Mahishi",
-      "owner" : true
-    },{
-      "name" : "Zachariah Georgekutty Ponnal"
-    },{
-      "name" : "Sandeep Menon"
-    }]
+    "teamCls" : "team-brown"
   }
 ]
