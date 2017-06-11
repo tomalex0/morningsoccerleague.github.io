@@ -29,13 +29,15 @@ function  getTeamsDetails(teamIdArr,teamsObjArr, playersObjArr){
 
         _.each(teamIditem.players,function(playersItem){
 
-            playersArr.push(playersObjArr[playersItem][0]);
+            var playerObj = playersObjArr[playersItem][0];
+
+            playerObj.isOwner = ((teamIditem.owners).indexOf(playersItem) >=0 )? true : false;
+
+
+            playersArr.push(playerObj);
         });
 
-        _.each(teamIditem.owners,function(playersItem){
 
-            ownersArr.push(playersObjArr[playersItem][0]);
-        });
 
         teamIditem.owners = ownersArr;
         teamIditem.players = playersArr;
