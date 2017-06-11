@@ -69,7 +69,7 @@ function getTeamStats (teams, schedule){
 
 
                 teamObj[home.team].won =  (teamObj[home.team].won || 0 ) + 1;
-                teamObj[away.team].lost =  (teamObj[home.team].lost|| 0 ) + 1;
+                teamObj[away.team].lost =  (teamObj[away.team].lost|| 0 ) + 1;
 
                 teamObj[away.team].goal_allowed =  teamObj[away.team].goal_allowed + home.goals.length;
 
