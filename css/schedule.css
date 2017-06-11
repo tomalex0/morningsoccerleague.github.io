@@ -111,7 +111,7 @@
     top: -3px;
 }
 
-.goal-cls:before {
+.goal-cls span:before {
 
     content: '\00a0';
     display: inline-block;
@@ -138,6 +138,11 @@ tr.team-table-header th {
 .mom-cls span {
     font-weight: bold;
 }
+
+.goal-section {
+    text-align: right;
+}
+
 
 
 
