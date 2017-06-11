@@ -1,17 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+<html>
+<header>
   <meta charset="UTF-8">
-  <title>Morning Soccer League</title>
+  <title>Morning Soccer League - Stats</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stats.css">
   <script src="js/prefixfree.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
+  <script src="js/common.js"></script>
+</header>
 <body>
 
+<script id="teams-template" type="text/x-handlebars-template">
+  {{#each this}}
+    <div class="col-md-4">
+      <table class="table">
+        <thead>
+        <tr>
+          <th class="text-left">{{team.teamName}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each players}}
+            <tr>
+              <td><span class="hide-id">{{id}}.&nbsp;&nbsp;</span>{{name}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{/each}}
+</script>
 <header>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -29,100 +51,27 @@
       </div><!-- navbar-header -->
       <div class="collapse navbar-collapse" id="collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="index.html#featured">Home</a></li>
-          <li ><a href="schedule.html">Schedule</a></li>
+          <li ><a href="index.html#featured">Home</a></li>
+          <li ><a href="stats.html">Stats</a></li>
+          <li class="active" ><a href="teams.html">Teams</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
           <li><a href="index.html#mission">Mission</a></li>
           <li><a href="index.html#teams">Tournament</a></li>
           <li><a href="registration.html">Register</a></li>
-          <li><a href="rules.html">Rules</a></li>
+          <li ><a href="rules.html">Rules</a></li>
           <li><a href="index.html#staff">Contacts</a></li>
         </ul>
       </div><!-- collapse navbar-collapse -->
-    </div><!-- container -->
+    </div><!-- container  -->
   </nav>
 </header>
-
-<div class="main">
-  <div class="page" id="mission">
-    <div class="content container">
-      <h2>Teams</h2>
-      <div class="row">
-        <p class="col-md-5 col-md-offset-1">Describe: Team selction rules</p>
-        <p class="col-md-5">More details</p>
-      </div><!-- row -->
-    </div><!-- content container -->
-  </div><!-- mission page -->
-
-  <div class="page" id="teams">
-    <div class="container-fluid">
-      <h2>Testimonials</h2>
-      <div class="row">
-        <blockquote class="col-md-6 col-lg-3" id="team1">
-          <div class="quote">
-            <span class="intro">Team 1</span>
-            <span class="more">Details</span>
-          </div>
-        </blockquote>
-
-        <blockquote class="col-md-6 col-lg-3" id="team1">
-          <div class="quote">
-            <span class="intro">Team 2</span>
-            <span class="more">Details</span>
-            </span>
-          </div>
-        </blockquote>
-
-        <blockquote class="col-md-6 col-lg-3" id="team1">
-          <div class="quote">
-            <span class="intro">Team 3</span>
-            <span class="more">Details</span>
-          </div>
-        </blockquote>
-
-        <blockquote class="col-md-6 col-lg-3" id="team1">
-          <div class="quote">
-            <span class="intro">Team 4</span>
-            <span class="more">Details</span>
-          </div>
-        </blockquote>
-      </div>
-      <div class="row">
-        <blockquote class="col-md-6 col-lg-3" id="team1">
-          <div class="quote">
-            <span class="intro">Team 5</span>
-            <span class="more">Details</span>
-          </div>
-        </blockquote>
-
-        <blockquote class="col-md-6 col-lg-3" id="team1">
-          <div class="quote">
-            <span class="intro">Team 6</span>
-            <span class="more">Details</span>
-            </span>
-          </div>
-        </blockquote>
-
-        <blockquote class="col-md-6 col-lg-3" id="team1">
-          <div class="quote">
-            <span class="intro">Team 7</span>
-            <span class="more">Details</span>
-          </div>
-        </blockquote>
-
-        <blockquote class="col-md-6 col-lg-3" id="team1">
-          <div class="quote">
-            <span class="intro">Team 8</span>
-            <span class="more">Details</span>
-          </div>
-        </blockquote>
-      </div>
-    </div><!-- container -->
-  </div><!-- teams page -->
-
-</div><!-- main -->
-
+<div class="container-fluid text-center" style="padding-top: 120px;">
+  <div id="teams-members" class="row"></div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="js/myscript.js"></script>
+<script src="js/teams.js"></script>
 </body>
 </html>

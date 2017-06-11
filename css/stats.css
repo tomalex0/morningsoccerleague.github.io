@@ -30,3 +30,7 @@ thead {
     width: 42px;
     height: 42px;
 }
+
+.hide-id {
+    display: none;
+}
