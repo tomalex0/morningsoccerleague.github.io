@@ -139,6 +139,7 @@
       "team" :  3,
       "player" : 23
     }],
+    "completed" : true,
     "stats" : {
       "home" :  {
         "team" : 1,
