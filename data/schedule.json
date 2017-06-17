@@ -141,10 +141,21 @@
     }],
     "stats" : {
       "home" :  {
-        "team" : 1
+        "team" : 1,
+        "goals" :[{
+          "player" : 9,
+          "minute" : 50
+        }]
       },
       "away" :  {
-        "team" : 4
+        "team" : 4,
+        "goals" :[{
+          "player" : 34,
+          "minute" : 43
+        }],
+        "mom"  : [{
+          "player" : 36
+        }]
       }
     }
   },
