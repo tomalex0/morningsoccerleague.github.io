@@ -169,12 +169,21 @@
       "team" :  4,
       "player" :  41
     }],
+    "completed" : true,
     "stats" : {
       "home" :  {
         "team" : 2
       },
       "away" :  {
-        "team" : 3
+        "team" : 3,
+        "goals" :[{
+          "player" : 14,
+          "minute" : 45,
+          "owngoal" : true
+        }],
+        "mom"  : [{
+          "player" : 33
+        }]
       }
     }
   },
