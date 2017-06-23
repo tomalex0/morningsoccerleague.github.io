@@ -62,28 +62,52 @@ function getTeamStats (teams, schedule){
 
             if(home.goals.length == away.goals.length) {
 
+                if(home.team == 3 || away.team == 3){
+                    console.log(home,away,"if one");
+                }
+
                 teamObj[home.team].draw =  (teamObj[home.team].draw || 0 ) + 1;
                 teamObj[away.team].draw =  (teamObj[away.team].draw || 0 ) + 1;
 
+               // teamObj[away.team].goal_allowed =  teamObj[away.team].goal_allowed + home.goals.length;
+               // teamObj[home.team].goal_allowed =  teamObj[home.team].goal_allowed + away.goals.length;
+
+
+
             } else if(home.goals.length > away.goals.length) {
 
+                if(home.team == 3 || away.team == 3){
+                    console.log(home,away,"if two");
+                }
 
                 teamObj[home.team].won =  (teamObj[home.team].won || 0 ) + 1;
                 teamObj[away.team].lost =  (teamObj[away.team].lost|| 0 ) + 1;
 
-                teamObj[away.team].goal_allowed =  teamObj[away.team].goal_allowed + home.goals.length;
-
+              //  teamObj[away.team].goal_allowed =  teamObj[away.team].goal_allowed + home.goals.length;
+               // teamObj[home.team].goal_allowed =  teamObj[home.team].goal_allowed + away.goals.length;
 
 
 
             } else if(away.goals.length > home.goals.length) {
 
+                if(home.team == 3 || away.team == 3){
+                    console.log(home,away,"if three");
+                }
+
                 teamObj[away.team].won =  (teamObj[away.team].won || 0 ) + 1;
                 teamObj[home.team].lost =  (teamObj[home.team].lost || 0 ) + 1;
 
-                teamObj[home.team].goal_allowed =  teamObj[home.team].goal_allowed + away.goals.length;
-
+                //teamObj[home.team].goal_allowed =  teamObj[home.team].goal_allowed + away.goals.length;
+                //teamObj[away.team].goal_allowed =  teamObj[away.team].goal_allowed + home.goals.length;
             }
+
+            teamObj[home.team].goal_allowed =  teamObj[home.team].goal_allowed + away.goals.length;
+            teamObj[away.team].goal_allowed =  teamObj[away.team].goal_allowed + home.goals.length;
+
+            if(home.team == 3 || away.team == 3){
+                //console.log(home,away,"if");
+            }
+
 
             teamObj[home.team].goal_scored =  teamObj[home.team].goal_scored + home.goals.length;
             teamObj[away.team].goal_scored =  teamObj[away.team].goal_scored + away.goals.length;
@@ -92,7 +116,9 @@ function getTeamStats (teams, schedule){
 
 
         } else {
-
+            //if(home.team == 2 || away.team == 2){
+            //    console.log(home.team,away.team,"else");
+            //}
 
             if(!teamObj[home.team]){
 
