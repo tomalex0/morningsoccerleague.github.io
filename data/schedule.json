@@ -206,6 +206,7 @@
 	"stats": {
 		"home": {
 			"team": 2,
+			"goals": [],
 			"cautions": [{
 				"caution_id": 1,
 				"player": 19,
