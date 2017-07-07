@@ -196,10 +196,10 @@
   {
     "scheduled_date": "7/7/2017",
     "referees" : [{
-      "team" :  1
+      "team" :  1,
       "player" : 2
     },{
-      "team" :  3
+      "team" :  3,
       "player" : 56
     }],
     "stats" : {
