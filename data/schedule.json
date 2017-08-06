@@ -340,9 +340,11 @@
 	{
 		"scheduled_date": "8/4/2017",
 		"referees": [{
-			"team": 5
+			"team": 5,
+			"player": 49
 		}, {
-			"team": 2
+			"team": 2,
+			"player": 13
 		}],
 		"completed": true,
 		"stats": {
