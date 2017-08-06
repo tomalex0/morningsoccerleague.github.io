@@ -344,12 +344,27 @@
 		}, {
 			"team": 2
 		}],
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 3
+				"team": 3,
+				"goals": [{
+					"player": 57,
+					"minute": 18
+				}, {
+					"player": 29,
+					"minute": 37
+				}],
+				"mom": [{
+					"player": 57
+				}]
 			},
 			"away": {
-				"team": 1
+				"team": 1,
+				"goals": [{
+					"player": 9,
+					"minute": 25
+				}]
 			}
 		}
 	},
