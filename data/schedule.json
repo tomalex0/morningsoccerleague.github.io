@@ -482,22 +482,6 @@
 			}
 		}
 	},
-	{
-		"scheduled_date": "10/13/2017",
-		"referees": [{
-			"team": 4
-		}, {
-			"team": 2
-		}],
-		"stats": {
-			"home": {
-				"team": 5
-			},
-			"away": {
-				"team": 1
-			}
-		}
-	},
     {
       "scheduled_date": "10/13/2017",
       "referees": [{
