@@ -371,24 +371,6 @@
 		}
 	},
 	{
-		"scheduled_date": "8/11/2017",
-		"referees": [{
-			"team": 3,
-			"player": 28
-		}, {
-			"team": 2,
-			"player": 18
-		}],
-		"stats": {
-			"home": {
-				"team": 5
-			},
-			"away": {
-				"team": 4
-			}
-		}
-	},
-	{
 		"scheduled_date": "8/18/2017",
 		"referees": [{
 			"team": 5
@@ -515,5 +497,21 @@
 				"team": 1
 			}
 		}
-	}
+	},
+    {
+      "scheduled_date": "10/13/2017",
+      "referees": [{
+        "team": 4
+      }, {
+        "team": 2
+      }],
+      "stats": {
+        "home": {
+          "team": 5
+        },
+        "away": {
+          "team": 1
+        }
+      }
+    }
 ]
