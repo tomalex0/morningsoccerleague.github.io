@@ -497,5 +497,21 @@
           "team": 1
         }
       }
-    }
+    },
+	{
+		"scheduled_date": "10/20/2017",
+		"referees": [{
+			"team": 3
+		}, {
+			"team": 2
+		}],
+		"stats": {
+			"home": {
+				"team": 5
+			},
+			"away": {
+				"team": 4
+			}
+		}
+	}
 ]
