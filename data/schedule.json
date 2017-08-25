@@ -409,9 +409,11 @@
 	{
 		"scheduled_date": "8/25/2017",
 		"referees": [{
-			"team": 1
+			"team": 1,
+			"player" : 5
 		}, {
-			"team": 2
+			"team": 2,
+			"player" : 62
 		}],
 		"stats": {
 			"home": {
