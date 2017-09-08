@@ -445,12 +445,27 @@
 			"team": 2,
 			"player" : 14
 		}],
+		"completed" : true,
 		"stats": {
 			"home": {
-				"team": 4
+				"team": 4,
+				"goals": []
 			},
 			"away": {
-				"team": 1
+				"team": 1,
+				"goals": [{
+					"player": 10,
+					"minute": 12
+				},{
+					"player": 10,
+					"minute": 21
+				},{
+					"player": 9,
+					"minute": 42
+				}],
+				"mom": [{
+					"player": 10
+				}]
 			}
 		}
 	},
