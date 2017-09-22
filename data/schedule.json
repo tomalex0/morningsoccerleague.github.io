@@ -472,9 +472,11 @@
 	{
 		"scheduled_date": "9/15/2017",
 		"referees": [{
-			"team": 1
+			"team": 1,
+ 			"player" : 6
 		}, {
-			"team": 4
+			"team": 4,
+			"player" : 36
 		}],
 		"completed" : true,
 		"stats": {
@@ -518,9 +520,11 @@
 	{
 		"scheduled_date": "9/22/2017",
 		"referees": [{
-			"team": 1
+			"team": 1,
+			"player" : 10
 		}, {
-			"team": 2
+			"team": 2,
+			"player" : 22
 		}],
 		"stats": {
 			"home": {
