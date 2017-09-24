@@ -529,12 +529,12 @@
 		"completed" : true,
 		"stats": {
 			"home": {
-				"team": 4
+				"team": 4,
+				goals" :[]
 			},
 			"away": {
 				"team": 5,
-				"goals" :[
-					{
+				"goals" :[{
 					"player": 45,
 					"minute": 33
 				},{
