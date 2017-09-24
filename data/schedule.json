@@ -526,12 +526,30 @@
 			"team": 2,
 			"player" : 22
 		}],
+		"completed" : true,
 		"stats": {
 			"home": {
 				"team": 4
 			},
 			"away": {
-				"team": 5
+				"team": 5,
+				"goals" :[
+					{
+					"player": 45,
+					"minute": 33
+				},{
+					"player": 50,
+					"minute": 35
+				},{
+					"player": 45,
+					"minute": 46
+				},{
+					"player": 45,
+					"minute": 48
+				}],
+				"mom" :[{
+					"player":"45"
+				}]
 			}
 		}
 	},
