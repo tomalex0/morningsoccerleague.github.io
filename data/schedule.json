@@ -565,10 +565,21 @@
 		"completed" : true,
 		"stats": {
 			"home": {
-				"team": 1
+				"team": 1,
+				"goals" :[]
 			},
 			"away": {
-				"team": 3
+				"team": 3,
+				"goals" :[{
+					"player": 57,
+					"minute": 26
+				},{
+					"player": 29,
+					"minute": 28
+				}]
+				"mom": [{
+					"player": 57
+				}]
 			}
 		}
 	},
