@@ -556,10 +556,13 @@
 	{
 		"scheduled_date": "9/29/2017",
 		"referees": [{
-			"team": 4
+			"team": 4,
+			"player" : 42
 		}, {
-			"team": 2
+			"team": 2,
+			"player" : 61
 		}],
+		"completed" : true,
 		"stats": {
 			"home": {
 				"team": 1
