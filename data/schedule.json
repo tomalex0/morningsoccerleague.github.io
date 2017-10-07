@@ -592,12 +592,21 @@
 			"team": 5,
 			"player" : 59
 		}],
+		"completed" : true,
 		"stats": {
 			"home": {
-				"team": 2
+				"team": 2,
+				"goals" : []
 			},
 			"away": {
-				"team": 4
+				"team": 4,
+				"goals" :[{
+					"player": 40,
+					"minute": 27
+				}],
+				"mom": [{
+					"player": 40
+				}]
 			}
 		}
 	},
