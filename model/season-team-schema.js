@@ -4,7 +4,14 @@ const PlayerType = require('./player-schema');
 
 const Teams = require('../data/teams');
 const Seasons = require('../data/season');
-const Players = require('../data/players');
+
+
+const PlayersController = require('../controllers/players');
+const playersCtrl  = new PlayersController();
+
+const TeamsController = require('../controllers/teams');
+const teamsCtrl  = new TeamsController();
+
 
 const _ = require('lodash');
 
@@ -30,21 +37,21 @@ const SeasonTeamType = new GraphQLObjectType({
                 type: TeamType,
                 resolve: function(root, team) {
                     let teamId = root.team;
-                    return _.find(Teams, item => item.id == teamId);
+                    return teamsCtrl.getDetails(teamId)
                 }
             },
             players: {
                 type: new GraphQLList(PlayerType),
                 resolve: function(root, team) {
                     let playersList = root.players;
-                    return _.filter(Players, item => playersList.indexOf(item.id) > -1 );
+                    return playersCtrl.getList(playersList)
                 }
             },
             owners: {
                 type: new GraphQLList(PlayerType),
                 resolve: function(root, team) {
                     let playersList = root.owners;
-                    return _.filter(Players, item => playersList.indexOf(item.id) > -1 );
+                    return playersCtrl.getList(playersList)
                 }
             }
         })

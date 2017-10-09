@@ -1,3 +1,5 @@
+'use strict';
+
 const SeasonTeamType = require('./season-team-schema');
 /* Here a simple schema is constructed without using the GraphQL query language.
  e.g. using 'new GraphQLObjectType' to create an object type

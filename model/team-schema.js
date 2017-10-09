@@ -1,3 +1,4 @@
+'use strict';
 
 const Players    = require('../data/players');
 const PlayerType = require('./player-schema');

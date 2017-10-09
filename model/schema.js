@@ -1,14 +1,18 @@
+'use strict';
+
 const _ = require('lodash');
 
 const Teams = require('../data/teams');
 const Seasons = require('../data/season');
-const Players = require('../data/players');
 const Cautions = require('../data/caution');
 
 const TeamType = require('./team-schema');
 const PlayerType = require('./player-schema');
 const CautionType = require('./caution-schema');
 const SeasonType = require('./season-schema');
+
+const PlayersController = require('../controllers/players');
+const playersCtrl  = new PlayersController();
 
 
 /* Here a simple schema is constructed without using the GraphQL query language.
@@ -50,7 +54,7 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
                 type: new GraphQLList(PlayerType),
                 description: "List of all Players",
                 resolve: function(args) {
-                    return Players;
+                    return playersCtrl.getList();
                 }
             },
             cautions: {
