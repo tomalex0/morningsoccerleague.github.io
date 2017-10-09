@@ -1,4 +1,4 @@
-
+const SeasonTeamType = require('./season-team-schema');
 /* Here a simple schema is constructed without using the GraphQL query language.
  e.g. using 'new GraphQLObjectType' to create an object type
  */
@@ -18,7 +18,9 @@ const SeasonType = new GraphQLObjectType({
         description: "This represent a season",
         fields: () => ({
             id: {type: new GraphQLNonNull(GraphQLString)},
-            description: {type: GraphQLString}
+            season: {type: new GraphQLNonNull(GraphQLString)},
+            description: {type: GraphQLString},
+            teams: { type: new GraphQLList(SeasonTeamType)}
         })
 });
 
