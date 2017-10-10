@@ -2,9 +2,6 @@
 
 const _ = require('lodash');
 
-const Teams = require('../data/teams');
-const Seasons = require('../data/season');
-const Cautions = require('../data/caution');
 
 const TeamType = require('./team-schema');
 const PlayerType = require('./player-schema');
@@ -13,6 +10,15 @@ const SeasonType = require('./season-schema');
 
 const PlayersController = require('../controllers/players');
 const playersCtrl  = new PlayersController();
+
+const TeamsController = require('../controllers/teams');
+const teamsCtrl  = new TeamsController();
+
+const SeasonsController = require('../controllers/seasons');
+const seasonsCtrl  = new SeasonsController();
+
+const CautionsController = require('../controllers/cautions');
+const cautionsCtrl  = new CautionsController();
 
 
 /* Here a simple schema is constructed without using the GraphQL query language.
@@ -40,14 +46,14 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
                 type: new GraphQLList(TeamType),
                 description: "List of all Teams",
                 resolve: function() {
-                    return Teams
+                    return teamsCtrl.getList();
                 }
             },
             seasons: {
                 type: new GraphQLList(SeasonType),
                 description: "List of all Seasons",
                 resolve: function(args) {
-                    return Seasons;
+                    return seasonsCtrl.getList();
                 }
             },
             players: {
@@ -61,7 +67,7 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
                 type: new GraphQLList(CautionType),
                 description: "List of all Cautions",
                 resolve: function(args) {
-                    return Cautions;
+                    return cautionsCtrl.getList();
                 }
             }
         })

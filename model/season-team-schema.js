@@ -2,9 +2,6 @@
 const TeamType = require('./team-schema');
 const PlayerType = require('./player-schema');
 
-const Teams = require('../data/teams');
-const Seasons = require('../data/season');
-
 
 const PlayersController = require('../controllers/players');
 const playersCtrl  = new PlayersController();
