@@ -7,6 +7,7 @@ const TeamType = require('./team-schema');
 const PlayerType = require('./player-schema');
 const CautionType = require('./caution-schema');
 const SeasonType = require('./season-schema');
+const ScheduleType = require('./schedule-schema');
 
 const PlayersController = require('../controllers/players');
 const playersCtrl  = new PlayersController();
@@ -19,6 +20,11 @@ const seasonsCtrl  = new SeasonsController();
 
 const CautionsController = require('../controllers/cautions');
 const cautionsCtrl  = new CautionsController();
+
+const ScheduleController = require('../controllers/schedule');
+const scheduleCtrl  = new ScheduleController();
+
+
 
 
 /* Here a simple schema is constructed without using the GraphQL query language.
@@ -68,6 +74,13 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
                 description: "List of all Cautions",
                 resolve: function(args) {
                     return cautionsCtrl.getList();
+                }
+            },
+            schedule: {
+                type: new GraphQLList(ScheduleType),
+                description: "List of all Schedule",
+                resolve: function(args) {
+                    return scheduleCtrl.getList();
                 }
             }
         })

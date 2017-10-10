@@ -1,5 +1,6 @@
 [{
 		"scheduled_date": "5/12/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 1,
 			"player": 9
@@ -30,6 +31,7 @@
 	},
 	{
 		"scheduled_date": "5/19/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 5,
 			"player": 46
@@ -63,6 +65,7 @@
 	},
 	{
 		"scheduled_date": "6/2/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 3,
 			"player": 24
@@ -98,6 +101,7 @@
 	},
 	{
 		"scheduled_date": "6/9/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 1,
 			"player": 8
@@ -131,6 +135,7 @@
 	},
 	{
 		"scheduled_date": "6/16/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 5,
 			"player": 53
@@ -161,6 +166,7 @@
 	},
 	{
 		"scheduled_date": "6/23/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 5,
 			"player": 45
@@ -194,6 +200,7 @@
 	},
 	{
 		"scheduled_date": "7/7/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 1,
 			"player": 2
@@ -229,6 +236,7 @@
 	},
 	{
 		"scheduled_date": "7/14/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 1,
 			"player": 9
@@ -267,6 +275,7 @@
 	},
 	{
 		"scheduled_date": "7/21/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 3,
 			"player": 33
@@ -306,6 +315,7 @@
 	},
 	{
 		"scheduled_date": "7/28/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 5,
 			"player": 50
@@ -339,6 +349,7 @@
 	},
 	{
 		"scheduled_date": "8/4/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 5,
 			"player": 49
@@ -372,6 +383,7 @@
 	},
 	{
 		"scheduled_date": "8/18/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 5,
 			"player" :  60
@@ -408,6 +420,7 @@
 	},
 	{
 		"scheduled_date": "8/25/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 1,
 			"player" : 5
@@ -438,6 +451,7 @@
 	},
 	{
 		"scheduled_date": "9/8/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 3,
 			"player" : 26
@@ -471,6 +485,7 @@
 	},
 	{
 		"scheduled_date": "9/15/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 1,
  			"player" : 6
@@ -519,6 +534,7 @@
 	},
 	{
 		"scheduled_date": "9/22/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 1,
 			"player" : 10
@@ -555,6 +571,7 @@
 	},
 	{
 		"scheduled_date": "9/29/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 4,
 			"player" : 42
@@ -585,6 +602,7 @@
 	},
 	{
 		"scheduled_date": "10/6/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 1,
 			"player" : 3
@@ -611,23 +629,25 @@
 		}
 	},
     {
-      "scheduled_date": "10/13/2017",
-      "referees": [{
-        "team": 4
-      }, {
-        "team": 2
-      }],
-      "stats": {
-        "home": {
-          "team": 5
-        },
-        "away": {
-          "team": 1
-        }
-      }
+      	"scheduled_date": "10/13/2017",
+		"season" : 1,
+		"referees": [{
+			"team": 4
+		},{
+			"team": 2
+		}],
+		"stats": {
+			"home": {
+		  		"team": 5
+			},
+			"away": {
+				"team": 1
+			}
+		}
     },
 	{
 		"scheduled_date": "10/20/2017",
+		"season" : 1,
 		"referees": [{
 			"team": 3
 		}, {

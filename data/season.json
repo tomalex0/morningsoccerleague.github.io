@@ -1,7 +1,6 @@
 [
   {
     "id": 1,
-    "season": 1,
     "description" : "Season 1",
     "teams" : [{
       "team" : 1,
@@ -27,7 +26,6 @@
   },
   {
     "id": 2,
-    "season": 2,
     "description" : "Season 2",
     "teams" : [{
       "team" : 1,

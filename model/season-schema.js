@@ -20,7 +20,6 @@ const SeasonType = new GraphQLObjectType({
         description: "This represent a season",
         fields: () => ({
             id: {type: new GraphQLNonNull(GraphQLString)},
-            season: {type: new GraphQLNonNull(GraphQLString)},
             description: {type: GraphQLString},
             teams: { type: new GraphQLList(SeasonTeamType)}
         })
