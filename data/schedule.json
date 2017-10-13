@@ -374,10 +374,10 @@
 		"scheduled_date": "8/18/2017",
 		"referees": [{
 			"team": 5,
-			"player" :  60
+			"player": 60
 		}, {
 			"team": 4,
-			"player" : 35
+			"player": 35
 		}],
 		"completed": true,
 		"stats": {
@@ -410,12 +410,12 @@
 		"scheduled_date": "8/25/2017",
 		"referees": [{
 			"team": 1,
-			"player" : 5
+			"player": 5
 		}, {
 			"team": 2,
-			"player" : 62
+			"player": 62
 		}],
-		"completed" : true,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 5,
@@ -440,12 +440,12 @@
 		"scheduled_date": "9/8/2017",
 		"referees": [{
 			"team": 3,
-			"player" : 26
+			"player": 26
 		}, {
 			"team": 2,
-			"player" : 14
+			"player": 14
 		}],
-		"completed" : true,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 4,
@@ -456,10 +456,10 @@
 				"goals": [{
 					"player": 10,
 					"minute": 12
-				},{
+				}, {
 					"player": 10,
 					"minute": 21
-				},{
+				}, {
 					"player": 9,
 					"minute": 42
 				}],
@@ -473,34 +473,34 @@
 		"scheduled_date": "9/15/2017",
 		"referees": [{
 			"team": 1,
- 			"player" : 6
+			"player": 6
 		}, {
 			"team": 4,
-			"player" : 36
+			"player": 36
 		}],
-		"completed" : true,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 3,
 				"goals": [{
 					"player": 57,
 					"minute": 1
-				},{
+				}, {
 					"player": 30,
 					"minute": 6
-				},{
+				}, {
 					"player": 24,
 					"minute": 20
-				},{
+				}, {
 					"player": 24,
 					"minute": 24
-				},{
+				}, {
 					"player": 57,
 					"minute": 30
-				},{
+				}, {
 					"player": 30,
 					"minute": 33
-				},{
+				}, {
 					"player": 33,
 					"minute": 47
 				}],
@@ -521,34 +521,34 @@
 		"scheduled_date": "9/22/2017",
 		"referees": [{
 			"team": 1,
-			"player" : 10
+			"player": 10
 		}, {
 			"team": 2,
-			"player" : 22
+			"player": 22
 		}],
-		"completed" : true,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 4,
-				"goals" :[]
+				"goals": []
 			},
 			"away": {
 				"team": 5,
-				"goals" :[{
+				"goals": [{
 					"player": 45,
 					"minute": 33
-				},{
+				}, {
 					"player": 50,
 					"minute": 35
-				},{
+				}, {
 					"player": 45,
 					"minute": 46
-				},{
+				}, {
 					"player": 45,
 					"minute": 48
 				}],
-				"mom" :[{
-					"player":"45"
+				"mom": [{
+					"player": "45"
 				}]
 			}
 		}
@@ -557,23 +557,23 @@
 		"scheduled_date": "9/29/2017",
 		"referees": [{
 			"team": 4,
-			"player" : 42
+			"player": 42
 		}, {
 			"team": 2,
-			"player" : 61
+			"player": 61
 		}],
-		"completed" : true,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 1,
-				"goals" :[]
+				"goals": []
 			},
 			"away": {
 				"team": 3,
-				"goals" :[{
+				"goals": [{
 					"player": 57,
 					"minute": 26
-				},{
+				}, {
 					"player": 29,
 					"minute": 28
 				}],
@@ -587,20 +587,20 @@
 		"scheduled_date": "10/6/2017",
 		"referees": [{
 			"team": 1,
-			"player" : 3
+			"player": 3
 		}, {
 			"team": 5,
-			"player" : 59
+			"player": 59
 		}],
-		"completed" : true,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 2,
-				"goals" : []
+				"goals": []
 			},
 			"away": {
 				"team": 4,
-				"goals" :[{
+				"goals": [{
 					"player": 40,
 					"minute": 27
 				}],
@@ -610,22 +610,39 @@
 			}
 		}
 	},
-    {
-      "scheduled_date": "10/13/2017",
-      "referees": [{
-        "team": 4
-      }, {
-        "team": 2
-      }],
-      "stats": {
-        "home": {
-          "team": 5
-        },
-        "away": {
-          "team": 1
-        }
-      }
-    },
+	{
+		"scheduled_date": "10/13/2017",
+		"referees": [{
+			"team": 4,
+			"player": 44
+		}, {
+			"team": 2,
+			"player": 20
+		}],
+		"completed": true,
+		"stats": {
+			"home": {
+				"team": 5,
+				"goals": []
+
+			},
+			"away": {
+				"team": 1,
+				"goals": [{
+					"player": 5,
+					"minute": 35
+				}],
+				"mom": [{
+					"player": 35
+				}],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 4,
+					"minute": 33
+				}]
+			}
+		}
+	},
 	{
 		"scheduled_date": "10/20/2017",
 		"referees": [{
