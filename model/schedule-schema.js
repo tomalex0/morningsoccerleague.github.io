@@ -2,6 +2,7 @@
 
 const SeasonType = require('./season-schema');
 const RefereeType = require('./referee-schema');
+const GameStatsType = require('./game-stats-schema');
 
 const SeasonsController = require('../controllers/seasons');
 const seasonsCtrl  = new SeasonsController();
@@ -39,6 +40,20 @@ const ScheduleType = new GraphQLObjectType({
                 resolve : function (root, args){
                     let referees = root.referees;
                     return  referees;
+                }
+            },
+            homestats : {
+                type  : GameStatsType,
+                resolve : function (root, args){
+                    let stats = root.stats.home;
+                    return  stats;
+                }
+            },
+            awaystats : {
+                type  : GameStatsType,
+                resolve : function (root, args){
+                    let stats = root.stats.away;
+                    return  stats;
                 }
             }
         })

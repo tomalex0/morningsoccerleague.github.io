@@ -19,6 +19,13 @@ class PlayersController {
         return _.find(Players, item => item.id == id);
     }
 
+    playerSchemaResolve (root, args){
+
+        let playerId = root.player;
+        let playerObj  = this.getDetails(playerId);
+        return playerObj;
+    }
+
 
 }
 

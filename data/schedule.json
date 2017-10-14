@@ -56,7 +56,11 @@
 					"minute": 41,
 					"owngoal": true
 				}],
-				"cautions": [],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 18,
+					"minute": 25
+				}],
 				"mom": [{
 					"player": 41
 				}]

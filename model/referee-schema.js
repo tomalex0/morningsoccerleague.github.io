@@ -38,8 +38,7 @@ const RefereeType = new GraphQLObjectType({
             player: {
                 type: PlayerType,
                 resolve : function(root, args){
-                    let playerId = root.player;
-                    return playersCtrl.getDetails(playerId);
+                    return playersCtrl.playerSchemaResolve(root, args)
                 }
             }
         })
