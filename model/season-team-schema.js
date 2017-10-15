@@ -26,11 +26,11 @@ let {
 
     } = require('graphql');
 
-const SeasonTeamType = new GraphQLObjectType({
+const SeasonTeamObjType = new GraphQLObjectType({
         name: "SeasonTeam",
         description: "This represent a players and team belongs to the season",
         fields: () => ({
-            team: {
+            info: {
                 type: TeamType,
                 resolve: function(root, team) {
                     let teamId = root.team;
@@ -52,6 +52,20 @@ const SeasonTeamType = new GraphQLObjectType({
                 }
             }
         })
+});
+
+
+const SeasonTeamType = new GraphQLObjectType({
+    name: "SeasonTeamList",
+    description: "This represent a players and team belongs to the season",
+    fields: () => ({
+        team: {
+            type: SeasonTeamObjType,
+            resolve: function(root, args) {
+                return root;
+            }
+        }
+    })
 });
 
 module.exports = SeasonTeamType;

@@ -9,6 +9,7 @@ let {
     // These are the basic GraphQL types need in this tutorial
     GraphQLString,
     GraphQLList,
+    GraphQLInt,
     GraphQLObjectType,
     // This is used to create required fileds and arguments
     GraphQLNonNull
@@ -19,7 +20,7 @@ const TeamType = new GraphQLObjectType({
         name: "Team",
         description: "This represent a team",
         fields: () => ({
-            id: {type: new GraphQLNonNull(GraphQLString)},
+            id: {type: new GraphQLNonNull(GraphQLInt)},
             teamName: {type: new GraphQLNonNull(GraphQLString)},
             teamCls: {type: GraphQLString}
         })

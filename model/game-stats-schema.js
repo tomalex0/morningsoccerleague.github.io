@@ -63,7 +63,7 @@ const GameStatsType = new GraphQLObjectType({
                 resolve: function(root, args) {
                     let momArr = root.mom || [];
                     let momPlayers = momArr.map(item => item.player);
-                    let playerArr = playersCtrl.getList(momPlayers)
+                    let playerArr = playersCtrl.getList(momPlayers);
                     return playerArr;
                 }
             }

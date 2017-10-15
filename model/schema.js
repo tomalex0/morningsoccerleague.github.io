@@ -35,6 +35,7 @@ let {
     // These are the basic GraphQL types need in this tutorial
     GraphQLString,
     GraphQLList,
+    GraphQLInt,
     GraphQLObjectType,
     // This is used to create required fileds and arguments
     GraphQLNonNull,
@@ -51,15 +52,26 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
             teams: {
                 type: new GraphQLList(TeamType),
                 description: "List of all Teams",
-                resolve: function() {
-                    return teamsCtrl.getList();
+                args:{
+                    teams :{type:new GraphQLList(GraphQLInt)}
+                },
+                resolve: function(root, args) {
+                    let teamList = (args.teams)
+                                    ? teamsCtrl.getList(args.teams)
+                                    : teamsCtrl.getList()
+                    return teamList;
                 }
             },
             seasons: {
                 type: new GraphQLList(SeasonType),
+                args:{
+                    seasons :{type:new GraphQLList(GraphQLInt)}
+                },
                 description: "List of all Seasons",
-                resolve: function(args) {
-                    return seasonsCtrl.getList();
+                resolve: function(root,args) {
+                    return  (args.seasons)
+                            ? seasonsCtrl.getList()
+                            : seasonsCtrl.getList(args.seasons)
                 }
             },
             players: {
