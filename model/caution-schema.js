@@ -8,6 +8,7 @@ let {
     // These are the basic GraphQL types need in this tutorial
     GraphQLString,
     GraphQLList,
+    GraphQLInt,
     GraphQLObjectType,
     // This is used to create required fileds and arguments
     GraphQLNonNull
@@ -18,7 +19,7 @@ const CautionType = new GraphQLObjectType({
         name: "Caution",
         description: "This represent a caution",
         fields: () => ({
-            id: {type: new GraphQLNonNull(GraphQLString)},
+            id: {type: new GraphQLNonNull(GraphQLInt)},
             name: {type: new GraphQLNonNull(GraphQLString)},
             cls: {type: new GraphQLNonNull(GraphQLString)}
         })
