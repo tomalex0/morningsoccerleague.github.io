@@ -70,8 +70,8 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
                 description: "List of all Seasons",
                 resolve: function(root,args) {
                     return  (args.seasons)
-                            ? seasonsCtrl.getList()
-                            : seasonsCtrl.getList(args.seasons)
+                            ? seasonsCtrl.getList(args.seasons)
+                            : seasonsCtrl.getList()
                 }
             },
             players: {
