@@ -1,6 +1,10 @@
 'use strict';
 
 const SeasonTeamType = require('./season-team-schema');
+
+const ScheduleController = require('../controllers/schedule');
+const scheduleCtrl  = new ScheduleController();
+
 /* Here a simple schema is constructed without using the GraphQL query language.
  e.g. using 'new GraphQLObjectType' to create an object type
  */
@@ -33,6 +37,14 @@ const SeasonType = new GraphQLObjectType({
                                     ? _.filter(root.teams, item => args.teams.indexOf(item.team) > -1 )
                                     : root.teams;
                     return teamsArr;
+                }
+            },
+            schedule: {
+                type : new GraphQLList(require('./schedule-schema')),
+                resolve: function(root, args) {
+                    let seasonId = root.id;
+                    let scheduleData = scheduleCtrl.getListBySeason(seasonId);
+                    return scheduleData;
                 }
             }
         })
