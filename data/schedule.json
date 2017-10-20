@@ -646,10 +646,13 @@
 	{
 		"scheduled_date": "10/20/2017",
 		"referees": [{
-			"team": 3
+			"team": 3,
+			"player" : 28
 		}, {
-			"team": 2
+			"team": 2,
+			"player" : 18
 		}],
+		"completed": false,
 		"stats": {
 			"home": {
 				"team": 5
