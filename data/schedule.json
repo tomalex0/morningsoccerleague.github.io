@@ -652,13 +652,49 @@
 			"team": 2,
 			"player" : 18
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 5
+				"team": 5,
+				"goals": [{
+					"player": 45,
+					"minute": 5
+				},{
+					"player": 53,
+					"minute": 8
+				},{
+					"player": 46,
+					"minute": 17
+				},{
+					"player": 37,
+					"minute": 21,
+					"owngoal" : true
+				},{
+					"player": 53,
+					"minute": 27
+				},{
+					"player": 45,
+					"minute": 29
+				},{
+					"player": 45,
+					"minute": 43
+				},{
+					"player": 46,
+					"minute": 49
+				},{
+					"player": 45,
+					"minute": 50
+				}],
+				"mom": [{
+					"player": 45
+				}],
 			},
 			"away": {
-				"team": 4
+				"team": 4,
+				"goals": [{
+					"player": 34,
+					"minute": 11
+				}]
 			}
 		}
 	}
