@@ -694,6 +694,11 @@
 				"goals": [{
 					"player": 34,
 					"minute": 11
+				}],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 36,
+					"minute": 33
 				}]
 			}
 		}
