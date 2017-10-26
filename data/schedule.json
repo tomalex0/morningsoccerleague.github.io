@@ -513,7 +513,12 @@
 				"goals": [{
 					"player": 19,
 					"minute": 17
-				}]
+				}],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 13,
+					"minute": 37
+				}],
 			}
 		}
 	},
@@ -698,7 +703,7 @@
 				"cautions": [{
 					"caution_id": 1,
 					"player": 36,
-					"minute": 33
+					"minute": 50
 				}]
 			}
 		}
