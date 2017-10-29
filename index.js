@@ -9,14 +9,22 @@
 
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
-const schema = require('./schema/schema.js');
+const schema = require('./schema/schema');
 
-const PORT = process.env.PORT || 4000;
-const app = express();
-app.use('/', graphqlHTTP({
-    schema: schema,
-    graphiql: true //set to false if you don't want graphiql enabled
-}));
+const connectMongo = require('./lib/mongo-connector');
+const start = async () => {
+    const mongo = await connectMongo();
 
-app.listen(PORT);
-console.log(`GraphQL API server running at localhost:${PORT}`);
+    const PORT = process.env.PORT || 4000;
+    const app = express();
+    app.use('/', graphqlHTTP({
+        context: mongo,
+        schema: schema,
+        graphiql: true //set to false if you don't want graphiql enabled
+    }));
+
+    app.listen(PORT);
+    console.log(`GraphQL API server running at localhost:${PORT}`);
+};
+
+start();

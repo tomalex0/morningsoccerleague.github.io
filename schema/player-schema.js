@@ -19,7 +19,7 @@ const PlayerType = new GraphQLObjectType({
         name: "Player",
         description: "This represent a player",
         fields: () => ({
-            id: {type: new GraphQLNonNull(GraphQLInt)},
+            _id: {type: new GraphQLNonNull(GraphQLString)},
             name: {type: new GraphQLNonNull(GraphQLString)}
         })
 });

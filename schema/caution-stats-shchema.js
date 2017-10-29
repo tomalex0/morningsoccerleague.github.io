@@ -44,7 +44,7 @@ const CautionStatsType = new GraphQLObjectType({
             }
         },
         minute: {
-            type: GraphQLInt
+            type: GraphQLString
         }
     })
 });

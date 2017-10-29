@@ -25,12 +25,12 @@ const SeasonType = new GraphQLObjectType({
         name: "Season",
         description: "This represent a season",
         fields: () => ({
-            id: {type: new GraphQLNonNull(GraphQLInt)},
+            _id: {type: new GraphQLNonNull(GraphQLString)},
             description: {type: GraphQLString},
             teams: {
                 type: new GraphQLList(SeasonTeamType),
                 args:{
-                    teams :{type:new GraphQLList(GraphQLInt)}
+                    teams :{type:new GraphQLList(GraphQLString)}
                 },
                 resolve: function(root, args) {
                     let teamsArr = (args.teams)
@@ -42,7 +42,7 @@ const SeasonType = new GraphQLObjectType({
             schedule: {
                 type : new GraphQLList(require('./schedule-schema')),
                 resolve: function(root, args) {
-                    let seasonId = root.id;
+                    let seasonId = root._id;
                     let scheduleData = scheduleCtrl.getListBySeason(seasonId);
                     return scheduleData;
                 }

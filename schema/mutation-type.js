@@ -15,7 +15,7 @@ const MorninigSoccerMutation = new GraphQLObjectType({
             resolve(root, args){
                 let newPlayer = {
                     name : args.name,
-                    id : 100
+                    _id : 100
                 };
                 console.log(newPlayer);
                 return newPlayer;
@@ -24,13 +24,13 @@ const MorninigSoccerMutation = new GraphQLObjectType({
         updatePlayer: {
             type: PlayerType,
             args: {
-                id: {type: new GraphQLNonNull(GraphQLInt)},
+                _id: {type: new GraphQLNonNull(GraphQLString)},
                 name: {type: new GraphQLNonNull(GraphQLString)}
             },
             resolve(root, args){
                 let updatedPlayer = {
                     name: args.name,
-                    id: args.id
+                    _id: args._id
                 };
                 console.log(updatedPlayer);
                 return updatedPlayer;

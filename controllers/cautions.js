@@ -2,6 +2,7 @@
 
 const _  = require('lodash');
 const Cautions = require('../data/caution');
+const utility = require('../lib/utility');
 
 class CautionsController {
     constructor() {
@@ -9,14 +10,19 @@ class CautionsController {
     }
 
 
-    getList(listArr) {
-        return (listArr)
-                ? _.filter(Cautions, item => listArr.indexOf(item.id) > -1 )
-                : Cautions;
+    async getList(root, args, db) {
+
+        let queryCondition = {};
+
+
+        let data =  await db.collection('cautions').find(queryCondition).toArray(); // 2
+
+        return data;
     }
 
-    getDetails(id) {
-        return _.find(Cautions, item => item.id == id);
+    async getDetails(id) {
+        let data = await db.collection('cautions').findOne({_id : utility.wrapObjectId(id)});
+        return data;
     }
 
 

@@ -20,7 +20,7 @@ const TeamType = new GraphQLObjectType({
         name: "Team",
         description: "This represent a team",
         fields: () => ({
-            id: {type: new GraphQLNonNull(GraphQLInt)},
+            _id: {type: new GraphQLNonNull(GraphQLString)},
             teamName: {type: new GraphQLNonNull(GraphQLString)},
             teamCls: {type: GraphQLString}
         })

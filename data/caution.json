@@ -1,9 +1,9 @@
 [{
   "name" : "Yellow",
   "cls" : "yellow-card",
-  "id" :  1
+  "_id" :  "1"
 },{
   "name" : "Red",
   "cls" : "red-card",
-  "id" :  2
+  "_id" :  "2"
 }]

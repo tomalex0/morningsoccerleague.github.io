@@ -19,7 +19,7 @@ const CautionType = new GraphQLObjectType({
         name: "Caution",
         description: "This represent a caution",
         fields: () => ({
-            id: {type: new GraphQLNonNull(GraphQLInt)},
+            _id: {type: new GraphQLNonNull(GraphQLString)},
             name: {type: new GraphQLNonNull(GraphQLString)},
             cls: {type: new GraphQLNonNull(GraphQLString)}
         })

@@ -32,7 +32,7 @@ const GoalStatsType = new GraphQLObjectType({
             }
         },
         minute: {
-            type: GraphQLInt
+            type: GraphQLString
         },
         owngoal: {
             type: GraphQLBoolean

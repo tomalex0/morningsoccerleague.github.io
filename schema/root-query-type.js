@@ -50,19 +50,14 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
             type: new GraphQLList(TeamType),
             description: "List of all Teams",
             args:{
-                teams :{type:new GraphQLList(GraphQLInt)}
+                teams :{type:new GraphQLList(GraphQLString)}
             },
-            resolve: function(root, args) {
-                let teamList = (args.teams)
-                    ? teamsCtrl.getList(args.teams)
-                    : teamsCtrl.getList()
-                return teamList;
-            }
+            resolve: teamsCtrl.getList
         },
         seasons: {
             type: new GraphQLList(SeasonType),
             args:{
-                seasons :{type:new GraphQLList(GraphQLInt)}
+                seasons :{type:new GraphQLList(GraphQLString)}
             },
             description: "List of all Seasons",
             resolve: function(root,args) {
@@ -73,17 +68,16 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
         },
         players: {
             type: new GraphQLList(PlayerType),
-            description: "List of all Players",
-            resolve: function(args) {
-                return playersCtrl.getList();
-            }
+            description: "List of Players",
+            args:{
+                players :{type:new GraphQLList(GraphQLString)}
+            },
+            resolve: playersCtrl.getList
         },
         cautions: {
             type: new GraphQLList(CautionType),
             description: "List of all Cautions",
-            resolve: function(args) {
-                return cautionsCtrl.getList();
-            }
+            resolve: cautionsCtrl.getList
         },
         schedule: {
             type: new GraphQLList(ScheduleType),

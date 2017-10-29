@@ -2,21 +2,34 @@
 
 const _  = require('lodash');
 const Players = require('../data/players');
+const utility = require('../lib/utility');
+
 
 class PlayersController {
+
     constructor() {
 
     }
 
+    async getList(root, args, db) {
 
-    getList(listArr) {
-        return (listArr)
-                ? _.filter(Players, item => listArr.indexOf(item.id) > -1 )
-                : Players;
+        let playersArr  =  args.players;
+        let queryCondition = {};
+
+        if(playersArr) {
+            let playerObjIds = utility.wrapObjectIdArr(playersArr);
+            queryCondition = { "_id" : { $in : playerObjIds } };
+        }
+
+
+        let data =  await db.collection('players').find(queryCondition).toArray(); // 2
+
+        return data;
     }
 
-    getDetails(id) {
-        return _.find(Players, item => item.id == id);
+    async getDetails(id) {
+        let data = await db.collection('players').findOne({_id : utility.wrapObjectId(id)});
+        return data;
     }
 
     playerSchemaResolve (root, args){

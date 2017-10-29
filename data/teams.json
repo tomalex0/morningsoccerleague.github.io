@@ -1,26 +1,26 @@
 [
   {
-    "id": 1,
+    "_id": "1",
     "teamName": "1Touchables",
     "teamCls" : "team-gray"
   },
   {
-    "id": 2,
+    "_id": "2",
     "teamName": "Atletico Vista",
     "teamCls" : "team-red"
   },
   {
-    "id": 3,
+    "_id": "3",
     "teamName": "Benchwarmers FC",
     "teamCls" : "team-beige"
   },
   {
-    "id": 4,
+    "_id": "4",
     "teamName": "Early Risers",
     "teamCls" : "team-orange"
   },
   {
-    "id": 5,
+    "_id": "5",
     "teamName": "Rabona FC",
     "teamCls" : "team-brown"
   }
