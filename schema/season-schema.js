@@ -29,8 +29,8 @@ let {
     } = require('graphql');
 
 const SeasonType = new GraphQLObjectType({
-        name: "Season",
-        description: "This represent a season",
+        name: 'Season',
+        description: 'This represent a season',
         fields: () => ({
             _id: {type: new GraphQLNonNull(GraphQLString)},
             season_no: {type: new GraphQLNonNull(GraphQLString)},

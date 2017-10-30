@@ -17,8 +17,8 @@ let {
     } = require('graphql');
 
 const TeamType = new GraphQLObjectType({
-        name: "Team",
-        description: "This represent a team",
+        name: 'Team',
+        description: 'This represent a team',
         fields: () => ({
             _id: {type: new GraphQLNonNull(GraphQLString)},
             teamName: {type: new GraphQLNonNull(GraphQLString)},

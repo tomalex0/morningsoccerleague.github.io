@@ -22,7 +22,7 @@ class PlayersController {
             playersArr = root.players;
 
             let playerObjIds = utility.wrapObjectIdArr(playersArr);
-            queryCondition = { "_id" : { $in : playerObjIds } };
+            queryCondition = { '_id' : { $in : playerObjIds } };
 
         }
 

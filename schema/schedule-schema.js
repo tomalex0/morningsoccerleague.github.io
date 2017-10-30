@@ -23,8 +23,8 @@ let {
     } = require('graphql');
 
 const ScheduleType = new GraphQLObjectType({
-        name: "Schedule",
-        description: "This represent a schedule",
+        name: 'Schedule',
+        description: 'This represent a schedule',
         fields: () => ({
             scheduled_date: {type: new GraphQLNonNull(GraphQLString)},
             _id: {type: new GraphQLNonNull(GraphQLString)},

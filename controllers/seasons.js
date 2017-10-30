@@ -18,7 +18,7 @@ class SeasonsController {
 
         if(seasonArr) {
             let playerObjIds = utility.wrapObjectIdArr(seasonArr);
-            queryCondition = { "_id" : { $in : playerObjIds } };
+            queryCondition = { '_id' : { $in : playerObjIds } };
         }
 
         let data =  await db.collection('seasons').find(queryCondition).toArray();
@@ -30,7 +30,7 @@ class SeasonsController {
 
         let seasonId = utility.wrapObjectId(root.season);
 
-        let data =  await db.collection('seasons').findOne({"_id" : seasonId});
+        let data =  await db.collection('seasons').findOne({'_id' : seasonId});
 
         return data;
     }

@@ -17,7 +17,7 @@ class TeamsController {
 
         if(args && args.teams) {
             let teamObjIds = utility.wrapObjectIdArr(teamsArr);
-            queryCondition = { "_id" : { $in : teamObjIds } };
+            queryCondition = { '_id' : { $in : teamObjIds } };
         }
 
         let data =  await db.collection('teams').find(queryCondition).toArray(); // 2

@@ -30,8 +30,8 @@ let {
     } = require('graphql');
 
 const GameStatsType = new GraphQLObjectType({
-        name: "GameStatsType",
-        description: "This represent a game stats",
+        name: 'GameStatsType',
+        description: 'This represent a game stats',
         fields: () => ({
             team: {
                 type: TeamType,
@@ -39,7 +39,7 @@ const GameStatsType = new GraphQLObjectType({
             },
             cautions: {
                 type: new GraphQLList(CautionStatsType),
-                description: "List of all Cautions",
+                description: 'List of all Cautions',
                 resolve: function(root, args) {
                     let cautions = root.cautions || [];
                     return cautions;
@@ -47,7 +47,7 @@ const GameStatsType = new GraphQLObjectType({
             },
             goals: {
                 type: new GraphQLList(GoalStatsType),
-                description: "List of all Goals",
+                description: 'List of all Goals',
                 resolve: function(root, args) {
                     let goals = root.goals || [];
                     return goals;
@@ -55,7 +55,7 @@ const GameStatsType = new GraphQLObjectType({
             },
             mom: {
                 type: new GraphQLList(PlayerType),
-                description: "List of all mom players",
+                description: 'List of all mom players',
                 resolve: async function(root, args, db) {
                     let momArr = root.mom || [];
                     let momPlayers = momArr.map(item => item.player);

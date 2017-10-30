@@ -24,17 +24,17 @@ let {
     } = require('graphql');
 
 const CautionStatsType = new GraphQLObjectType({
-    name: "CautionStats",
-    description: "This represent caution stats",
+    name: 'CautionStats',
+    description: 'This represent caution stats',
     fields: () => ({
         caution: {
             type: CautionType,
-            description: "List of all Cautions",
+            description: 'List of all Cautions',
             resolve: cautionsCtrl.getDetails
         },
         player : {
             type: PlayerType,
-            description: "List of all Player",
+            description: 'List of all Player',
             resolve:  playersCtrl.getDetails
         },
         minute: {

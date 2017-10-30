@@ -44,11 +44,11 @@ let {
 // This is the Root Query
 const MorninigSoccerQueryRootType = new GraphQLObjectType({
     name: 'MorningSoccerAppSchema',
-    description: "MorninigSoccer Application Schema Query Root",
+    description: 'MorninigSoccer Application Schema Query Root',
     fields: () => ({
         teams: {
             type: new GraphQLList(TeamType),
-            description: "List of all Teams",
+            description: 'List of all Teams',
             args:{
                 teams :{type:new GraphQLList(GraphQLString)}
             },
@@ -59,12 +59,12 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
             args:{
                 seasons :{type:new GraphQLList(GraphQLString)}
             },
-            description: "List of all Seasons",
+            description: 'List of all Seasons',
             resolve: seasonsCtrl.getList
         },
         players: {
             type: new GraphQLList(PlayerType),
-            description: "List of Players",
+            description: 'List of Players',
             args:{
                 players :{type:new GraphQLList(GraphQLString)}
             },
@@ -75,12 +75,12 @@ const MorninigSoccerQueryRootType = new GraphQLObjectType({
         },
         cautions: {
             type: new GraphQLList(CautionType),
-            description: "List of all Cautions",
+            description: 'List of all Cautions',
             resolve: cautionsCtrl.getList
         },
         schedule: {
             type: new GraphQLList(ScheduleType),
-            description: "List of all Schedule",
+            description: 'List of all Schedule',
             resolve: scheduleCtrl.getList
         }
     })

@@ -5,7 +5,7 @@ const PlayerType = require('./player-schema');
 
 
 const MorninigSoccerMutation = new GraphQLObjectType({
-    name : "Mutation",
+    name : 'Mutation',
     fields: {
         addPlayer:{
             type: PlayerType,

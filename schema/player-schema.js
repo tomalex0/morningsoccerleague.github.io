@@ -16,8 +16,8 @@ let {
     } = require('graphql');
 
 const PlayerType = new GraphQLObjectType({
-        name: "Player",
-        description: "This represent a player",
+        name: 'Player',
+        description: 'This represent a player',
         fields: () => ({
             _id: {type: new GraphQLNonNull(GraphQLString)},
             name: {type: new GraphQLNonNull(GraphQLString)}

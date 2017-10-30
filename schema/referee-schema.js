@@ -25,8 +25,8 @@ let {
     } = require('graphql');
 
 const RefereeType = new GraphQLObjectType({
-        name: "Referee",
-        description: "This represent a referee",
+        name: 'Referee',
+        description: 'This represent a referee',
         fields: () => ({
             team: {
                 type: TeamType,
