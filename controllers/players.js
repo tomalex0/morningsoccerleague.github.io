@@ -37,7 +37,6 @@ class PlayersController {
     async getDetails(root, args, db) {
 
         let playerId = root.player;
-        console.log(playerId,'---playerid---');
         let data = await db.collection('players').findOne({_id : utility.wrapObjectId(playerId)});
         return data;
     }

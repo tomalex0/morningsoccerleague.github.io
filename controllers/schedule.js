@@ -19,7 +19,6 @@ class ScheduleController {
     async getListBySeason(root, args, db) {
         let seasonId = root.season;
         let data = await db.collection('schedule').find({'season': `${seasonId}`}).toArray();
-        console.log(seasonId)
         return data;
     }
 
