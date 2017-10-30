@@ -1,7 +1,8 @@
 'use strict';
 
 const _  = require('lodash');
-const Schedule = require('../data/schedule');
+const utility = require('../lib/utility');
+
 
 class ScheduleController {
     constructor() {
@@ -9,12 +10,17 @@ class ScheduleController {
     }
 
 
-    getList(listArr) {
-        return Schedule;
+    async getList(root, args, db) {
+        let data = await db.collection('schedule').find().toArray();
+
+        return data;
     }
 
-    getListBySeason(id) {
-        return _.filter(Schedule, item => item.season == id);
+    async getListBySeason(root, args, db) {
+        let seasonId = root.season;
+        let data = await db.collection('schedule').find({'season': `${seasonId}`}).toArray();
+        console.log(seasonId)
+        return data;
     }
 
 

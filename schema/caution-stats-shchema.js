@@ -30,17 +30,18 @@ const CautionStatsType = new GraphQLObjectType({
         caution: {
             type: CautionType,
             description: "List of all Cautions",
-            resolve: function(root, args) {
-                let cautionId = root.caution_id;
-                let cautionObj = cautionsCtrl.getDetails(cautionId);
+            resolve: async function(root, args, db) {
+
+                let cautionObj = await cautionsCtrl.getDetails(root, args, db);
                 return cautionObj;
             }
         },
         player : {
             type: PlayerType,
             description: "List of all Player",
-            resolve:  function(root, args) {
-                return playersCtrl.playerSchemaResolve(root, args)
+            resolve:  async function(root, args, db) {
+                let data = await playersCtrl.getDetails(root, args, db);
+                return data;
             }
         },
         minute: {

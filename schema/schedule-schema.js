@@ -27,12 +27,13 @@ const ScheduleType = new GraphQLObjectType({
         description: "This represent a schedule",
         fields: () => ({
             scheduled_date: {type: new GraphQLNonNull(GraphQLString)},
+            _id: {type: new GraphQLNonNull(GraphQLString)},
             completed : {type : GraphQLBoolean},
             season : {
                 type : SeasonType,
-                resolve : function (root, args){
-                    let seasonId = root.season;
-                    return  seasonsCtrl.getDetails(seasonId);
+                resolve : async function (root, args, db){
+                    let data = await seasonsCtrl.getDetails(root, args, db);
+                    return  data;
                 }
             },
             referees :{

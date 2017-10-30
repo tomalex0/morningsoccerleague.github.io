@@ -1,7 +1,7 @@
 'use strict';
 
 const _  = require('lodash');
-const Cautions = require('../data/caution');
+
 const utility = require('../lib/utility');
 
 class CautionsController {
@@ -20,8 +20,9 @@ class CautionsController {
         return data;
     }
 
-    async getDetails(id) {
-        let data = await db.collection('cautions').findOne({_id : utility.wrapObjectId(id)});
+    async getDetails(root, args, db) {
+        let cautionId = root.caution_id;
+        let data = await db.collection('cautions').findOne({_id : utility.wrapObjectId(cautionId)});
         return data;
     }
 

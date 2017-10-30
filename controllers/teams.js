@@ -1,10 +1,10 @@
 'use strict';
 
 const _  = require('lodash');
-const Teams = require('../data/teams');
 const utility = require('../lib/utility');
 
 class TeamsController {
+
     constructor() {
 
     }
@@ -12,10 +12,10 @@ class TeamsController {
 
     async getList(root, args, db) {
 
-        let teamsArr  =  args.teams;
+
         let queryCondition = {};
 
-        if(teamsArr) {
+        if(args && args.teams) {
             let teamObjIds = utility.wrapObjectIdArr(teamsArr);
             queryCondition = { "_id" : { $in : teamObjIds } };
         }
@@ -25,14 +25,12 @@ class TeamsController {
         return data;
     }
 
-    async getDetails(id) {
-        let data = await db.collection('teams').findOne({_id : utility.wrapObjectId(id)});
+    async getDetails(root, args, db) {
+        let teamId = root.team;
+        let data = await db.collection('teams').findOne({_id : utility.wrapObjectId(teamId)});
         return data;
     }
 
-    getDetails(id) {
-        return _.find(Teams, item => item.id == id);
-    }
 
 
 }

@@ -35,9 +35,9 @@ const GameStatsType = new GraphQLObjectType({
         fields: () => ({
             team: {
                 type: TeamType,
-                resolve : function (root, args){
+                resolve : async function (root, args, db){
                     let teamId = root.team;
-                    let teamData = teamsCtrl.getDetails(teamId);
+                    let teamData = await teamsCtrl.getDetails(root, args, db);
                     return  teamData;
                 }
             },
@@ -60,10 +60,12 @@ const GameStatsType = new GraphQLObjectType({
             mom: {
                 type: new GraphQLList(PlayerType),
                 description: "List of all mom players",
-                resolve: function(root, args) {
+                resolve: async function(root, args, db) {
                     let momArr = root.mom || [];
                     let momPlayers = momArr.map(item => item.player);
-                    let playerArr = playersCtrl.getList(momPlayers);
+                    root.players = momPlayers;
+
+                    let playerArr = await playersCtrl.getList(root, args, db);
                     return playerArr;
                 }
             }

@@ -1,7 +1,6 @@
 'use strict';
 
 const _  = require('lodash');
-const Players = require('../data/players');
 const utility = require('../lib/utility');
 
 
@@ -13,30 +12,34 @@ class PlayersController {
 
     async getList(root, args, db) {
 
+
         let playersArr  =  args.players;
+
+
         let queryCondition = {};
 
-        if(playersArr) {
+        if(root && root.players) {
+            playersArr = root.players;
+
             let playerObjIds = utility.wrapObjectIdArr(playersArr);
             queryCondition = { "_id" : { $in : playerObjIds } };
+
         }
 
 
         let data =  await db.collection('players').find(queryCondition).toArray(); // 2
 
+
+
         return data;
     }
 
-    async getDetails(id) {
-        let data = await db.collection('players').findOne({_id : utility.wrapObjectId(id)});
-        return data;
-    }
-
-    playerSchemaResolve (root, args){
+    async getDetails(root, args, db) {
 
         let playerId = root.player;
-        let playerObj  = this.getDetails(playerId);
-        return playerObj;
+        console.log(playerId,'---playerid---');
+        let data = await db.collection('players').findOne({_id : utility.wrapObjectId(playerId)});
+        return data;
     }
 
 

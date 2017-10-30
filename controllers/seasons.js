@@ -1,7 +1,8 @@
 'use strict';
 
 const _  = require('lodash');
-const Seasons = require('../data/season');
+const utility = require('../lib/utility');
+
 
 class SeasonsController {
     constructor() {
@@ -9,14 +10,29 @@ class SeasonsController {
     }
 
 
-    getList(listArr) {
-        return (listArr)
-                ? _.filter(Seasons, item => listArr.indexOf(item.id) > -1 )
-                : Seasons;
+    async getList(root, args, db) {
+
+        let seasonArr  =  args.seasons;
+
+        let queryCondition = {};
+
+        if(seasonArr) {
+            let playerObjIds = utility.wrapObjectIdArr(seasonArr);
+            queryCondition = { "_id" : { $in : playerObjIds } };
+        }
+
+        let data =  await db.collection('seasons').find(queryCondition).toArray();
+
+        return data;
     }
 
-    getDetails(id) {
-        return _.find(Seasons, item => item.id == id);
+    async getDetails(root, args, db) {
+
+        let seasonId = utility.wrapObjectId(root.season);
+
+        let data =  await db.collection('seasons').findOne({"_id" : seasonId});
+
+        return data;
     }
 
 

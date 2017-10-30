@@ -32,23 +32,18 @@ const SeasonTeamObjType = new GraphQLObjectType({
         fields: () => ({
             info: {
                 type: TeamType,
-                resolve: function(root, team) {
-                    let teamId = root.team;
-                    return teamsCtrl.getDetails(teamId)
-                }
+                resolve: teamsCtrl.getDetails
             },
             players: {
                 type: new GraphQLList(PlayerType),
-                resolve: function(root, team) {
-                    let playersList = root.players;
-                    return playersCtrl.getList(playersList)
-                }
+                resolve: playersCtrl.getList
             },
             owners: {
                 type: new GraphQLList(PlayerType),
-                resolve: function(root, team) {
-                    let playersList = root.owners;
-                    return playersCtrl.getList(playersList)
+                resolve: async function(root, args, db) {
+                    root.players = root.owners;
+                    let players = await playersCtrl.getList(root, args, db);
+                    return players;
                 }
             }
         })
