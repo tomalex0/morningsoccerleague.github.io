@@ -46,12 +46,7 @@ const SeasonType = new GraphQLObjectType({
             },
             schedule: {
                 type : new GraphQLList(require('./schedule-schema')),
-                resolve: async function(root, args, db) {
-
-                    root.season = root._id;
-                    let scheduleData = await scheduleCtrl.getListBySeason(root, args, db);
-                    return scheduleData;
-                }
+                resolve: scheduleCtrl.getListBySeason
             }
         })
 });

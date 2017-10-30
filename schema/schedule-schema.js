@@ -31,10 +31,7 @@ const ScheduleType = new GraphQLObjectType({
             completed : {type : GraphQLBoolean},
             season : {
                 type : SeasonType,
-                resolve : async function (root, args, db){
-                    let data = await seasonsCtrl.getDetails(root, args, db);
-                    return  data;
-                }
+                resolve : seasonsCtrl.getDetails
             },
             referees :{
                 type : new GraphQLList(RefereeType),

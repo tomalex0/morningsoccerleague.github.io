@@ -30,17 +30,11 @@ const RefereeType = new GraphQLObjectType({
         fields: () => ({
             team: {
                 type: TeamType,
-                resolve : async function(root, args, db){
-                    let data = await teamsCtrl.getDetails(root, args, db);
-                    return data;
-                }
+                resolve : teamsCtrl.getDetails
             },
             player: {
                 type: PlayerType,
-                resolve:  async function(root, args, db) {
-                    let data = await playersCtrl.getDetails(root, args, db);
-                    return data;
-                }
+                resolve:  playersCtrl.getDetails
             }
         })
 });

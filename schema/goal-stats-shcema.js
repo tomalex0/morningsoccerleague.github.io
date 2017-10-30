@@ -27,10 +27,7 @@ const GoalStatsType = new GraphQLObjectType({
         player : {
             type: PlayerType,
             description: "List of all Player",
-            resolve:  async function(root, args, db) {
-                let data = await playersCtrl.getDetails(root, args, db);
-                return data;
-            }
+            resolve:  playersCtrl.getDetails
         },
         minute: {
             type: GraphQLString

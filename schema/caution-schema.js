@@ -16,8 +16,8 @@ let {
     } = require('graphql');
 
 const CautionType = new GraphQLObjectType({
-        name: "Caution",
-        description: "This represent a caution",
+        name: 'Caution',
+        description: 'This represent a caution',
         fields: () => ({
             _id: {type: new GraphQLNonNull(GraphQLString)},
             name: {type: new GraphQLNonNull(GraphQLString)},

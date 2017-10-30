@@ -35,11 +35,7 @@ const GameStatsType = new GraphQLObjectType({
         fields: () => ({
             team: {
                 type: TeamType,
-                resolve : async function (root, args, db){
-                    let teamId = root.team;
-                    let teamData = await teamsCtrl.getDetails(root, args, db);
-                    return  teamData;
-                }
+                resolve : teamsCtrl.getDetails
             },
             cautions: {
                 type: new GraphQLList(CautionStatsType),

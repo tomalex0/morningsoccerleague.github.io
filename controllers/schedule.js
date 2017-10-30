@@ -17,7 +17,7 @@ class ScheduleController {
     }
 
     async getListBySeason(root, args, db) {
-        let seasonId = root.season;
+        let seasonId = root._id;
         let data = await db.collection('schedule').find({'season': `${seasonId}`}).toArray();
         return data;
     }
