@@ -1,0 +1,2 @@
+- `mongodump --db morningsoccerleague`
+- `mongorestore -d backup --drop "C:\path"
