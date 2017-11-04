@@ -41,6 +41,46 @@ class PlayersController {
         return data;
     }
 
+    async addPlayer (root, args, db){
+
+        let name = args.name;
+        let data = await db.collection('players').insertOne({
+                name:  name
+            })
+            .then(function(result) {
+               return result.ops[0];
+            });
+
+        return data;
+
+    }
+
+    async updatePlayer (root, args, db){
+
+        let name = args.name;
+        let _id = utility.wrapObjectId(args._id);
+
+        let data = await db.collection('players').findOneAndUpdate(
+            {
+                _id:_id
+            },
+            {
+                $set:{
+                    name:name
+                }
+            },
+            {
+                returnOriginal : false
+            }
+            )
+            .then(function(result, error) {
+                return result.value;
+            });
+
+        return data;
+
+    }
+
 
 }
 

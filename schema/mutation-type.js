@@ -3,6 +3,8 @@
 const { GraphQLObjectType, GraphQLString, GraphQLNonNull, GraphQLInt } = require('graphql');
 const PlayerType = require('./player-schema');
 
+const PlayersController = require('../controllers/players');
+const playersCtrl  = new PlayersController();
 
 const MorninigSoccerMutation = new GraphQLObjectType({
     name : 'Mutation',
@@ -12,14 +14,7 @@ const MorninigSoccerMutation = new GraphQLObjectType({
             args:{
                 name: { type: new GraphQLNonNull(GraphQLString)}
             },
-            resolve(root, args){
-                let newPlayer = {
-                    name : args.name,
-                    _id : 100
-                };
-                console.log(newPlayer);
-                return newPlayer;
-            }
+            resolve : playersCtrl.addPlayer
         },
         updatePlayer: {
             type: PlayerType,
@@ -27,15 +22,7 @@ const MorninigSoccerMutation = new GraphQLObjectType({
                 _id: {type: new GraphQLNonNull(GraphQLString)},
                 name: {type: new GraphQLNonNull(GraphQLString)}
             },
-            resolve(root, args){
-                let updatedPlayer = {
-                    name: args.name,
-                    _id: args._id
-                };
-                console.log(updatedPlayer);
-                return updatedPlayer;
-
-            }
+            resolve : playersCtrl.updatePlayer
         }
     }
 });
