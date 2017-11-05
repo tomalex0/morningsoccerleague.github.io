@@ -23,6 +23,13 @@ const MorninigSoccerMutation = new GraphQLObjectType({
                 name: {type: new GraphQLNonNull(GraphQLString)}
             },
             resolve : playersCtrl.updatePlayer
+        },
+        deletePlayer: {
+            type: PlayerType,
+            args: {
+                _id: {type: new GraphQLNonNull(GraphQLString)}
+            },
+            resolve : playersCtrl.deleteUser
         }
     }
 });

@@ -81,6 +81,29 @@ class PlayersController {
 
     }
 
+    async deleteUser(root, args, db){
+
+        let _id = utility.wrapObjectId(args._id);
+
+        let data =  await db.collection('players').deleteOne({
+                _id: _id
+            })
+            .then(function(result) {
+                console.log();
+
+
+                if(result.deletedCount > 0 ){
+                    return {
+                        _id : args._id
+                    };
+                } else {
+                    return null;
+                }
+
+            });
+        return data;
+    }
+
 
 }
 
