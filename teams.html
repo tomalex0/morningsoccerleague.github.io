@@ -33,6 +33,8 @@
         </tbody>
       </table>
     </div>
+  {{else}}
+    <div class="col-md-12 text-center"><h1>Coming Soon</h1></div>
   {{/each}}
 </script>
 <header>
@@ -66,8 +68,18 @@
   </nav>
 </header>
 <div class="container-fluid text-center" style="padding-top: 120px;">
-  <h1>MSL Season 1</h1>
-  <br>
+  <form class="form-inline">
+  <div class="form-group season-selector" >
+    <label class="sr-only" for="seasonSelector">Select Season</label>
+    <div class="input-group">
+      <select id="seasonSelector" class="form-control" onchange="switchSeason(this)">
+        <option value="1">MSL Season 1</option>
+        <option value="2" selected>MSL Season 2</option>s
+      </select>
+    </div>
+  </div>
+
+</form>
   <div id="teams-members" class="row"></div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
