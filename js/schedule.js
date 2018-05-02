@@ -10,9 +10,6 @@ loadCautions();
 
 $(document).ready(function () {
     $("#seasonSelector").trigger("change");
-
-
-
 });
 
 function  switchSeason(el) {
