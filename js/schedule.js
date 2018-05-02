@@ -9,16 +9,11 @@ loadPlayers();
 loadCautions();
 
 $(document).ready(function () {
-    $("#seasonSelector").trigger("change");
 
+    loadTeams(loadSchedule)
 
 
 });
-
-function  switchSeason(el) {
-
-    loadTeams(loadSchedule,el.value)
-}
 
 function getTeamName (teamsArr, teamId) {
     return _.where(teamsArr,{id : teamId})[0];
@@ -58,9 +53,9 @@ function getGoals (stats) {
     return goals;
 }
 
-function  loadTeams (callback,season){
+function  loadTeams (callback){
     $.getJSON('./data/teams.json?time='+datetime,function(json){
-        callback(json,season)
+        callback(json)
     });
 }
 function  loadPlayers (){
@@ -114,7 +109,7 @@ function buildTableData (teamsArr, scheduleArr){
         newItem.home_goals = (item.stats) ? getGoals(item.stats.home) : undefined;
         newItem.away_goals = (item.stats) ?  getGoals(item.stats.away) : undefined;
 
-
+        //console.log(newItem,'0---------------')
         scheduleArrFormatted.push(newItem)
     });
 
@@ -133,11 +128,9 @@ function  renderTable (scheduleData){
 
 }
 var scheduleData
-function  loadSchedule(teamsArr, season){
-
+function  loadSchedule(teamsArr){
     $.getJSON('./data/schedule.json?time='+datetime,function(json){
-        var seasonSchedule = json.filter(item => item.season == season);
-        scheduleData = buildTableData(teamsArr, seasonSchedule);
+        scheduleData = buildTableData(teamsArr, json);
         renderTable(scheduleData);
     });
 

@@ -5,19 +5,13 @@ var datetime = Math.round(new Date().getTime() / 1000);
 
 $(document).ready(function () {
 
-    $("#seasonSelector").trigger("change");
-
+    loadSeasonTeams(loadTeamsMembers)
 
 });
 
-function  switchSeason(el) {
-
-    loadSeasonTeams(loadTeamsMembers,el.value)
-}
-
-function  loadSeasonTeams (callback, season){
+function  loadSeasonTeams (callback){
     $.getJSON('./data/season_team.json?time='+datetime,function(json){
-        callback(json, season)
+        callback(json)
     });
 }
 
@@ -81,17 +75,17 @@ function  renderTable (teamMembers){
 
 
 var teamMembers;
-//var season = 1;
-function  loadTeamsMembers(seasonsTeams, season){
+var season = 1;
+function  loadTeamsMembers(seasonsTeams){
     //console.log(seasonsTeams);
 
     var teamItem =_.find(seasonsTeams,function(item){
         return item.season == season;
-    }) || {};
+    });
 
-    //console.log(teamItem)
+    console.log(teamItem)
 
-    var teamIdArr = teamItem.teams || [];
+    var teamIdArr = teamItem.teams;
 
     $.getJSON('./data/players.json?time='+datetime,function(playersArr){
 
@@ -102,7 +96,7 @@ function  loadTeamsMembers(seasonsTeams, season){
             var teamsObjsArr = _.groupBy(teamsArr,'id');
 
             var teamMemberList = getTeamsDetails(teamIdArr,teamsObjsArr, playerObjsArr );
-           // console.log(teamMemberList,'===========');
+            console.log(teamMemberList,'===========');
 
             renderTable(teamMemberList)
         });
