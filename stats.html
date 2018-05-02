@@ -29,6 +29,8 @@
       <td>{{goal_diff}}</td>
       <td>{{points}}</td>
     </tr>
+  {{else}}
+    <tr style="background:white;"><td  colspan="10" class="text-center"><h1>Coming Soon</h1></td></tr>
   {{/each}}
 </script>
 <header>
@@ -62,9 +64,18 @@
   </nav>
 </header>
 <div class="container text-center">
-  <!--<img src="images/stats.jpg" />-->
-  <h1>MSL Season 1</h1>
-  <br>
+  <form class="form-inline">
+    <div class="form-group season-selector" >
+      <label class="sr-only" for="seasonSelector">Select Season</label>
+      <div class="input-group">
+        <select id="seasonSelector" class="form-control" onchange="switchSeason(this)">
+          <option value="1">MSL Season 1</option>
+          <option value="2" selected>MSL Season 2</option>s
+        </select>
+      </div>
+    </div>
+
+  </form>
   <div >
     <table class="table stats-table">
       <thead>
