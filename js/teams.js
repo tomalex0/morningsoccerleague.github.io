@@ -4,10 +4,7 @@ var datetime = Math.round(new Date().getTime() / 1000);
 
 
 $(document).ready(function () {
-
     $("#seasonSelector").trigger("change");
-
-
 });
 
 function  switchSeason(el) {
