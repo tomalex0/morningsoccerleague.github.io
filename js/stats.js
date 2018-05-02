@@ -1,19 +1,36 @@
 var datetime = Math.round(new Date().getTime() / 1000);
 
 
-var teamObj = {};
+
+//var teamObj = {};
 
 
 $(document).ready(function () {
 
-    loadTeams(loadStats)
+    $("#seasonSelector").trigger("change");
 
 
 });
 
-function  loadTeams (callback){
+function  switchSeason(el) {
+    //teamObj = {}
+    loadSeasonTeams(loadTeams,el.value)
+}
+
+function  loadSeasonTeams (callback, season){
+    $.getJSON('./data/season_team.json?time='+datetime,function(json){
+        var seasonObj = json.find(item => item.season == season) || {};
+        var teams = _.pluck(seasonObj.teams,'id')
+        callback(teams, season)
+    });
+}
+
+function  loadTeams (seasonTeam, season){
+
     $.getJSON('./data/teams.json?time='+datetime,function(json){
-        callback(json)
+        var teams = json.filter(item => seasonTeam.includes(item.id));
+
+        loadStats(teams, season)
     });
 }
 
@@ -32,6 +49,8 @@ function getDefaultScore(){
 }
 
 function getTeamStats (teams, schedule){
+
+    var teamObj = {};
 
     var groupedTeams = _.groupBy(teams,'id');
 
@@ -63,7 +82,7 @@ function getTeamStats (teams, schedule){
             if(home.goals.length == away.goals.length) {
 
                 if(home.team == 3 || away.team == 3){
-                    console.log(home,away,"if one");
+                    //console.log(home,away,"if one");
                 }
 
                 teamObj[home.team].draw =  (teamObj[home.team].draw || 0 ) + 1;
@@ -77,7 +96,7 @@ function getTeamStats (teams, schedule){
             } else if(home.goals.length > away.goals.length) {
 
                 if(home.team == 3 || away.team == 3){
-                    console.log(home,away,"if two");
+                    //console.log(home,away,"if two");
                 }
 
                 teamObj[home.team].won =  (teamObj[home.team].won || 0 ) + 1;
@@ -91,7 +110,7 @@ function getTeamStats (teams, schedule){
             } else if(away.goals.length > home.goals.length) {
 
                 if(home.team == 3 || away.team == 3){
-                    console.log(home,away,"if three");
+                    //console.log(home,away,"if three");
                 }
 
                 teamObj[away.team].won =  (teamObj[away.team].won || 0 ) + 1;
@@ -139,7 +158,7 @@ function getTeamStats (teams, schedule){
         itemobj.goal_diff =  itemobj.goal_scored - itemobj.goal_allowed;
 
         itemobj.points =  (itemobj.draw * 1) +  (itemobj.won * 3);
-        console.log(groupedTeams[index]);
+        //console.log(groupedTeams[index]);
 
         itemobj.team = groupedTeams[index][0];
 
@@ -175,9 +194,10 @@ function  renderTable (statsData){
 
 
 var teamStats;
-function  loadStats(teamsArr){
+function  loadStats(teamsArr, season){
     $.getJSON('./data/schedule.json?time='+datetime,function(scheduleData){
-        teamStats = getTeamStats(teamsArr, scheduleData);
+        var seasonSchedule = scheduleData.filter(item => item.season == season);
+        teamStats = getTeamStats(teamsArr, seasonSchedule);
         renderTable(teamStats);
     });
 
