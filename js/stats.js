@@ -17,19 +17,49 @@ function  switchSeason(el) {
 function  loadSeasonTeams (callback, season){
     $.getJSON('./data/season_team.json?time='+datetime,function(json){
         var seasonObj = json.find(item => item.season == season) || {};
-        var teams = _.pluck(seasonObj.teams,'id')
-        callback(teams, season)
+        var teams = _.pluck(seasonObj.teams,'id');
+        var mos = seasonObj.mos;
+        var season_team = json;
+
+        callback(teams, mos, season, season_team)
     });
 }
 
-function  loadTeams (seasonTeam, season){
+function  loadTeams (seasonTeam, mos, season, season_team){
 
     $.getJSON('./data/teams.json?time='+datetime,function(json){
         var teams = json.filter(item => seasonTeam.includes(item.id));
 
-        loadStats(teams, season)
+        loadPlayers(teams, mos, season, season_team)
     });
 }
+function  loadPlayers (teams, mos,season, season_team){
+
+    $.getJSON('./data/players.json?time='+datetime,function(players){
+        var moslist = [];
+        for(i=0;i<mos.length;i++) {
+            var playerdetails = getPlayerDetails(teams, season_team, mos[i], season, players)
+            moslist.push(playerdetails);
+        }
+
+        loadStats(teams, season, moslist)
+    });
+}
+
+function  getPlayerDetails(teams,season_team,player, season, players) {
+    var seasonObj = season_team.find(item => item.season == season) || {};
+    var teamSeasonObj = (seasonObj.teams).find(item => item.players.indexOf(player)>0 ) || {};
+    var teamObj = teams.find(item => item.id == teamSeasonObj.id) || {};
+    var playerObj = players.find(item => item.id == player)
+
+    var playerDetails = {
+        player : playerObj,
+        team : teamObj
+    };
+    return playerDetails;
+}
+
+
 
 
 function getDefaultScore(){
@@ -180,6 +210,7 @@ function getTeamStats (teams, schedule){
 
 function  renderTable (statsData){
 
+
     var stats_source   = $("#stats-template").html();
     var stats_template = Handlebars.compile(stats_source);
 
@@ -191,11 +222,16 @@ function  renderTable (statsData){
 
 
 var teamStats;
-function  loadStats(teamsArr, season){
+function  loadStats(teamsArr, season, moslist){
     $.getJSON('./data/schedule.json?time='+datetime,function(scheduleData){
         var seasonSchedule = scheduleData.filter(item => item.season == season);
         teamStats = getTeamStats(teamsArr, seasonSchedule);
-        renderTable(teamStats);
+        var details = {
+            teamStats : teamStats,
+            mos : moslist
+        };
+
+        renderTable(details);
     });
 
 }
