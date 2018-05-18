@@ -16,7 +16,7 @@
 <body>
 
 <script id="stats-template" type="text/x-handlebars-template">
-  {{#each this}}
+  {{#each this.teamStats}}
     <tr>
       <td class="stats-pos">{{inc @index}}</td>
       <td><img  src="images/{{team.id}}.png"  class="stats-logo"/> {{team.teamName}}</td>
@@ -31,6 +31,11 @@
     </tr>
   {{else}}
     <tr style="background:white;"><td  colspan="10" class="text-center"><h1>Coming Soon</h1></td></tr>
+  {{/each}}
+
+  <tr class="mos-cls"><td colspan="10" class="mos-cls">Player of the Season</td></tr>
+  {{#each this.mos}}
+  <tr><td colspan="10" >{{player.name}} ({{team.teamName}})</td></tr>
   {{/each}}
 </script>
 <header>
