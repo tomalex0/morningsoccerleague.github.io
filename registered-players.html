@@ -2,40 +2,16 @@
 <html>
 <header>
   <meta charset="UTF-8">
-  <title>Morning Soccer League - Teams</title>
+  <title>Morning Soccer League - Rules</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/stats.css">
+  <link rel="stylesheet" href="css/rules.css">
   <script src="js/prefixfree.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
-  <script src="js/common.js"></script>
 </header>
 <body>
-<script id="teams-template" type="text/x-handlebars-template">
-  {{#each this}}
-    <div class="col-md-4">
-      <table class="table teams-table">
-        <thead>
-        <tr>
-          <th class="text-right"><span>{{team.teamName}}</span> <span class="text-right teams-icon-cls"><img src="images/{{team.id}}.png" ></span></th>
 
-        </tr>
-        </thead>
-        <tbody>
-        {{#each players}}
-            <tr>
-              <td><span class="hide-id">{{id}}.&nbsp;&nbsp;</span>{{name}} {{#if isOwner}}<span class="fo-cls">(FO)</span> {{/if}}</td>
-            </tr>
-        {{/each}}
-        </tbody>
-      </table>
-    </div>
-  {{else}}
-    <div class="col-md-12 text-center"><h1>Coming Soon</h1></div>
-  {{/each}}
-</script>
 <header>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -55,36 +31,28 @@
         <ul class="nav navbar-nav navbar-right">
           <li ><a href="index.html#featured">Home</a></li>
           <li ><a href="stats.html">Stats</a></li>
-          <li class="active" ><a href="teams.html">Teams</a></li>
+          <li ><a href="teams.html">Teams</a></li>
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="index.html#mission">Mission</a></li>
           <li><a href="registration.html">Register</a></li>
-          <li ><a href="rules.html">Rules</a></li>
+          <li class="active"><a href="rules.html">Rules</a></li>
           <li><a href="index.html#staff">Contacts</a></li>
         </ul>
       </div><!-- collapse navbar-collapse -->
     </div><!-- container  -->
   </nav>
 </header>
-<div class="container-fluid text-center" style="padding-top: 120px;">
-  <form class="form-inline">
-  <div class="form-group season-selector" >
-    <label class="sr-only" for="seasonSelector">Select Season</label>
-    <div class="input-group">
-      <select id="seasonSelector" class="form-control" onchange="switchSeason(this)">
-        <option value="1">MSL Season 1</option>
-        <option value="2" selected>MSL Season 2</option>s
-      </select>
-    </div>
+<div class="container">
+  
+  <h1 align="center">MSL Season II Registered Players</h1>
+  <br>
+  <div>
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSDy002Q1xsXXK_7mx80JvaQsYR2hdber-Vm-3PsK2m7BAUC-a3UboaOj-KQaGCD4JIVOpBzbN7SZR_/pubhtml?gid=355259476&amp;single=true&amp;widget=true&amp;headers=false" height="900", width="100%"></iframe>
   </div>
 
-</form>
-  <div id="teams-members" class="row"></div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="js/myscript.js"></script>
-<script src="js/teams.js"></script>
 </body>
 </html>

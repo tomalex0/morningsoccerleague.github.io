@@ -444,9 +444,8 @@ body > .container {
 .season-selector.form-group {
   text-align: center;
   display:block;
-
-
 }
+
 .season-selector select{
   font-size: 18px;
   font-weight: bold;
