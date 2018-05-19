@@ -23,5 +23,15 @@
     "id": 5,
     "teamName": "Rabona FC",
     "teamCls" : "team-brown"
+  },
+  {
+    "id": 6,
+    "teamName": "The Messy Messis",
+    "teamCls" : "team-blue"
+  },
+  {
+    "id": 7,
+    "teamName": "Morning Soccer United",
+    "teamCls" : "team-green"
   }
 ]
