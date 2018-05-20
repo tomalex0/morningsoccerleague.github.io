@@ -733,18 +733,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 5
-		}, {
-			"team": 5
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 4,
-				"goals": []
+				"team": 4
 			},
 			"away": {
-				"team": 3,
-				"goals": []
+				"team": 3
 			}
 		}
 	},
@@ -753,18 +749,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 5
-		}, {
-			"team": 5
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 6,
-				"goals": []
+				"team": 6
 			},
 			"away": {
-				"team": 7,
-				"goals": []
+				"team": 7
 			}
 		}
 	},
@@ -773,18 +765,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 6
-		}, {
-			"team": 6
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 4,
-				"goals": []
+				"team": 4
 			},
 			"away": {
-				"team": 5,
-				"goals": []
+				"team": 5
 			}
 		}
 	},
@@ -793,18 +781,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 6
-		}, {
-			"team": 6
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 3,
-				"goals": []
+				"team": 3
 			},
 			"away": {
-				"team": 7,
-				"goals": []
+				"team": 7
 			}
 		}
 	},
@@ -813,18 +797,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 3
-		}, {
-			"team": 3
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 6,
-				"goals": []
+				"team": 6
 			},
 			"away": {
-				"team": 5,
-				"goals": []
+				"team": 5
 			}
 		}
 	},
@@ -833,18 +813,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 3
-		}, {
-			"team": 3
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 7,
-				"goals": []
+				"team": 7
 			},
 			"away": {
-				"team": 4,
-				"goals": []
+				"team": 4
 			}
 		}
 	},
@@ -853,18 +829,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 7
-		}, {
-			"team": 7
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 5,
-				"goals": []
+				"team": 5
 			},
 			"away": {
-				"team": 3,
-				"goals": []
+				"team": 3
 			}
 		}
 	},
@@ -873,18 +845,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 7
-		}, {
-			"team": 7
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 4,
-				"goals": []
+				"team": 4
 			},
 			"away": {
-				"team": 6,
-				"goals": []
+				"team": 6
 			}
 		}
 	},
@@ -893,18 +861,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 4
-		}, {
-			"team": 4
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 5,
-				"goals": []
+				"team": 5
 			},
 			"away": {
-				"team": 7,
-				"goals": []
+				"team": 7
 			}
 		}
 	},
@@ -913,18 +877,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 4
-		}, {
-			"team": 4
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 3,
-				"goals": []
+				"team": 3
 			},
 			"away": {
-				"team": 6,
-				"goals": []
+				"team": 6
 			}
 		}
 	},
@@ -933,18 +893,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 5
-		}, {
-			"team": 5
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 3,
-				"goals": []
+				"team": 3
 			},
 			"away": {
-				"team": 4,
-				"goals": []
+				"team": 4
 			}
 		}
 	},
@@ -953,18 +909,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 5
-		}, {
-			"team": 5
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 7,
-				"goals": []
+				"team": 7
 			},
 			"away": {
-				"team": 6,
-				"goals": []
+				"team": 6
 			}
 		}
 	},
@@ -973,18 +925,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 6
-		}, {
-			"team": 6
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 3,
-				"goals": []
+				"team": 3
 			},
 			"away": {
-				"team": 5,
-				"goals": []
+				"team": 5
 			}
 		}
 	},
@@ -993,18 +941,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 6
-		}, {
-			"team": 6
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 4,
-				"goals": []
+				"team": 4
 			},
 			"away": {
-				"team": 7,
-				"goals": []
+				"team": 7
 			}
 		}
 	},
@@ -1013,18 +957,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 4
-		}, {
-			"team": 4
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 5,
-				"goals": []
+				"team": 5
 			},
 			"away": {
-				"team": 6,
-				"goals": []
+				"team": 6
 			}
 		}
 	},
@@ -1033,18 +973,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 4
-		}, {
-			"team": 4
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 7,
-				"goals": []
+				"team": 7
 			},
 			"away": {
-				"team": 3,
-				"goals": []
+				"team": 3
 			}
 		}
 	},
@@ -1053,18 +989,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 7
-		}, {
-			"team": 7
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 5,
-				"goals": []
+				"team": 5
 			},
 			"away": {
-				"team": 4,
-				"goals": []
+				"team": 4
 			}
 		}
 	},
@@ -1073,18 +1005,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 7
-		}, {
-			"team": 7
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 6,
-				"goals": []
+				"team": 6
 			},
 			"away": {
-				"team": 3,
-				"goals": []
+				"team": 3
 			}
 		}
 	},
@@ -1093,18 +1021,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 3
-		}, {
-			"team": 3
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 7,
-				"goals": []
+				"team": 7
 			},
 			"away": {
-				"team": 5,
-				"goals": []
+				"team": 5
 			}
 		}
 	},
@@ -1113,18 +1037,14 @@
 		"season" :  2,
 		"referees": [{
 			"team": 3
-		}, {
-			"team": 3
 		}],
 		"completed": false,
 		"stats": {
 			"home": {
-				"team": 6,
-				"goals": []
+				"team": 6
 			},
 			"away": {
-				"team": 4,
-				"goals": []
+				"team": 4
 			}
 		}
 	}
