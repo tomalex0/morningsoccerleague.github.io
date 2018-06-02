@@ -749,6 +749,10 @@
 				"goals": [{
 					"player": 8,
 					"minute": 19
+				}],
+				"cautions": [{
+					"player": 74,
+					"minute": 24
 				}]
 			}
 		}
