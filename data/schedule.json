@@ -732,15 +732,29 @@
 		"scheduled_date": "6/1/2018",
 		"season" :  2,
 		"referees": [{
-			"team": 5
+			"team": 5,
+			"player" : 46
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 4
+				"team": 4,
+				"goals": [{
+					"player": 87,
+					"minute": 24
+				}]
 			},
 			"away": {
-				"team": 3
+				"team": 3,
+				"goals": [{
+					"player": 8,
+					"minute": 19
+				}],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 74,
+					"minute": 24
+				}]
 			}
 		}
 	},
@@ -748,15 +762,30 @@
 		"scheduled_date": "6/1/2018",
 		"season" :  2,
 		"referees": [{
-			"team": 5
+			"team": 5,
+			"player" : 72
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 6
+				"team": 6,
+				"goals": [{
+					"player": 4,
+					"minute": 11
+				},{
+					"player": 49,
+					"minute": 49
+				}]
 			},
 			"away": {
-				"team": 7
+				"team": 7,
+				"goals": [{
+					"player": 60,
+					"minute": 24
+				},{
+					"player": 6,
+					"minute": 47
+				}]
 			}
 		}
 	},
