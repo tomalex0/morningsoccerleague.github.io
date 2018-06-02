@@ -748,7 +748,8 @@
 		"scheduled_date": "6/1/2018",
 		"season" :  2,
 		"referees": [{
-			"team": 5
+			"team": 5,
+			"player" : 46
 		}],
 		"completed": false,
 		"stats": {
@@ -764,7 +765,8 @@
 		"scheduled_date": "6/8/2018",
 		"season" :  2,
 		"referees": [{
-			"team": 6
+			"team": 6,
+			"player" : 72
 		}],
 		"completed": false,
 		"stats": {
