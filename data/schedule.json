@@ -851,13 +851,27 @@
 			"team": 6,
 			"player" : 68
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 3
+				"team": 3,
+				"goals" : [{
+					"player": 28,
+					"minute": 14
+				},{
+					"player": 74,
+					"minute": 22
+				},{
+					"player": 74,
+					"minute": 24
+				}],
+				"mom": [{
+					"player": 74
+				}]
 			},
 			"away": {
-				"team": 7
+				"team": 7,
+				"goals" : []
 			}
 		}
 	},
