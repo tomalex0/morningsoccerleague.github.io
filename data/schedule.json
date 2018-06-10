@@ -808,32 +808,32 @@
 				"team": 4,
 				"goals": [{
 					"player": 2,
-					"minute": "7"
+					"minute": 26
 				},{
 					"player": 87,
-					"minute": 7
+					"minute": 41
 				}]
 			},
 			"away": {
 				"team": 5,
 				"goals": [{
 					"player": 72,
-					"minute": "6"
+					"minute": 3
 				},{
 					"player": 46,
-					"minute": 6
+					"minute": 9
 				},{
 					"player": 45,
-					"minute": 7
+					"minute": 24
 				},{
 					"player": 45,
-					"minute": 7
+					"minute": 51
 				},{
 					"player": 45,
-					"minute": 7
+					"minute": 58
 				},{
 					"player": 46,
-					"minute": 7
+					"minute": 59
 				}],
 				"mom": [{
 					"player": 45
