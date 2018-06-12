@@ -811,7 +811,7 @@
 					"minute": 26
 				},{
 					"player": 87,
-					"minute": 51
+					"minute": 48
 				}]
 			},
 			"away": {
@@ -827,13 +827,13 @@
 					"minute": 24
 				},{
 					"player": 45,
-					"minute": 51
+					"minute": 48
 				},{
 					"player": 45,
-					"minute": 58
+					"minute": "50 + 5"
 				},{
 					"player": 46,
-					"minute": 59
+					"minute": "50 + 6"
 				}],
 				"mom": [{
 					"player": 45
