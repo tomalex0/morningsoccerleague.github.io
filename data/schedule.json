@@ -881,13 +881,21 @@
 		"referees": [{
 			"team": 3
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 6
+				"team": 6,
+				"goals":[]
 			},
 			"away": {
-				"team": 5
+				"team": 5,
+				"goals":[{
+				    	"player" : 46,
+					"minute" : 23
+				}],
+				"mom": [{
+					"player": 50
+				}]
 			}
 		}
 	},
@@ -897,13 +905,24 @@
 		"referees": [{
 			"team": 3
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 7
+				"team": 7,
+				"goals":[{
+					"player" : 85,
+					"minute" :  23
+				},{
+					"player" : 60,
+					"minute" :  49
+				}],
+				"mom" : [{
+					"player" :  85
+				}]
 			},
 			"away": {
-				"team": 4
+				"team": 4,
+				"goals" : []
 			}
 		}
 	},
