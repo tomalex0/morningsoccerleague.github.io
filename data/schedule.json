@@ -922,7 +922,16 @@
 			},
 			"away": {
 				"team": 4,
-				"goals" : []
+				"goals" : [],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 87,
+					"minute": 43
+				},{
+					"caution_id": 1,
+					"player": 34,
+					"minute": "50 + 3"
+				}],
 			}
 		}
 	},
