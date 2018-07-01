@@ -1025,13 +1025,27 @@
 		"referees": [{
 			"team": 4
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 5
+				"team": 5,
+				"goals" : [{
+					"player" : 46,
+					"minute" 44
+				}]
 			},
 			"away": {
-				"team": 7
+				"team": 7,
+				"goals" : [{
+					"player" : 60,
+					"minute" : 12
+				},{
+					"player" : 78,
+					"minute" :  50
+				}],
+				"mom" : [{
+					"player" : 78
+				}]
 			}
 		}
 	},
