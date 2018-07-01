@@ -1055,13 +1055,36 @@
 		"referees": [{
 			"team": 4
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 3
+				"team": 3,
+				"goals" : [{
+					"player" : 33,
+					"minute" :  44
+				}],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 70,
+					"minute": 31
+				}]
+				
 			},
 			"away": {
-				"team": 6
+				"team": 6,
+				"goals" : [{
+					"player" : 4,
+					"minute" :  10
+				},{
+					"player" : 49,
+					"minute" :  13
+				},{
+					"player" : 4,
+					"minute" : 49
+				}],
+				"mom" : [{
+					"player" :4
+				}]
 			}
 		}
 	},
