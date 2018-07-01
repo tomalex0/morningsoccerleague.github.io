@@ -1031,7 +1031,7 @@
 				"team": 5,
 				"goals" : [{
 					"player" : 46,
-					"minute" 44
+					"minute" : 44
 				}]
 			},
 			"away": {
