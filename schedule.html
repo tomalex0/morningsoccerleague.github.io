@@ -38,6 +38,9 @@
             <tr>
               <td class="text-right team-score score-sep">{{stats.home.goals.length}}</td>
             </tr>
+            <tr>
+              <td class="text-right fouls-cls">Fouls : {{home_fouls}}</td>
+            </tr>
             {{/if}}
             <tr>
               <td>
@@ -52,7 +55,6 @@
             </tr>
             <tr>
               <td>
-
                 <ul class="caution-cls">
                   {{#each home_cautions}}
                   <li class="{{card.cls}} ">{{player.name}} <strong>{{minute}}"</strong></li>
@@ -85,6 +87,9 @@
             <tr>
               <td class="text-left team-score">{{stats.away.goals.length}}</td>
             </tr>
+            <tr>
+              <td class="text-left fouls-cls">Fouls : {{away_fouls}}</td>
+            </tr>
             {{/if}}
             <tr>
               <td>
@@ -99,7 +104,6 @@
             </tr>
             <tr>
               <td>
-
                 <ul class="caution-cls">
                   {{#each away_cautions}}
                   <li class="{{card.cls}} text-right">{{player.name}}, <strong>{{minute}}"</strong> {{#if owngoal}}  (OG) {{/if}}</li>

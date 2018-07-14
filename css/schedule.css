@@ -151,5 +151,11 @@ tr.team-table-header th {
    margin : 0
 }
 
+.fouls-cls {
+    padding-top : 15px;
+    color: #E7262B;
+    font-size: 14px;
+    font-weight: bold;
+}
 
 
