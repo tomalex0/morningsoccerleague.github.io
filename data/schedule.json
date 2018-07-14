@@ -13,7 +13,8 @@
 			"home": {
 				"team": 5,
 				"goals": [],
-				"cautions": []
+				"cautions": [],
+				"fouls" : 1
 			},
 			"away": {
 				"team": 2,
@@ -25,7 +26,8 @@
 				}],
 				"mom": [{
 					"player": 19
-				}]
+				}],
+				"fouls" : 4
 			}
 		}
 	},
@@ -44,7 +46,8 @@
 			"home": {
 				"team": 3,
 				"goals": [],
-				"cautions": []
+				"cautions": [],
+				"fouls" : 5
 			},
 			"away": {
 				"team": 4,
@@ -59,7 +62,8 @@
 				"cautions": [],
 				"mom": [{
 					"player": 41
-				}]
+				}],
+				"fouls" : 1
 			}
 		}
 	},
@@ -78,7 +82,8 @@
 			"home": {
 				"team": 2,
 				"goals": [],
-				"cautions": []
+				"cautions": [],
+				"fouls" : 3
 			},
 			"away": {
 				"team": 1,
@@ -95,7 +100,8 @@
 				"cautions": [],
 				"mom": [{
 					"player": 9
-				}]
+				}],
+				"fouls" : 2
 			}
 		}
 	},
@@ -122,14 +128,16 @@
 				}],
 				"mom": [{
 					"player": 33
-				}]
+				}],
+				"fouls" : 4
 			},
 			"away": {
 				"team": 5,
 				"goals": [{
 					"player": 49,
 					"minute": 45
-				}]
+				}],
+				"fouls" : 4
 			}
 		}
 	},
@@ -150,7 +158,8 @@
 				"goals": [{
 					"player": 9,
 					"minute": 50
-				}]
+				}],
+				"fouls" : 0
 			},
 			"away": {
 				"team": 4,
@@ -160,7 +169,8 @@
 				}],
 				"mom": [{
 					"player": 36
-				}]
+				}],
+				"fouls" : 3
 			}
 		}
 	},
@@ -178,7 +188,8 @@
 		"stats": {
 			"home": {
 				"team": 2,
-				"goals": []
+				"goals": [],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 3,
@@ -194,7 +205,8 @@
 				}],
 				"mom": [{
 					"player": 33
-				}]
+				}],
+				"fouls" :4
 			}
 		}
 	},
@@ -217,7 +229,8 @@
 					"caution_id": 1,
 					"player": 19,
 					"minute": 48
-				}]
+				}],
+				"fouls" : 12
 			},
 			"away": {
 				"team": 5,
@@ -230,7 +243,8 @@
 				}],
 				"mom": [{
 					"player": 45
-				}]
+				}],
+				"fouls" : 2
 			}
 		}
 	},
@@ -252,7 +266,8 @@
 				"goals": [{
 					"player": 36,
 					"minute": 43
-				}]
+				}],
+				"fouls" : 5
 			},
 			"away": {
 				"team": 3,
@@ -268,7 +283,8 @@
 				}],
 				"mom": [{
 					"player": 57
-				}]
+				}],
+				"fouls" : 6
 			}
 		}
 
@@ -293,7 +309,8 @@
 				}, {
 					"player": 9,
 					"minute": 44
-				}]
+				}],
+				"fouls" : 4
 			},
 			"away": {
 				"team": 5,
@@ -309,7 +326,8 @@
 				}],
 				"mom": [{
 					"player": 45
-				}]
+				}],
+				"fouls" : 5
 			}
 		}
 	},
@@ -339,11 +357,13 @@
 				}],
 				"mom": [{
 					"player": 36
-				}]
+				}],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 2,
-				"goals": []
+				"goals": [],
+				"fouls" : 4
 			}
 		}
 	},
@@ -370,14 +390,16 @@
 				}],
 				"mom": [{
 					"player": 57
-				}]
+				}],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 1,
 				"goals": [{
 					"player": 9,
 					"minute": 25
-				}]
+				}],
+				"fouls" : 2
 			}
 		}
 	},
@@ -402,7 +424,8 @@
 				}, {
 					"player": 9,
 					"minute": 49
-				}]
+				}],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 2,
@@ -414,7 +437,8 @@
 				}],
 				"mom": [{
 					"player": 21
-				}]
+				}],
+				"fouls" : 5
 			}
 		}
 	},
@@ -435,7 +459,8 @@
 				"goals": [{
 					"player": 45,
 					"minute": 17
-				}]
+				}],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 3,
@@ -445,7 +470,8 @@
 				}],
 				"mom": [{
 					"player": 28
-				}]
+				}],
+				"fouls" : 3
 			}
 		}
 	},
@@ -463,7 +489,8 @@
 		"stats": {
 			"home": {
 				"team": 4,
-				"goals": []
+				"goals": [],
+				"fouls" : 0
 			},
 			"away": {
 				"team": 1,
@@ -479,7 +506,8 @@
 				}],
 				"mom": [{
 					"player": 10
-				}]
+				}],
+				"fouls" : 3
 			}
 		}
 	},
@@ -521,7 +549,8 @@
 				}],
 				"mom": [{
 					"player": 57
-				}]
+				}],
+				"fouls" : 1
 			},
 			"away": {
 				"team": 2,
@@ -533,7 +562,8 @@
 					"caution_id": 1,
 					"player": 13,
 					"minute": 37
-				}]
+				}],
+				"fouls" : 1
 			}
 		}
 	},
@@ -551,7 +581,8 @@
 		"stats": {
 			"home": {
 				"team": 4,
-				"goals": []
+				"goals": [],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 5,
@@ -570,7 +601,8 @@
 				}],
 				"mom": [{
 					"player": "45"
-				}]
+				}],
+				"fouls" : 4
 			}
 		}
 	},
@@ -588,7 +620,8 @@
 		"stats": {
 			"home": {
 				"team": 1,
-				"goals": []
+				"goals": [],
+				"fouls" : 1
 			},
 			"away": {
 				"team": 3,
@@ -601,7 +634,8 @@
 				}],
 				"mom": [{
 					"player": 57
-				}]
+				}],
+				"fouls" : 3
 			}
 		}
 	},
@@ -619,7 +653,8 @@
 		"stats": {
 			"home": {
 				"team": 2,
-				"goals": []
+				"goals": [],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 4,
@@ -629,7 +664,8 @@
 				}],
 				"mom": [{
 					"player": 40
-				}]
+				}],
+				"fouls" : 1
 			}
 		}
 	},
@@ -647,8 +683,8 @@
 		"stats": {
 			"home": {
 				"team": 5,
-				"goals": []
-
+				"goals": [],
+				"fouls" : 3
 			},
 			"away": {
 				"team": 1,
@@ -663,7 +699,8 @@
 					"caution_id": 1,
 					"player": 4,
 					"minute": 33
-				}]
+				}],
+				"fouls" : 7
 			}
 		}
 	},
@@ -712,7 +749,8 @@
 				}],
 				"mom": [{
 					"player": 45
-				}]
+				}],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 4,
@@ -724,7 +762,8 @@
 					"caution_id": 1,
 					"player": 36,
 					"minute": 50
-				}]
+				}],
+				"fouls" : 2
 			}
 		}
 	},
