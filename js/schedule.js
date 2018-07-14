@@ -111,6 +111,9 @@ function buildTableData (teamsArr, scheduleArr){
         newItem.home_goals = (item.stats) ? getGoals(item.stats.home) : undefined;
         newItem.away_goals = (item.stats) ?  getGoals(item.stats.away) : undefined;
 
+        newItem.home_fouls = (item.stats) ? item.stats.home.fouls : 0;
+        newItem.away_fouls = (item.stats) ?  item.stats.away.fouls : 0;
+
 
         scheduleArrFormatted.push(newItem)
     });
