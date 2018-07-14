@@ -1109,15 +1109,46 @@
 		"scheduled_date": "7/13/2018",
 		"season" :  2,
 		"referees": [{
-			"team": 5
+			"team": 5,
+			"player" : 56
+		},{
+			"team": 5,
+			"player" : 83
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 3
+				"team": 3,
+				"goals" : [{
+					"player" : 33,
+					"minute" :  4
+				},{
+					"player" : 74,
+					"minute" :  19
+				},{
+					"player" : 74,
+					"minute" : 25
+				}],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 33,
+					"minute": 30
+				},{
+					"caution_id": 1,
+					"player": 28,
+					"minute": 32
+				}],
+				"fouls" : 3
 			},
 			"away": {
-				"team": 4
+				"team": 4,
+				"goals" : [],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 35,
+					"minute": 43
+				}],
+				"fouls" : 1
 			}
 		}
 	},
@@ -1125,15 +1156,41 @@
 		"scheduled_date": "7/13/2018",
 		"season" :  2,
 		"referees": [{
-			"team": 5
+			"team": 5,
+			"player" : 46
+		},{
+			"team": 5,
+			"player" : 50
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 7
+				"team": 7,
+				"goals" : [{
+					"player" : 85,
+					"minute" :  "50 + 1"
+				}],
+				"fouls" :1
 			},
 			"away": {
-				"team": 6
+				"team": 6,
+				"goals" : [{
+					"player" : 3,
+					"minute" :  13
+				},{
+					"player" : 84,
+					"minute" :  41
+				}],
+				"cautions": [{
+					"caution_id": 1,
+					"player": 67,
+					"minute": 23
+				},{
+					"caution_id": 1,
+					"player": 49,
+					"minute": 50
+				}],
+				"fouls" :5
 			}
 		}
 	},
