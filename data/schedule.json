@@ -745,7 +745,8 @@
 				"goals": [{
 					"player": 87,
 					"minute": 24
-				}]
+				}],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 3,
@@ -760,7 +761,8 @@
 				}],
 				"mom": [{
 					"player": 33
-				}]
+				}],
+				"fouls" : 3
 			}
 		}
 	},
@@ -787,7 +789,8 @@
 				}],
 				"mom": [{
 					"player": 4
-				}]
+				}],
+				"fouls" :  1
 			},
 			"away": {
 				"team": 7,
@@ -797,7 +800,8 @@
 				},{
 					"player": 6,
 					"minute": 47
-				}]
+				}],
+				"fouls" : 6
 			}
 		}
 	},
@@ -821,7 +825,8 @@
 				},{
 					"player": 87,
 					"minute": 48
-				}]
+				}],
+				"fouls" : 0
 			},
 			"away": {
 				"team": 5,
@@ -846,7 +851,8 @@
 				}],
 				"mom": [{
 					"player": 45
-				}]
+				}],
+				"fouls" : 0
 			}
 		}
 	},
@@ -876,11 +882,13 @@
 				}],
 				"mom": [{
 					"player": 74
-				}]
+				}],
+				"fouls" : 4
 			},
 			"away": {
 				"team": 7,
-				"goals" : []
+				"goals" : [],
+				"fouls" : 4
 			}
 		}
 	},
@@ -898,7 +906,8 @@
 		"stats": {
 			"home": {
 				"team": 6,
-				"goals":[]
+				"goals":[],
+				"fouls" : 5
 			},
 			"away": {
 				"team": 5,
@@ -908,7 +917,8 @@
 				}],
 				"mom": [{
 					"player": 50
-				}]
+				}],
+				"fouls" : 3
 			}
 		}
 	},
@@ -935,7 +945,8 @@
 				}],
 				"mom" : [{
 					"player" :  85
-				}]
+				}],
+				"fouls" : 0
 			},
 			"away": {
 				"team": 4,
@@ -948,7 +959,8 @@
 					"caution_id": 1,
 					"player": 34,
 					"minute": "50 + 3"
-				}]
+				}],
+				"fouls" : 2
 			}
 		}
 	},
@@ -978,7 +990,8 @@
 				}],
 				"mom" : [{
 					"player" : 45
-				}]
+				}],
+				"fouls" : 4
 			},
 			"away": {
 				"team": 3,
@@ -993,7 +1006,8 @@
 					"caution_id": 1,
 					"player": 70,
 					"minute": 48
-				}]
+				}],
+				"fouls" : 5
 			}
 		}
 	},
@@ -1020,11 +1034,13 @@
 				}],
 				"mom" : [{
 					"player" : 41
-				}]
+				}],
+				"fouls" : 3
 			},
 			"away": {
 				"team": 6,
-				"goals" : []
+				"goals" : [],
+				"fouls" : 4
 			}
 		}
 	},
@@ -1045,7 +1061,8 @@
 				"goals" : [{
 					"player" : 46,
 					"minute" : 44
-				}]
+				}],
+				"fouls" : 2
 			},
 			"away": {
 				"team": 7,
@@ -1058,7 +1075,8 @@
 				}],
 				"mom" : [{
 					"player" : 78
-				}]
+				}],
+				"fouls" : 3
 			}
 		}
 	},
@@ -1084,7 +1102,8 @@
 					"caution_id": 1,
 					"player": 70,
 					"minute": 31
-				}]
+				}],
+				"fouls" : 3
 				
 			},
 			"away": {
@@ -1101,7 +1120,8 @@
 				}],
 				"mom" : [{
 					"player" :4
-				}]
+				}],
+				"fouls" : 3
 			}
 		}
 	},
