@@ -30,6 +30,11 @@ thead, .mos-cls {
     width: 42px;
     height: 42px;
 }
+.stats-logo-md {
+    width: 32px;
+    height: 32px;
+}
+
 .stats-logo-sm {
     width: 24px;
     height: 24px;

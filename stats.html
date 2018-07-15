@@ -15,27 +15,27 @@
 <body>
 
 <script id="stats-template" type="text/x-handlebars-template">
-  <div class="col-md-12">
+  <div class="col-md-7">
     <table class="table stats-table">
       <thead>
       <tr>
         <th class="text-center">POS</th>
         <th>TEAMS</th>
-        <th>PLAYED</th>
-        <th>WON</th>
-        <th>DRAWN</th>
-        <th>LOST</th>
+        <th>P</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
         <th>GF</th>
         <th>GA</th>
         <th>GD</th>
-        <th>POINTS</th>
+        <th>PTS</th>
       </tr>
       </thead>
       <tbody>
         {{#each this.teamStats}}
           <tr>
             <td class="stats-pos">{{inc @index}}</td>
-            <td><img  src="images/{{team.id}}.png"  class="stats-logo"/> {{team.teamName}}</td>
+            <td><img  src="images/{{team.id}}.png"  class="stats-logo-md"/> {{team.teamName}}</td>
             <td>{{played}}</td>
             <td>{{won}}</td>
             <td>{{draw}}</td>
@@ -51,25 +51,7 @@
       </tbody>
     </table>
   </div>
-  <div class="col-sm-12 col-md-6">
-    <table class="table stats-table">
-      <thead>
-        <tr>
-          <th>Player of the Season</th>
-          <th>Team</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each this.mos}}
-        <tr>
-          <td >{{player.name}} </td>
-          <td><img  src="images/{{team.id}}.png"  class="stats-logo-sm"/> {{team.teamName}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-  <div class="col-sm-12 col-md-6">
+  <div class="col-sm-12 col-md-5">
     <table class="table stats-table">
       <thead>
       <tr>
@@ -81,12 +63,12 @@
       </thead>
       <tbody>
       {{#each this.foulStats.items}}
-        <tr>
-          <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/> {{teamName}}</td>
-          <td>{{fouls}}</td>
-          <td>{{games}}</td>
-          <td>{{foulAvg}}</td>
-        </tr>
+      <tr>
+        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/> {{teamName}}</td>
+        <td>{{fouls}}</td>
+        <td>{{games}}</td>
+        <td>{{foulAvg}}</td>
+      </tr>
       {{/each}}
       <tr class="total-cls">
         <td>Grand Total</td>
@@ -97,6 +79,26 @@
       </tbody>
     </table>
   </div>
+  {{#if this.mos}}
+    <div class="col-sm-12 col-md-12">
+      <table class="table stats-table">
+        <thead>
+          <tr>
+            <th>Player of the Season</th>
+            <th>Team</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this.mos}}
+          <tr>
+            <td >{{player.name}} </td>
+            <td><img  src="images/{{team.id}}.png"  class="stats-logo-sm"/> {{team.teamName}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
   <div class="col-sm-12 col-md-4">
     <table class="table stats-table">
       <thead>
