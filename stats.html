@@ -29,8 +29,12 @@
     <table class="table stats-table">
       <thead>
       <tr>
-        <th class="text-center" width="5%">POS</th>
-        <th width="55%">TEAMS</th>
+        <th class="text-center" width="5%">
+          <span class="hidden-sm hidden-xs">POS</span><span class="hidden-md hidden-lg">#</span>
+        </th>
+        <th width="55%">
+          <span class="hidden-sm hidden-xs">TEAMS</span><span class="hidden-md hidden-lg">T</span>
+        </th>
         <th width="5%">P</th>
         <th width="5%">W</th>
         <th width="5%">D</th>
@@ -45,7 +49,10 @@
         {{#each this.teamStats}}
           <tr>
             <td class="stats-pos">{{inc @index}}</td>
-            <td><img  src="images/{{team.id}}.png" alt="{{team.teamName}}" title="{{team.teamName}}"  class="stats-logo-md"/> {{team.teamName}}</td>
+            <td>
+              <img  src="images/{{team.id}}.png" alt="{{team.teamName}}" title="{{team.teamName}}"  class="stats-logo-md"/>
+              <span class="hidden-sm hidden-xs">{{team.teamName}}</span>
+            </td>
             <td>{{played}}</td>
             <td>{{won}}</td>
             <td>{{draw}}</td>
