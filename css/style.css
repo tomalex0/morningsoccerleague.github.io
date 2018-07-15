@@ -455,3 +455,6 @@ body > .container {
   background: #665034 !important;
   color :white !important;
 }
+.float-right {
+  float : right;
+}

@@ -35,7 +35,7 @@
         {{#each this.teamStats}}
           <tr>
             <td class="stats-pos">{{inc @index}}</td>
-            <td><img  src="images/{{team.id}}.png"  class="stats-logo-md"/> {{team.teamName}}</td>
+            <td><img  src="images/{{team.id}}.png" alt="{{team.teamName}}" title="{{team.teamName}}"  class="stats-logo-md"/> {{team.teamName}}</td>
             <td>{{played}}</td>
             <td>{{won}}</td>
             <td>{{draw}}</td>
@@ -64,7 +64,7 @@
       <tbody>
       {{#each this.foulStats.items}}
       <tr>
-        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/> {{teamName}}</td>
+        <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}"  class="stats-logo-sm"/> {{teamName}}</td>
         <td>{{fouls}}</td>
         <td>{{games}}</td>
         <td>{{foulAvg}}</td>
@@ -92,7 +92,7 @@
           {{#each this.mos}}
           <tr>
             <td >{{player.name}} </td>
-            <td><img  src="images/{{team.id}}.png"  class="stats-logo-sm"/> {{team.teamName}}</td>
+            <td><img  src="images/{{team.id}}.png" alt="{{team.name}}" title="{{team.name}}"  class="stats-logo-sm"/> {{team.teamName}}</td>
           </tr>
           {{/each}}
         </tbody>
@@ -103,22 +103,25 @@
     <table class="table stats-table">
       <thead>
       <tr>
-        <th>Goal Scorers</th>
-        <th>Team</th>
-        <th># Goals</th>
+        <th width="70%">Goal Scorers</th>
+        <th width="20%">Team</th>
+        <th width="10%">#</th>
       </tr>
       </thead>
       <tbody>
       {{#each this.goalScorerStats.items}}
       <tr>
         <td>{{playerName}}</td>
-        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/></td>
+        <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
         <td>{{goals}}</td>
       </tr>
       {{/each}}
       <tr class="total-cls">
-        <td>Grand Total</td>
-        <td colspan="2" class="text-right">{{this.goalScorerStats.summary.totalPlayers}} Players,  {{this.goalScorerStats.summary.totalGoals}} Goals</td>
+        <td colspan="3">
+          Total
+          <span class="float-right">{{this.goalScorerStats.summary.totalPlayers}} Players,  {{this.goalScorerStats.summary.totalGoals}} Goals</span>
+        </td>
+
       </tr>
       </tbody>
     </table>
@@ -127,22 +130,24 @@
     <table class="table stats-table">
       <thead>
       <tr>
-        <th width="45%">Man of the Match</th>
-        <th>Team</th>
-        <th>#</th>
+        <th width="70%">Man of the Match</th>
+        <th width="20%">Team</th>
+        <th width="10%">#</th>
       </tr>
       </thead>
       <tbody>
       {{#each this.momStats.items}}
       <tr>
         <td>{{playerName}}</td>
-        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/></td>
+        <td><img  src="images/{{teamId}}.png"  alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
         <td>{{mom}}</td>
       </tr>
       {{/each}}
       <tr class="total-cls">
-        <td>Grand Total</td>
-        <td colspan="2" class="text-right">{{this.momStats.summary.totalPlayers}} Players,  {{this.momStats.summary.totalMom}}</td>
+        <td colspan="3">
+          Total
+          <span class="float-right">{{this.momStats.summary.totalPlayers}} Players,  {{this.momStats.summary.totalMom}}</span>
+        </td>
       </tr>
       </tbody>
     </table>
@@ -152,22 +157,21 @@
       <table class="table stats-table">
         <thead>
         <tr>
-          <th>{{cautionName}} Card</th>
-          <th>Team</th>
-          <th>#</th>
+          <th width="70%">{{cautionName}} Card</th>
+          <th width="20%">Team</th>
+          <th width="10%">#</th>
         </tr>
         </thead>
         <tbody>
         {{#each items}}
         <tr>
           <td>{{playerName}}</td>
-          <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/></td>
+          <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
           <td>{{cautions}}</td>
         </tr>
         {{/each}}
         <tr class="total-cls">
-          <td colspan="2">Grand Total</td>
-          <td class="text-right">{{summary.totalCautions}}</td>
+          <td colspan="3">Total <span class="float-right">{{summary.totalPlayers}} {{summary.playerLabel}}, {{summary.totalCautions}}</span></td>
         </tr>
         </tbody>
       </table>

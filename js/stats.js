@@ -262,6 +262,8 @@ function  getCautionStats(players, schedule, allPlayersDetails, cautionData ) {
             playerDataArr = _.sortBy(playerDataArr,'cautions').reverse();
             var totalCautions = _.pluck(playerDataArr, 'cautions').reduce(reducer);
             var summary = {
+                totalPlayers : playerDataArr.length,
+                playerLabel : (playerDataArr.length ==1) ? 'Player' : 'Players',
                 totalCautions : totalCautions
             };
             return {
