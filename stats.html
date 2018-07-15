@@ -81,7 +81,10 @@
       <tbody>
       {{#each this.foulStats.items}}
       <tr>
-        <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}"  class="stats-logo-sm"/> {{teamName}}</td>
+        <td>
+          <img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}"  class="stats-logo-sm"/>
+          <span class="hidden-sm hidden-xs">{{teamName}}</span>
+        </td>
         <td>{{fouls}}</td>
         <td>{{games}}</td>
         <td>{{foulAvg}}</td>
