@@ -8,7 +8,7 @@ var datetime = Math.round(new Date().getTime() / 1000);
 $(document).ready(function () {
     $("#seasonSelector").trigger("change");
 });
-
+var reducer = (accumulator, currentValue) => accumulator + currentValue;
 function  switchSeason(el) {
     //teamObj = {}
     loadSeasonTeams(loadTeams,el.value)
@@ -103,7 +103,7 @@ function  getFoulStats(teams,schedule) {
         .groupBy('team')
         .map(function(value, key) {
             var foulsData  = _.pluck(value, 'fouls');
-            var totalFouls = foulsData.reduce((accumulator, currentValue) => accumulator + currentValue);
+            var totalFouls = foulsData.reduce(reducer);
             var foulAvg  = totalFouls/value.length;
             return {
                 teamId: key,
@@ -111,15 +111,15 @@ function  getFoulStats(teams,schedule) {
                 teamCls : value[0].teamCls,
                 games : value.length,
                 foulAvg : foulAvg.toFixed(2),
-                fouls: foulsData.reduce((accumulator, currentValue) => accumulator + currentValue),
+                fouls: foulsData.reduce(reducer),
 
             }
         })
         .value();
     var foulsStats = {};
     foulsStats.items = _.sortBy(foulsStatsArr, 'fouls').reverse();
-    var totalFouls = _.pluck(foulsStats.items, 'fouls').reduce((accumulator, currentValue) => accumulator + currentValue);
-    var totalMatches = _.pluck(foulsStats.items, 'games').reduce((accumulator, currentValue) => accumulator + currentValue);
+    var totalFouls = _.pluck(foulsStats.items, 'fouls').reduce(reducer);
+    var totalMatches = _.pluck(foulsStats.items, 'games').reduce(reducer);
     foulsStats.summary = {
         totalFouls : totalFouls,
         totalMatches : totalMatches,
@@ -140,9 +140,11 @@ function  getGoalScorers(players, schedule, allPlayersDetails ) {
             teamstatsArr.push(item.stats.away.goals);
         }
     });
+
     var scorersArr = _
         .chain(teamstatsArr)
         .flatten()
+        .filter(function(item) { return !item.owngoal; })
         .groupBy('player')
         .map(function(value, key) {
             var teamDetails = allPlayersDetails.find(item =>{
@@ -162,7 +164,7 @@ function  getGoalScorers(players, schedule, allPlayersDetails ) {
     var scorerStats = {};
     scorerStats.items = _.sortBy(scorersArr,'goals').reverse();
 
-    var totalGoals = _.pluck(scorerStats.items, 'goals').reduce((accumulator, currentValue) => accumulator + currentValue);
+    var totalGoals = _.pluck(scorerStats.items, 'goals').reduce(reducer);
     scorerStats.summary = {
         totalPlayers : scorerStats.items.length,
         totalGoals : totalGoals
@@ -170,6 +172,115 @@ function  getGoalScorers(players, schedule, allPlayersDetails ) {
 
     return scorerStats;
 }
+
+function  getMomStats(players, schedule, allPlayersDetails ) {
+    var teamstatsArr = [];
+    var groupedPlayers = _.groupBy(players,'id');
+    schedule.forEach(item => {
+
+            if(item.completed) {
+                if(item.stats.home.mom) {
+                    teamstatsArr.push(item.stats.home.mom);
+                }
+                if(item.stats.away.mom) {
+                    teamstatsArr.push(item.stats.away.mom);
+                }
+
+            }
+    });
+
+    var momArr = _
+        .chain(teamstatsArr)
+        .flatten()
+        .groupBy('player')
+        .map(function(value, key) {
+            var teamDetails = allPlayersDetails.find(item =>{
+                return item.player.id == key;
+            });
+
+            return {
+                playerid: key,
+                playerName : groupedPlayers[key][0].name,
+                mom: value.length,
+                teamName : teamDetails.team.teamName,
+                teamId : teamDetails.team.id,
+                teamCls : teamDetails.team.teamCls
+            }
+        })
+        .value();
+    var momStats = {};
+    momStats.items = _.sortBy(momArr,'mom').reverse();
+
+    var totalMom = _.pluck(momStats.items, 'mom').reduce(reducer);
+    momStats.summary = {
+        totalPlayers : momStats.items.length,
+        totalMom : totalMom
+    };
+
+    return momStats;
+}
+
+function  getCautionStats(players, schedule, allPlayersDetails, cautionData ) {
+    var teamstatsArr = [];
+    var groupedPlayers = _.groupBy(players,'id');
+    var groupedCaution = _.groupBy(cautionData,'id');
+    schedule.forEach(item => {
+
+        if(item.completed) {
+            if(item.stats.home.cautions) {
+                teamstatsArr.push(item.stats.home.cautions);
+            }
+            if(item.stats.away.cautions) {
+                teamstatsArr.push(item.stats.away.cautions);
+            }
+
+        }
+    });
+
+    var cautionArr = _
+        .chain(teamstatsArr)
+        .flatten()
+        .groupBy('caution_id')
+        .map(function(value, key) {
+
+
+            var groupCautionPlayers = _.groupBy(value,'player');
+            var playerDataArr = _.map(groupCautionPlayers,(pl_val,pl_key) => {
+                var teamDetails = allPlayersDetails.find(item =>{
+                    return item.player.id == pl_key;
+                });
+
+                return {
+                    playerid: pl_key,
+                    playerName : groupedPlayers[pl_key][0].name,
+                    cautions: pl_val.length,
+                    teamName : teamDetails.team.teamName,
+                    teamId : teamDetails.team.id,
+                    teamCls : teamDetails.team.teamCls
+                }
+            });
+            playerDataArr = _.sortBy(playerDataArr,'cautions').reverse();
+            var totalCautions = _.pluck(playerDataArr, 'cautions').reduce(reducer);
+            var summary = {
+                totalCautions : totalCautions
+            };
+            return {
+                cautionId : key,
+                cautionName : groupedCaution[key][0].name,
+                cautionCls : groupedCaution[key][0].cls,
+                items :  playerDataArr,
+                summary : summary
+            };
+        })
+        .value();
+    var cautionStats = {};
+    cautionStats.items = cautionArr;
+
+
+    return cautionStats;
+}
+
+
 
 function getTeamStats (teams, schedule){
 
@@ -321,20 +432,27 @@ function  renderStats (statsData){
 
 
 function  loadStats(teamsArr, season, moslist, players, season_team, allPlayersDetails){
-    $.getJSON('./data/schedule.json?time='+datetime,function(scheduleData){
-        var seasonSchedule = scheduleData.filter(item => item.season == season);
-        var seasonTeam = season_team.filter(item => item.season == season);
-        var teamStats = getTeamStats(teamsArr, seasonSchedule);
-        var foulStats = getFoulStats(teamsArr,seasonSchedule);
-        var goalScorerStats = getGoalScorers(players,seasonSchedule, allPlayersDetails);
-        var details = {
-            teamStats : teamStats,
-            foulStats : foulStats,
-            goalScorerStats : goalScorerStats,
-            mos : moslist
-        };
+    $.getJSON('./data/caution.json?time='+datetime,function(cautionData) {
+        $.getJSON('./data/schedule.json?time=' + datetime, function (scheduleData) {
+            var seasonSchedule = scheduleData.filter(item => item.season == season);
+            var seasonTeam = season_team.filter(item => item.season == season);
+            var teamStats = getTeamStats(teamsArr, seasonSchedule);
+            var foulStats = getFoulStats(teamsArr, seasonSchedule);
+            var goalScorerStats = getGoalScorers(players, seasonSchedule, allPlayersDetails);
+            var momStats = getMomStats(players, seasonSchedule, allPlayersDetails);
+            var cautionStats = getCautionStats(players, seasonSchedule, allPlayersDetails,cautionData);
 
-        renderStats(details);
+            var details = {
+                teamStats: teamStats,
+                foulStats: foulStats,
+                goalScorerStats: goalScorerStats,
+                momStats: momStats,
+                cautionStats : cautionStats,
+                mos: moslist
+            };
+
+            renderStats(details);
+        });
     });
 
 }

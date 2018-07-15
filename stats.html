@@ -21,14 +21,14 @@
       <tr>
         <th class="text-center">POS</th>
         <th>TEAMS</th>
-        <th>Played</th>
-        <th>Won</th>
-        <th>Drawn</th>
-        <th>Lost</th>
+        <th>PLAYED</th>
+        <th>WON</th>
+        <th>DRAWN</th>
+        <th>LOST</th>
         <th>GF</th>
         <th>GA</th>
         <th>GD</th>
-        <th>Points</th>
+        <th>POINTS</th>
       </tr>
       </thead>
       <tbody>
@@ -56,11 +56,15 @@
       <thead>
         <tr>
           <th>Player of the Season</th>
+          <th>Team</th>
         </tr>
       </thead>
       <tbody>
         {{#each this.mos}}
-        <tr><td colspan="10" >{{player.name}} ({{team.teamName}})</td></tr>
+        <tr>
+          <td >{{player.name}} </td>
+          <td><img  src="images/{{team.id}}.png"  class="stats-logo-sm"/> {{team.teamName}}</td>
+        </tr>
         {{/each}}
       </tbody>
     </table>
@@ -117,6 +121,56 @@
       </tbody>
     </table>
   </div>
+  <div class="col-sm-12 col-md-6">
+    <table class="table stats-table">
+      <thead>
+      <tr>
+        <th>Man of the Match</th>
+        <th>Team</th>
+        <th>#</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each this.momStats.items}}
+      <tr>
+        <td>{{playerName}}</td>
+        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/>  {{teamName}}</td>
+        <td>{{mom}}</td>
+      </tr>
+      {{/each}}
+      <tr class="total-cls">
+        <td>Grand Total</td>
+        <td colspan="2" class="text-right">{{this.momStats.summary.totalPlayers}} Players,  {{this.momStats.summary.totalMom}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  {{#each this.cautionStats.items}}
+    <div class="col-sm-12 col-md-6">
+      <table class="table stats-table">
+        <thead>
+        <tr>
+          <th>{{cautionName}} Card</th>
+          <th>Team</th>
+          <th>#</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each items}}
+        <tr>
+          <td>{{playerName}}</td>
+          <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/>  {{teamName}}</td>
+          <td>{{cautions}}</td>
+        </tr>
+        {{/each}}
+        <tr class="total-cls">
+          <td colspan="2">Grand Total</td>
+          <td class="text-right">{{summary.totalCautions}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  {{/each}}
 </script>
 <header>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -163,12 +217,7 @@
 
   </form>
   <div class="row" >
-    <div class="col-md-12" id="overallStats">
-
-    </div>
-    <div>
-      <img src="images/1/stats.jpeg" />
-    </div>
+    <div class="col-md-12" id="overallStats"></div>
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
