@@ -97,7 +97,7 @@
       </tbody>
     </table>
   </div>
-  <div class="col-sm-12 col-md-6">
+  <div class="col-sm-12 col-md-4">
     <table class="table stats-table">
       <thead>
       <tr>
@@ -110,7 +110,7 @@
       {{#each this.goalScorerStats.items}}
       <tr>
         <td>{{playerName}}</td>
-        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/>  {{teamName}}</td>
+        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/></td>
         <td>{{goals}}</td>
       </tr>
       {{/each}}
@@ -121,11 +121,11 @@
       </tbody>
     </table>
   </div>
-  <div class="col-sm-12 col-md-6">
+  <div class="col-sm-12 col-md-4">
     <table class="table stats-table">
       <thead>
       <tr>
-        <th>Man of the Match</th>
+        <th width="45%">Man of the Match</th>
         <th>Team</th>
         <th>#</th>
       </tr>
@@ -134,7 +134,7 @@
       {{#each this.momStats.items}}
       <tr>
         <td>{{playerName}}</td>
-        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/>  {{teamName}}</td>
+        <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/></td>
         <td>{{mom}}</td>
       </tr>
       {{/each}}
@@ -146,7 +146,7 @@
     </table>
   </div>
   {{#each this.cautionStats.items}}
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-4">
       <table class="table stats-table">
         <thead>
         <tr>
@@ -159,7 +159,7 @@
         {{#each items}}
         <tr>
           <td>{{playerName}}</td>
-          <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/>  {{teamName}}</td>
+          <td><img  src="images/{{teamId}}.png"  class="stats-logo-sm"/></td>
           <td>{{cautions}}</td>
         </tr>
         {{/each}}
