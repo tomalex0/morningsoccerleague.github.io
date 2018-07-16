@@ -68,6 +68,8 @@
       </tbody>
     </table>
   </div>
+
+
   <div class="col-sm-12 col-md-5">
     <table class="table stats-table">
       <thead>
@@ -99,6 +101,7 @@
       </tbody>
     </table>
   </div>
+
   {{#if this.mos}}
     <div class="col-sm-12 col-md-12">
       <table class="table stats-table">
@@ -119,84 +122,86 @@
       </table>
     </div>
   {{/if}}
-  <div class="col-sm-12 col-md-4">
-    <table class="table stats-table">
-      <thead>
-      <tr>
-        <th width="70%">Goal Scorers</th>
-        <th width="20%">Team</th>
-        <th width="10%">#</th>
-      </tr>
-      </thead>
-      <tbody>
-      {{#each this.goalScorerStats.items}}
-      <tr>
-        <td>{{playerName}}</td>
-        <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
-        <td>{{goals}}</td>
-      </tr>
-      {{/each}}
-      <tr class="total-cls">
-        <td colspan="3">
-          Total
-          <span class="float-right">{{this.goalScorerStats.summary.totalPlayers}} Players,  {{this.goalScorerStats.summary.totalGoals}} Goals</span>
-        </td>
-
-      </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-sm-12 col-md-4">
-    <table class="table stats-table">
-      <thead>
-      <tr>
-        <th width="70%">Man of the Match</th>
-        <th width="20%">Team</th>
-        <th width="10%">#</th>
-      </tr>
-      </thead>
-      <tbody>
-      {{#each this.momStats.items}}
-      <tr>
-        <td>{{playerName}}</td>
-        <td><img  src="images/{{teamId}}.png"  alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
-        <td>{{mom}}</td>
-      </tr>
-      {{/each}}
-      <tr class="total-cls">
-        <td colspan="3">
-          Total
-          <span class="float-right">{{this.momStats.summary.totalPlayers}} Players,  {{this.momStats.summary.totalMom}}</span>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-  {{#each this.cautionStats.items}}
+  <div class="col-sm-12" style="padding:0;">
     <div class="col-sm-12 col-md-4">
       <table class="table stats-table">
         <thead>
         <tr>
-          <th width="70%">{{cautionName}} Card</th>
+          <th width="70%">Goal Scorers</th>
           <th width="20%">Team</th>
           <th width="10%">#</th>
         </tr>
         </thead>
         <tbody>
-        {{#each items}}
+        {{#each this.goalScorerStats.items}}
         <tr>
           <td>{{playerName}}</td>
           <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
-          <td>{{cautions}}</td>
+          <td>{{goals}}</td>
         </tr>
         {{/each}}
         <tr class="total-cls">
-          <td colspan="3">Total <span class="float-right">{{summary.totalPlayers}} {{summary.playerLabel}}, {{summary.totalCautions}}</span></td>
+          <td colspan="3">
+            Total
+            <span class="float-right">{{this.goalScorerStats.summary.totalPlayers}} Players,  {{this.goalScorerStats.summary.totalGoals}} Goals</span>
+          </td>
+
         </tr>
         </tbody>
       </table>
     </div>
-  {{/each}}
+    <div class="col-sm-12 col-md-4">
+      <table class="table stats-table">
+        <thead>
+        <tr>
+          <th width="70%">Man of the Match</th>
+          <th width="20%">Team</th>
+          <th width="10%">#</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each this.momStats.items}}
+        <tr>
+          <td>{{playerName}}</td>
+          <td><img  src="images/{{teamId}}.png"  alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
+          <td>{{mom}}</td>
+        </tr>
+        {{/each}}
+        <tr class="total-cls">
+          <td colspan="3">
+            Total
+            <span class="float-right">{{this.momStats.summary.totalPlayers}} Players,  {{this.momStats.summary.totalMom}}</span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    {{#each this.cautionStats.items}}
+      <div class="col-sm-12 col-md-4">
+        <table class="table stats-table">
+          <thead>
+          <tr>
+            <th width="70%">{{cautionName}} Card</th>
+            <th width="20%">Team</th>
+            <th width="10%">#</th>
+          </tr>
+          </thead>
+          <tbody>
+          {{#each items}}
+          <tr>
+            <td>{{playerName}}</td>
+            <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
+            <td>{{cautions}}</td>
+          </tr>
+          {{/each}}
+          <tr class="total-cls">
+            <td colspan="3">Total <span class="float-right">{{summary.totalPlayers}} {{summary.playerLabel}}, {{summary.totalCautions}}</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    {{/each}}
+  </div>
 </script>
 <header>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">

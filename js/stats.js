@@ -117,7 +117,15 @@ function  getFoulStats(teams,schedule) {
         })
         .value();
     var foulsStats = {};
-    foulsStats.items = _.sortBy(foulsStatsArr, 'fouls').reverse();
+    foulsStatsArr.sort(predicate({
+        name : 'fouls',
+        reverse : false
+    },{
+        name : 'teamName',
+        reverse : false
+    }));
+    foulsStats.items = foulsStatsArr;
+
     var totalFouls = _.pluck(foulsStats.items, 'fouls').reduce(reducer);
     var totalMatches = _.pluck(foulsStats.items, 'games').reduce(reducer);
     foulsStats.summary = {
@@ -162,7 +170,16 @@ function  getGoalScorers(players, schedule, allPlayersDetails ) {
         })
         .value();
     var scorerStats = {};
-    scorerStats.items = _.sortBy(scorersArr,'goals').reverse();
+
+    scorersArr.sort(predicate({
+        name : 'goals',
+        reverse : true
+    },{
+        name : 'playerName',
+        reverse : false
+    }));
+
+    scorerStats.items = scorersArr;
 
     var totalGoals = _.pluck(scorerStats.items, 'goals').reduce(reducer);
     scorerStats.summary = {
@@ -209,7 +226,16 @@ function  getMomStats(players, schedule, allPlayersDetails ) {
         })
         .value();
     var momStats = {};
-    momStats.items = _.sortBy(momArr,'mom').reverse();
+
+    momArr.sort(predicate({
+        name : 'mom',
+        reverse : true
+    },{
+        name : 'playerName',
+        reverse : false
+    }));
+
+    momStats.items = momArr;
 
     var totalMom = _.pluck(momStats.items, 'mom').reduce(reducer);
     momStats.summary = {
@@ -259,7 +285,16 @@ function  getCautionStats(players, schedule, allPlayersDetails, cautionData ) {
                     teamCls : teamDetails.team.teamCls
                 }
             });
-            playerDataArr = _.sortBy(playerDataArr,'cautions').reverse();
+
+
+            playerDataArr.sort(predicate({
+                name : 'cautions',
+                reverse : true
+            },{
+                name : 'playerName',
+                reverse : false
+            }));
+
             var totalCautions = _.pluck(playerDataArr, 'cautions').reduce(reducer);
             var summary = {
                 totalPlayers : playerDataArr.length,
