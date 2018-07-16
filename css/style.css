@@ -450,3 +450,11 @@ body > .container {
   font-size: 18px;
   font-weight: bold;
 }
+
+.table>tbody>tr.total-cls {
+  background: #665034 !important;
+  color :white !important;
+}
+.float-right {
+  float : right;
+}

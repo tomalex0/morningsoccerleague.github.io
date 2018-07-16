@@ -1,6 +1,16 @@
 
 <html>
-<header>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122366850-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-122366850-1');
+  </script>
+
   <meta charset="UTF-8">
   <title>Morning Soccer League - Stats</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -9,34 +19,189 @@
   <link rel="stylesheet" href="css/stats.css">
   <script src="js/prefixfree.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
   <script src="js/common.js"></script>
-</header>
+</head>
 <body>
 
 <script id="stats-template" type="text/x-handlebars-template">
-  {{#each this.teamStats}}
-    <tr>
-      <td class="stats-pos">{{inc @index}}</td>
-      <td><img  src="images/{{team.id}}.png"  class="stats-logo"/> {{team.teamName}}</td>
-      <td>{{played}}</td>
-      <td>{{won}}</td>
-      <td>{{draw}}</td>
-      <td>{{lost}}</td>
-      <td>{{goal_scored}}</td>
-      <td>{{goal_allowed}}</td>
-      <td>{{goal_diff}}</td>
-      <td>{{points}}</td>
-    </tr>
-  {{else}}
-    <tr style="background:white;"><td  colspan="10" class="text-center"><h1>Coming Soon</h1></td></tr>
-  {{/each}}
+  <div class="col-md-7">
+    <table class="table stats-table">
+      <thead>
+      <tr>
+        <th class="text-center" width="5%">
+          <span class="hidden-sm hidden-xs">POS</span><span class="hidden-md hidden-lg">#</span>
+        </th>
+        <th width="55%">
+          <span class="hidden-sm hidden-xs">TEAMS</span><span class="hidden-md hidden-lg">T</span>
+        </th>
+        <th width="5%">P</th>
+        <th width="5%">W</th>
+        <th width="5%">D</th>
+        <th width="5%">L</th>
+        <th width="5%">GF</th>
+        <th width="5%">GA</th>
+        <th width="5%">GD</th>
+        <th width="5%">PTS</th>
+      </tr>
+      </thead>
+      <tbody>
+        {{#each this.teamStats}}
+          <tr>
+            <td class="stats-pos">{{inc @index}}</td>
+            <td>
+              <img  src="images/{{team.id}}.png" alt="{{team.teamName}}" title="{{team.teamName}}"  class="stats-logo-md"/>
+              <span class="hidden-sm hidden-xs">{{team.teamName}}</span>
+            </td>
+            <td>{{played}}</td>
+            <td>{{won}}</td>
+            <td>{{draw}}</td>
+            <td>{{lost}}</td>
+            <td>{{goal_scored}}</td>
+            <td>{{goal_allowed}}</td>
+            <td>{{goal_diff}}</td>
+            <td>{{points}}</td>
+          </tr>
+        {{else}}
+          <tr style="background:white;"><td  colspan="10" class="text-center"><h1>Coming Soon</h1></td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 
-  <tr class="mos-cls"><td colspan="10" class="mos-cls">Player of the Season</td></tr>
-  {{#each this.mos}}
-  <tr><td colspan="10" >{{player.name}} ({{team.teamName}})</td></tr>
-  {{/each}}
+
+  <div class="col-sm-12 col-md-5">
+    <table class="table stats-table">
+      <thead>
+      <tr>
+        <th>Teams</th>
+        <th># Fouls</th>
+        <th># Matches</th>
+        <th>Avg</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each this.foulStats.items}}
+      <tr>
+        <td>
+          <img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}"  class="stats-logo-sm"/>
+          <span class="hidden-sm hidden-xs">{{teamName}}</span>
+        </td>
+        <td>{{fouls}}</td>
+        <td>{{games}}</td>
+        <td>{{foulAvg}}</td>
+      </tr>
+      {{/each}}
+      <tr class="total-cls">
+        <td>Grand Total</td>
+        <td>{{this.foulStats.summary.totalFouls}}</td>
+        <td>{{this.foulStats.summary.totalMatches}}</td>
+        <td>{{this.foulStats.summary.totalAvg}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  {{#if this.mos}}
+    <div class="col-sm-12 col-md-12">
+      <table class="table stats-table">
+        <thead>
+          <tr>
+            <th>Player of the Season</th>
+            <th>Team</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this.mos}}
+          <tr>
+            <td >{{player.name}} </td>
+            <td><img  src="images/{{team.id}}.png" alt="{{team.name}}" title="{{team.name}}"  class="stats-logo-sm"/> {{team.teamName}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
+  <div class="col-sm-12" style="padding:0;">
+    <div class="col-sm-12 col-md-4">
+      <table class="table stats-table">
+        <thead>
+        <tr>
+          <th width="70%">Goal Scorers</th>
+          <th width="20%">Team</th>
+          <th width="10%">#</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each this.goalScorerStats.items}}
+        <tr>
+          <td>{{playerName}}</td>
+          <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
+          <td>{{goals}}</td>
+        </tr>
+        {{/each}}
+        <tr class="total-cls">
+          <td colspan="3">
+            Total
+            <span class="float-right">{{this.goalScorerStats.summary.totalPlayers}} Players,  {{this.goalScorerStats.summary.totalGoals}} Goals</span>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <table class="table stats-table">
+        <thead>
+        <tr>
+          <th width="70%">Man of the Match</th>
+          <th width="20%">Team</th>
+          <th width="10%">#</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each this.momStats.items}}
+        <tr>
+          <td>{{playerName}}</td>
+          <td><img  src="images/{{teamId}}.png"  alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
+          <td>{{mom}}</td>
+        </tr>
+        {{/each}}
+        <tr class="total-cls">
+          <td colspan="3">
+            Total
+            <span class="float-right">{{this.momStats.summary.totalPlayers}} Players,  {{this.momStats.summary.totalMom}}</span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    {{#each this.cautionStats.items}}
+      <div class="col-sm-12 col-md-4">
+        <table class="table stats-table">
+          <thead>
+          <tr>
+            <th width="70%">{{cautionName}} Card</th>
+            <th width="20%">Team</th>
+            <th width="10%">#</th>
+          </tr>
+          </thead>
+          <tbody>
+          {{#each items}}
+          <tr>
+            <td>{{playerName}}</td>
+            <td><img  src="images/{{teamId}}.png" alt="{{teamName}}" title="{{teamName}}" class="stats-logo-sm"/></td>
+            <td>{{cautions}}</td>
+          </tr>
+          {{/each}}
+          <tr class="total-cls">
+            <td colspan="3">Total <span class="float-right">{{summary.totalPlayers}} {{summary.playerLabel}}, {{summary.totalCautions}}</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    {{/each}}
+  </div>
 </script>
 <header>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -82,29 +247,8 @@
     </div>
 
   </form>
-  <div >
-    <table class="table stats-table">
-      <thead>
-      <tr>
-        <th class="text-center">POS</th>
-        <th>TEAMS</th>
-        <th>P</th>
-        <th>W</th>
-        <th>D</th>
-        <th>L</th>
-        <th>GF</th>
-        <th>GA</th>
-        <th>GD</th>
-        <th>PTS</th>
-      </tr>
-      </thead>
-      <tbody>
-      </tbody>
-      
-    </table>
-    <div>
-      <img src="images/1/stats.jpeg" />
-    </div>
+  <div class="row" >
+    <div class="col-md-12" id="overallStats"></div>
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
