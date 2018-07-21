@@ -1263,15 +1263,32 @@
 		"scheduled_date": "7/20/2018",
 		"season" :  2,
 		"referees": [{
-			"team": 6
+			"team": 6,
+			"player":67
+		},{
+			"team": 6,
+			"player":22
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
-				"team": 3
+				"team": 3,
+				"goals" : [],
+				"fouls" : 6
 			},
 			"away": {
-				"team": 5
+				"team": 5,
+				"goals" : [{
+					"player" : 72,
+					"minute" : 41
+				},{
+					"player" : 46,
+					"minute" : 43
+				}],
+				"mom" : [{
+					"player" : 31
+				}],
+				"fouls" : 4
 			}
 		}
 	},
@@ -1279,9 +1296,13 @@
 		"scheduled_date": "7/20/2018",
 		"season" :  2,
 		"referees": [{
-			"team": 6
+			"team": 6,
+			"player":68
+		},{
+			"team": 6,
+			"player":76
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 4
