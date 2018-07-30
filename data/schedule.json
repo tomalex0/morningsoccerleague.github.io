@@ -1394,7 +1394,7 @@
 			"team": 4,
 			"player" : 80
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 7,
