@@ -34,7 +34,7 @@
   {{#each this}}
     <tr>
         <th  scope="row" class="event-week">{{ inc @index}}</th>
-        <td class="event-week">{{scheduled_date}}</td>
+        <td class="event-week">{{scheduled_date}} {{scheduled_time}}</td>
         <td class="home-team-cls">
           <table width="100%">
             <tr>
@@ -186,7 +186,8 @@
       <div class="input-group">
         <select id="seasonSelector" class="form-control" onchange="switchSeason(this)">
           <option value="1">MSL Season 1</option>
-          <option value="2" selected>MSL Season 2</option>s
+          <option value="2">MSL Season 2</option>
+          <option value="3" selected>MSL Season 3</option>
         </select>
       </div>
     </div>

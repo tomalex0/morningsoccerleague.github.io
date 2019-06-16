@@ -335,7 +335,7 @@ function getTeamStats (teams, schedule){
         var away = _.pick(itemobj.stats,'away').away;
 
 
-        if(home.goals && away.goals) {
+        if(home.goals && away.goals && itemobj.completed) {
             if(teamObj[home.team]){
                 teamObj[home.team].played =  teamObj[home.team].played + 1;
             } else {
@@ -350,7 +350,7 @@ function getTeamStats (teams, schedule){
             }
 
 
-            if(home.goals.length == away.goals.length) {
+            if(home.goals.length == away.goals.length ) {
 
                 if(home.team == 3 || away.team == 3){
                     //console.log(home,away,"if one");
@@ -432,6 +432,7 @@ function getTeamStats (teams, schedule){
         //console.log(groupedTeams[index]);
 
         itemobj.team = groupedTeams[index][0];
+        itemobj.teamName = itemobj.team.teamName;
 
 
     });
@@ -446,6 +447,9 @@ function getTeamStats (teams, schedule){
     },{
         name : 'goal_scored',
         reverse : true
+    },{
+        name : 'teamName',
+        reverse : false
     }));
 
     return _.values(teamObj);
@@ -473,11 +477,39 @@ function  loadStats(teamsArr, season, moslist, players, season_team, allPlayersD
         $.getJSON('./data/schedule.json?time=' + datetime, function (scheduleData) {
             var seasonSchedule = scheduleData.filter(item => item.season == season);
             var seasonTeam = season_team.filter(item => item.season == season);
-            var teamStats = getTeamStats(teamsArr, seasonSchedule);
-            var foulStats = getFoulStats(teamsArr, seasonSchedule);
-            var goalScorerStats = getGoalScorers(players, seasonSchedule, allPlayersDetails);
-            var momStats = getMomStats(players, seasonSchedule, allPlayersDetails);
-            var cautionStats = getCautionStats(players, seasonSchedule, allPlayersDetails,cautionData);
+            var teamStats, foulStats, goalScorerStats, momStats, cautionStats;
+
+            try {
+                teamStats = getTeamStats(teamsArr, seasonSchedule);
+            } catch(e){
+                teamStats = [];
+            }
+
+            try {
+                foulStats = getFoulStats(teamsArr, seasonSchedule);
+            } catch(e){
+
+            }
+
+            try {
+                goalScorerStats = getGoalScorers(players, seasonSchedule, allPlayersDetails);
+            } catch(e){
+
+            }
+
+            try {
+                momStats = getMomStats(players, seasonSchedule, allPlayersDetails);
+            } catch(e){
+
+            }
+
+            try {
+                cautionStats = getCautionStats(players, seasonSchedule, allPlayersDetails,cautionData);
+            } catch(e){
+
+            }
+
+
 
             var details = {
                 teamStats: teamStats,
