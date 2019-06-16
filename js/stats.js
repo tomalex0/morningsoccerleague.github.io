@@ -432,6 +432,7 @@ function getTeamStats (teams, schedule){
         //console.log(groupedTeams[index]);
 
         itemobj.team = groupedTeams[index][0];
+        itemobj.teamName = itemobj.team.teamName;
 
 
     });
@@ -446,6 +447,9 @@ function getTeamStats (teams, schedule){
     },{
         name : 'goal_scored',
         reverse : true
+    },{
+        name : 'teamName',
+        reverse : false
     }));
 
     return _.values(teamObj);
