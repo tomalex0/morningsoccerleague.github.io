@@ -33,5 +33,15 @@
     "id": 7,
     "teamName": "Morning Soccer United",
     "teamCls" : "team-green"
+  },
+  {
+    "id": 8,
+    "teamName": "Survivors",
+    "teamCls" : "team-green"
+  },
+  {
+    "id": 9,
+    "teamName": "FC Passing Lane",
+    "teamCls" : "team-green"
   }
 ]
