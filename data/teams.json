@@ -37,11 +37,11 @@
   {
     "id": 8,
     "teamName": "Survivors",
-    "teamCls" : "team-green"
+    "teamCls" : "team-grey"
   },
   {
     "id": 9,
     "teamName": "FC Passing Lane",
-    "teamCls" : "team-green"
+    "teamCls" : "team-yellow"
   }
 ]
