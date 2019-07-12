@@ -1604,67 +1604,120 @@
 	{
 		"scheduled_date": "6/28/2019",
 		"scheduled_time": "6:20 AM",
+		"started_time" : "6:28 AM",
+		"end_time" : "7:24 AM",
 		"season": 3,
 		"referees": [{
 			"team": 7
 		}, {
 			"team": 6
 		}],
-		"completed": false,
+		"completed": true,
 		"stats": {
 			"home": {
 				"team": 9,
-				"goals": [],
+				"goals": [{
+					"minute": "3",
+					"player": 120,
+					"owngoal": true
+				}, {
+					"minute": "15",
+					"player": 111
+				}, {
+					"minute": "17",
+					"player": 111
+				},{
+					"minute": "39",
+					"player": 111
+				}],
+				"mom": [{
+					"player": 111
+				}],
 				"fouls": 0
 			},
 			"away": {
 				"team": 8,
-				"goals": [],
+				"goals": [{
+					"minute": "2",
+					"player": 112
+				}, {
+					"minute": "41",
+					"player": 116
+				}, {
+					"minute": "50",
+					"player": 114
+				}],
 				"fouls": 0
 			}
 		}
 	}, {
 	"scheduled_date": "6/28/2019",
 	"scheduled_time": "6:20 AM",
+	"started_time" : "6:29 AM",
+	"end_time" : "7:25 AM",
 	"season": 3,
 	"referees": [{
-		"team": 6
+		"team": 6,
+		"player" : 67
 	}, {
 		"team": 7
 	}],
-	"completed": false,
+	"completed": true,
 	"stats": {
 		"home": {
 			"team": 5,
-			"goals": [],
-			"fouls": 0
+			"goals": [{
+				"minute": "23",
+				"player": 72
+			},{
+				"minute": "46",
+				"player": 45,
+				"penalty" : true
+			},{
+				"minute": "54",
+				"player": 72
+			}],
+			"mom": [{
+				"player": 72
+			}],
+			"fouls": 2
 		},
 		"away": {
 			"team": 4,
 			"goals": [],
-			"fouls": 0
+			"fouls": 5
 		}
 	}
 }, {
 	"scheduled_date": "6/28/2019",
 	"scheduled_time": "7:30 AM",
+	"started_time" : "7:39 AM",
+	"end_time" : "8:36 AM",
 	"season": 3,
 	"referees": [{
-		"team": 8
+		"team": 8,
+		"player" : 116
 	}, {
-		"team": 5
+		"team": 5,
+		"player" : 46
 	}],
-	"completed": false,
+	"completed": true,
 	"stats": {
 		"home": {
 			"team": 6,
-			"goals": [],
+			"goals": [{
+				"minute": "14",
+				"player": 98
+			}],
+			"mom": [{
+				"player": 98
+			}],
 			"fouls": 0
 		},
 		"away": {
 			"team": 7,
 			"goals": [],
-			"fouls": 0
+			"fouls": 1
 		}
 	}
 }, {
