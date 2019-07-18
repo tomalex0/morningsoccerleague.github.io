@@ -1723,13 +1723,17 @@
 }, {
 	"scheduled_date": "7/12/2019",
 	"scheduled_time": "6:20 AM",
+	"started_time" : "6:25 AM",
+	"end_time" : "7:22 AM",
 	"season": 3,
 	"referees": [{
-		"team": 4
+		"team": 4,
+		"player" :  8
 	}, {
-		"team": 9
+		"team": 9,
+		"player" : 109
 	}],
-	"completed": false,
+	"completed": true,
 	"stats": {
 		"home": {
 			"team": 8,
@@ -1745,11 +1749,15 @@
 }, {
 	"scheduled_date": "7/12/2019",
 	"scheduled_time": "6:20 AM",
+	"started_time" : "6:25 AM",
+	"end_time" : "7:22 AM",
 	"season": 3,
 	"referees": [{
-		"team": 9
+		"team": 9,
+		"player" : 109
 	}, {
-		"team": 4
+		"team": 4,
+		"player" :  8
 	}],
 	"completed": false,
 	"stats": {
