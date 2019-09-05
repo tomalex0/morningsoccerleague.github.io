@@ -3048,7 +3048,7 @@
       "home": {
         "team": 6,
         "players": [{"player":67},{"player":68},{"player":95},{"player":66},{"player":122},{"player":84},{"player":96},{"player":24},{"player":88},{"player":97},{"player":98},{"player":54}],
-        "goals": [{"minute":"7","player":24,"assist":66},{"minute":"24","player":114},{"minute":"46","player":96},{"minute":"49","player":24,"assist":66},{"minute":"52","player":88,"assist":84}],
+        "goals": [{"minute":"7","player":24,"assist":66},{"minute":"24","player":114,"owngoal": true},{"minute":"46","player":96},{"minute":"49","player":24,"assist":66},{"minute":"52","player":88,"assist":84}],
         "mom": [{
           "player": 24
         }],
