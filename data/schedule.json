@@ -2113,6 +2113,11 @@
       },
       "away": {
         "team": 5,
+        "cautions": [{
+          "caution_id": 1,
+          "player": 32,
+          "minute": 42
+        }],
         "goals": [{
           "minute": "5",
           "player": 46
@@ -2909,6 +2914,11 @@
       },
       "away": {
         "team": 6,
+        "cautions": [{
+          "caution_id": 1,
+          "player": 66,
+          "minute": 24
+        }],
         "keeper" : [{"player":54,"saves":5}],
         "players" : [{"player":67},{"player":68},{"player":95},{"player":66},{"player":122},{"player":84},{"player":96},{"player":24},{"player":88},{"player":97},{"player":98},{"player":54}],
         "goals": [{"minute":"23","player":24,"assist":24}],
