@@ -2699,7 +2699,6 @@
           "player": 109,
           "assist": 30
         }],
-        "cautions" : [{"caution_id":1,"player":111,"minute":7}],
         "keeper" : [{"player":28,"saves":6}],
         "fouls": 1,
         "players" : [{"player":106},{"player":22},{"player":107},{"player":108},{"player":28},{"player":34},{"player":109},{"player":73},{"player":110},{"player":81},{"player":30},{"player":111}]
@@ -2769,6 +2768,7 @@
         "mom": [{
           "player": 28
         }],
+        "cautions" : [{"caution_id":1,"player":111,"minute":7}],
         "keeper" : [{"player":28,"saves":10}],
         "players" : [{"player":106},{"player":22},{"player":107},{"player":108},{"player":28},{"player":34},{"player":109},{"player":73},{"player":110},{"player":81},{"player":30},{"player":111}],
         "goals": [{"minute":"32","player":111,"assist":106}],
@@ -3048,7 +3048,7 @@
       "home": {
         "team": 6,
         "players": [{"player":67},{"player":68},{"player":95},{"player":66},{"player":122},{"player":84},{"player":96},{"player":24},{"player":88},{"player":97},{"player":98},{"player":54}],
-        "goals": [{"minute":"7","player":24,"assist":66},{"minute":"24","player":114},{"minute":"46","player":96},{"minute":"49","player":24,"assist":66},{"minute":"52","player":88,"assist":84}],
+        "goals": [{"minute":"7","player":24,"assist":66},{"minute":"24","player":114,"owngoal": true},{"minute":"46","player":96},{"minute":"49","player":24,"assist":66},{"minute":"52","player":88,"assist":84}],
         "mom": [{
           "player": 24
         }],
