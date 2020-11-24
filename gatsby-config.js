@@ -28,7 +28,7 @@ module.exports = {
         icon: `src/images/msl-logo.svg`, // This path is relative to the root of the site.
         icon_options: {
           purpose: `any maskable`,
-        }
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
