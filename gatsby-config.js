@@ -26,6 +26,9 @@ module.exports = {
         theme_color: `#EEC856`,
         display: `minimal-ui`,
         icon: `src/images/msl-logo.svg`, // This path is relative to the root of the site.
+        icon_options: {
+          purpose: `any maskable`,
+        }
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
