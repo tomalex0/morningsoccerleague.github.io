@@ -2,7 +2,7 @@ name: LightHouse CI
 on:
   push:
     branches: [gatsby]
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   lhci:
     name: Lighthouse
