@@ -20,4 +20,6 @@ jobs:
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.6.x
-          lhci autorun
+          lhci autorun \
+            --collect.isSinglePageApplication=true \
+            --collect.settings.chromeFlags=" --no-sandbox --disable-dev-shm-usage"
