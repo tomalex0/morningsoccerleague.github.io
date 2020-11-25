@@ -23,8 +23,8 @@ module.exports = {
         short_name: `MSL`,
         lang: `en`,
         start_url: `/`,
-        background_color: `#EEC856`,
-        theme_color: `#EEC856`,
+        background_color: `#A4281D`,
+        theme_color: `#A4281D`,
         display: `minimal-ui`,
         icon: `src/images/logo.svg`, // This path is relative to the root of the site.
         icon_options: {
