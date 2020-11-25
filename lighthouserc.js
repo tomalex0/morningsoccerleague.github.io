@@ -12,7 +12,19 @@ module.exports = {
       target: "temporary-public-storage",
     },
     assert: {
-      preset: "lighthouse:no-pwa"
+      preset: "lighthouse:no-pwa",
+      assertions: {
+        "uses-rel-preload": "off",
+        "uses-rel-preconnect": "off",
+        "robots-txt": "off",
+        "legacy-javascript": "off",
+        "unused-javascript": "off",
+        "non-composited-animations": "off",
+        "tap-targets": "off",
+        "errors-in-console": "off",
+        "max-potential-fid": "off",
+        "is-crawlable": "off",
+      },
     },
   },
 }
