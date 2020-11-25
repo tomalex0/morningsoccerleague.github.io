@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://tomalex0.github.io/morningsoccerleague.github.io/">
-    <img alt="MSL" src="./src/images/msl-logo.svg" width="60" />
+    <img alt="MSL" src="./src/images/msl-logo.svg" width="100" />
   </a>
 </p>
 <h1 align="center">
@@ -19,7 +19,8 @@
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-default-starter/
+    git clone
+    cd folder/
     gatsby develop
     ```
 
@@ -75,7 +76,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ## 💫 Deploy
 
-<a href="/actions?query=workflow%3A%22Github+Pages+Deploy+CI%22">
+<a href="actions?query=workflow%3A%22Github+Pages+Deploy+CI%22">
     <img alt="MSL" src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg" width="60" />
 </a>
   
