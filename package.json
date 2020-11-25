@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "morningsoccerleague.github.io",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Morning Soccer League Web Codebase using Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Thomas Alexander <tomalex0@gmail.com>",
   "dependencies": {
     "autoprefixer": "^10.0.2",
     "gatsby": "^2.27.1",
