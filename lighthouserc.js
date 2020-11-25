@@ -23,6 +23,7 @@ module.exports = {
         "tap-targets": "off",
         "errors-in-console": "off",
         "max-potential-fid": "off",
+        "is-crawlable": "off",
       },
     },
   },
