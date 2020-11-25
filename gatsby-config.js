@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,7 +26,7 @@ module.exports = {
         background_color: `#EEC856`,
         theme_color: `#EEC856`,
         display: `minimal-ui`,
-        icon: `src/images/msl-logo.svg`, // This path is relative to the root of the site.
+        icon: `src/images/logo.svg`, // This path is relative to the root of the site.
         icon_options: {
           purpose: `any maskable`,
         },
