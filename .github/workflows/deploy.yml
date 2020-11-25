@@ -2,6 +2,12 @@ name: Github Pages Deploy CI
 on:
   push:
     branches: [gatsby]
+    paths:
+      - 'src/**'
+      - '**.js'
+      - 'static/**'
+      - 'package.json'
+      - '!lighthouserc.js'
   workflow_dispatch:
 jobs:
   ghpages:
@@ -13,7 +19,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 13.x
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
       - name: Build Application
         run: |

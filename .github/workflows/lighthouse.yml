@@ -2,6 +2,10 @@ name: LightHouse CI
 on:
   push:
     branches: [gatsby]
+    paths:
+      - 'src/**'
+      - 'static/**'
+      - 'package.json'
   workflow_dispatch:
 jobs:
   lhci:
@@ -13,9 +17,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 13.x
-      - name: npm install, build
+      - name: Install Dependencies
         run: |
           npm install
+      - name: Build Application
+        run: |
           npm run build --prefix-paths
       - name: run Lighthouse CI
         run: |

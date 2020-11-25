@@ -20,7 +20,7 @@
 
     ```shell
     git clone
-    cd folder/
+    cd project-folder/
     gatsby develop
     ```
 
