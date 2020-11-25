@@ -1,0 +1,23 @@
+name: Github Pages Deploy CI
+on:
+  push:
+    branches: [gatsby]
+  workflow_dispatch:
+jobs:
+  ghpages:
+    name: Github Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 13.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.x
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build
+      - name: run Deploy CI
+        run: |
+          npm install -g gh-pages@3.1.0
+          gh-pages -d public
