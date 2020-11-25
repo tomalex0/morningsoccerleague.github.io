@@ -22,6 +22,7 @@ module.exports = {
         "non-composited-animations": "off",
         "tap-targets": "off",
         "errors-in-console": "off",
+        "max-potential-fid": "off",
       },
     },
   },
