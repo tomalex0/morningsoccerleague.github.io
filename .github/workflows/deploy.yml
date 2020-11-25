@@ -18,7 +18,8 @@ jobs:
           npm install
           npm run build
       - name: run Deploy CI
-        run: ./devops/scripts/deploy
+        run: |
+          ./devops/scripts/deploy
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           DEV_BRANCH: gatsby
