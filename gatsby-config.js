@@ -1,4 +1,6 @@
+console.log(process.env.APP_PATH, "--APP_PATH--")
 module.exports = {
+  pathPrefix: process.env.APP_PATH,
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
