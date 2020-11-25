@@ -20,7 +20,7 @@ jobs:
           npm run build
         env:
           APP_PATH: morningsoccerleague.github.io
-      - name: run Deploy CI
+      - name: Deploy to gh-pages
         run: |
           npm install -g gh-pages@3.1.0
           gh-pages -d public -b gh-pages -u "github-actions-bot <support+actions@github.com>" -r https://git:${DEPLOY_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
