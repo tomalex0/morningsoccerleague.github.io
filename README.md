@@ -76,7 +76,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ## 💫 Deploy
 
-<a href="actions?query=workflow%3A%22Github+Pages+Deploy+CI%22">
+<a href="../../actions?query=workflow%3A%22Github+Pages+Deploy+CI%22">
     <img alt="MSL" src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg" width="60" />
 </a>
   
