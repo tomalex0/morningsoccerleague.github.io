@@ -18,6 +18,9 @@ jobs:
           npm install
           npm run build
       - name: run Deploy CI
-        run: |
-          npm install -g gh-pages@3.1.0
-          gh-pages -d public
+        run: ./devops/scripts/deploy
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          DEV_BRANCH: gatsby
+          DEPLOY_BRANCH: gh-pages
+          BUILD_DIR: public
