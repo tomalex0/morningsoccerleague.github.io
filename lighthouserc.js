@@ -5,11 +5,11 @@ module.exports = {
       staticDistDir: "public",
       isSinglePageApplication: true,
       settings: {
-        chromeFlags: " --no-sandbox --disable-dev-shm-usage"
-      }
+        chromeFlags: " --no-sandbox --disable-dev-shm-usage",
+      },
     },
     upload: {
-      target: "temporary-public-storage"
+      target: "temporary-public-storage",
     },
     assert: {
       preset: "lighthouse:no-pwa",
@@ -21,7 +21,7 @@ module.exports = {
         "unused-javascript": "off",
         "non-composited-animations": "off",
         "tap-targets": "off",
-        "errors-in-console": "off"
+        "errors-in-console": "off",
       },
     },
   },
