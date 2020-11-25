@@ -19,6 +19,7 @@ jobs:
           npm run build
       - name: run Deploy CI
         run: |
+          chmod +x ./devops/scripts/deploy
           ./devops/scripts/deploy
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
