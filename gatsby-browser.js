@@ -27,11 +27,14 @@ function capturePageMetrics(
   })
 }
 
-export const wrapPageElement = ({ element, props }) => (
+export const wrapPageElement = ({ element, props }) => {
+  const path = props.path || '';
   // See https://reactjs.org/docs/profiler.html#onrender-callback for onRender parameters
-  <Profiler id={props.someUniqueId} onRender={capturePageMetrics}>
-    {element}
-  </Profiler>
-)
+  return (
+    <Profiler id={path} onRender={capturePageMetrics}>
+      {element}
+    </Profiler>
+  )
+}
 
 export const registerServiceWorker = () => true
