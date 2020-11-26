@@ -23,7 +23,7 @@ jobs:
         run: npm ci
       - name: Build Application
         run: |
-          npm run build -- --prefix-paths
+          npm run build -- --prefix-paths  --log-pages
         env:
           PATH_PREFIX: morningsoccerleague.github.io
           SITE_URL: https://tomalex0.github.io

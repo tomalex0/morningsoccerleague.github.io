@@ -22,7 +22,7 @@ jobs:
           npm ci
       - name: Build Application
         run: |
-          npm run build --prefix-paths
+          npm run build -- --prefix-paths  --log-pages
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.6.x
