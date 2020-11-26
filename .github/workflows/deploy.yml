@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 13.x
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
       - name: Build Application
         run: |
           npm run build -- --prefix-paths
