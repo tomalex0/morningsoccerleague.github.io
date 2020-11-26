@@ -81,3 +81,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 </a>
   
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## Reference
+
+- https://hashinteractive.com/blog/gatsby-data-relationships-with-foreign-key-fields/

@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Post One",
+    "date": "2020-05-30",
+    "content": "Post one lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "tags": ["gatsby", "react", "graphql"],
+    "author": "jdoe"
+  },
+  {
+    "title": "Post Two",
+    "date": "2020-05-31",
+    "content": "Post two lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "tags": ["gatsby", "react", "graphql"],
+    "author": "jdoe"
+  }
+]
