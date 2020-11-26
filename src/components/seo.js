@@ -104,8 +104,8 @@ function SEO({ description, lang, meta, title, image, path }) {
           content: metaDescription,
         },
         {
-          property: 'twitter:image',
-          content: fullImage
+          property: "twitter:image",
+          content: fullImage,
         },
       ].concat(meta)}
     >
