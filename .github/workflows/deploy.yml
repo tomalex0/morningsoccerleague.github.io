@@ -25,7 +25,8 @@ jobs:
         run: |
           npm run build -- --prefix-paths
         env:
-          APP_PATH: morningsoccerleague.github.io
+          PATH_PREFIX: morningsoccerleague.github.io
+          SITE_URL: https://tomalex0.github.io/morningsoccerleague.github.io
       - name: Deploy to gh-pages
         run: |
           npm install -g gh-pages@3.1.0

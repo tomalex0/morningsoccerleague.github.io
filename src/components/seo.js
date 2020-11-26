@@ -10,7 +10,20 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+import DefaultOpenGraphImage from "../../src/images/og.jpg"
+
+function isValidUrl(string) {
+  try {
+    // eslint-disable-next-line no-new
+    new URL(string)
+  } catch (_) {
+    return false
+  }
+
+  return true
+}
+
+function SEO({ description, lang, meta, title, image, path }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,14 +32,20 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
     `
   )
+  console.log(site, "--site---")
 
+  const siteUrl = site.siteMetadata.siteUrl
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const metaImage = image || DefaultOpenGraphImage
+  const fullImage = isValidUrl(metaImage) ? metaImage : `${siteUrl}${metaImage}`
+  const canonicalUrl = path ? `${siteUrl}/${path}` : siteUrl
 
   return (
     <Helmet
@@ -45,12 +64,20 @@ function SEO({ description, lang, meta, title }) {
           content: title,
         },
         {
+          property: `og:image`,
+          content: fullImage,
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: "og:url",
+          content: canonicalUrl,
         },
         {
           name: `twitter:card`,
@@ -69,7 +96,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
   )
 }
 

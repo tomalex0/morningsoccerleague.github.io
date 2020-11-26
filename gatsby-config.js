@@ -1,10 +1,12 @@
-console.log(process.env.APP_PATH, "--APP_PATH--")
+const SITE_URL = process.env.SITE_URL || "http://localhost:8000"
+const PATH_PREFIX = process.env.PATH_PREFIX
+const siteConfig = require("./src/data/config")
+
 module.exports = {
-  pathPrefix: `/${process.env.APP_PATH}`,
+  pathPrefix: `/${PATH_PREFIX}`,
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    ...siteConfig,
+    siteUrl: SITE_URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Morning Soccer League`,
-        short_name: `MSL`,
+        name: siteConfig.title,
+        short_name: siteConfig.short_name,
         lang: `en`,
         start_url: `/`,
         background_color: `#A4281D`,
