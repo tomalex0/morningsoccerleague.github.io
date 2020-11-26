@@ -150,11 +150,13 @@
             },
             {
               "player": 45,
-              "minute": "50 + 5"
+              "minute": 50,
+              "extra_min": 5
             },
             {
               "player": 46,
-              "minute": "50 + 6"
+              "minute": 50,
+              "extra_min": 6
             }
           ],
           "mom": [
@@ -294,7 +296,8 @@
             {
               "caution_id": 1,
               "player": 34,
-              "minute": "50 + 3"
+              "minute": 50,
+              "extra_min": 3
             }
           ],
           "fouls": 2
@@ -386,7 +389,8 @@
             },
             {
               "player": 41,
-              "minute": "50 + 2"
+              "minute": 50,
+              "extra_min": 2
             }
           ],
           "mom": [
@@ -590,7 +594,8 @@
           "goals": [
             {
               "player": 85,
-              "minute": "50 + 1"
+              "minute": 50,
+              "extra_min": 1
             }
           ],
           "fouls": 1
@@ -768,7 +773,8 @@
             },
             {
               "player": 84,
-              "minute": "25 + 3"
+              "minute": 25,
+              "extra_min": 3
             }
           ],
           "mom": [
@@ -972,7 +978,8 @@
           "team": 7,
           "goals": [
             {
-              "minute": "50 + 2",
+              "minute": 50,
+              "extra_min": 2,
               "player": 86
             }
           ],
@@ -982,23 +989,23 @@
           "team": 5,
           "goals": [
             {
-              "minute": "14",
+              "minute": 14,
               "player": 45
             },
             {
-              "minute": "29",
+              "minute": 29,
               "player": 72
             },
             {
-              "minute": "30",
+              "minute": 30,
               "player": 45
             },
             {
-              "minute": "31",
+              "minute": 31,
               "player": 45
             },
             {
-              "minute": "36",
+              "minute": 36,
               "player": 45
             }
           ],
@@ -1030,15 +1037,15 @@
           "team": 6,
           "goals": [
             {
-              "minute": "4",
+              "minute": 4,
               "player": 4
             },
             {
-              "minute": "26",
+              "minute": 26,
               "player": 4
             },
             {
-              "minute": "40",
+              "minute": 40,
               "player": 4
             }
           ],
@@ -1053,11 +1060,11 @@
           "team": 4,
           "goals": [
             {
-              "minute": "32",
+              "minute": 32,
               "player": 37
             },
             {
-              "minute": "37",
+              "minute": 37,
               "player": 37
             }
           ],
