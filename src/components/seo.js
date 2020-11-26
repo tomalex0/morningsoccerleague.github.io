@@ -38,7 +38,6 @@ function SEO({ description, lang, meta, title, image, path }) {
       }
     `
   )
-  console.log(site, "--site---")
 
   const siteUrl = site.siteMetadata.siteUrl
   const metaDescription = description || site.siteMetadata.description
