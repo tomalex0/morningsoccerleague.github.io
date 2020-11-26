@@ -51,9 +51,9 @@ function SEO({ description, lang, meta, title, image, path }) {
   const pathJoined = join(pathPrefix, path || "/")
   const canonicalUrl = new URL(pathJoined, siteUrl).href
 
-  console.log(pathJoined, "pathJoined")
-  console.log(canonicalUrl, "canonicalUrl")
-  console.log(site.siteMetadata.siteUrl, pathPrefix, path)
+  // console.log(pathJoined, "pathJoined")
+  // console.log(canonicalUrl, "canonicalUrl")
+  // console.log(site.siteMetadata.siteUrl, pathPrefix, path)
 
   return (
     <Helmet
