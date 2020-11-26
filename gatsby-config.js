@@ -1,12 +1,15 @@
 const SITE_URL = process.env.SITE_URL || "http://localhost:8000"
 const PATH_PREFIX = process.env.PATH_PREFIX
+  ? `/${process.env.PATH_PREFIX}`
+  : `/`
 const siteConfig = require("./src/data/config")
 
 module.exports = {
-  pathPrefix: `/${PATH_PREFIX}`,
+  pathPrefix: PATH_PREFIX,
   siteMetadata: {
     ...siteConfig,
     siteUrl: SITE_URL,
+    pathPrefix: PATH_PREFIX,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

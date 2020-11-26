@@ -12,6 +12,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import DefaultOpenGraphImage from "../../src/images/og.jpg"
 
+import { join } from "path"
+
 function isValidUrl(string) {
   try {
     // eslint-disable-next-line no-new
@@ -33,6 +35,7 @@ function SEO({ description, lang, meta, title, image, path }) {
             description
             author
             siteUrl
+            pathPrefix
           }
         }
       }
@@ -40,11 +43,17 @@ function SEO({ description, lang, meta, title, image, path }) {
   )
 
   const siteUrl = site.siteMetadata.siteUrl
+  const pathPrefix = site.siteMetadata.pathPrefix
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const metaImage = image || DefaultOpenGraphImage
   const fullImage = isValidUrl(metaImage) ? metaImage : `${siteUrl}${metaImage}`
-  const canonicalUrl = path ? `${siteUrl}/${path}` : siteUrl
+  const pathJoined = join(pathPrefix, path || "/")
+  const canonicalUrl = new URL(pathJoined, siteUrl).href
+
+  console.log(pathJoined, "pathJoined")
+  console.log(canonicalUrl, "canonicalUrl")
+  console.log(site.siteMetadata.siteUrl, pathPrefix, path)
 
   return (
     <Helmet
