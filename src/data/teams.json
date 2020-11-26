@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "teamName": "1Touchables",
+    "teamCls": "team-gray"
+  },
+  {
+    "id": 2,
+    "teamName": "Atletico Vista",
+    "teamCls": "team-red"
+  },
+  {
+    "id": 3,
+    "teamName": "Benchwarmers FC",
+    "teamCls": "team-beige"
+  },
+  {
+    "id": 4,
+    "teamName": "Early Risers",
+    "teamCls": "team-orange"
+  },
+  {
+    "id": 5,
+    "teamName": "Rabona FC",
+    "teamCls": "team-brown"
+  },
+  {
+    "id": 6,
+    "teamName": "The Messy Messis",
+    "teamCls": "team-tmm"
+  },
+  {
+    "id": 7,
+    "teamName": "Morning Soccer United",
+    "teamCls": "team-green"
+  },
+  {
+    "id": 8,
+    "teamName": "Survivors",
+    "teamCls": "team-grey"
+  },
+  {
+    "id": 9,
+    "teamName": "FC Passing Lane",
+    "teamCls": "team-yellow"
+  }
+]

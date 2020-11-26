@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Yellow",
+    "cls": "yellow-card",
+    "id": 1
+  },
+  {
+    "name": "Red",
+    "cls": "red-card",
+    "id": 2
+  }
+]

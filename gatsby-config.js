@@ -3,7 +3,7 @@ const PATH_PREFIX = process.env.PATH_PREFIX
   ? `/${process.env.PATH_PREFIX}`
   : `/`
 const siteConfig = require("./src/data/config")
-
+process.env.ENABLE_GATSBY_REFRESH_ENDPOINT = true
 module.exports = {
   pathPrefix: PATH_PREFIX,
   siteMetadata: {
@@ -14,11 +14,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
       },
     },
     `gatsby-transformer-sharp`,

@@ -1,0 +1,974 @@
+{
+  "season": 1,
+  "items": [
+    {
+      "scheduled_date": "5/12/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 1,
+          "player": 9
+        },
+        {
+          "team": 3,
+          "player": 32
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 5,
+          "goals": [],
+          "cautions": [],
+          "fouls": 1
+        },
+        "away": {
+          "team": 2,
+          "goals": [],
+          "cautions": [
+            {
+              "caution_id": 1,
+              "player": 18,
+              "minute": 25
+            }
+          ],
+          "mom": [
+            {
+              "player": 19
+            }
+          ],
+          "fouls": 4
+        }
+      }
+    },
+    {
+      "scheduled_date": "5/19/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 5,
+          "player": 46
+        },
+        {
+          "team": 2,
+          "player": 19
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 3,
+          "goals": [],
+          "cautions": [],
+          "fouls": 5
+        },
+        "away": {
+          "team": 4,
+          "goals": [
+            {
+              "player": 41,
+              "minute": 35
+            },
+            {
+              "player": 32,
+              "minute": 41,
+              "owngoal": true
+            }
+          ],
+          "cautions": [],
+          "mom": [
+            {
+              "player": 41
+            }
+          ],
+          "fouls": 1
+        }
+      }
+    },
+    {
+      "scheduled_date": "6/2/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 3,
+          "player": 24
+        },
+        {
+          "team": 4,
+          "player": 37
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 2,
+          "goals": [],
+          "cautions": [],
+          "fouls": 3
+        },
+        "away": {
+          "team": 1,
+          "goals": [
+            {
+              "player": 8,
+              "minute": 9
+            },
+            {
+              "player": 9,
+              "minute": 23
+            },
+            {
+              "player": 5,
+              "minute": 32
+            }
+          ],
+          "cautions": [],
+          "mom": [
+            {
+              "player": 9
+            }
+          ],
+          "fouls": 2
+        }
+      }
+    },
+    {
+      "scheduled_date": "6/9/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 1,
+          "player": 8
+        },
+        {
+          "team": 4,
+          "player": 35
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 3,
+          "goals": [
+            {
+              "player": 31,
+              "minute": 17
+            },
+            {
+              "player": 28,
+              "minute": 21
+            }
+          ],
+          "mom": [
+            {
+              "player": 33
+            }
+          ],
+          "fouls": 4
+        },
+        "away": {
+          "team": 5,
+          "goals": [
+            {
+              "player": 49,
+              "minute": 45
+            }
+          ],
+          "fouls": 4
+        }
+      }
+    },
+    {
+      "scheduled_date": "6/16/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 5,
+          "player": 53
+        },
+        {
+          "team": 3,
+          "player": 23
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 1,
+          "goals": [
+            {
+              "player": 9,
+              "minute": 50
+            }
+          ],
+          "fouls": 0
+        },
+        "away": {
+          "team": 4,
+          "goals": [
+            {
+              "player": 34,
+              "minute": 43
+            }
+          ],
+          "mom": [
+            {
+              "player": 36
+            }
+          ],
+          "fouls": 3
+        }
+      }
+    },
+    {
+      "scheduled_date": "6/23/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 5,
+          "player": 45
+        },
+        {
+          "team": 4,
+          "player": 41
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 2,
+          "goals": [],
+          "fouls": 2
+        },
+        "away": {
+          "team": 3,
+          "cautions": [
+            {
+              "caution_id": 1,
+              "player": 29,
+              "minute": 47
+            }
+          ],
+          "goals": [
+            {
+              "player": 14,
+              "minute": 45,
+              "owngoal": true
+            }
+          ],
+          "mom": [
+            {
+              "player": 33
+            }
+          ],
+          "fouls": 4
+        }
+      }
+    },
+    {
+      "scheduled_date": "7/7/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 1,
+          "player": 2
+        },
+        {
+          "team": 3,
+          "player": 56
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 2,
+          "goals": [],
+          "cautions": [
+            {
+              "caution_id": 1,
+              "player": 19,
+              "minute": 48
+            }
+          ],
+          "fouls": 12
+        },
+        "away": {
+          "team": 5,
+          "goals": [
+            {
+              "player": 53,
+              "minute": 19
+            },
+            {
+              "player": 45,
+              "minute": 33
+            }
+          ],
+          "mom": [
+            {
+              "player": 45
+            }
+          ],
+          "fouls": 2
+        }
+      }
+    },
+    {
+      "scheduled_date": "7/14/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 1,
+          "player": 9
+        },
+        {
+          "team": 5,
+          "player": 46
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 4,
+          "goals": [
+            {
+              "player": 36,
+              "minute": 43
+            }
+          ],
+          "fouls": 5
+        },
+        "away": {
+          "team": 3,
+          "goals": [
+            {
+              "player": 57,
+              "minute": 35
+            },
+            {
+              "player": 29,
+              "minute": 39
+            },
+            {
+              "player": 57,
+              "minute": 49
+            }
+          ],
+          "mom": [
+            {
+              "player": 57
+            }
+          ],
+          "fouls": 6
+        }
+      }
+    },
+    {
+      "scheduled_date": "7/21/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 3,
+          "player": 33
+        },
+        {
+          "team": 4,
+          "player": 40
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 1,
+          "goals": [
+            {
+              "player": 5,
+              "minute": 4
+            },
+            {
+              "player": 9,
+              "minute": 44
+            }
+          ],
+          "fouls": 4
+        },
+        "away": {
+          "team": 5,
+          "goals": [
+            {
+              "player": 45,
+              "minute": 24
+            },
+            {
+              "player": 53,
+              "minute": 32
+            },
+            {
+              "player": 45,
+              "minute": 34
+            }
+          ],
+          "mom": [
+            {
+              "player": 45
+            }
+          ],
+          "fouls": 5
+        }
+      }
+    },
+    {
+      "scheduled_date": "7/28/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 5,
+          "player": 50
+        },
+        {
+          "team": 3,
+          "player": 29
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 4,
+          "goals": [
+            {
+              "player": 42,
+              "minute": 14
+            },
+            {
+              "player": 36,
+              "minute": 23
+            },
+            {
+              "player": 36,
+              "minute": 46
+            }
+          ],
+          "mom": [
+            {
+              "player": 36
+            }
+          ],
+          "fouls": 2
+        },
+        "away": {
+          "team": 2,
+          "goals": [],
+          "fouls": 4
+        }
+      }
+    },
+    {
+      "scheduled_date": "8/4/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 5,
+          "player": 49
+        },
+        {
+          "team": 2,
+          "player": 13
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 3,
+          "goals": [
+            {
+              "player": 57,
+              "minute": 18
+            },
+            {
+              "player": 29,
+              "minute": 37
+            }
+          ],
+          "mom": [
+            {
+              "player": 57
+            }
+          ],
+          "fouls": 2
+        },
+        "away": {
+          "team": 1,
+          "goals": [
+            {
+              "player": 9,
+              "minute": 25
+            }
+          ],
+          "fouls": 2
+        }
+      }
+    },
+    {
+      "scheduled_date": "8/18/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 5,
+          "player": 60
+        },
+        {
+          "team": 4,
+          "player": 35
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 1,
+          "goals": [
+            {
+              "player": 62,
+              "minute": 26,
+              "owngoal": true
+            },
+            {
+              "player": 9,
+              "minute": 49
+            }
+          ],
+          "fouls": 2
+        },
+        "away": {
+          "team": 2,
+          "goals": [],
+          "cautions": [
+            {
+              "caution_id": 1,
+              "player": 13,
+              "minute": 37
+            }
+          ],
+          "mom": [
+            {
+              "player": 21
+            }
+          ],
+          "fouls": 5
+        }
+      }
+    },
+    {
+      "scheduled_date": "8/25/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 1,
+          "player": 5
+        },
+        {
+          "team": 2,
+          "player": 62
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 5,
+          "goals": [
+            {
+              "player": 45,
+              "minute": 17
+            }
+          ],
+          "fouls": 2
+        },
+        "away": {
+          "team": 3,
+          "goals": [
+            {
+              "player": 57,
+              "minute": 16
+            }
+          ],
+          "mom": [
+            {
+              "player": 28
+            }
+          ],
+          "fouls": 3
+        }
+      }
+    },
+    {
+      "scheduled_date": "9/8/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 3,
+          "player": 26
+        },
+        {
+          "team": 2,
+          "player": 14
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 4,
+          "goals": [],
+          "fouls": 0
+        },
+        "away": {
+          "team": 1,
+          "goals": [
+            {
+              "player": 10,
+              "minute": 12
+            },
+            {
+              "player": 10,
+              "minute": 21
+            },
+            {
+              "player": 9,
+              "minute": 42
+            }
+          ],
+          "mom": [
+            {
+              "player": 10
+            }
+          ],
+          "fouls": 3
+        }
+      }
+    },
+    {
+      "scheduled_date": "9/15/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 1,
+          "player": 6
+        },
+        {
+          "team": 4,
+          "player": 36
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 3,
+          "goals": [
+            {
+              "player": 57,
+              "minute": 1
+            },
+            {
+              "player": 30,
+              "minute": 6
+            },
+            {
+              "player": 24,
+              "minute": 20
+            },
+            {
+              "player": 24,
+              "minute": 24
+            },
+            {
+              "player": 57,
+              "minute": 30
+            },
+            {
+              "player": 30,
+              "minute": 33
+            },
+            {
+              "player": 33,
+              "minute": 47
+            }
+          ],
+          "mom": [
+            {
+              "player": 57
+            }
+          ],
+          "fouls": 1
+        },
+        "away": {
+          "team": 2,
+          "goals": [
+            {
+              "player": 19,
+              "minute": 17
+            }
+          ],
+          "cautions": [
+            {
+              "caution_id": 1,
+              "player": 13,
+              "minute": 37
+            }
+          ],
+          "fouls": 1
+        }
+      }
+    },
+    {
+      "scheduled_date": "9/22/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 1,
+          "player": 10
+        },
+        {
+          "team": 2,
+          "player": 22
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 4,
+          "goals": [],
+          "fouls": 2
+        },
+        "away": {
+          "team": 5,
+          "goals": [
+            {
+              "player": 45,
+              "minute": 33
+            },
+            {
+              "player": 50,
+              "minute": 35
+            },
+            {
+              "player": 45,
+              "minute": 46
+            },
+            {
+              "player": 45,
+              "minute": 48
+            }
+          ],
+          "mom": [
+            {
+              "player": "45"
+            }
+          ],
+          "fouls": 4
+        }
+      }
+    },
+    {
+      "scheduled_date": "9/29/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 4,
+          "player": 42
+        },
+        {
+          "team": 2,
+          "player": 61
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 1,
+          "goals": [],
+          "fouls": 1
+        },
+        "away": {
+          "team": 3,
+          "goals": [
+            {
+              "player": 57,
+              "minute": 26
+            },
+            {
+              "player": 29,
+              "minute": 28
+            }
+          ],
+          "mom": [
+            {
+              "player": 57
+            }
+          ],
+          "fouls": 3
+        }
+      }
+    },
+    {
+      "scheduled_date": "10/6/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 1,
+          "player": 3
+        },
+        {
+          "team": 5,
+          "player": 59
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 2,
+          "goals": [],
+          "fouls": 2
+        },
+        "away": {
+          "team": 4,
+          "goals": [
+            {
+              "player": 40,
+              "minute": 27
+            }
+          ],
+          "mom": [
+            {
+              "player": 40
+            }
+          ],
+          "fouls": 1
+        }
+      }
+    },
+    {
+      "scheduled_date": "10/13/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 4,
+          "player": 44
+        },
+        {
+          "team": 2,
+          "player": 20
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 5,
+          "goals": [],
+          "fouls": 3
+        },
+        "away": {
+          "team": 1,
+          "goals": [
+            {
+              "player": 5,
+              "minute": 35
+            }
+          ],
+          "mom": [
+            {
+              "player": 5
+            }
+          ],
+          "cautions": [
+            {
+              "caution_id": 1,
+              "player": 4,
+              "minute": 33
+            }
+          ],
+          "fouls": 7
+        }
+      }
+    },
+    {
+      "scheduled_date": "10/20/2017",
+      "season": 1,
+      "referees": [
+        {
+          "team": 3,
+          "player": 28
+        },
+        {
+          "team": 2,
+          "player": 18
+        }
+      ],
+      "completed": true,
+      "stats": {
+        "home": {
+          "team": 5,
+          "goals": [
+            {
+              "player": 45,
+              "minute": 5
+            },
+            {
+              "player": 53,
+              "minute": 8
+            },
+            {
+              "player": 46,
+              "minute": 17
+            },
+            {
+              "player": 37,
+              "minute": 21,
+              "owngoal": true
+            },
+            {
+              "player": 53,
+              "minute": 27
+            },
+            {
+              "player": 45,
+              "minute": 29
+            },
+            {
+              "player": 45,
+              "minute": 43
+            },
+            {
+              "player": 46,
+              "minute": 49
+            },
+            {
+              "player": 45,
+              "minute": 50
+            }
+          ],
+          "mom": [
+            {
+              "player": 45
+            }
+          ],
+          "fouls": 2
+        },
+        "away": {
+          "team": 4,
+          "goals": [
+            {
+              "player": 34,
+              "minute": 11
+            }
+          ],
+          "cautions": [
+            {
+              "caution_id": 1,
+              "player": 36,
+              "minute": 50
+            }
+          ],
+          "fouls": 2
+        }
+      }
+    }
+  ]
+}
