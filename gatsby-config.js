@@ -2,7 +2,7 @@ const SITE_URL = process.env.SITE_URL || "http://localhost:8000"
 const PATH_PREFIX = process.env.PATH_PREFIX
   ? `/${process.env.PATH_PREFIX}`
   : `/`
-const siteConfig = require("./src/data/config")
+const siteConfig = require("./src/data/config/index")
 process.env.ENABLE_GATSBY_REFRESH_ENDPOINT = true
 module.exports = {
   pathPrefix: PATH_PREFIX,
