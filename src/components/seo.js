@@ -103,6 +103,10 @@ function SEO({ description, lang, meta, title, image, path }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          property: 'twitter:image',
+          content: fullImage
+        },
       ].concat(meta)}
     >
       <link rel="canonical" href={canonicalUrl} />
