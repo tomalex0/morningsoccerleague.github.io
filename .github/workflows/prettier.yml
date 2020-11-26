@@ -6,7 +6,7 @@ name: Prettier CI
 on:
   push:
     branches: [ gatsby ]
-
+  workflow_dispatch:
 jobs:
   build:
 
