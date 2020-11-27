@@ -39,3 +39,12 @@ jobs:
           npx gh-pages -d public -b gh-pages -u "github-actions-bot <support+actions@github.com>" -r https://git:${DEPLOY_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+    lhci:
+      needs: ghpages
+      name: Lighthouse
+      runs-on: ubuntu-latest
+      steps:
+        - name: run Lighthouse CI
+          run: |
+            npm install -g @lhci/cli@0.6.x
+            lhci autorun --config=./lighthouserc-url.js
