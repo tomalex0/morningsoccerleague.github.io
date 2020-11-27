@@ -10,7 +10,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type PostJson implements Node {
       author: AuthorJson @link(by: "username")
-      tags: TagsJson @link(by: "tagname")
+      tags: [TagsJson] @link(by: "tagname")
     }
 
     type AuthorJson implements Node {
