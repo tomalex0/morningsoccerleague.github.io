@@ -51,4 +51,4 @@ jobs:
           node-version: 14.x
       - name: run Lighthouse CI
         run: |
-          npx lhci autorun --config=./lighthouserc-url.js
+          npx @lhci/cli autorun --config=./lighthouserc-url.js
