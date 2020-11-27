@@ -10,6 +10,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type PostJson implements Node {
       author: AuthorJson @link(by: "username")
+      tags: TagsJson @link(by: "tagname")
     }
 
     type AuthorJson implements Node {
@@ -17,4 +18,33 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `
   createTypes(typeDefs)
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    TagsJson: {
+      posts: {
+        type: ["PostJson"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            query: {
+              filter: {
+                tags: {
+                  elemMatch: {
+                    tagname: {
+                      eq: source.tagname,
+                    },
+                  },
+                },
+              },
+            },
+            type: "PostJson",
+            firstOnly: false,
+          })
+        },
+      },
+    },
+  }
+
+  createResolvers(resolvers)
 }

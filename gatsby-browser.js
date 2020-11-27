@@ -23,12 +23,12 @@ function capturePageMetrics(
     baseDuration,
     startTime,
     commitTime,
-    interactions
+    interactions,
   })
 }
 
 export const wrapPageElement = ({ element, props }) => {
-  const path = props.path || '';
+  const path = props.path || ""
   // See https://reactjs.org/docs/profiler.html#onrender-callback for onRender parameters
   return (
     <Profiler id={path} onRender={capturePageMetrics}>

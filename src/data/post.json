@@ -11,6 +11,20 @@
     "date": "2020-05-31",
     "content": "Post two lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "tags": ["gatsby", "react", "graphql"],
+    "author": "janedoe"
+  },
+  {
+    "title": "Post Three",
+    "date": "2020-06-01",
+    "content": "Post three lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "tags": ["react", "graphql"],
     "author": "jdoe"
+  },
+  {
+    "title": "Post Four",
+    "date": "2020-06-02",
+    "content": "Post four lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "tags": ["gatsby", "react"],
+    "author": "janedoe"
   }
 ]
