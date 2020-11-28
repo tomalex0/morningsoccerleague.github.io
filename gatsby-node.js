@@ -4,54 +4,19 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-  const typeDefs = `
-    type PostJson implements Node {
-      author: AuthorJson @link(by: "username")
-      tags: [TagsJson] @link(by: "tagname")
-    }
-
-    type AuthorJson implements Node {
-      posts: [PostJson] @link(by: "author.username", from: "username")
-    }
-  `
-  createTypes(typeDefs)
-}
-
-exports.createResolvers = ({ createResolvers }) => {
-  const resolvers = {
-    TagsJson: {
-      posts: {
-        type: ["PostJson"],
-        resolve(source, args, context, info) {
-          return context.nodeModel.runQuery({
-            query: {
-              filter: {
-                tags: {
-                  elemMatch: {
-                    tagname: {
-                      eq: source.tagname,
-                    },
-                  },
-                },
-              },
-            },
-            type: "PostJson",
-            firstOnly: false,
-          })
-        },
-      },
-    },
-  }
-
-  createResolvers(resolvers)
-}
-
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = `
+  
+    type DemoPostJson implements Node {
+      author: DemoAuthorJson @link(by: "username")
+      tags: [DemoTagsJson] @link(by: "tagname")
+    }
+
+    type DemoAuthorJson implements Node {
+      posts: [DemoPostJson] @link(by: "author.username", from: "username")
+    }
+    
     type  MslSeasonsJsonTeams implements Node {
       owners: [ MslPlayersJson] @link(by: "player_id")
       players: [ MslPlayersJson] @link(by: "player_id")
@@ -71,6 +36,28 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
 exports.createResolvers = ({ createResolvers }) => {
   const resolvers = {
+    DemoTagsJson: {
+      posts: {
+        type: ["DemoPostJson"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            query: {
+              filter: {
+                tags: {
+                  elemMatch: {
+                    tagname: {
+                      eq: source.tagname,
+                    },
+                  },
+                },
+              },
+            },
+            type: "DemoPostJson",
+            firstOnly: false,
+          })
+        },
+      },
+    },
     PlayersJson: {
       seasons: {
         type: [" MslSeasonsJson"],
