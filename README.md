@@ -88,3 +88,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 - https://hashinteractive.com/blog/gatsby-data-relationships-with-foreign-key-fields/
 - https://github.com/gatsbyjs/gatsby/issues/25077#issuecomment-645855986
+
+#### Parallax
+
+- https://gatsbyawesome.com/playful-colorful-one-page-website-with-parallax-effect/
+- https://www.react-spring.io/docs/hooks/examples

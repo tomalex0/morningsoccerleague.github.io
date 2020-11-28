@@ -48,3 +48,92 @@ exports.createResolvers = ({ createResolvers }) => {
 
   createResolvers(resolvers)
 }
+
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type SeasonsJsonTeams implements Node {
+      owners: [PlayersJson] @link(by: "player_id")
+      players: [PlayersJson] @link(by: "player_id")
+      team: TeamsJson @link(by: "team_id")
+    }
+    
+    type TeamsJson implements Node {
+      seasons: [SeasonsJson] @link(by: "team.team_id", from: "team_id")
+    }
+    
+    type SeasonsJson implements Node {
+      mos: [PlayersJson] @link(by: "player_id")
+    }    
+  `
+  createTypes(typeDefs)
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    PlayersJson: {
+      seasons: {
+        type: ["SeasonsJson"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            query: {
+              filter: {
+                mos: {
+                  elemMatch: {
+                    player_id: {
+                      eq: source.player_id,
+                    },
+                  },
+                },
+              },
+            },
+            type: "SeasonsJson",
+            firstOnly: false,
+          })
+        },
+      },
+      owners: {
+        type: ["SeasonsJsonTeams"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            query: {
+              filter: {
+                mos: {
+                  elemMatch: {
+                    player_id: {
+                      eq: source.player_id,
+                    },
+                  },
+                },
+              },
+            },
+            type: "SeasonsJsonTeams",
+            firstOnly: false,
+          })
+        },
+      },
+      players: {
+        type: ["SeasonsJsonTeams"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            query: {
+              filter: {
+                mos: {
+                  elemMatch: {
+                    player_id: {
+                      eq: source.player_id,
+                    },
+                  },
+                },
+              },
+            },
+            type: "SeasonsJsonTeams",
+            firstOnly: false,
+          })
+        },
+      },
+    },
+  }
+
+  createResolvers(resolvers)
+}
