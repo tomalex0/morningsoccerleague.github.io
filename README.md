@@ -93,3 +93,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 - https://gatsbyawesome.com/playful-colorful-one-page-website-with-parallax-effect/
 - https://www.react-spring.io/docs/hooks/examples
+
+#### GFatsby Develop
+
+- https://github.com/gatsbyjs/gatsby/issues/16616
+- https://github.com/gatsbyjs/gatsby/issues/10230
