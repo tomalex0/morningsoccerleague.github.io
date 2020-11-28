@@ -52,18 +52,18 @@ exports.createResolvers = ({ createResolvers }) => {
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = `
-    type SeasonsJsonTeams implements Node {
-      owners: [PlayersJson] @link(by: "player_id")
-      players: [PlayersJson] @link(by: "player_id")
-      team: TeamsJson @link(by: "team_id")
+    type  MslSeasonsJsonTeams implements Node {
+      owners: [ MslPlayersJson] @link(by: "player_id")
+      players: [ MslPlayersJson] @link(by: "player_id")
+      team:  MslTeamsJson @link(by: "team_id")
     }
     
-    type TeamsJson implements Node {
-      seasons: [SeasonsJson] @link(by: "team.team_id", from: "team_id")
+    type  MslTeamsJson implements Node {
+      seasons: [ MslSeasonsJson] @link(by: "team.team_id", from: "team_id")
     }
     
-    type SeasonsJson implements Node {
-      mos: [PlayersJson] @link(by: "player_id")
+    type  MslSeasonsJson implements Node {
+      mos: [ MslPlayersJson] @link(by: "player_id")
     }    
   `
   createTypes(typeDefs)
@@ -73,7 +73,7 @@ exports.createResolvers = ({ createResolvers }) => {
   const resolvers = {
     PlayersJson: {
       seasons: {
-        type: ["SeasonsJson"],
+        type: [" MslSeasonsJson"],
         resolve(source, args, context, info) {
           return context.nodeModel.runQuery({
             query: {
@@ -87,13 +87,13 @@ exports.createResolvers = ({ createResolvers }) => {
                 },
               },
             },
-            type: "SeasonsJson",
+            type: " MslSeasonsJson",
             firstOnly: false,
           })
         },
       },
       owners: {
-        type: ["SeasonsJsonTeams"],
+        type: [" MslSeasonsJsonTeams"],
         resolve(source, args, context, info) {
           return context.nodeModel.runQuery({
             query: {
@@ -107,13 +107,13 @@ exports.createResolvers = ({ createResolvers }) => {
                 },
               },
             },
-            type: "SeasonsJsonTeams",
+            type: " MslSeasonsJsonTeams",
             firstOnly: false,
           })
         },
       },
       players: {
-        type: ["SeasonsJsonTeams"],
+        type: [" MslSeasonsJsonTeams"],
         resolve(source, args, context, info) {
           return context.nodeModel.runQuery({
             query: {
@@ -127,7 +127,7 @@ exports.createResolvers = ({ createResolvers }) => {
                 },
               },
             },
-            type: "SeasonsJsonTeams",
+            type: " MslSeasonsJsonTeams",
             firstOnly: false,
           })
         },
