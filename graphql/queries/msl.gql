@@ -1,0 +1,13 @@
+type MslSeasonsJsonTeams implements Node {
+  owners: [MslPlayersJson] @link(by: "player_id")
+  players: [MslPlayersJson] @link(by: "player_id")
+  team: MslTeamsJson @link(by: "team_id")
+}
+
+type MslTeamsJson implements Node {
+  seasons: [MslSeasonsJson] @link(by: "team.team_id", from: "team_id")
+}
+
+type MslSeasonsJson implements Node {
+  mos: [MslPlayersJson] @link(by: "player_id")
+}

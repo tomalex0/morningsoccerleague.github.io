@@ -1,0 +1,8 @@
+type DemoPostJson implements Node {
+  author: DemoAuthorJson @link(by: "username")
+  tags: [DemoTagsJson] @link(by: "tagname")
+}
+
+type DemoAuthorJson implements Node {
+  posts: [DemoPostJson] @link(by: "author.username", from: "username")
+}
