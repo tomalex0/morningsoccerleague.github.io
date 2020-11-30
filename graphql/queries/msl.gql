@@ -13,8 +13,50 @@ type MslSchedulesJsonStatsAway implements Node {
 }
 
 type MslSchedulesJsonReferees implements Node {
-  player: MslPlayersJson @link(by: "player_id")
+
   team: MslTeamsJson @link(by: "team_id")
+}
+
+type MslSchedulesJsonStatsHomeMom implements Node {
+	player: [MslPlayersJson] @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsAwayMom implements Node {
+	player: [MslPlayersJson] @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsHomePlayers implements Node {
+	player: [MslPlayersJson] @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsAwayPlayers implements Node {
+	player: [MslPlayersJson] @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsHomeKeeper implements Node {
+	player: MslPlayersJson @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsAwayKeeper implements Node {
+	player: MslPlayersJson @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsHomeCautions implements Node {
+	player: MslPlayersJson @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsAwayCautions implements Node {
+	player: MslPlayersJson @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsHomeGoals implements Node {
+	player: MslPlayersJson @link(by: "player_id")
+	assist: MslPlayersJson @link(by: "player_id")
+}
+
+type MslSchedulesJsonStatsAwayGoals implements Node {
+	player: MslPlayersJson @link(by: "player_id")
+	assist: MslPlayersJson @link(by: "player_id")
 }
 
 
