@@ -57,5 +57,6 @@
       "fouls": 1,
       "keeper": [{ "player": 77, "saves": 3 }]
     }
-  }
+  },
+  "schedule_id": "3_15"
 }

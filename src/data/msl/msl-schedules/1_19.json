@@ -15,5 +15,6 @@
       "cautions": [{ "caution_id": 1, "player": 4, "minute": 33 }],
       "fouls": 7
     }
-  }
+  },
+  "schedule_id": "1_19"
 }

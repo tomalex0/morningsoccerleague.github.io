@@ -43,10 +43,12 @@ type MslSchedulesJsonStatsAwayKeeper implements Node {
 
 type MslSchedulesJsonStatsHomeCautions implements Node {
 	player: MslPlayersJson @link(by: "player_id")
+	caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
 }
 
 type MslSchedulesJsonStatsAwayCautions implements Node {
 	player: MslPlayersJson @link(by: "player_id")
+	caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
 }
 
 type MslSchedulesJsonStatsHomeGoals implements Node {

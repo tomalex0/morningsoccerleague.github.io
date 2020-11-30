@@ -18,5 +18,6 @@
       "fouls": 4
     },
     "away": { "team": 7, "goals": [], "fouls": 4 }
-  }
+  },
+  "schedule_id": "2_4"
 }

@@ -53,5 +53,6 @@
       "goals": [{ "minute": 23, "player": 24, "assist": 24 }],
       "fouls": 0
     }
-  }
+  },
+  "schedule_id": "3_17"
 }

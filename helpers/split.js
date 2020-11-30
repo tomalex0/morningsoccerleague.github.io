@@ -1,17 +1,18 @@
 const fs = require("fs")
 
-const season1 = require("../src/data/msl/msl-schedule/1")
-const season2 = require("../src/data/msl/msl-schedule/2")
-const season3 = require("../src/data/msl/msl-schedule/3")
+const season1 = require("../src/data/raw/schedule/1")
+const season2 = require("../src/data/raw/schedule/2")
+const season3 = require("../src/data/raw/schedule/3")
 
 function generateFile(data) {
   data.items.forEach((item, index) => {
     const position = index + 1
+    item.schedule_id = `${data.season}_${position}`
     fs.writeFileSync(
-      `../src/data/msl-schedules/${data.season}_${position}.json`,
+      `../src/data/msl/msl-schedules/${data.season}_${position}.json`,
       JSON.stringify(item)
     )
   })
 }
 
-generateFile(season3)
+generateFile(season1)

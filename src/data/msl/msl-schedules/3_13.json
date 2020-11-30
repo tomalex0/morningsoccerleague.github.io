@@ -47,5 +47,6 @@
       "goals": [{ "minute": 13, "player": 66, "assist": 84 }],
       "fouls": 5
     }
-  }
+  },
+  "schedule_id": "3_13"
 }
