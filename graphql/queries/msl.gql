@@ -13,7 +13,7 @@ type MslSchedulesJsonStatsAway implements Node {
 }
 
 type MslSchedulesJsonReferees implements Node {
-
+	 player: MslPlayersJson @link(by: "player_id")
   team: MslTeamsJson @link(by: "team_id")
 }
 
