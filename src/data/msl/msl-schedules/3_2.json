@@ -1,0 +1,22 @@
+{
+  "scheduled_date": "6/28/2019",
+  "scheduled_time": "6:20 AM",
+  "started_time": "6:29 AM",
+  "end_time": "7:25 AM",
+  "season": 3,
+  "referees": [{ "team": 6, "player": 67 }, { "team": 7 }],
+  "completed": true,
+  "stats": {
+    "home": {
+      "team": 5,
+      "goals": [
+        { "minute": 23, "player": 72 },
+        { "minute": 46, "player": 45, "penalty": true },
+        { "minute": 54, "player": 72 }
+      ],
+      "mom": [{ "player": 72 }],
+      "fouls": 2
+    },
+    "away": { "team": 4, "goals": [], "fouls": 5 }
+  }
+}

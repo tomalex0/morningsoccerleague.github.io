@@ -1,0 +1,19 @@
+{
+  "scheduled_date": "6/23/2017",
+  "season": 1,
+  "referees": [
+    { "team": 5, "player": 45 },
+    { "team": 4, "player": 41 }
+  ],
+  "completed": true,
+  "stats": {
+    "home": { "team": 2, "goals": [], "fouls": 2 },
+    "away": {
+      "team": 3,
+      "cautions": [{ "caution_id": 1, "player": 29, "minute": 47 }],
+      "goals": [{ "player": 14, "minute": 45, "owngoal": true }],
+      "mom": [{ "player": 33 }],
+      "fouls": 4
+    }
+  }
+}

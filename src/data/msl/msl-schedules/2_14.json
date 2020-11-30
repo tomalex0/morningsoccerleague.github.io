@@ -1,0 +1,32 @@
+{
+  "scheduled_date": "7/20/2018",
+  "season": 2,
+  "referees": [
+    { "team": 6, "player": 68 },
+    { "team": 6, "player": 76 }
+  ],
+  "completed": true,
+  "stats": {
+    "home": {
+      "team": 4,
+      "goals": [
+        { "player": 42, "minute": 10 },
+        { "player": 42, "minute": 14 },
+        { "player": 86, "owngoal": true, "minute": 18 },
+        { "player": 42, "minute": 32 },
+        { "player": 42, "minute": 35 }
+      ],
+      "mom": [{ "player": 42 }],
+      "fouls": 4
+    },
+    "away": {
+      "team": 7,
+      "goals": [
+        { "player": 85, "minute": 40 },
+        { "player": 85, "minute": 45 }
+      ],
+      "cautions": [{ "caution_id": 1, "player": 75, "minute": 31 }],
+      "fouls": 2
+    }
+  }
+}

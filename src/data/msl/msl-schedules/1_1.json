@@ -1,0 +1,19 @@
+{
+  "scheduled_date": "5/12/2017",
+  "season": 1,
+  "referees": [
+    { "team": 1, "player": 9 },
+    { "team": 3, "player": 32 }
+  ],
+  "completed": true,
+  "stats": {
+    "home": { "team": 5, "goals": [], "cautions": [], "fouls": 1 },
+    "away": {
+      "team": 2,
+      "goals": [],
+      "cautions": [{ "caution_id": 1, "player": 18, "minute": 25 }],
+      "mom": [{ "player": 19 }],
+      "fouls": 4
+    }
+  }
+}

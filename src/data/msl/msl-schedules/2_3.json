@@ -1,0 +1,32 @@
+{
+  "scheduled_date": "6/8/2018",
+  "season": 2,
+  "referees": [
+    { "team": 6, "player": 84 },
+    { "team": 6, "player": 90 }
+  ],
+  "completed": true,
+  "stats": {
+    "home": {
+      "team": 4,
+      "goals": [
+        { "player": 2, "minute": 26 },
+        { "player": 87, "minute": 48 }
+      ],
+      "fouls": 0
+    },
+    "away": {
+      "team": 5,
+      "goals": [
+        { "player": 72, "minute": 3 },
+        { "player": 46, "minute": 9 },
+        { "player": 45, "minute": 24 },
+        { "player": 45, "minute": 48 },
+        { "player": 45, "minute": 50, "extra_min": 5 },
+        { "player": 46, "minute": 50, "extra_min": 6 }
+      ],
+      "mom": [{ "player": 45 }],
+      "fouls": 0
+    }
+  }
+}

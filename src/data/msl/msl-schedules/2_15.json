@@ -1,0 +1,22 @@
+{
+  "scheduled_date": "7/27/2018",
+  "season": 2,
+  "referees": [
+    { "team": 4, "player": 41 },
+    { "team": 4, "player": 44 }
+  ],
+  "completed": true,
+  "stats": {
+    "home": { "team": 5, "goals": [], "fouls": 4 },
+    "away": {
+      "team": 6,
+      "goals": [
+        { "player": 4, "minute": 11 },
+        { "player": 84, "minute": 25, "extra_min": 3 }
+      ],
+      "mom": [{ "player": 4 }],
+      "cautions": [{ "caution_id": 1, "player": 67, "minute": 49 }],
+      "fouls": 7
+    }
+  }
+}

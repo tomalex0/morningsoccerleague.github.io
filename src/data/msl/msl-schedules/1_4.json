@@ -1,0 +1,21 @@
+{
+  "scheduled_date": "6/9/2017",
+  "season": 1,
+  "referees": [
+    { "team": 1, "player": 8 },
+    { "team": 4, "player": 35 }
+  ],
+  "completed": true,
+  "stats": {
+    "home": {
+      "team": 3,
+      "goals": [
+        { "player": 31, "minute": 17 },
+        { "player": 28, "minute": 21 }
+      ],
+      "mom": [{ "player": 33 }],
+      "fouls": 4
+    },
+    "away": { "team": 5, "goals": [{ "player": 49, "minute": 45 }], "fouls": 4 }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "scheduled_date": "9/6/2019",
+  "scheduled_time": "7:30 AM",
+  "season": 3,
+  "referees": [
+    { "team": 5, "player": 46 },
+    { "team": 7, "player": 49 }
+  ],
+  "completed": true,
+  "stats": {
+    "home": {
+      "team": 4,
+      "goals": [{ "minute": 38, "player": 104, "assist": 35 }],
+      "fouls": 3,
+      "cautions": [],
+      "players": [
+        { "player": 35 },
+        { "player": 41 },
+        { "player": 102 },
+        { "player": 69 },
+        { "player": 3 },
+        { "player": 76 },
+        { "player": 103 },
+        { "player": 104 },
+        { "player": 42 },
+        { "player": 105 },
+        { "player": 8 },
+        { "player": 53 }
+      ],
+      "keeper": [{ "player": 105, "saves": 11 }],
+      "mom": []
+    },
+    "away": {
+      "team": 6,
+      "goal s": [],
+      "fouls": 1,
+      "goals": [
+        { "minute": 15, "player": 67, "assist": 88 },
+        { "minute": 26, "player": 96 },
+        { "minute": 27, "player": 67, "assist": 66 },
+        { "minute": 47, "player": 24, "assist": 66 },
+        { "minute": 55, "player": 88 }
+      ],
+      "cautions": [],
+      "players": [
+        { "player": 67 },
+        { "player": 68 },
+        { "player": 95 },
+        { "player": 66 },
+        { "player": 122 },
+        { "player": 84 },
+        { "player": 96 },
+        { "player": 24 },
+        { "player": 88 },
+        { "player": 97 },
+        { "player": 98 },
+        { "player": 54 }
+      ],
+      "keeper": [
+        { "player": 97, "saves": 1 },
+        { "player": 68, "saves": 1 }
+      ],
+      "mom": [{ "player": 67 }]
+    }
+  }
+}
