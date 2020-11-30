@@ -17,6 +17,24 @@ module.exports = {
       },
     },
   },
+  MslSeasonsJson: {
+    schedules: {
+      type: ["MslSchedulesJson"],
+      resolve(source, args, context, info) {
+        return context.nodeModel.runQuery({
+          query: {
+            filter: {
+              season: {
+                season_id: { eq: source.season_id },
+              },
+            },
+          },
+          type: "MslSchedulesJson",
+          firstOnly: false,
+        })
+      },
+    },
+  },
   MslPlayersJson: {
     mos: {
       type: ["MslSeasonsJson"],

@@ -10,6 +10,7 @@ type MslTeamsJson implements Node {
 
 type MslSeasonsJson implements Node {
   mos: [MslPlayersJson] @link(by: "player_id")
+  schedules: [MslSchedulesJson] @link(by: "season.season_id", from: "season_id")
 }
 
 type MslSchedulesJson implements Node {
