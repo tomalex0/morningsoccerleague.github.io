@@ -1,6 +1,8 @@
+
 type MslSeasonsJsonTeams implements Node {
   owners: [MslPlayersJson] @link(by: "player_id")
   players: [MslPlayersJson] @link(by: "player_id")
+  # Team details for each team in the season
   team: MslTeamsJson @link(by: "team_id")
 }
 
@@ -18,59 +20,63 @@ type MslSchedulesJsonReferees implements Node {
 }
 
 type MslSchedulesJsonStatsHomeMom implements Node {
-	player: [MslPlayersJson] @link(by: "player_id")
+		player: [MslPlayersJson] @link(by: "player_id")
 }
 
 type MslSchedulesJsonStatsAwayMom implements Node {
-	player: [MslPlayersJson] @link(by: "player_id")
+		player: [MslPlayersJson] @link(by: "player_id")
 }
 
 type MslSchedulesJsonStatsHomePlayers implements Node {
-	player: [MslPlayersJson] @link(by: "player_id")
+		player: [MslPlayersJson] @link(by: "player_id")
 }
 
 type MslSchedulesJsonStatsAwayPlayers implements Node {
-	player: [MslPlayersJson] @link(by: "player_id")
+		player: [MslPlayersJson] @link(by: "player_id")
 }
 
 type MslSchedulesJsonStatsHomeKeeper implements Node {
-	player: MslPlayersJson @link(by: "player_id")
+		player: MslPlayersJson @link(by: "player_id")
 }
 
 type MslSchedulesJsonStatsAwayKeeper implements Node {
-	player: MslPlayersJson @link(by: "player_id")
+		player: MslPlayersJson @link(by: "player_id")
 }
 
 type MslSchedulesJsonStatsHomeCautions implements Node {
-	player: MslPlayersJson @link(by: "player_id")
-	caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
+		player: MslPlayersJson @link(by: "player_id")
+		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
 }
 
 type MslSchedulesJsonStatsAwayCautions implements Node {
-	player: MslPlayersJson @link(by: "player_id")
-	caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
+		player: MslPlayersJson @link(by: "player_id")
+		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
 }
 
 type MslSchedulesJsonStatsHomeGoals implements Node {
-	player: MslPlayersJson @link(by: "player_id")
-	assist: MslPlayersJson @link(by: "player_id")
+		player: MslPlayersJson @link(by: "player_id")
+		assist: MslPlayersJson @link(by: "player_id")
 }
 
 type MslSchedulesJsonStatsAwayGoals implements Node {
-	player: MslPlayersJson @link(by: "player_id")
-	assist: MslPlayersJson @link(by: "player_id")
+		player: MslPlayersJson @link(by: "player_id")
+		assist: MslPlayersJson @link(by: "player_id")
 }
 
-
 type MslTeamsJson implements Node {
+  # List all seasons the team is part of
   seasons: [MslSeasonsJson] @link(by: "team.team_id", from: "team_id")
+}
+
+type MslSchedulesJson implements Node {
+		# Schedule to Season Mapping
+  season: MslSeasonsJson @link(by: "season")
 }
 
 type MslSeasonsJson implements Node {
   mos: [MslPlayersJson] @link(by: "player_id")
+  # Link back to schedule from season
   schedules: [MslSchedulesJson] @link(by: "season.season_id", from: "season_id")
 }
 
-type MslSchedulesJson implements Node {
-  season: MslSeasonsJson @link(by: "season")
-}
+
