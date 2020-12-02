@@ -3,6 +3,7 @@ const path = require("path")
 
 const PostTypeDefsPath = path.resolve(__dirname, "./queries/post.gql")
 const MslTypeDefsPath = path.resolve(__dirname, "./queries/msl.gql")
+// const MslSchema = require("./queries/msl")
 
 const PostTypeDefs = fs.readFileSync(PostTypeDefsPath, {
   encoding: `utf-8`,

@@ -55,5 +55,55 @@
       ]
     }
   },
-  "schedule_id": "3_11"
+  "schedule_id": "3_11",
+  "gamestats": [
+    {
+      "team": 9,
+      "goals": [{ "minute": 39, "player": 109, "assist": 30 }],
+      "keeper": [{ "player": 28, "saves": 6 }],
+      "fouls": 1,
+      "players": [
+        { "player": 106 },
+        { "player": 22 },
+        { "player": 107 },
+        { "player": 108 },
+        { "player": 28 },
+        { "player": 34 },
+        { "player": 109 },
+        { "player": 73 },
+        { "player": 110 },
+        { "player": 81 },
+        { "player": 30 },
+        { "player": 111 }
+      ],
+      "type": "home"
+    },
+    {
+      "team": 5,
+      "goals": [
+        { "minute": 3, "player": 72, "assist": 45 },
+        { "minute": 7, "player": 72, "assist": 46 },
+        { "minute": 36, "player": 46, "assist": 45 },
+        { "minute": 45, "player": 72, "assist": 45 }
+      ],
+      "fouls": 0,
+      "mom": [{ "player": 72 }],
+      "keeper": [{ "player": 77, "saves": 3 }],
+      "players": [
+        { "player": 46 },
+        { "player": 72 },
+        { "player": 91 },
+        { "player": 92 },
+        { "player": 70 },
+        { "player": 45 },
+        { "player": 77 },
+        { "player": 50 },
+        { "player": 29 },
+        { "player": 93 },
+        { "player": 94 },
+        { "player": 32 }
+      ],
+      "type": "away"
+    }
+  ]
 }

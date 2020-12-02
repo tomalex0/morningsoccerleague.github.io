@@ -55,5 +55,55 @@
       "fouls": 3
     }
   },
-  "schedule_id": "3_8"
+  "schedule_id": "3_8",
+  "gamestats": [
+    {
+      "team": 5,
+      "goals": [
+        { "minute": 17, "player": 45 },
+        { "minute": 20, "player": 45 },
+        { "minute": 23, "player": 45 },
+        { "minute": 49, "player": 72 }
+      ],
+      "mom": [{ "player": 45 }],
+      "keeper": [{ "player": 77, "saves": 3 }],
+      "players": [
+        { "player": 46 },
+        { "player": 72 },
+        { "player": 91 },
+        { "player": 92 },
+        { "player": 70 },
+        { "player": 45 },
+        { "player": 77 },
+        { "player": 50 },
+        { "player": 29 },
+        { "player": 93 },
+        { "player": 94 },
+        { "player": 32 }
+      ],
+      "fouls": 3,
+      "type": "home"
+    },
+    {
+      "team": 6,
+      "goals": [{ "minute": 43, "player": 96 }],
+      "keeper": [{ "player": 54, "saves": 8 }],
+      "players": [
+        { "player": 67 },
+        { "player": 68 },
+        { "player": 95 },
+        { "player": 66 },
+        { "player": 122 },
+        { "player": 84 },
+        { "player": 96 },
+        { "player": 24 },
+        { "player": 88 },
+        { "player": 97 },
+        { "player": 98 },
+        { "player": 54 }
+      ],
+      "fouls": 3,
+      "type": "away"
+    }
+  ]
 }

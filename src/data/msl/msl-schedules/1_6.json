@@ -16,5 +16,16 @@
       "fouls": 4
     }
   },
-  "schedule_id": "1_6"
+  "schedule_id": "1_6",
+  "gamestats": [
+    { "team": 2, "goals": [], "fouls": 2, "type": "home" },
+    {
+      "team": 3,
+      "cautions": [{ "caution_id": 1, "player": 29, "minute": 47 }],
+      "goals": [{ "player": 14, "minute": 45, "owngoal": true }],
+      "mom": [{ "player": 33 }],
+      "fouls": 4,
+      "type": "away"
+    }
+  ]
 }

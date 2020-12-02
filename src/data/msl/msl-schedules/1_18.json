@@ -15,5 +15,15 @@
       "fouls": 1
     }
   },
-  "schedule_id": "1_18"
+  "schedule_id": "1_18",
+  "gamestats": [
+    { "team": 2, "goals": [], "fouls": 2, "type": "home" },
+    {
+      "team": 4,
+      "goals": [{ "player": 40, "minute": 27 }],
+      "mom": [{ "player": 40 }],
+      "fouls": 1,
+      "type": "away"
+    }
+  ]
 }

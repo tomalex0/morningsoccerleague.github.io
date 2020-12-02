@@ -28,5 +28,29 @@
       "fouls": 0
     }
   },
-  "schedule_id": "3_1"
+  "schedule_id": "3_1",
+  "gamestats": [
+    {
+      "team": 9,
+      "goals": [
+        { "minute": 3, "player": 120, "owngoal": true },
+        { "minute": 15, "player": 111 },
+        { "minute": 17, "player": 111 },
+        { "minute": 39, "player": 111 }
+      ],
+      "mom": [{ "player": 111 }],
+      "fouls": 0,
+      "type": "home"
+    },
+    {
+      "team": 8,
+      "goals": [
+        { "minute": 2, "player": 112 },
+        { "minute": 41, "player": 116 },
+        { "minute": 50, "player": 114 }
+      ],
+      "fouls": 0,
+      "type": "away"
+    }
+  ]
 }

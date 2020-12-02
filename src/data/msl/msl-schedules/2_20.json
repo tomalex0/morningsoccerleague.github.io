@@ -26,5 +26,27 @@
       "fouls": 1
     }
   },
-  "schedule_id": "2_20"
+  "schedule_id": "2_20",
+  "gamestats": [
+    {
+      "team": 6,
+      "goals": [
+        { "minute": 4, "player": 4 },
+        { "minute": 26, "player": 4 },
+        { "minute": 40, "player": 4 }
+      ],
+      "mom": [{ "player": 4 }],
+      "fouls": 3,
+      "type": "home"
+    },
+    {
+      "team": 4,
+      "goals": [
+        { "minute": 32, "player": 37 },
+        { "minute": 37, "player": 37 }
+      ],
+      "fouls": 1,
+      "type": "away"
+    }
+  ]
 }

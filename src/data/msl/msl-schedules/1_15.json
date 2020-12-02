@@ -28,5 +28,29 @@
       "fouls": 1
     }
   },
-  "schedule_id": "1_15"
+  "schedule_id": "1_15",
+  "gamestats": [
+    {
+      "team": 3,
+      "goals": [
+        { "player": 57, "minute": 1 },
+        { "player": 30, "minute": 6 },
+        { "player": 24, "minute": 20 },
+        { "player": 24, "minute": 24 },
+        { "player": 57, "minute": 30 },
+        { "player": 30, "minute": 33 },
+        { "player": 33, "minute": 47 }
+      ],
+      "mom": [{ "player": 57 }],
+      "fouls": 1,
+      "type": "home"
+    },
+    {
+      "team": 2,
+      "goals": [{ "player": 19, "minute": 17 }],
+      "cautions": [{ "caution_id": 1, "player": 13, "minute": 37 }],
+      "fouls": 1,
+      "type": "away"
+    }
+  ]
 }

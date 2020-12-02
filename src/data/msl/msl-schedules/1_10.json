@@ -19,5 +19,19 @@
     },
     "away": { "team": 2, "goals": [], "fouls": 4 }
   },
-  "schedule_id": "1_10"
+  "schedule_id": "1_10",
+  "gamestats": [
+    {
+      "team": 4,
+      "goals": [
+        { "player": 42, "minute": 14 },
+        { "player": 36, "minute": 23 },
+        { "player": 36, "minute": 46 }
+      ],
+      "mom": [{ "player": 36 }],
+      "fouls": 2,
+      "type": "home"
+    },
+    { "team": 2, "goals": [], "fouls": 4, "type": "away" }
+  ]
 }

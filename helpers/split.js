@@ -8,6 +8,10 @@ function generateFile(data) {
   data.items.forEach((item, index) => {
     const position = index + 1
     item.schedule_id = `${data.season}_${position}`
+    item.gamestats = [
+      { ...item.stats.home, type: "home" },
+      { ...item.stats.away, type: "away" },
+    ]
     fs.writeFileSync(
       `../src/data/msl/msl-schedules/${data.season}_${position}.json`,
       JSON.stringify(item)
@@ -15,4 +19,4 @@ function generateFile(data) {
   })
 }
 
-generateFile(season1)
+generateFile(season2)

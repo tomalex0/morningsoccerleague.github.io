@@ -30,5 +30,31 @@
       "fouls": 2
     }
   },
-  "schedule_id": "1_20"
+  "schedule_id": "1_20",
+  "gamestats": [
+    {
+      "team": 5,
+      "goals": [
+        { "player": 45, "minute": 5 },
+        { "player": 53, "minute": 8 },
+        { "player": 46, "minute": 17 },
+        { "player": 37, "minute": 21, "owngoal": true },
+        { "player": 53, "minute": 27 },
+        { "player": 45, "minute": 29 },
+        { "player": 45, "minute": 43 },
+        { "player": 46, "minute": 49 },
+        { "player": 45, "minute": 50 }
+      ],
+      "mom": [{ "player": 45 }],
+      "fouls": 2,
+      "type": "home"
+    },
+    {
+      "team": 4,
+      "goals": [{ "player": 34, "minute": 11 }],
+      "cautions": [{ "caution_id": 1, "player": 36, "minute": 50 }],
+      "fouls": 2,
+      "type": "away"
+    }
+  ]
 }

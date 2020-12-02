@@ -19,5 +19,20 @@
       "fouls": 3
     }
   },
-  "schedule_id": "2_18"
+  "schedule_id": "2_18",
+  "gamestats": [
+    {
+      "team": 6,
+      "goals": [{ "minute": 30, "owngoal": true, "player": 32 }],
+      "fouls": 2,
+      "type": "home"
+    },
+    {
+      "team": 3,
+      "goals": [{ "minute": 28, "player": 28 }],
+      "mom": [{ "player": 18 }],
+      "fouls": 3,
+      "type": "away"
+    }
+  ]
 }
