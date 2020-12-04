@@ -1,1 +1,83 @@
-{"preview":[{"views":[{"id":"codesandbox.browser"},{"id":"codesandbox.browser","closeable":true,"options":{"url":"/___graphql","title":"GraphiQL"}},{"id":"codesandbox.browser","options":{"url":"/___graphql","title":"GraphiQL"},"closeable":true},{"id":"codesandbox.browser","options":{"port":50400,"url":"https://nxy85-50400.sse.codesandbox.io"},"closeable":true},{"id":"codesandbox.browser","options":{"port":33137,"url":"https://nxy85-33137.sse.codesandbox.io"},"closeable":true},{"id":"codesandbox.browser","options":{"port":40231,"url":"https://nxy85-40231.sse.codesandbox.io"},"closeable":true},{"id":"codesandbox.browser","options":{"port":33985,"url":"https://nxy85-33985.sse.codesandbox.io"},"closeable":true},{"id":"codesandbox.browser","options":{"port":43515,"url":"https://nxy85-43515.sse.codesandbox.io"},"closeable":true},{"id":"codesandbox.browser","options":{"port":41639,"url":"https://nxy85-41639.sse.codesandbox.io"},"closeable":true},{"id":"codesandbox.browser","options":{"port":44261,"url":"https://nxy85-44261.sse.codesandbox.io"},"closeable":true}]},{"open":true,"views":[{"id":"codesandbox.terminal"},{"id":"codesandbox.console"},{"id":"codesandbox.problems"}]}]}
+{
+  "preview": [
+    {
+      "views": [
+        { "id": "codesandbox.browser" },
+        {
+          "id": "codesandbox.browser",
+          "closeable": true,
+          "options": { "url": "/___graphql", "title": "GraphiQL" }
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": { "url": "/___graphql", "title": "GraphiQL" },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 50400,
+            "url": "https://nxy85-50400.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 33137,
+            "url": "https://nxy85-33137.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 40231,
+            "url": "https://nxy85-40231.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 33985,
+            "url": "https://nxy85-33985.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 43515,
+            "url": "https://nxy85-43515.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 41639,
+            "url": "https://nxy85-41639.sse.codesandbox.io"
+          },
+          "closeable": true
+        },
+        {
+          "id": "codesandbox.browser",
+          "options": {
+            "port": 44261,
+            "url": "https://nxy85-44261.sse.codesandbox.io"
+          },
+          "closeable": true
+        }
+      ]
+    },
+    {
+      "open": true,
+      "views": [
+        { "id": "codesandbox.terminal" },
+        { "id": "codesandbox.console" },
+        { "id": "codesandbox.problems" }
+      ]
+    }
+  ]
+}

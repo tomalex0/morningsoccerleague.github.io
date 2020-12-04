@@ -82,6 +82,11 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   
 <!-- AUTO-GENERATED-CONTENT:END -->
 
+## Deployed Version
+
+- https://nxy85.sse.codesandbox.io/___graphql
+- https://tomalex0.github.io/morningsoccerleague.github.io
+
 ## Reference
 
 ##### Gatsby Link Directive
@@ -98,6 +103,4 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 - https://github.com/gatsbyjs/gatsby/issues/16616
 - https://github.com/gatsbyjs/gatsby/issues/10230
-
-
-<button class="button-save large">Big Fat Button</button>
+- https://dev.to/fzammetti/need-help-with-filtering-data-in-graphiql-2jpf

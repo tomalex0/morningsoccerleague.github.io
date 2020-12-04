@@ -1,7 +1,7 @@
 type Frontmatter {
   tags: [String!]!
 }
-type MslSeasonsJsonTeams implements Node {
+type MslSeasonsJsonTeams {
   owners: [MslPlayersJson] @link(by: "player_id")
   players: [MslPlayersJson] @link(by: "player_id")
   # Team details for each team in the season
@@ -13,29 +13,29 @@ type MslSchedulesJsonGamestats implements Node {
 		team: MslTeamsJson @link(by: "team_id")
 }
 
-type MslSchedulesJsonGamestatsMom implements Node {
+type MslSchedulesJsonGamestatsMom {
 		player: [MslPlayersJson] @link(by: "player_id")
 }
 
-type MslSchedulesJsonGamestatsGoals implements Node {
+type MslSchedulesJsonGamestatsGoals {
 			player: MslPlayersJson @link(by: "player_id")
    assist: MslPlayersJson @link(by: "player_id")
 }
 
-type MslSchedulesJsonReferees implements Node {
+type MslSchedulesJsonReferees {
 	 player: MslPlayersJson @link(by: "player_id")
   team: MslTeamsJson @link(by: "team_id")
 }
 
-type MslSchedulesJsonGamestatsKeeper implements Node {
+type MslSchedulesJsonGamestatsKeeper {
 		player: MslPlayersJson @link(by: "player_id")
 }
 
-type MslSchedulesJsonGamestatsPlayers  implements Node {
+type MslSchedulesJsonGamestatsPlayers {
 		player: [MslPlayersJson] @link(by: "player_id")
 }
 
-type MslSchedulesJsonGamestatsCautions implements Node {
+type MslSchedulesJsonGamestatsCautions {
 		player: MslPlayersJson @link(by: "player_id")
   caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
 }
