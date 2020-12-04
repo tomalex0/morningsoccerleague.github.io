@@ -40,7 +40,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "postinstall": "npm install node@14.2.0",
+    "postinstall": "npm install node@14.2.0 --no-save",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
