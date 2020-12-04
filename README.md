@@ -103,4 +103,12 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 - https://github.com/gatsbyjs/gatsby/issues/16616
 - https://github.com/gatsbyjs/gatsby/issues/10230
+
+### Graphql Fields
+
 - https://dev.to/fzammetti/need-help-with-filtering-data-in-graphiql-2jpf
+- https://stackoverflow.com/a/53200224
+- https://hashinteractive.com/blog/gatsby-graphql-custom-field-resolver-related-types/
+- https://www.gatsbyjs.com/docs/schema-root-fields/#sorting-types
+- https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/query/__tests__/fixtures/query-compiler-schema.graphql#L546
+- https://graphql.org/graphql-js/passing-arguments/

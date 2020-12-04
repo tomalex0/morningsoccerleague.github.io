@@ -1,15 +1,16 @@
-type Frontmatter {
-  tags: [String!]!
+enum ScheduleTeamStats {
+  home
+  away
 }
+
 type MslSeasonsJsonTeams {
   owners: [MslPlayersJson] @link(by: "player_id")
   players: [MslPlayersJson] @link(by: "player_id")
   # Team details for each team in the season
   team: MslTeamsJson @link(by: "team_id")
-  frontmatter: Frontmatter
 }
 
-type MslSchedulesJsonGamestats implements Node {
+type MslSchedulesJsonGamestats {
 		team: MslTeamsJson @link(by: "team_id")
 }
 
@@ -18,8 +19,8 @@ type MslSchedulesJsonGamestatsMom {
 }
 
 type MslSchedulesJsonGamestatsGoals {
-			player: MslPlayersJson @link(by: "player_id")
-   assist: MslPlayersJson @link(by: "player_id")
+		player: MslPlayersJson @link(by: "player_id")
+  assist: MslPlayersJson @link(by: "player_id")
 }
 
 type MslSchedulesJsonReferees {
@@ -48,6 +49,7 @@ type MslTeamsJson implements Node {
 type MslSchedulesJson implements Node {
 		# Schedule to Season Mapping
   season: MslSeasonsJson @link(by: "season")
+  stats(stats_type: ScheduleTeamStats): MslSchedulesJsonGamestats
 }
 
 type MslSeasonsJson implements Node {

@@ -6,6 +6,5 @@ module.exports = ({ createResolvers }) => {
     ...PostResolver,
     ...MslResolver,
   }
-
   createResolvers(resolvers)
 }
