@@ -84,7 +84,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ## Deployed Version
 
-- https://ylgj2.sse.codesandbox.io/___graphql
+- https://b0o5f.sse.codesandbox.io/___graphql
 - https://tomalex0.github.io/morningsoccerleague.github.io
 
 ## Reference
