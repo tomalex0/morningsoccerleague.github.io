@@ -25,6 +25,7 @@ type MslSchedulesJsonGamestatsGoals {
 
 type MslSchedulesJsonReferees {
 	 player: MslPlayersJson @link(by: "player_id")
+	 # value of `team` property will be linked with value of `team_id` in `MslTeamsJson`
   team: MslTeamsJson @link(by: "team_id")
 }
 
