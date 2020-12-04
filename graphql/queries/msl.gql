@@ -25,7 +25,7 @@ type MslSchedulesJsonGamestatsGoals {
 
 type MslSchedulesJsonReferees {
 	 player: MslPlayersJson @link(by: "player_id")
-	 # value of `team` property will be linked with value of `team_id` in `MslTeamsJson`
+	 # value associated with `team` property will be linked with value of `team_id` in `MslTeamsJson`
   team: MslTeamsJson @link(by: "team_id")
 }
 
@@ -50,6 +50,7 @@ type MslTeamsJson implements Node {
 type MslSchedulesJson implements Node {
 		# Schedule to Season Mapping
   season: MslSeasonsJson @link(by: "season")
+  # custom field with filter capability to get stats of home & away
   stats(stats_type: ScheduleTeamStats): MslSchedulesJsonGamestats
 }
 
@@ -58,58 +59,3 @@ type MslSeasonsJson implements Node {
   # Link back to schedule from season
   schedules: [MslSchedulesJson] @link(by: "season.season_id", from: "season_id")
 }
-
-# Remove this block Starts Here
-
-#type MslSchedulesJsonStatsHome implements Node {
-#		team: MslTeamsJson @link(by: "team_id")
-#}
-#
-#type MslSchedulesJsonStatsAway implements Node {
-#		team: MslTeamsJson @link(by: "team_id")
-#}
-#
-#type MslSchedulesJsonStatsHomeMom implements Node {
-#		player: [MslPlayersJson] @link(by: "player_id")
-#}
-#
-#type MslSchedulesJsonStatsAwayMom implements Node {
-#		player: [MslPlayersJson] @link(by: "player_id")
-#}
-#
-#type MslSchedulesJsonStatsHomePlayers implements Node {
-#		player: [MslPlayersJson] @link(by: "player_id")
-#}
-#
-#type MslSchedulesJsonStatsAwayPlayers implements Node {
-#		player: [MslPlayersJson] @link(by: "player_id")
-#}
-#
-#type MslSchedulesJsonStatsHomeKeeper implements Node {
-#		player: MslPlayersJson @link(by: "player_id")
-#}
-#
-#type MslSchedulesJsonStatsAwayKeeper implements Node {
-#		player: MslPlayersJson @link(by: "player_id")
-#}
-#
-#type MslSchedulesJsonStatsHomeCautions implements Node {
-#		player: MslPlayersJson @link(by: "player_id")
-#		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
-#}
-#
-#type MslSchedulesJsonStatsAwayCautions implements Node {
-#		player: MslPlayersJson @link(by: "player_id")
-#		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
-#}
-#
-#type MslSchedulesJsonStatsHomeGoals implements Node {
-#		player: MslPlayersJson @link(by: "player_id")
-#		assist: MslPlayersJson @link(by: "player_id")
-#}
-#
-#type MslSchedulesJsonStatsAwayGoals implements Node {
-#		player: MslPlayersJson @link(by: "player_id")
-#		assist: MslPlayersJson @link(by: "player_id")
-#}
-# Remove this block Ends Here
