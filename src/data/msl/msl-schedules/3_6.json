@@ -7,48 +7,6 @@
     { "team": 5, "player": 50 }
   ],
   "completed": true,
-  "stats": {
-    "home": {
-      "team": 4,
-      "goals": [],
-      "keeper": [{ "player": 35, "saves": 6 }],
-      "players": [
-        { "player": 35 },
-        { "player": 102 },
-        { "player": 76 },
-        { "player": 103 },
-        { "player": 104 },
-        { "player": 42 },
-        { "player": 105 },
-        { "player": 8 },
-        { "player": 53 }
-      ],
-      "fouls": 2
-    },
-    "away": {
-      "team": 9,
-      "goals": [
-        { "minute": 9, "player": 34, "assist": 109 },
-        { "minute": 26, "player": 111, "assist": 81 },
-        { "minute": 39, "player": 111, "assist": 22 }
-      ],
-      "mom": [{ "player": 111 }],
-      "keeper": [{ "player": 28, "saves": 2 }],
-      "players": [
-        { "player": 106 },
-        { "player": 22 },
-        { "player": 107 },
-        { "player": 108 },
-        { "player": 28 },
-        { "player": 34 },
-        { "player": 109 },
-        { "player": 81 },
-        { "player": 30 },
-        { "player": 111 }
-      ],
-      "fouls": 0
-    }
-  },
   "schedule_id": "3_6",
   "gamestats": [
     {
@@ -67,7 +25,7 @@
         { "player": 53 }
       ],
       "fouls": 2,
-      "type": "home"
+      "team_type": "home"
     },
     {
       "team": 9,
@@ -91,7 +49,7 @@
         { "player": 111 }
       ],
       "fouls": 0,
-      "type": "away"
+      "team_type": "away"
     }
   ]
 }

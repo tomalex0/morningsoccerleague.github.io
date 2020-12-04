@@ -7,57 +7,6 @@
     { "team": 6, "player": 68 }
   ],
   "completed": true,
-  "stats": {
-    "home": {
-      "team": 5,
-      "cautions": [
-        { "caution_id": 1, "player": 45, "minute": 46 },
-        { "caution_id": 1, "player": 32, "minute": 51 }
-      ],
-      "players": [
-        { "player": 46 },
-        { "player": 72 },
-        { "player": 91 },
-        { "player": 92 },
-        { "player": 70 },
-        { "player": 45 },
-        { "player": 77 },
-        { "player": 50 },
-        { "player": 29 },
-        { "player": 93 },
-        { "player": 94 },
-        { "player": 32 }
-      ],
-      "goals": [],
-      "keeper": [{ "player": 77, "saves": 6 }],
-      "fouls": 3
-    },
-    "away": {
-      "team": 7,
-      "mom": [{ "player": 90 }],
-      "cautions": [
-        { "caution_id": 1, "player": 85, "minute": 32 },
-        { "caution_id": 1, "player": 31, "minute": 51 }
-      ],
-      "keeper": [{ "player": 90, "saves": 8 }],
-      "players": [
-        { "player": 6 },
-        { "player": 85 },
-        { "player": 56 },
-        { "player": 99 },
-        { "player": 49 },
-        { "player": 60 },
-        { "player": 100 },
-        { "player": 101 },
-        { "player": 63 },
-        { "player": 90 },
-        { "player": 31 },
-        { "player": 25 }
-      ],
-      "goals": [],
-      "fouls": 5
-    }
-  },
   "schedule_id": "3_19",
   "gamestats": [
     {
@@ -83,7 +32,7 @@
       "goals": [],
       "keeper": [{ "player": 77, "saves": 6 }],
       "fouls": 3,
-      "type": "home"
+      "team_type": "home"
     },
     {
       "team": 7,
@@ -109,7 +58,7 @@
       ],
       "goals": [],
       "fouls": 5,
-      "type": "away"
+      "team_type": "away"
     }
   ]
 }

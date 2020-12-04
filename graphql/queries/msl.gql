@@ -1,9 +1,12 @@
-
+type Frontmatter {
+  tags: [String!]!
+}
 type MslSeasonsJsonTeams implements Node {
   owners: [MslPlayersJson] @link(by: "player_id")
   players: [MslPlayersJson] @link(by: "player_id")
   # Team details for each team in the season
   team: MslTeamsJson @link(by: "team_id")
+  frontmatter: Frontmatter
 }
 
 type MslSchedulesJsonGamestats implements Node {
@@ -12,14 +15,6 @@ type MslSchedulesJsonGamestats implements Node {
 
 type MslSchedulesJsonGamestatsMom implements Node {
 		player: [MslPlayersJson] @link(by: "player_id")
-}
-
-type MslSchedulesJsonStatsHome implements Node {
-		team: MslTeamsJson @link(by: "team_id")
-}
-
-type MslSchedulesJsonStatsAway implements Node {
-		team: MslTeamsJson @link(by: "team_id")
 }
 
 type MslSchedulesJsonGamestatsGoals implements Node {
@@ -62,47 +57,56 @@ type MslSeasonsJson implements Node {
 }
 
 # Remove this block Starts Here
-type MslSchedulesJsonStatsHomeMom implements Node {
-		player: [MslPlayersJson] @link(by: "player_id")
-}
 
-type MslSchedulesJsonStatsAwayMom implements Node {
-		player: [MslPlayersJson] @link(by: "player_id")
-}
-
-type MslSchedulesJsonStatsHomePlayers implements Node {
-		player: [MslPlayersJson] @link(by: "player_id")
-}
-
-type MslSchedulesJsonStatsAwayPlayers implements Node {
-		player: [MslPlayersJson] @link(by: "player_id")
-}
-
-type MslSchedulesJsonStatsHomeKeeper implements Node {
-		player: MslPlayersJson @link(by: "player_id")
-}
-
-type MslSchedulesJsonStatsAwayKeeper implements Node {
-		player: MslPlayersJson @link(by: "player_id")
-}
-
-type MslSchedulesJsonStatsHomeCautions implements Node {
-		player: MslPlayersJson @link(by: "player_id")
-		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
-}
-
-type MslSchedulesJsonStatsAwayCautions implements Node {
-		player: MslPlayersJson @link(by: "player_id")
-		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
-}
-
-type MslSchedulesJsonStatsHomeGoals implements Node {
-		player: MslPlayersJson @link(by: "player_id")
-		assist: MslPlayersJson @link(by: "player_id")
-}
-
-type MslSchedulesJsonStatsAwayGoals implements Node {
-		player: MslPlayersJson @link(by: "player_id")
-		assist: MslPlayersJson @link(by: "player_id")
-}
+#type MslSchedulesJsonStatsHome implements Node {
+#		team: MslTeamsJson @link(by: "team_id")
+#}
+#
+#type MslSchedulesJsonStatsAway implements Node {
+#		team: MslTeamsJson @link(by: "team_id")
+#}
+#
+#type MslSchedulesJsonStatsHomeMom implements Node {
+#		player: [MslPlayersJson] @link(by: "player_id")
+#}
+#
+#type MslSchedulesJsonStatsAwayMom implements Node {
+#		player: [MslPlayersJson] @link(by: "player_id")
+#}
+#
+#type MslSchedulesJsonStatsHomePlayers implements Node {
+#		player: [MslPlayersJson] @link(by: "player_id")
+#}
+#
+#type MslSchedulesJsonStatsAwayPlayers implements Node {
+#		player: [MslPlayersJson] @link(by: "player_id")
+#}
+#
+#type MslSchedulesJsonStatsHomeKeeper implements Node {
+#		player: MslPlayersJson @link(by: "player_id")
+#}
+#
+#type MslSchedulesJsonStatsAwayKeeper implements Node {
+#		player: MslPlayersJson @link(by: "player_id")
+#}
+#
+#type MslSchedulesJsonStatsHomeCautions implements Node {
+#		player: MslPlayersJson @link(by: "player_id")
+#		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
+#}
+#
+#type MslSchedulesJsonStatsAwayCautions implements Node {
+#		player: MslPlayersJson @link(by: "player_id")
+#		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
+#}
+#
+#type MslSchedulesJsonStatsHomeGoals implements Node {
+#		player: MslPlayersJson @link(by: "player_id")
+#		assist: MslPlayersJson @link(by: "player_id")
+#}
+#
+#type MslSchedulesJsonStatsAwayGoals implements Node {
+#		player: MslPlayersJson @link(by: "player_id")
+#		assist: MslPlayersJson @link(by: "player_id")
+#}
 # Remove this block Ends Here

@@ -6,21 +6,9 @@
     { "team": 2, "player": 61 }
   ],
   "completed": true,
-  "stats": {
-    "home": { "team": 1, "goals": [], "fouls": 1 },
-    "away": {
-      "team": 3,
-      "goals": [
-        { "player": 57, "minute": 26 },
-        { "player": 29, "minute": 28 }
-      ],
-      "mom": [{ "player": 57 }],
-      "fouls": 3
-    }
-  },
   "schedule_id": "1_17",
   "gamestats": [
-    { "team": 1, "goals": [], "fouls": 1, "type": "home" },
+    { "team": 1, "goals": [], "fouls": 1, "team_type": "home" },
     {
       "team": 3,
       "goals": [
@@ -29,7 +17,7 @@
       ],
       "mom": [{ "player": 57 }],
       "fouls": 3,
-      "type": "away"
+      "team_type": "away"
     }
   ]
 }
