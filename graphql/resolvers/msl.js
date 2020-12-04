@@ -3,7 +3,6 @@ module.exports = {
     seasons: {
       type: ["MslSeasonsJson"],
       resolve(source, args, context, info) {
-        console.log(source, args, context, "----fg-f---")
         return context.nodeModel.runQuery({
           query: {
             filter: {
