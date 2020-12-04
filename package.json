@@ -29,9 +29,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "2.1.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
@@ -42,6 +40,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "postinstall": "npm install node@14.2.0",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
