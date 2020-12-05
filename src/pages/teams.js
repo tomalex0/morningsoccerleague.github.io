@@ -5,19 +5,44 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = ({ path }) => (
+const IndexPage = ({ data, path }) => (
   <Layout>
     <SEO title="Teams" path={path} />
     <h1>Hi Teams</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <p>Change v4.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
+
+// export const query = graphql`
+//   query MyQuery($seasonId: Int! = 3) {
+//     allMslSeasonsJson(filter: { season_id: { eq: $seasonId } }) {
+//       nodes {
+//         season_id
+//         season
+//         teams {
+//           owners {
+//             name
+//             player_id
+//           }
+//           players {
+//             player_id
+//             name
+//           }
+//           team {
+//             team_id
+//             teamName
+//             teamCls
+//           }
+//         }
+//         mos {
+//           player_id
+//           name
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default IndexPage
