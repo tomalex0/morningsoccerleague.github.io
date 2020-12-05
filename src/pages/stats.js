@@ -5,9 +5,9 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = ({ path }) => (
   <Layout>
-    <SEO title="Stats" path="stats" />
+    <SEO title="Stats" path={path} />
     <h1>Hi Stats</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
