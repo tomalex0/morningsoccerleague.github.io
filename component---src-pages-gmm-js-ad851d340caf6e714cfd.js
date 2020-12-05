@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{QfMZ:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),l=a.n(n),r=(a("Wbzz"),a("Bl7J")),c=a("tBDR"),i=a("vrFN");t.default=function IndexPage(e){var t=e.path;return l.a.createElement(r.a,null,l.a.createElement(i.a,{title:"GMM",path:t}),l.a.createElement("h1",null,"Hi GMM"),l.a.createElement("div",{style:{maxWidth:"300px",marginBottom:"1.45rem"}},l.a.createElement(c.a,null)))}}}]);
+//# sourceMappingURL=component---src-pages-gmm-js-ad851d340caf6e714cfd.js.map
