@@ -1,15 +1,17 @@
-type Test1Json implements Node {
-	typeName: String
+# union examples
+# https://www.gatsbyjs.com/docs/schema-customization/#custom-interfaces-and-unions
+
+interface TestJson {
+  typeName: Int
+  name: String
+}
+
+type Test1Json implements Node & TestJson {
+	typeName: Int
 	name: String
 }
 
-type Test2Json implements Node {
-	typeName: String
+type Test2Json implements Node & TestJson {
+	typeName: Int
 	name: String
 }
-
-type MyType implements Node {
-  related: [FooBar]
-}
-
-union FooBar = Test1Json | Test2Json
