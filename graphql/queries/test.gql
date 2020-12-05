@@ -1,0 +1,15 @@
+type Test1Json implements Node {
+	typeName: String
+	name: String
+}
+
+type Test2Json implements Node {
+	typeName: String
+	name: String
+}
+
+type MyType implements Node {
+  related: [FooBar]
+}
+
+union FooBar = Test1Json | Test2Json

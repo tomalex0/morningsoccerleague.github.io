@@ -25,12 +25,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `msl`,
         path: `./src/data/msl/`,
+        // ignore: [`./**/msl-test/***`]
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `test`,
+        path: `./src/data/test/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `post`,
         path: `./src/data/post/`,
       },
     },

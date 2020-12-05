@@ -117,20 +117,19 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 - https://codesandbox.io/s/node-custom-version-j7xvv?file=/package.json:176-218
 
-
 ## Features
 
-- Form Team Position 
-    - https://codepen.io/kaolay/pen/vydwjq
-    - https://www.opihana.com/2017/11/08/Soccer-Formations-in-CSS-Grid/
-    - https://github.com/zhenfei666/a-football-pitch-CSS-/blob/master/soccer-pitch.html
-    - https://codepen.io/paulnoble/pen/PwOxOY
-    - https://github.com/jalapic/jalapic.github.io
-    - https://xbeat-gameserver.herokuapp.com/
+- Form Team Position
+  - https://codepen.io/kaolay/pen/vydwjq
+  - https://www.opihana.com/2017/11/08/Soccer-Formations-in-CSS-Grid/
+  - https://github.com/zhenfei666/a-football-pitch-CSS-/blob/master/soccer-pitch.html
+  - https://codepen.io/paulnoble/pen/PwOxOY
+  - https://github.com/jalapic/jalapic.github.io
+  - https://xbeat-gameserver.herokuapp.com/
 - Create schedule data - Form Builder
 - Standings
-    - https://codepen.io/Shayley/pen/NWqrvqQ
+  - https://codepen.io/Shayley/pen/NWqrvqQ
 - UI Components
-    - https://codemyui.com/soccer-ball-hexagon-pattern-loader/
-    - https://codemyui.com/various-style-toggle-gravity-beer-pong-and-more/
-    - https://codemyui.com/tennis-toggle-button-for-sports-websites/
+  - https://codemyui.com/soccer-ball-hexagon-pattern-loader/
+  - https://codemyui.com/various-style-toggle-gravity-beer-pong-and-more/
+  - https://codemyui.com/tennis-toggle-button-for-sports-websites/
