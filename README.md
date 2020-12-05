@@ -94,17 +94,17 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 - https://hashinteractive.com/blog/gatsby-data-relationships-with-foreign-key-fields/
 - https://github.com/gatsbyjs/gatsby/issues/25077#issuecomment-645855986
 
-#### Parallax
+##### Parallax
 
 - https://gatsbyawesome.com/playful-colorful-one-page-website-with-parallax-effect/
 - https://www.react-spring.io/docs/hooks/examples
 
-#### Gatsby Develop
+##### Gatsby Develop
 
 - https://github.com/gatsbyjs/gatsby/issues/16616
 - https://github.com/gatsbyjs/gatsby/issues/10230
 
-### Graphql Fields
+##### Graphql Fields
 
 - https://dev.to/fzammetti/need-help-with-filtering-data-in-graphiql-2jpf
 - https://stackoverflow.com/a/53200224
@@ -113,6 +113,24 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 - https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/query/__tests__/fixtures/query-compiler-schema.graphql#L546
 - https://graphql.org/graphql-js/passing-arguments/
 
-### CodeSandBox
+##### CodeSandBox
 
 - https://codesandbox.io/s/node-custom-version-j7xvv?file=/package.json:176-218
+
+
+## Features
+
+- Form Team Position 
+    - https://codepen.io/kaolay/pen/vydwjq
+    - https://www.opihana.com/2017/11/08/Soccer-Formations-in-CSS-Grid/
+    - https://github.com/zhenfei666/a-football-pitch-CSS-/blob/master/soccer-pitch.html
+    - https://codepen.io/paulnoble/pen/PwOxOY
+    - https://github.com/jalapic/jalapic.github.io
+    - https://xbeat-gameserver.herokuapp.com/
+- Create schedule data - Form Builder
+- Standings
+    - https://codepen.io/Shayley/pen/NWqrvqQ
+- UI Components
+    - https://codemyui.com/soccer-ball-hexagon-pattern-loader/
+    - https://codemyui.com/various-style-toggle-gravity-beer-pong-and-more/
+    - https://codemyui.com/tennis-toggle-button-for-sports-websites/
