@@ -57,11 +57,11 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         devMode: false,
-        analyzerMode: 'static'
-      }
+        analyzerMode: "static",
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,

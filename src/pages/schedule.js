@@ -4,6 +4,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import {
+  MslPlayersJsonFragment,
+  MslTeamsJsonFragment,
+  MslSchedulesJsonGamestatsFragment,
+} from "../data/fragments"
 
 const IndexPage = ({ path, data }) => {
   return (
@@ -21,58 +26,7 @@ const IndexPage = ({ path, data }) => {
 }
 
 export const query = graphql`
-  fragment MslPlayersJsonFragment on MslPlayersJson {
-    name
-    player_id
-  }
-
-  fragment MslTeamsJsonFragment on MslTeamsJson {
-    team_id
-    teamName
-    teamCls
-  }
-
-  fragment MslSchedulesJsonGamestatsFragment on MslSchedulesJsonGamestats {
-    mom {
-      player {
-        ...MslPlayersJsonFragment
-      }
-    }
-    team {
-      teamName
-      teamCls
-      team_id
-    }
-    fouls
-    goals {
-      minute
-      owngoal
-      penalty
-      extra_min
-      assist {
-        ...MslPlayersJsonFragment
-      }
-    }
-    keeper {
-      saves
-      player {
-        ...MslPlayersJsonFragment
-      }
-    }
-    cautions {
-      player {
-        ...MslPlayersJsonFragment
-      }
-      minute
-      extra_min
-      caution {
-        name
-        cls
-        caution_id
-      }
-    }
-  }
-  query MyQuery($seasonId: Int! = 3) {
+  query($seasonId: Int! = 3) {
     allMslSchedulesJson(filter: { season: { season_id: { eq: $seasonId } } }) {
       nodes {
         scheduled_time
