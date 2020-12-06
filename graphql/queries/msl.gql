@@ -45,6 +45,11 @@ type MslSchedulesJsonGamestatsCautions {
 type MslTeamsJson implements Node {
   # List all seasons the team is part of
   seasons: [MslSeasonsJson] @link(by: "team.team_id", from: "team_id")
+  image: File
+}
+
+type MslPlayersJson implements Node {
+		image: File
 }
 
 type MslSchedulesJson implements Node {

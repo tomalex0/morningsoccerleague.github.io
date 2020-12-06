@@ -9,7 +9,7 @@ const IndexPage = ({ path }) => (
   <Layout>
     <SEO title="Home" path={path} />
     <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site v14.</p>
+    <p>Welcome to your new Gatsby site v15.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>

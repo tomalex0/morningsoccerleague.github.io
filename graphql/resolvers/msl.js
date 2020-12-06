@@ -1,3 +1,9 @@
+function getFile(context, path) {
+  const data = context.nodeModel.getAllNodes({ type: `File` })
+  const record = data.find(item => item.relativePath == path)
+  return record
+}
+
 module.exports = {
   MslTeamsJson: {
     seasons: {
@@ -14,6 +20,22 @@ module.exports = {
           type: "MslSeasonsJson",
           firstOnly: false,
         })
+      },
+    },
+    image: {
+      type: "File",
+      resolve(source, args, context, info) {
+        const record = getFile(context, `teams/${source.team_id}.png`)
+        return record
+      },
+    },
+  },
+  MslPlayersJson: {
+    image: {
+      type: "File",
+      resolve(source, args, context, info) {
+        const record = getFile(context, `players/${source.player_id}.png`)
+        return record
       },
     },
   },

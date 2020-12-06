@@ -13,6 +13,12 @@ module.exports = {
   },
   flags: {
     LAZY_IMAGES: true,
+    FAST_DEV: true,
+    DEV_SSR: true,
+    QUERY_ON_DEMAND: true,
+    FAST_REFRESH: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
