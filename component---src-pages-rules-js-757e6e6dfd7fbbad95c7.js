@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{tHgG:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),l=a.n(n),r=(a("Wbzz"),a("Bl7J")),u=a("tBDR"),c=a("vrFN");t.default=function IndexPage(e){var t=e.path;return l.a.createElement(r.a,null,l.a.createElement(c.a,{title:"Rules",path:t}),l.a.createElement("h1",null,"Hi Rules"),l.a.createElement("div",{style:{maxWidth:"300px",marginBottom:"1.45rem"}},l.a.createElement(u.a,null)))}}}]);
-//# sourceMappingURL=component---src-pages-rules-js-757e6e6dfd7fbbad95c7.js.map

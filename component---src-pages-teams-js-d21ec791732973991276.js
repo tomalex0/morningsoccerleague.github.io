@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{RL57:function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),l=t.n(n),r=(t("Wbzz"),t("Bl7J")),m=t("tBDR"),c=t("vrFN");a.default=function IndexPage(e){e.data;var a=e.path;return l.a.createElement(r.a,null,l.a.createElement(c.a,{title:"Teams",path:a}),l.a.createElement("h1",null,"Hi Teams"),l.a.createElement("div",{style:{maxWidth:"300px",marginBottom:"1.45rem"}},l.a.createElement(m.a,null)))}}}]);
-//# sourceMappingURL=component---src-pages-teams-js-d21ec791732973991276.js.map
