@@ -1,10 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { MslPlayersJsonFragment, MslTeamsJsonFragment } from "../data/fragments"
+import {
+  MslPlayersJsonFragment,
+  MslTeamsJsonFragment,
+  MslSeasonsJsonFragment,
+} from "../data/fragments"
 
 const IndexPage = ({ data, path }) => (
   <Layout>
@@ -23,8 +27,7 @@ export const query = graphql`
   query($seasonId: Int! = 3) {
     allMslSeasonsJson(filter: { season_id: { eq: $seasonId } }) {
       nodes {
-        season_id
-        season
+        ...MslSeasonsJsonFragment
         teams {
           owners {
             ...MslPlayersJsonFragment

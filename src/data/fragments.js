@@ -21,6 +21,14 @@ export const MslCautionJsonFragment = graphql`
     cls
   }
 `
+
+export const MslSeasonsJsonFragment = graphql`
+  fragment MslSeasonsJsonFragment on MslSeasonsJson {
+    season_year
+    season_id
+    season
+  }
+`
 export const MslSchedulesJsonGamestatsFragment = graphql`
   fragment MslSchedulesJsonGamestatsFragment on MslSchedulesJsonGamestats {
     mom {

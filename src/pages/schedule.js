@@ -8,6 +8,7 @@ import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSchedulesJsonGamestatsFragment,
+  MslSeasonsJsonFragment,
 } from "../data/fragments"
 
 const IndexPage = ({ path, data }) => {
@@ -35,6 +36,9 @@ export const query = graphql`
         started_time
         end_time
         completed
+        season {
+          ...MslSeasonsJsonFragment
+        }
         homestats: stats(stats_type: home) {
           ...MslSchedulesJsonGamestatsFragment
         }
