@@ -1,8 +1,5 @@
-function getFile(context, path) {
-  const data = context.nodeModel.getAllNodes({ type: `File` })
-  const record = data.find(item => item.relativePath == path)
-  return record
-}
+const { MslImgKey } = require("../lib/enum")
+const { getFile } = require("../lib/helpers")
 
 module.exports = {
   MslTeamsJson: {
@@ -25,7 +22,8 @@ module.exports = {
     image: {
       type: "File",
       resolve(source, args, context, info) {
-        const record = getFile(context, `teams/${source.team_id}.png`)
+        const imgPath = `${MslImgKey.TEAM}/${source.team_id}.png`
+        const record = getFile(context, imgPath)
         return record
       },
     },
@@ -34,7 +32,8 @@ module.exports = {
     image: {
       type: "File",
       resolve(source, args, context, info) {
-        const record = getFile(context, `players/${source.player_id}.png`)
+        const imgPath = `${MslImgKey.PLAYER}/${source.player_id}.png`
+        const record = getFile(context, imgPath)
         return record
       },
     },

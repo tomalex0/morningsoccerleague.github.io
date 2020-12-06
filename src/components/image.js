@@ -28,7 +28,7 @@ const Image = () => {
     return <div>Picture not found</div>
   }
 
-  return <GatsbyImage image={imageData} />
+  return <GatsbyImage image={imageData} alt={"Astronaut"} />
 }
 
 export default Image
