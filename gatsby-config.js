@@ -11,6 +11,9 @@ module.exports = {
     siteUrl: SITE_URL,
     pathPrefix: PATH_PREFIX,
   },
+  flags: {
+    LAZY_IMAGES: true,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
