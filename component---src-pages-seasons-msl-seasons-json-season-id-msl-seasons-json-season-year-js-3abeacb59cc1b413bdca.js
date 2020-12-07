@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{kSlB:function(n,e,a){"use strict";a.r(e);var o=a("q1tI"),s=a.n(o);a("o5e5");e.default=function Season(n){var e=n.data.season;return s.a.createElement("div",null,"Season ",e.season_id,"-",e.season_year)}},o5e5:function(n,e){}}]);
-//# sourceMappingURL=component---src-pages-seasons-msl-seasons-json-season-id-msl-seasons-json-season-year-js-3abeacb59cc1b413bdca.js.map
