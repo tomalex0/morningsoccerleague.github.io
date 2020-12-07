@@ -32,7 +32,7 @@ const TeamsIndex = ({ data, path }) => {
 
 export const query = graphql`
   query {
-    teams: allMslTeamsJson {
+    teams: allMslTeamsJson(sort: {fields: teamName, order: ASC}) {
       nodes {
         ...MslTeamsJsonFragment
       }

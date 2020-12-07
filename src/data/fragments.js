@@ -29,6 +29,7 @@ export const MslSeasonsJsonFragment = graphql`
     season_year
     season_id
     season
+    seasonPath: gatsbyPath(filePath: "/seasons/{MslSeasonsJson.season_id}-{MslSeasonsJson.season_year}")
   }
 `
 export const MslSchedulesJsonGamestatsFragment = graphql`

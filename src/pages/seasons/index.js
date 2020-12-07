@@ -10,19 +10,19 @@ import {
   MslSeasonsJsonFragment,
 } from "../../data/fragments"
 
-const PlayersIndex = ({ data, path }) => {
-  const { players } = data
+const SeasonsIndex = ({ data, path }) => {
+  const { seasons } = data
   return (
     <Layout>
-      <SEO title="Players" path={path} />
-      <h1>Hi Players</h1>
+      <SEO title="Seasons" path={path} />
+      <h1>Hi Seasons</h1>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>
       <ul>
-        {players.nodes.map(player => (
-          <li key={player.name}>
-            <Link to={player.teamPath}>{player.name}</Link>
+        {seasons.nodes.map(season => (
+          <li key={season.season_id}>
+            <Link to={season.seasonPath}>{season.season_id}-{season.season_year}</Link>
           </li>
         ))}
       </ul>
@@ -32,12 +32,12 @@ const PlayersIndex = ({ data, path }) => {
 
 export const query = graphql`
   query {
-    players: allMslPlayersJson(sort: {fields: name, order: ASC}) {
+    seasons: allMslSeasonsJson (sort: {order: ASC, fields: season_id}) {
       nodes {
-        ...MslPlayersJsonFragment
+        ...MslSeasonsJsonFragment
       }
     }
   }
 `
 
-export default PlayersIndex
+export default SeasonsIndex
