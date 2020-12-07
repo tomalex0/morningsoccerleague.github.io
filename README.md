@@ -66,26 +66,25 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-1. **`graphql`**: This directory contains new Graphql Types and Resolvers
+1.  **`graphql`**: This directory contains new Graphql Types and Resolvers
 
-1. **`.github`**: This directory contains all github actions
+1.  **`.github`**: This directory contains all github actions
 
-1. **`helpers`**: This directory contains functions to normalize data
+1.  **`helpers`**: This directory contains functions to normalize data
 
-1. **`onCreateWebpackConfig.js`**: To add Custom Webpack Config
+1.  **`onCreateWebpackConfig.js`**: To add Custom Webpack Config
 
-1. **`lighthouserc*.js`**: Lighthouse Test Config
+1.  **`lighthouserc*.js`**: Lighthouse Test Config
 
-1. **`static`**: This directory contains files that need to be in root of `public` folder
+1.  **`static`**: This directory contains files that need to be in root of `public` folder
 
 1.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
 
-1. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+1.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-1. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-1. **`README.md`**: A text file containing useful reference information about your project.
-
+1.  **`README.md`**: A text file containing useful reference information about your project.
 
 ## 💫 Deploy
 
