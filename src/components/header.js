@@ -35,6 +35,7 @@ const Header = ({ siteTitle }) => (
       <Link to="/schedule/">Schedule</Link> <br />
       <Link to="/stats/">Stats</Link> <br />
       <Link to="/teams/">Teams</Link> <br />
+      <Link to="/players/">Teams</Link> <br />
       <Link to="/using-typescript/">Using TypeScript</Link>
     </div>
   </header>
