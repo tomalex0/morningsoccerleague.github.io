@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{dFek:function(e,a,n){"use strict";n.r(a);var t=n("q1tI"),o=n.n(t);n("o5e5");a.default=function Team(e){var a=e.data.team;return o.a.createElement("div",null,"Team ",a.teamName)}},o5e5:function(e,a){}}]);
+//# sourceMappingURL=component---src-pages-teams-msl-teams-json-team-name-js-4d0880677fece45757c8.js.map

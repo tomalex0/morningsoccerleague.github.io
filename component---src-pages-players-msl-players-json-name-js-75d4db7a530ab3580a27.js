@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{"+ujc":function(e,n,a){"use strict";a.r(n);var t=a("q1tI"),r=a.n(t);a("o5e5");n.default=function Player(e){var n=e.data.player;return r.a.createElement("div",null,"Player ",n.name)}},o5e5:function(e,n){}}]);
+//# sourceMappingURL=component---src-pages-players-msl-players-json-name-js-75d4db7a530ab3580a27.js.map
