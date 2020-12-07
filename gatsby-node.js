@@ -7,3 +7,5 @@
 exports.createSchemaCustomization = require("./graphql/typedef")
 
 exports.createResolvers = require("./graphql/resolvers")
+
+exports.onCreateWebpackConfig = require("./onCreateWebpackConfig")

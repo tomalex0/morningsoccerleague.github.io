@@ -1,14 +1,15 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../../components/layout"
-import Image from "../../components/image"
-import SEO from "../../components/seo"
+import Layout from "components/layout"
+import Image from "components/image"
+import SEO from "components/seo"
+
 import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
-} from "../../data/fragments"
+} from "data/fragments"
 
 const PlayersIndex = ({ data, path }) => {
   const { players } = data
@@ -32,7 +33,7 @@ const PlayersIndex = ({ data, path }) => {
 
 export const query = graphql`
   query {
-    players: allMslPlayersJson(sort: {fields: name, order: ASC}) {
+    players: allMslPlayersJson(sort: { fields: name, order: ASC }) {
       nodes {
         ...MslPlayersJsonFragment
       }

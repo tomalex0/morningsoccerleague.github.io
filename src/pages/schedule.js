@@ -1,15 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "components/layout"
+import Image from "components/image"
+import SEO from "components/seo"
 import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSchedulesJsonGamestatsFragment,
   MslSeasonsJsonFragment,
-} from "../data/fragments"
+} from "data/fragments"
 
 const IndexPage = ({ path, data }) => {
   return (
