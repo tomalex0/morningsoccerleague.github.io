@@ -1,12 +1,12 @@
 {
-  "scheduled_date": "6/15/2018",
+  "scheduled_date": "2018-06-15",
   "season": 2,
   "referees": [
     { "team": 3, "player": 29 },
     { "team": 3, "player": 33 }
   ],
   "completed": true,
-  "schedule_id": "2_5",
+  "schedule_id": 205,
   "gamestats": [
     { "team": 6, "goals": [], "fouls": 5, "team_type": "home" },
     {

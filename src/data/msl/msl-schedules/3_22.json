@@ -1,5 +1,5 @@
 {
-  "scheduled_date": "8/23/2019",
+  "scheduled_date": "2019-08-23",
   "scheduled_time": "6:20 AM",
   "season": 3,
   "referees": [
@@ -7,7 +7,7 @@
     { "team": 9, "player": 22 }
   ],
   "completed": true,
-  "schedule_id": "3_22",
+  "schedule_id": 322,
   "gamestats": [
     {
       "team": 8,

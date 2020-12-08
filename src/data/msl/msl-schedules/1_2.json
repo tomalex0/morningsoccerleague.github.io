@@ -1,12 +1,12 @@
 {
-  "scheduled_date": "5/19/2017",
+  "scheduled_date": "2017-05-19",
   "season": 1,
   "referees": [
     { "team": 5, "player": 46 },
     { "team": 2, "player": 19 }
   ],
   "completed": true,
-  "schedule_id": "1_2",
+  "schedule_id": 102,
   "gamestats": [
     { "team": 3, "goals": [], "cautions": [], "fouls": 5, "team_type": "home" },
     {

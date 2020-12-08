@@ -1,12 +1,12 @@
 {
-  "scheduled_date": "9/29/2017",
+  "scheduled_date": "2017-09-29",
   "season": 1,
   "referees": [
     { "team": 4, "player": 42 },
     { "team": 2, "player": 61 }
   ],
   "completed": true,
-  "schedule_id": "1_17",
+  "schedule_id": 117,
   "gamestats": [
     { "team": 1, "goals": [], "fouls": 1, "team_type": "home" },
     {

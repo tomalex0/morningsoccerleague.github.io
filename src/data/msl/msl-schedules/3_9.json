@@ -1,10 +1,10 @@
 {
-  "scheduled_date": "7/19/2019",
+  "scheduled_date": "2019-07-19",
   "scheduled_time": "7:30 AM",
   "season": 3,
   "referees": [{ "team": 4 }, { "team": 6 }],
   "completed": true,
-  "schedule_id": "3_9",
+  "schedule_id": 309,
   "gamestats": [
     {
       "team": 9,

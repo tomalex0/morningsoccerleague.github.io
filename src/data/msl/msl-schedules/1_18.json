@@ -1,12 +1,12 @@
 {
-  "scheduled_date": "10/6/2017",
+  "scheduled_date": "2017-10-06",
   "season": 1,
   "referees": [
     { "team": 1, "player": 3 },
     { "team": 5, "player": 59 }
   ],
   "completed": true,
-  "schedule_id": "1_18",
+  "schedule_id": 118,
   "gamestats": [
     { "team": 2, "goals": [], "fouls": 2, "team_type": "home" },
     {

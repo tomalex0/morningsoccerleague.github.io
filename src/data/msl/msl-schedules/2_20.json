@@ -1,12 +1,12 @@
 {
-  "scheduled_date": "8/10/2018",
+  "scheduled_date": "2018-08-10",
   "season": 2,
   "referees": [
     { "team": 3, "player": 28 },
     { "team": 3, "player": 33 }
   ],
   "completed": true,
-  "schedule_id": "2_20",
+  "schedule_id": 220,
   "gamestats": [
     {
       "team": 6,

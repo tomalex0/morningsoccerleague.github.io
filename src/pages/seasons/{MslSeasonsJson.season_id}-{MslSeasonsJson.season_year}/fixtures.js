@@ -42,6 +42,7 @@ export const query = graphql`
   query($season_id: Int) {
     fixtures: allMslSchedulesJson(
       filter: { season: { season_id: { eq: $season_id } } }
+      sort: { fields: schedule_id, order: ASC }
     ) {
       nodes {
         scheduled_time

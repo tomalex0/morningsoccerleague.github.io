@@ -1,12 +1,12 @@
 {
-  "scheduled_date": "6/28/2019",
+  "scheduled_date": "2019-06-28",
   "scheduled_time": "6:20 AM",
   "started_time": "6:29 AM",
   "end_time": "7:25 AM",
   "season": 3,
   "referees": [{ "team": 6, "player": 67 }, { "team": 7 }],
   "completed": true,
-  "schedule_id": "3_2",
+  "schedule_id": 302,
   "gamestats": [
     {
       "team": 5,

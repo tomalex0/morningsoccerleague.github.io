@@ -1,5 +1,5 @@
 {
-  "scheduled_date": "7/12/2019",
+  "scheduled_date": "2019-07-12",
   "scheduled_time": "6:20 AM",
   "started_time": "6:25 AM",
   "end_time": "7:22 AM",
@@ -9,7 +9,7 @@
     { "team": 4, "player": 8 }
   ],
   "completed": true,
-  "schedule_id": "3_5",
+  "schedule_id": 305,
   "gamestats": [
     {
       "team": 7,

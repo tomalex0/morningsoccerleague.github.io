@@ -96,7 +96,6 @@ A quick look at the top-level files and directories you'll see in this project.
 
 ## Deployed Version
 
-- https://b0o5f.sse.codesandbox.io/___graphql
 - https://tomalex0.github.io/morningsoccerleague.github.io
 
 ## Reference
