@@ -17,8 +17,29 @@ function getTotalPlayers(teams) {
   })
   return sum
 }
+
+function getTotalGoals(schedules) {
+  const allStats = schedules.map(item => item.gamestats).flat()
+  let sum = 0
+  allStats.map(item => {
+    sum += item.goals.length
+  })
+  return sum
+}
+
+// function getTotalCautionType(schedules) {
+//   const allStats = schedules.map(item => item.cautions).flat()
+//   let sum = 0
+//   allStats.map(item => {
+//     if(item.caution_id)
+//     sum += item.goals.length
+//   })
+//   return sum
+// }
+
 const SeasonsIndex = ({ data, path }) => {
   const { seasons } = data
+  console.log(seasons)
   return (
     <Layout>
       <SEO title="Seasons" path={path} />
@@ -32,7 +53,8 @@ const SeasonsIndex = ({ data, path }) => {
             <Link to={season.seasonPath}>
               {season.season_id}-{season.season_year}-{season.schedules.length}{" "}
               Game--{season.teams.length} Teams --{" "}
-              {getTotalPlayers(season.teams)} Players
+              {getTotalPlayers(season.teams)} Players{" "}
+              {getTotalGoals(season.schedules)}Goals - Yellow Card - Red Card
             </Link>
           </li>
         ))}
@@ -48,6 +70,11 @@ export const query = graphql`
         ...MslSeasonsJsonFragment
         schedules {
           id
+          gamestats {
+            goals {
+              minute
+            }
+          }
         }
         teams {
           players {
