@@ -17,7 +17,9 @@ function Team({ path, data }) {
   return (
     <Layout>
       <SEO title={team.teamName} path={path} />
-      <h1>Hi Team {team.teamName}</h1>
+      <h1>
+        Hi Team {team.teamName} - {team.team_id}
+      </h1>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>

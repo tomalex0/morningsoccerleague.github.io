@@ -22,7 +22,9 @@ const TeamsIndex = ({ data, path }) => {
       <ul>
         {teams.nodes.map(team => (
           <li key={team.teamName}>
-            <Link to={team.teamPath}>{team.teamName}</Link>
+            <Link to={team.teamPath}>
+              {team.teamName} - {team.team_id}
+            </Link>
           </li>
         ))}
       </ul>
