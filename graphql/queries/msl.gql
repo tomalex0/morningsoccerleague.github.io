@@ -50,6 +50,7 @@ type MslTeamsJson implements Node {
 
 type MslPlayersJson implements Node {
 		image: File
+		seasons: [MslSeasonsJson]
 }
 
 type MslSchedulesJson implements Node {
@@ -59,8 +60,15 @@ type MslSchedulesJson implements Node {
   stats(stats_type: ScheduleTeamStats): MslSchedulesJsonGamestats
 }
 
+type MslTeamInfo {
+		team: MslTeamsJson @link(by: "team_id")
+		isOwner: Boolean
+}
 type MslSeasonsJson implements Node {
   mos: [MslPlayersJson] @link(by: "player_id")
+  # Only meant to be used while viewing from context of player
+  isMos: Boolean
+  teamInfo: MslTeamInfo
   # Link back to schedule from season
   schedules: [MslSchedulesJson] @link(by: "season.season_id", from: "season_id")
 }
