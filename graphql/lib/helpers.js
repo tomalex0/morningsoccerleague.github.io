@@ -16,7 +16,8 @@ exports.getFile = (context, path) => {
 //  }, {
 //  	"players": [12, 13]
 //  }]
-exports.findInNested = (searchData, arr, parentProp, accum = [], parentArr) => {
+
+function findInNested(searchData, arr, parentProp, accum = [], parentArr) {
   arr.forEach(f => {
     if (f[parentProp]) {
       findInNested(searchData, f[parentProp], parentProp, accum, f)
@@ -27,3 +28,5 @@ exports.findInNested = (searchData, arr, parentProp, accum = [], parentArr) => {
   })
   return accum
 }
+
+exports.findInNested = findInNested
