@@ -52,8 +52,6 @@ export const query = graphql`
           isOwner
         }
       }
-      player_id
-      name
     }
   }
 `
