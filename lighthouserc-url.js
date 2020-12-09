@@ -30,7 +30,7 @@ module.exports = {
         "uses-long-cache-ttl": "off",
         "speed-index": "off",
         "largest-contentful-paint": "off",
-        "interactive": "off",
+        interactive: "off",
         "first-cpu-idle": "off",
         "meta-description": "off",
         "meta-description": "off",
