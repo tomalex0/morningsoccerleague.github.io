@@ -35,6 +35,8 @@ module.exports = {
         "meta-description": "off",
         "meta-description": "off",
         "font-size": "off",
+        "html-has-lang": "off",
+        "first-meaningful-paint": "off",
       },
     },
   },
