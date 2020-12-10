@@ -1,5 +1,5 @@
 const { MslImgKey } = require("../lib/enum")
-const { getFile, findInNested, getPlayerGoals } = require("../lib/helpers")
+const { getFile, getPlayerGoals } = require("../lib/helpers")
 
 module.exports = {
   MslTeamsJson: {
@@ -120,15 +120,12 @@ module.exports = {
         })
         const teams = source.teams
         const playerId = source.player_id
-        console.log(getPlayerGoals(data, playerId), "---df-")
         const playerTeam = teams.find(item => item.players.includes(playerId))
-        // const playerTeam = findInNested(playerId, teams, "players")
-        // const playerOwner = findInNested(playerId, teams, "owners")
         const playerOwner = teams.filter(item => item.owners.includes(playerId))
-        // console.log(playerTeam,'--playerTeam---playerOwner--',playerOwner)
         return {
           team: playerTeam.team,
           isOwner: playerOwner.length > 0,
+          goals: getPlayerGoals(data, playerId).length,
         }
       },
     },

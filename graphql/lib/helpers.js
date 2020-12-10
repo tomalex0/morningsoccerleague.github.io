@@ -56,11 +56,8 @@ exports.getTotalGoals = getTotalGoals
 function getPlayerGoals(schedules, player_id) {
   const allGoals = getTotalGoals(schedules)
   // console.log(allGoals, "--fdf--", player_id)
-  return allGoals.filter(
-    item => !item.owngoal && item.player.player_id == player_id
-  )
+  return allGoals.filter(item => !item.owngoal && item.player == player_id)
 }
-
 exports.getPlayerGoals = getPlayerGoals
 
 function getTotalChildArr(itemArr, prop) {
