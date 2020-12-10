@@ -11,6 +11,8 @@ import {
   MslSeasonsJsonFragment,
 } from "data/fragments"
 
+import { getPlayerGoals } from "../../../graphql/lib/helpers"
+
 function Player({ data, path }) {
   const { player } = data
   return (
@@ -28,8 +30,12 @@ function Player({ data, path }) {
             <Link to={season.seasonPath}>
               {season.season_id}-{season.season_year}
             </Link>
-            {season.teamInfo.isOwner && <span>---Owner</span>}
-            <span>---{season.teamInfo.team.teamName}</span>
+            {season.playerInfo.isOwner && <span>---Owner</span>}
+            <span>
+              ---{getPlayerGoals(season.schedules, player.player_id).length}{" "}
+              Goals
+            </span>
+            <span>---{season.playerInfo.team.teamName}</span>
             {season.isMos && <span>---Mos</span>}
           </li>
         ))}
@@ -45,11 +51,21 @@ export const query = graphql`
       seasons {
         ...MslSeasonsJsonFragment
         isMos
-        teamInfo {
+        playerInfo {
           team {
             ...MslTeamsJsonFragment
           }
           isOwner
+        }
+        schedules {
+          gamestats {
+            goals {
+              player {
+                player_id
+              }
+              owngoal
+            }
+          }
         }
       }
     }
