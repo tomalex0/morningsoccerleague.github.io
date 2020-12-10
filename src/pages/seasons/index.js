@@ -5,7 +5,7 @@ import Layout from "components/layout"
 import Image from "components/image"
 import SEO from "components/seo"
 
-const  { Cautions } = require("../../../graphql/lib/enum")
+const { Cautions } = require("../../../graphql/lib/enum")
 
 import {
   MslPlayersJsonFragment,
@@ -22,9 +22,8 @@ function getTotalChildArr(itemArr, prop) {
 }
 
 function getTotalPlayers(teams) {
-  //const sum = getTotalChildArr(teams, "players")
-  const allStats = teams.map(item => item.players).flat()
-  return allStats.length
+  const sum = getTotalChildArr(teams, "players")
+  return sum
 }
 
 function getTotalGoals(schedules) {
@@ -46,12 +45,11 @@ function getTotalCautionType(schedules, cautionType = 1) {
   return allStats.length
 }
 function getMosDetails(mos, season_id) {
-  console.log(mos, season_id)
   const mosArr = mos.map(item => {
-    const teamName = item.seasons.find(item => item.season_id == season_id).teamInfo.team.teamName
+    const teamName = item.seasons.find(item => item.season_id == season_id)
+      .teamInfo.team.teamName
     return `${item.name} - ${teamName}`
   })
-  console.log(mosArr)
   return mosArr
 }
 
@@ -73,9 +71,10 @@ const SeasonsIndex = ({ data, path }) => {
               Game--{season.teams.length} Teams --{" "}
               {getTotalPlayers(season.teams)} Players --{" "}
               {getTotalGoals(season.schedules)}Goals --{" "}
-              {getTotalCautionType(season.schedules, Cautions.YELLOW)}Yellow Card --{" "}
-              {getTotalCautionType(season.schedules, Cautions.RED)} Red Card --{" "}
-              {getMosDetails(season.mos, season.season_id).join(",")} Mos -{" "}
+              {getTotalCautionType(season.schedules, Cautions.YELLOW)}Yellow
+              Card -- {getTotalCautionType(season.schedules, Cautions.RED)} Red
+              Card -- {getMosDetails(season.mos, season.season_id).join(",")}{" "}
+              Mos -{" "}
             </Link>
           </li>
         ))}
