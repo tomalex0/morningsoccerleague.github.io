@@ -29,7 +29,6 @@ function Player({ data, path }) {
               {season.season_id}-{season.season_year}
             </Link>
             {season.teamInfo.isOwner && <span>---Owner</span>}
-            {season.teamInfo.isOwner && <span>---Owner</span>}
             <span>---{season.teamInfo.team.teamName}</span>
             {season.isMos && <span>---Mos</span>}
           </li>
