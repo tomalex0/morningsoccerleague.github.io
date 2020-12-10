@@ -4,38 +4,56 @@ import { Link, graphql } from "gatsby"
 import Layout from "components/layout"
 import Image from "components/image"
 import SEO from "components/seo"
+
+const  { Cautions } = require("../../../graphql/lib/enum")
+
 import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
 } from "data/fragments"
 
-function getTotalPlayers(teams) {
+function getTotalChildArr(itemArr, prop) {
   let sum = 0
-  teams.map(item => {
-    sum += item.players.length
+  itemArr.map(item => {
+    sum += item[prop].length
   })
   return sum
+}
+
+function getTotalPlayers(teams) {
+  //const sum = getTotalChildArr(teams, "players")
+  const allStats = teams.map(item => item.players).flat()
+  return allStats.length
 }
 
 function getTotalGoals(schedules) {
-  const allStats = schedules.map(item => item.gamestats).flat()
-  let sum = 0
-  allStats.map(item => {
-    sum += item.goals.length
-  })
-  return sum
+  const allStats = schedules
+    .map(item => item.gamestats)
+    .flat()
+    .map(item => item.goals)
+    .flat()
+  return allStats.length
 }
 
-// function getTotalCautionType(schedules) {
-//   const allStats = schedules.map(item => item.cautions).flat()
-//   let sum = 0
-//   allStats.map(item => {
-//     if(item.caution_id)
-//     sum += item.goals.length
-//   })
-//   return sum
-// }
+function getTotalCautionType(schedules, cautionType = 1) {
+  const allStats = schedules
+    .map(item => item.gamestats)
+    .flat()
+    .map(item => item.cautions)
+    .flat()
+    .filter(item => item && item.caution_id == cautionType)
+  return allStats.length
+}
+function getMosDetails(mos, season_id) {
+  console.log(mos, season_id)
+  const mosArr = mos.map(item => {
+    const teamName = item.seasons.find(item => item.season_id == season_id).teamInfo.team.teamName
+    return `${item.name} - ${teamName}`
+  })
+  console.log(mosArr)
+  return mosArr
+}
 
 const SeasonsIndex = ({ data, path }) => {
   const { seasons } = data
@@ -53,8 +71,11 @@ const SeasonsIndex = ({ data, path }) => {
             <Link to={season.seasonPath}>
               {season.season_id}-{season.season_year}-{season.schedules.length}{" "}
               Game--{season.teams.length} Teams --{" "}
-              {getTotalPlayers(season.teams)} Players{" "}
-              {getTotalGoals(season.schedules)}Goals - Yellow Card - Red Card
+              {getTotalPlayers(season.teams)} Players --{" "}
+              {getTotalGoals(season.schedules)}Goals --{" "}
+              {getTotalCautionType(season.schedules, Cautions.YELLOW)}Yellow Card --{" "}
+              {getTotalCautionType(season.schedules, Cautions.RED)} Red Card --{" "}
+              {getMosDetails(season.mos, season.season_id).join(",")} Mos -{" "}
             </Link>
           </li>
         ))}
@@ -73,6 +94,22 @@ export const query = graphql`
           gamestats {
             goals {
               minute
+            }
+            cautions {
+              minute
+              caution_id
+            }
+          }
+        }
+        mos {
+          name
+          seasons {
+            isMos
+            season_id
+            teamInfo {
+              team {
+                ...MslTeamsJsonFragment
+              }
             }
           }
         }
