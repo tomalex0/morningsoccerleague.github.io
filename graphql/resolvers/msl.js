@@ -109,11 +109,15 @@ module.exports = {
       resolve(source, args, context, info) {
         const teams = source.teams
         const playerId = source.player_id
-        const playerTeam = findInNested(playerId, teams, "players")
-        const playerOwner = findInNested(playerId, teams, "owners")
+        //console.log(JSON.stringify(teams),'---df-')
+        const playerTeam = teams.find(item => item.players.includes(playerId))
+        // const playerTeam = findInNested(playerId, teams, "players")
+        // const playerOwner = findInNested(playerId, teams, "owners")
+        const playerOwner = teams.filter(item => item.owners.includes(playerId))
+        // console.log(playerTeam,'--playerTeam---playerOwner--',playerOwner)
         return {
-          team: playerTeam.length > 0 ? playerTeam[0].team : null,
-          isOwner: playerOwner.length > 0 ? true : false,
+          team: playerTeam.team,
+          isOwner: playerOwner.length > 0,
         }
       },
     },
