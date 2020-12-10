@@ -84,3 +84,14 @@ function getPlayerTotalGoals(schedules, player_id) {
     .filter(item => item.player.player_id == player_id)
   return allStats
 }
+
+function getMosDetails(mos, season_id) {
+  const mosArr = mos.map(item => {
+    const teamName = item.seasons.find(item => item.season_id == season_id)
+      .playerInfo.team.teamName
+    return `${item.name} - ${teamName}`
+  })
+  return mosArr
+}
+
+exports.getMosDetails = getMosDetails
