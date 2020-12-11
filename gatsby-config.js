@@ -76,7 +76,7 @@ module.exports = {
         short_name: siteConfig.short_name,
         lang: `en`,
         start_url: `/`,
-        background_color: `#A4281D`,
+        background_color: `#000000`,
         theme_color: `#A4281D`,
         display: `minimal-ui`,
         icon: `src/images/logo.svg`, // This path is relative to the root of the site.
