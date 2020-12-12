@@ -24,6 +24,25 @@ export const MslCautionJsonFragment = graphql`
   }
 `
 
+export const MslPlayerStatsFragment = graphql`
+  fragment MslPlayerStatsFragment on MslPlayerStats {
+    allseasonStats {
+      goals
+      assists
+    }
+    seasonStats {
+      isOwner
+      goals
+      assists
+      season_id
+      team {
+        team_id
+        teamName
+      }
+    }
+  }
+`
+
 export const MslSeasonsJsonFragment = graphql`
   fragment MslSeasonsJsonFragment on MslSeasonsJson {
     season_year

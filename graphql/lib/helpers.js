@@ -55,10 +55,15 @@ exports.getTotalGoals = getTotalGoals
 
 function getPlayerGoals(schedules, player_id) {
   const allGoals = getTotalGoals(schedules)
-  // console.log(allGoals, "--fdf--", player_id)
   return allGoals.filter(item => !item.owngoal && item.player == player_id)
 }
 exports.getPlayerGoals = getPlayerGoals
+
+function getPlayerAssists(schedules, player_id) {
+  const allGoals = getTotalGoals(schedules)
+  return allGoals.filter(item => item.assist == player_id)
+}
+exports.getPlayerAssists = getPlayerAssists
 
 function getTotalChildArr(itemArr, prop) {
   let sum = 0
@@ -95,3 +100,11 @@ function getMosDetails(mos, season_id) {
 }
 
 exports.getMosDetails = getMosDetails
+
+const groupBy = function (xs, key) {
+  return xs.reduce(function (rv, x) {
+    ;(rv[x[key]] = rv[x[key]] || []).push(x)
+    return rv
+  }, {})
+}
+exports.groupBy = groupBy

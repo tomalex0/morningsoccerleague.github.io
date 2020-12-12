@@ -71,11 +71,6 @@ export const query = graphql`
           seasons {
             isMos
             season_id
-            playerInfo {
-              team {
-                ...MslTeamsJsonFragment
-              }
-            }
           }
         }
         teams {

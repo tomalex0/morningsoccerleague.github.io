@@ -9,6 +9,7 @@ import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
+  MslPlayerStatsFragment,
 } from "data/fragments"
 
 const PlayersIndex = ({ data, path }) => {
@@ -24,8 +25,12 @@ const PlayersIndex = ({ data, path }) => {
         {players.nodes.map(player => (
           <li key={player.name}>
             <Link to={player.teamPath}>
-              {player.name} - {player.player_id}
+              {player.name} - {player.player_id} -
             </Link>
+            <span>
+              {player.playerStats.allseasonStats.goals} Total Goals ---
+              {player.playerStats.allseasonStats.assists} Total Assists
+            </span>
           </li>
         ))}
       </ul>
@@ -35,9 +40,18 @@ const PlayersIndex = ({ data, path }) => {
 
 export const query = graphql`
   query {
-    players: allMslPlayersJson(sort: { fields: name, order: ASC }) {
+    players: allMslPlayersJson(
+      sort: { fields: name, order: ASC } # filter: { player_id: { in: [1, 45, 54, 2] } }
+    ) {
       nodes {
         ...MslPlayersJsonFragment
+        playerStats {
+          ...MslPlayerStatsFragment
+        }
+        seasons {
+          season_year
+          season_id
+        }
       }
     }
   }

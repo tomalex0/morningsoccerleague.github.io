@@ -1,5 +1,10 @@
 const { MslImgKey } = require("../lib/enum")
-const { getFile, getPlayerGoals } = require("../lib/helpers")
+const {
+  getFile,
+  getPlayerGoals,
+  groupBy,
+  getPlayerAssists,
+} = require("../lib/helpers")
 
 module.exports = {
   MslTeamsJson: {
@@ -37,8 +42,7 @@ module.exports = {
         return record
       },
     },
-    seasons: {
-      type: ["MslSeasonsJson"],
+    playerStats: {
       async resolve(source, args, context, info) {
         const data = await context.nodeModel.runQuery({
           query: {
@@ -55,12 +59,78 @@ module.exports = {
           type: "MslSeasonsJson",
           firstOnly: false,
         })
-        if (source.player_id) {
-          // Add player_id to each season, so that player_id will available at MslSeasonsJson
-          data.map(item => {
-            item.player_id = source.player_id
-          })
+        const schedule_data = await context.nodeModel.runQuery({
+          query: {},
+          type: "MslSchedulesJson",
+          firstOnly: false,
+        })
+        const scheduleBySeason = groupBy(schedule_data, "season")
+
+        const playerId = source.player_id
+        const seasonStats = data.map(item => {
+          const playerTeam = item.teams.find(item =>
+            item.players.includes(playerId)
+          )
+          const playerOwner = item.teams.filter(item =>
+            item.owners.includes(playerId)
+          )
+          const schedules = scheduleBySeason[item.season]
+          const playerGoals = getPlayerGoals(schedules, playerId)
+          const playerAssists = getPlayerAssists(schedules, playerId)
+          return {
+            team: playerTeam ? playerTeam.team : null,
+            isOwner: playerOwner.length > 0,
+            goals: playerGoals.length,
+            assists: playerAssists.length,
+            season_id: item.season,
+            season: item.season,
+          }
+        })
+        const totalGoals = seasonStats.reduce(function (sum, item) {
+          return sum + item.goals
+        }, 0)
+        const totalAssists = seasonStats.reduce(function (sum, item) {
+          return sum + item.assists
+        }, 0)
+
+        return {
+          allseasonStats: {
+            goals: totalGoals,
+            assists: totalAssists,
+          },
+          seasonStats: seasonStats,
         }
+      },
+    },
+    seasons: {
+      type: ["MslSeasonsJson"],
+      async resolve(source, args, context, info) {
+        const newdata = context.nodeModel.getAllNodes({
+          type: `MslSeasonsJson`,
+        })
+
+        const data = await context.nodeModel.runQuery({
+          query: {
+            filter: {
+              teams: {
+                elemMatch: {
+                  players: {
+                    elemMatch: { player_id: { eq: source.player_id } },
+                  },
+                },
+              },
+            },
+          },
+          type: "MslSeasonsJson",
+          firstOnly: false,
+        })
+        // if (source.player_id) {
+        //   // Add player_id to each season, so that player_id will available at MslSeasonsJson
+        //   data.map(item => {
+        //     console.log(source.player_id,'----source.player_id---')
+        //     item.player_id = source.player_id
+        //   })
+        // }
 
         return data
       },
@@ -103,30 +173,6 @@ module.exports = {
           isMos = source.mos.includes(source.player_id)
         }
         return isMos
-      },
-    },
-    playerInfo: {
-      async resolve(source, args, context, info) {
-        const data = await context.nodeModel.runQuery({
-          query: {
-            filter: {
-              season: {
-                season_id: { eq: source.season_id },
-              },
-            },
-          },
-          type: "MslSchedulesJson",
-          firstOnly: false,
-        })
-        const teams = source.teams
-        const playerId = source.player_id
-        const playerTeam = teams.find(item => item.players.includes(playerId))
-        const playerOwner = teams.filter(item => item.owners.includes(playerId))
-        return {
-          team: playerTeam.team,
-          isOwner: playerOwner.length > 0,
-          goals: getPlayerGoals(data, playerId).length,
-        }
       },
     },
     schedules: {
