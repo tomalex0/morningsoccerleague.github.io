@@ -5,13 +5,13 @@ import Layout from "components/layout"
 import Image from "components/image"
 import SEO from "components/seo"
 
-const { Cautions } = require("../../../graphql/lib/enum")
-const {
+import { Cautions } from "graphql/lib/enum"
+import {
   getTotalPlayers,
   getTotalGoals,
   getTotalCautionType,
   getMosDetails,
-} = require("../../../graphql/lib/helpers")
+} from "graphql/lib/helpers"
 
 import {
   MslPlayersJsonFragment,

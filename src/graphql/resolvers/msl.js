@@ -107,10 +107,6 @@ module.exports = {
     seasons: {
       type: ["MslSeasonsJson"],
       async resolve(source, args, context, info) {
-        const newdata = context.nodeModel.getAllNodes({
-          type: `MslSeasonsJson`,
-        })
-
         const data = await context.nodeModel.runQuery({
           query: {
             filter: {
@@ -126,13 +122,6 @@ module.exports = {
           type: "MslSeasonsJson",
           firstOnly: false,
         })
-        // if (source.player_id) {
-        //   // Add player_id to each season, so that player_id will available at MslSeasonsJson
-        //   data.map(item => {
-        //     console.log(source.player_id,'----source.player_id---')
-        //     item.player_id = source.player_id
-        //   })
-        // }
 
         return data
       },

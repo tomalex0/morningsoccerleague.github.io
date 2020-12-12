@@ -11,12 +11,8 @@ import {
   MslSeasonsJsonFragment,
 } from "data/fragments"
 
-import { groupBy } from "../../../graphql/lib/helpers"
-
 function Player({ data, path }) {
   const { player } = data
-
-  const seasonGrouped = groupBy(player.playerStats.seasonStats, "season_id")
   return (
     <Layout>
       <SEO title={player.name} path={path} />
@@ -33,21 +29,20 @@ function Player({ data, path }) {
         <Image />
       </div>
       <ul>
-        {player.seasons.map(season => (
-          <li key={season.season_id}>
-            <Link to={season.seasonPath}>
-              {season.season_id}-{season.season_year}
+        {player.playerStats.seasonStats.map(item => (
+          <li key={item.season.season_id}>
+            <Link to={item.season.seasonPath}>
+              {item.season.season_id}-{item.season.season_year}
             </Link>
-            {seasonGrouped[season.season_id][0].isOwner && (
+            {item.isOwner && (
               <span>---Owner</span>
             )}
-            <span>---{seasonGrouped[season.season_id][0].goals} Goals</span>
+            <span>---{item.goals} Goals</span>
             <span>
-              ---{seasonGrouped[season.season_id][0].team.teamName} Team
+              ---{item.team.teamName} Team
             </span>
-            <span>---{seasonGrouped[season.season_id][0].assists} Assist</span>
-            {/*<span>---{season.playerInfo.team.teamName}</span>*/}
-            {seasonGrouped[season.season_id][0].isMos && <span>---Mos</span>}
+            <span>---{item.assists} Assist</span>
+            {item.isMos && <span>---Mos</span>}
           </li>
         ))}
       </ul>
@@ -61,22 +56,6 @@ export const query = graphql`
       ...MslPlayersJsonFragment
       playerStats {
         ...MslPlayerStatsFragment
-      }
-      seasons {
-        ...MslSeasonsJsonFragment
-        season_id
-        isMos
-
-        schedules {
-          gamestats {
-            goals {
-              player {
-                player_id
-              }
-              owngoal
-            }
-          }
-        }
       }
     }
   }

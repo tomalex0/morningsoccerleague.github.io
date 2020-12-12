@@ -36,6 +36,9 @@ export const MslPlayerStatsFragment = graphql`
       goals
       assists
       season_id
+      season {
+        ...MslSeasonsJsonFragment
+      }
       team {
         team_id
         teamName

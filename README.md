@@ -66,7 +66,7 @@ A quick look at the top-level files and directories you'll see in this project.
 
 1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-1.  **`graphql`**: This directory contains new Graphql Types and Resolvers
+1.  **`src/graphql`**: This directory contains new Graphql Types and Resolvers
 
 1.  **`.github`**: This directory contains all github actions
 

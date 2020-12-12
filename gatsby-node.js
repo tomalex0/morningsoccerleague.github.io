@@ -4,8 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-exports.createSchemaCustomization = require("./graphql/typedef")
+exports.createSchemaCustomization = require("./src/graphql/typedef")
 
-exports.createResolvers = require("./graphql/resolvers")
+exports.createResolvers = require("./src/graphql/resolvers")
 
 exports.onCreateWebpackConfig = require("./onCreateWebpackConfig")
