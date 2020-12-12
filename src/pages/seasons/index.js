@@ -39,8 +39,9 @@ const SeasonsIndex = ({ data, path }) => {
               {getTotalCautionType(season.schedules, Cautions.YELLOW).length}
               Yellow Card --{" "}
               {getTotalCautionType(season.schedules, Cautions.RED).length} Red
-              Card -- {getMosDetails(season.mos, season.season_id).join(",")}{" "}
-              Mos -{" "}
+              Card --
+              {/*{getMosDetails(season.mos, season.season_id).join(",")}{" "}*/}
+              {/*Mos -{" "}*/}
             </Link>
           </li>
         ))}
