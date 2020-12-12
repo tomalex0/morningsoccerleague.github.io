@@ -32,6 +32,7 @@ export const MslPlayerStatsFragment = graphql`
     }
     seasonStats {
       isOwner
+      isMos
       goals
       assists
       season_id

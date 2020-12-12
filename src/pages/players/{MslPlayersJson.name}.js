@@ -47,7 +47,7 @@ function Player({ data, path }) {
             </span>
             <span>---{seasonGrouped[season.season_id][0].assists} Assist</span>
             {/*<span>---{season.playerInfo.team.teamName}</span>*/}
-            {season.isMos && <span>---Mos</span>}
+            {seasonGrouped[season.season_id][0].isMos && <span>---Mos</span>}
           </li>
         ))}
       </ul>

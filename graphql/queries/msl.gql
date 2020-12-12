@@ -52,6 +52,7 @@ type MslPlayerSeasonStats {
 		team: MslTeamsJson @link(by: "team_id")
 		season: MslSeasonsJson @link(by: "season")
 		isOwner: Boolean
+		isMos: Boolean
 		goals: Int
 		season_id: Int
 		assists: Int

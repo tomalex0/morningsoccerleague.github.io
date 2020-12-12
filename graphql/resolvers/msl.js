@@ -74,12 +74,14 @@ module.exports = {
           const playerOwner = item.teams.filter(item =>
             item.owners.includes(playerId)
           )
+          const playerMos = item.mos.includes(playerId)
           const schedules = scheduleBySeason[item.season]
           const playerGoals = getPlayerGoals(schedules, playerId)
           const playerAssists = getPlayerAssists(schedules, playerId)
           return {
             team: playerTeam ? playerTeam.team : null,
             isOwner: playerOwner.length > 0,
+            isMos: playerMos,
             goals: playerGoals.length,
             assists: playerAssists.length,
             season_id: item.season,
