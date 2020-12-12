@@ -25,7 +25,7 @@ const PlayersIndex = ({ data, path }) => {
         {players.nodes.map(player => (
           <li key={player.name}>
             <Link to={player.teamPath}>
-              {player.name} - {player.player_id} -
+              {player.player_id} - {player.name}
             </Link>
             <span>
               {player.playerStats.allseasonStats.goals} Total Goals ---
