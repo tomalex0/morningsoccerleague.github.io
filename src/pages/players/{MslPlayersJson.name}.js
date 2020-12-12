@@ -34,13 +34,9 @@ function Player({ data, path }) {
             <Link to={item.season.seasonPath}>
               {item.season.season_id}-{item.season.season_year}
             </Link>
-            {item.isOwner && (
-              <span>---Owner</span>
-            )}
+            {item.isOwner && <span>---Owner</span>}
             <span>---{item.goals} Goals</span>
-            <span>
-              ---{item.team.teamName} Team
-            </span>
+            <span>---{item.team.teamName} Team</span>
             <span>---{item.assists} Assist</span>
             {item.isMos && <span>---Mos</span>}
           </li>
