@@ -28,6 +28,7 @@ function Player({ data, path }) {
           {player.playerStats.allseasonStats.yellow_cards} Total Yellow --
           {player.playerStats.allseasonStats.red_cards} Total Red --
           {player.playerStats.allseasonStats.mom} Total Mom --
+          {player.playerStats.allseasonStats.saves} Total Saves --
         </span>
       </div>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -46,6 +47,7 @@ function Player({ data, path }) {
             <span>---{item.yellow_cards} Yellow</span>
             <span>---{item.red_cards} Red</span>
             <span>---{item.mom} Mom</span>
+            <span>---{item.saves} Saves</span>
             {item.isMos && <span>---Mos</span>}
           </li>
         ))}

@@ -59,6 +59,7 @@ type MslPlayerSeasonStats {
 		season_id: Int
 		assists: Int
 		mom: Int
+		saves: Int
 }
 
 type MslPlayerAllSeasonStats {
@@ -68,6 +69,7 @@ type MslPlayerAllSeasonStats {
 		red_cards: Int
 		mos: Int
 		mom: Int
+		saves: Int
 }
 
 type MslPlayerStats {

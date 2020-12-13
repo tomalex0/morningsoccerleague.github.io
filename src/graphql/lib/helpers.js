@@ -32,61 +32,70 @@ function findInNested(searchData, arr, parentProp, accum = [], parentArr) {
 
 exports.findInNested = findInNested
 
-function getTotalCautionType(schedules, cautionType = 1) {
+function getTotalByType(schedules, key) {
   const allStats = schedules
     .map(item => item.gamestats)
     .flat()
-    .map(item => item.cautions)
+    .map(item => item[key])
     .flat()
-    .filter(item => item && item.caution_id == cautionType)
+    .filter(item => item !== undefined)
+  return allStats
+}
+
+function getTotalCautionType(schedules, cautionType = 1) {
+  const allStats = getTotalByType(schedules, "cautions").filter(item => item && item.caution_id == cautionType)
   return allStats
 }
 exports.getTotalCautionType = getTotalCautionType
 
 function getTotalGoals(schedules) {
-  const allStats = schedules
-    .map(item => item.gamestats)
-    .flat()
-    .map(item => item.goals)
-    .flat()
+  const allStats = getTotalByType(schedules, "goals")
   return allStats
 }
 exports.getTotalGoals = getTotalGoals
 
 function getTotalMom(schedules) {
-  const allStats = schedules
-    .map(item => item.gamestats)
-    .flat()
-    .map(item => item.mom)
-    .flat()
-    .filter(item => item !== undefined)
+  const allStats = getTotalByType(schedules, "mom")
   return allStats
 }
 exports.getTotalMom = getTotalMom
 
+function getTotalSaves(schedules) {
+  const allStats = getTotalByType(schedules, "keeper")
+  return allStats
+}
+exports.getTotalMom = getTotalMom
+
+
 function getPlayerGoals(schedules, player_id) {
-  const allGoals = getTotalGoals(schedules)
-  return allGoals.filter(item => !item.owngoal && item.player == player_id)
+  const allData = getTotalGoals(schedules)
+  return allData.filter(item => !item.owngoal && item.player == player_id)
 }
 exports.getPlayerGoals = getPlayerGoals
 
 function getPlayerAssists(schedules, player_id) {
-  const allGoals = getTotalGoals(schedules)
-  return allGoals.filter(item => item.assist == player_id)
+  const allData = getTotalGoals(schedules)
+  return allData.filter(item => item.assist == player_id)
 }
 exports.getPlayerAssists = getPlayerAssists
 
 function getPlayerCautions(schedules, player_id, caution_type) {
-  const allCautions = getTotalCautionType(schedules, caution_type)
-  return allCautions.filter(item => item.player == player_id)
+  const allData = getTotalCautionType(schedules, caution_type)
+  return allData.filter(item => item.player == player_id)
 }
 exports.getPlayerCautions = getPlayerCautions
 
 function getPlayerMom(schedules, player_id) {
-  const allMoms = getTotalMom(schedules)
-  return allMoms.filter(item => item.player == player_id)
+  const allData = getTotalMom(schedules)
+  return allData.filter(item => item.player == player_id)
 }
 exports.getPlayerMom = getPlayerMom
+
+function getPlayerSaves(schedules, player_id) {
+  const allData = getTotalSaves(schedules)
+  return allData.filter(item => item.player == player_id)
+}
+exports.getPlayerSaves = getPlayerSaves
 
 function getTotalChildArr(itemArr, prop) {
   let sum = 0
