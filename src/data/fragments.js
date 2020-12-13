@@ -8,22 +8,6 @@ export const MslPlayersJsonFragment = graphql`
   }
 `
 
-export const MslTeamsJsonFragment = graphql`
-  fragment MslTeamsJsonFragment on MslTeamsJson {
-    team_id
-    teamName
-    teamCls
-    teamPath: gatsbyPath(filePath: "/teams/{MslTeamsJson.teamName}")
-  }
-`
-export const MslCautionJsonFragment = graphql`
-  fragment MslCautionJsonFragment on MslCautionJson {
-    name
-    caution_id
-    cls
-  }
-`
-
 export const MslPlayerStatsFragment = graphql`
   fragment MslPlayerStatsFragment on MslPlayerStats {
     allseasonStats {
@@ -40,10 +24,25 @@ export const MslPlayerStatsFragment = graphql`
         ...MslSeasonsJsonFragment
       }
       team {
-        team_id
-        teamName
+        ...MslTeamsJsonFragment
       }
     }
+  }
+`
+
+export const MslTeamsJsonFragment = graphql`
+  fragment MslTeamsJsonFragment on MslTeamsJson {
+    team_id
+    teamName
+    teamCls
+    teamPath: gatsbyPath(filePath: "/teams/{MslTeamsJson.teamName}")
+  }
+`
+export const MslCautionJsonFragment = graphql`
+  fragment MslCautionJsonFragment on MslCautionJson {
+    name
+    caution_id
+    cls
   }
 `
 
