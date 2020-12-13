@@ -4,7 +4,7 @@ export const MslPlayersJsonFragment = graphql`
   fragment MslPlayersJsonFragment on MslPlayersJson {
     name
     player_id
-    teamPath: gatsbyPath(filePath: "/players/{MslPlayersJson.name}")
+    playerPath: gatsbyPath(filePath: "/players/{MslPlayersJson.name}")
   }
 `
 

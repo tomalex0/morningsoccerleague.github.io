@@ -24,7 +24,7 @@ const PlayersIndex = ({ data, path }) => {
       <ul>
         {players.nodes.map(player => (
           <li key={player.name}>
-            <Link to={player.teamPath}>
+            <Link to={player.playerPath}>
               {player.player_id} - {player.name}
             </Link>
             <span>
