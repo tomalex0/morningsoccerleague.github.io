@@ -53,6 +53,17 @@ function getTotalGoals(schedules) {
 }
 exports.getTotalGoals = getTotalGoals
 
+function getTotalMom(schedules) {
+  const allStats = schedules
+    .map(item => item.gamestats)
+    .flat()
+    .map(item => item.mom)
+    .flat()
+    .filter(item => item !== undefined)
+  return allStats
+}
+exports.getTotalMom = getTotalMom
+
 function getPlayerGoals(schedules, player_id) {
   const allGoals = getTotalGoals(schedules)
   return allGoals.filter(item => !item.owngoal && item.player == player_id)
@@ -70,6 +81,12 @@ function getPlayerCautions(schedules, player_id, caution_type) {
   return allCautions.filter(item => item.player == player_id)
 }
 exports.getPlayerCautions = getPlayerCautions
+
+function getPlayerMom(schedules, player_id) {
+  const allMoms = getTotalMom(schedules)
+  return allMoms.filter(item => item.player == player_id)
+}
+exports.getPlayerMom = getPlayerMom
 
 function getTotalChildArr(itemArr, prop) {
   let sum = 0

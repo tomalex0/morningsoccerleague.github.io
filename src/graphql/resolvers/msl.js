@@ -6,6 +6,7 @@ const {
   getPlayerAssists,
   getPlayerCautions,
   getSum,
+  getPlayerMom,
 } = require("../lib/helpers")
 
 module.exports = {
@@ -80,6 +81,7 @@ module.exports = {
           const schedules = scheduleBySeason[item.season]
           const playerGoals = getPlayerGoals(schedules, playerId)
           const playerAssists = getPlayerAssists(schedules, playerId)
+          const playerMom = getPlayerMom(schedules, playerId)
           const playerYellowCards = getPlayerCautions(
             schedules,
             playerId,
@@ -96,6 +98,7 @@ module.exports = {
             isMos: playerMos,
             goals: playerGoals.length,
             assists: playerAssists.length,
+            mom: playerMom.length,
             yellow_cards: playerYellowCards.length,
             red_cards: playerRedCards.length,
             season_id: item.season,
@@ -106,11 +109,13 @@ module.exports = {
         const totalAssists = getSum(seasonStats, "assists")
         const totalYellow = getSum(seasonStats, "yellow_cards")
         const totalRed = getSum(seasonStats, "red_cards")
+        const totalMom = getSum(seasonStats, "mom")
         const totalMos = seasonStats.filter(item => item.isMos == true)
 
         const allseasonStats = {
           goals: totalGoals,
           assists: totalAssists,
+          mom: totalMom,
           mos: totalMos.length,
           yellow_cards: totalYellow,
           red_cards: totalRed,
