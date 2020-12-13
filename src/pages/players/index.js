@@ -29,7 +29,10 @@ const PlayersIndex = ({ data, path }) => {
             </Link>
             <span>
               {player.playerStats.allseasonStats.goals} Total Goals ---
-              {player.playerStats.allseasonStats.assists} Total Assists
+              {player.playerStats.allseasonStats.assists} Total Assists---
+              {player.playerStats.allseasonStats.mos} Total Mos---
+              {player.playerStats.allseasonStats.yellow_cards} Total Yellow --
+              {player.playerStats.allseasonStats.red_cards} Total Red --
             </span>
           </li>
         ))}

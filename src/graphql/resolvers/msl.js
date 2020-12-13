@@ -1,9 +1,11 @@
-const { MslImgKey } = require("../lib/enum")
+const { MslImgKey, Cautions } = require("../lib/enum")
 const {
   getFile,
   getPlayerGoals,
   groupBy,
   getPlayerAssists,
+  getPlayerCautions,
+  getSum,
 } = require("../lib/helpers")
 
 module.exports = {
@@ -78,29 +80,44 @@ module.exports = {
           const schedules = scheduleBySeason[item.season]
           const playerGoals = getPlayerGoals(schedules, playerId)
           const playerAssists = getPlayerAssists(schedules, playerId)
+          const playerYellowCards = getPlayerCautions(
+            schedules,
+            playerId,
+            Cautions.YELLOW
+          )
+          const playerRedCards = getPlayerCautions(
+            schedules,
+            playerId,
+            Cautions.RED
+          )
           return {
             team: playerTeam ? playerTeam.team : null,
             isOwner: playerOwner.length > 0,
             isMos: playerMos,
             goals: playerGoals.length,
             assists: playerAssists.length,
+            yellow_cards: playerYellowCards.length,
+            red_cards: playerRedCards.length,
             season_id: item.season,
             season: item.season,
           }
         })
-        const totalGoals = seasonStats.reduce(function (sum, item) {
-          return sum + item.goals
-        }, 0)
-        const totalAssists = seasonStats.reduce(function (sum, item) {
-          return sum + item.assists
-        }, 0)
+        const totalGoals = getSum(seasonStats, "goals")
+        const totalAssists = getSum(seasonStats, "assists")
+        const totalYellow = getSum(seasonStats, "yellow_cards")
+        const totalRed = getSum(seasonStats, "red_cards")
+        const totalMos = seasonStats.filter(item => item.isMos == true)
 
+        const allseasonStats = {
+          goals: totalGoals,
+          assists: totalAssists,
+          mos: totalMos.length,
+          yellow_cards: totalYellow,
+          red_cards: totalRed,
+        }
         return {
-          allseasonStats: {
-            goals: totalGoals,
-            assists: totalAssists,
-          },
-          seasonStats: seasonStats,
+          allseasonStats,
+          seasonStats,
         }
       },
     },

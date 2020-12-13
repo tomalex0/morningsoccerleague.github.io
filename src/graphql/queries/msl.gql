@@ -54,6 +54,8 @@ type MslPlayerSeasonStats {
 		isOwner: Boolean
 		isMos: Boolean
 		goals: Int
+		yellow_cards: Int
+		red_cards: Int
 		season_id: Int
 		assists: Int
 }
@@ -61,6 +63,9 @@ type MslPlayerSeasonStats {
 type MslPlayerAllSeasonStats {
 		goals: Int
 		assists: Int
+		yellow_cards: Int
+		red_cards: Int
+		mos: Int
 }
 
 type MslPlayerStats {

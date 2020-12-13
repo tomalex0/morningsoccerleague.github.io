@@ -13,12 +13,17 @@ export const MslPlayerStatsFragment = graphql`
     allseasonStats {
       goals
       assists
+      yellow_cards
+      red_cards
+      mos
     }
     seasonStats {
       isOwner
       isMos
       goals
       assists
+      yellow_cards
+      red_cards
       season_id
       season {
         ...MslSeasonsJsonFragment

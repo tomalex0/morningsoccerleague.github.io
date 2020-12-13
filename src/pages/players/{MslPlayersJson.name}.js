@@ -13,6 +13,7 @@ import {
 
 function Player({ data, path }) {
   const { player } = data
+  console.log(player)
   return (
     <Layout>
       <SEO title={player.name} path={path} />
@@ -22,7 +23,10 @@ function Player({ data, path }) {
       <div>
         <span>
           {player.playerStats.allseasonStats.goals} Total Goals ---
-          {player.playerStats.allseasonStats.assists} Total Assists
+          {player.playerStats.allseasonStats.assists} Total Assists---
+          {player.playerStats.allseasonStats.mos} Total Mos---
+          {player.playerStats.allseasonStats.yellow_cards} Total Yellow --
+          {player.playerStats.allseasonStats.red_cards} Total Red --
         </span>
       </div>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -38,6 +42,8 @@ function Player({ data, path }) {
             <span>---{item.goals} Goals</span>
             <span>---{item.team.teamName} Team</span>
             <span>---{item.assists} Assist</span>
+            <span>---{item.yellow_cards} Yellow</span>
+            <span>---{item.red_cards} Red</span>
             {item.isMos && <span>---Mos</span>}
           </li>
         ))}

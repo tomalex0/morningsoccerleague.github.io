@@ -65,6 +65,12 @@ function getPlayerAssists(schedules, player_id) {
 }
 exports.getPlayerAssists = getPlayerAssists
 
+function getPlayerCautions(schedules, player_id, caution_type) {
+  const allCautions = getTotalCautionType(schedules, caution_type)
+  return allCautions.filter(item => item.player == player_id)
+}
+exports.getPlayerCautions = getPlayerCautions
+
 function getTotalChildArr(itemArr, prop) {
   let sum = 0
   itemArr.map(item => {
@@ -108,3 +114,10 @@ const groupBy = function (xs, key) {
   }, {})
 }
 exports.groupBy = groupBy
+
+function getSum(data, key) {
+  return data.reduce(function (sum, item) {
+    return sum + item[key]
+  }, 0)
+}
+exports.getSum = getSum
