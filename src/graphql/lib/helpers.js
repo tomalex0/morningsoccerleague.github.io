@@ -43,7 +43,9 @@ function getTotalByType(schedules, key) {
 }
 
 function getTotalCautionType(schedules, cautionType = 1) {
-  const allStats = getTotalByType(schedules, "cautions").filter(item => item && item.caution_id == cautionType)
+  const allStats = getTotalByType(schedules, "cautions").filter(
+    item => item && item.caution_id == cautionType
+  )
   return allStats
 }
 exports.getTotalCautionType = getTotalCautionType
@@ -65,7 +67,6 @@ function getTotalSaves(schedules) {
   return allStats
 }
 exports.getTotalMom = getTotalMom
-
 
 function getPlayerGoals(schedules, player_id) {
   const allData = getTotalGoals(schedules)
