@@ -7,6 +7,8 @@ module.exports = {
       settings: {
         chromeFlags: " --no-sandbox --disable-dev-shm-usage",
       },
+      maxAutodiscoverUrls: 5,
+      autodiscoverUrlBlocklist: ["404.html", "404/index.html", "report.html"],
     },
     upload: {
       target: "temporary-public-storage",
