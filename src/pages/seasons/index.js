@@ -10,7 +10,7 @@ import {
   getTotalPlayers,
   getTotalGoals,
   getTotalCautionType,
-  getTota,
+  getAllGameStatsByType,
 } from "graphql/lib/helpers"
 
 import {
@@ -34,6 +34,10 @@ const SeasonsIndex = ({ data, path }) => {
           const totalPlayers = getTotalPlayers(season.teams)
           const totalAssists = totalGoals.filter(item => item.assist)
           const totalOwnGoals = totalGoals.filter(item => item.owngoal)
+          const totalFouls = getAllGameStatsByType(
+            season.schedules,
+            "fouls"
+          ).reduce((a, b) => a + b, 0)
           const totalUniquePlayerGoals = [
             ...new Set(
               totalGoals
@@ -58,7 +62,8 @@ const SeasonsIndex = ({ data, path }) => {
                 {totalPlayers} Players -- {totalGoals.length}Goals --{" "}
                 {totalAssists.length}
                 Assists -- {totalOwnGoals.length}
-                Own Goals -- {totalUniquePlayerGoals.length}
+                Owngoals -- {totalFouls}
+                Total Fouls -- {totalUniquePlayerGoals.length}
                 Unique Players Scored -- {totalYellowCards.length}
                 Yellow Card -- {totalRedCards.length} Red Card --
                 {season.mos.map(item => item.name).join(",")} Mos

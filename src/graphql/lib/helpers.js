@@ -54,7 +54,6 @@ exports.getTotalCautionType = getTotalCautionType
 
 function getTotalGoals(schedules) {
   const allStats = getAllGameStatsByType(schedules, "goals")
-  console.log(allStats, "--aslas")
   return allStats
 }
 exports.getTotalGoals = getTotalGoals
