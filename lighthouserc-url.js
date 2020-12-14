@@ -2,13 +2,18 @@ module.exports = {
   ci: {
     collect: {
       numberOfRuns: 1,
-      url: "https://tomalex0.github.io/morningsoccerleague.github.io/",
+      url: [
+        "https://tomalex0.github.io/morningsoccerleague.github.io/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/players/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/players/kartik-pisupati/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/seasons/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/seasons/3-2019/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/teams/",
+      ],
       isSinglePageApplication: true,
       settings: {
         chromeFlags: " --no-sandbox --disable-dev-shm-usage",
       },
-      maxAutodiscoverUrls: 5,
-      autodiscoverUrlBlocklist: ["404.html", "404/index.html", "report.html"],
     },
     upload: {
       target: "temporary-public-storage",
