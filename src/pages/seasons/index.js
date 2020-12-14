@@ -58,14 +58,14 @@ const SeasonsIndex = ({ data, path }) => {
             teams: season.teams.length,
             goals: totalGoals.length,
             assists: totalAssists.length,
-            players: totalPlayers.length,
+            players: totalPlayers,
             owngoals: totalOwnGoals.length,
             yellow_cards: totalYellowCards.length,
             red_cards: totalRedCards.length,
             unique_players_goals: totalUniquePlayerGoals.length,
+            unique_players_goals_list: totalUniquePlayerGoals,
             fouls: totalFouls,
           }
-          console.log(season.seasonStats, "--season.seasonStats")
           return (
             <li key={season.season_id}>
               <Link to={season.seasonPath}>
