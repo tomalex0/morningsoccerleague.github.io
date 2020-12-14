@@ -10,7 +10,7 @@ import {
   getTotalPlayers,
   getTotalGoals,
   getTotalCautionType,
-  getMosDetails,
+  getTota,
 } from "graphql/lib/helpers"
 
 import {
@@ -29,21 +29,43 @@ const SeasonsIndex = ({ data, path }) => {
         <Image />
       </div>
       <ul>
-        {seasons.nodes.map(season => (
-          <li key={season.season_id}>
-            <Link to={season.seasonPath}>
-              {season.season_id}-{season.season_year}-{season.schedules.length}{" "}
-              Game--{season.teams.length} Teams --{" "}
-              {getTotalPlayers(season.teams)} Players --{" "}
-              {getTotalGoals(season.schedules).length}Goals --{" "}
-              {getTotalCautionType(season.schedules, Cautions.YELLOW).length}
-              Yellow Card --{" "}
-              {getTotalCautionType(season.schedules, Cautions.RED).length} Red
-              Card --
-              {season.mos.map(item => item.name).join(",")} Mos
-            </Link>
-          </li>
-        ))}
+        {seasons.nodes.map(season => {
+          const totalGoals = getTotalGoals(season.schedules)
+          const totalPlayers = getTotalPlayers(season.teams)
+          const totalAssists = totalGoals.filter(item => item.assist)
+          const totalOwnGoals = totalGoals.filter(item => item.owngoal)
+          const totalUniquePlayerGoals = [
+            ...new Set(
+              totalGoals
+                .filter(item => !item.owngoal)
+                .map(item => item.player.player_id)
+            ),
+          ]
+          const totalYellowCards = getTotalCautionType(
+            season.schedules,
+            Cautions.YELLOW
+          )
+          const totalRedCards = getTotalCautionType(
+            season.schedules,
+            Cautions.RED
+          )
+
+          return (
+            <li key={season.season_id}>
+              <Link to={season.seasonPath}>
+                {season.season_id}-{season.season_year}-
+                {season.schedules.length} Game--{season.teams.length} Teams --{" "}
+                {totalPlayers} Players -- {totalGoals.length}Goals --{" "}
+                {totalAssists.length}
+                Assists -- {totalOwnGoals.length}
+                Own Goals -- {totalUniquePlayerGoals.length}
+                Unique Players Scored -- {totalYellowCards.length}
+                Yellow Card -- {totalRedCards.length} Red Card --
+                {season.mos.map(item => item.name).join(",")} Mos
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </Layout>
   )
@@ -59,7 +81,15 @@ export const query = graphql`
           gamestats {
             goals {
               minute
+              owngoal
+              player {
+                ...MslPlayersJsonFragment
+              }
+              assist {
+                ...MslPlayersJsonFragment
+              }
             }
+            fouls
             cautions {
               minute
               caution_id

@@ -90,6 +90,20 @@ type MslSchedulesJson implements Node {
   stats(stats_type: ScheduleTeamStats): MslSchedulesJsonGamestats
 }
 
+type MslSeasonStatsItem {
+		fouls: Int
+		assists: Int
+		yellow_cards: Int
+		red_cards: Int
+		mom: Int
+		saves: Int
+}
+
+type MslSeasonStats {
+		allseasonStats: MslSeasonStatsItem
+		seasonStats: [MslSeasonStatsItem]
+}
+
 
 type MslSeasonsJson implements Node {
   mos: [MslPlayersJson] @link(by: "player_id")

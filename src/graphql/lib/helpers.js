@@ -42,6 +42,8 @@ function getAllGameStatsByType(schedules, key) {
   return allStats
 }
 
+exports.getAllGameStatsByType = getAllGameStatsByType
+
 function getTotalCautionType(schedules, cautionType = 1) {
   const allStats = getAllGameStatsByType(schedules, "cautions").filter(
     item => item && item.caution_id == cautionType
@@ -52,6 +54,7 @@ exports.getTotalCautionType = getTotalCautionType
 
 function getTotalGoals(schedules) {
   const allStats = getAllGameStatsByType(schedules, "goals")
+  console.log(allStats, "--aslas")
   return allStats
 }
 exports.getTotalGoals = getTotalGoals
