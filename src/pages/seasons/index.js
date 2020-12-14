@@ -53,19 +53,31 @@ const SeasonsIndex = ({ data, path }) => {
             season.schedules,
             Cautions.RED
           )
-
+          season.seasonStats = {
+            games: season.schedules.length,
+            teams: season.teams.length,
+            goals: totalGoals.length,
+            assists: totalAssists.length,
+            players: totalPlayers.length,
+            owngoals: totalOwnGoals.length,
+            yellow_cards: totalYellowCards.length,
+            red_cards: totalRedCards.length,
+            unique_players_goals: totalUniquePlayerGoals.length,
+            fouls: totalFouls,
+          }
+          console.log(season.seasonStats, "--season.seasonStats")
           return (
             <li key={season.season_id}>
               <Link to={season.seasonPath}>
                 {season.season_id}-{season.season_year}-
-                {season.schedules.length} Game--{season.teams.length} Teams --{" "}
-                {totalPlayers} Players -- {totalGoals.length}Goals --{" "}
-                {totalAssists.length}
-                Assists -- {totalOwnGoals.length}
-                Owngoals -- {totalFouls}
-                Total Fouls -- {totalUniquePlayerGoals.length}
-                Unique Players Scored -- {totalYellowCards.length}
-                Yellow Card -- {totalRedCards.length} Red Card --
+                {season.seasonStats.games} Game--{season.seasonStats.teams}{" "}
+                Teams -- {season.seasonStats.players} Players --{" "}
+                {season.seasonStats.goals}Goals -- {season.seasonStats.assists}
+                Assists -- {season.seasonStats.owngoals}
+                Owngoals -- {season.seasonStats.fouls}
+                Total Fouls -- {season.seasonStats.unique_players_goals}
+                Unique Players Scored -- {season.seasonStats.yellow_cards}
+                Yellow Card -- {season.seasonStats.red_cards} Red Card --
                 {season.mos.map(item => item.name).join(",")} Mos
               </Link>
             </li>
