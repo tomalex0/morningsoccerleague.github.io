@@ -79,7 +79,7 @@ type MslPlayerStats {
 
 type MslPlayersJson implements Node {
 		image: File
-		seasons: [MslSeasonsJson],
+		seasons: [MslSeasonsJson]
 		playerStats: MslPlayerStats
 }
 
@@ -93,8 +93,6 @@ type MslSchedulesJson implements Node {
 
 type MslSeasonsJson implements Node {
   mos: [MslPlayersJson] @link(by: "player_id")
-  # Only meant to be used while viewing from context of player
-  isMos: Boolean
   # Link back to schedule from season
   schedules: [MslSchedulesJson] @link(by: "season.season_id", from: "season_id")
 }

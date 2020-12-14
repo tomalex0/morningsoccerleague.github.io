@@ -32,7 +32,7 @@ function findInNested(searchData, arr, parentProp, accum = [], parentArr) {
 
 exports.findInNested = findInNested
 
-function getTotalByType(schedules, key) {
+function getAllGameStatsByType(schedules, key) {
   const allStats = schedules
     .map(item => item.gamestats)
     .flat()
@@ -43,7 +43,7 @@ function getTotalByType(schedules, key) {
 }
 
 function getTotalCautionType(schedules, cautionType = 1) {
-  const allStats = getTotalByType(schedules, "cautions").filter(
+  const allStats = getAllGameStatsByType(schedules, "cautions").filter(
     item => item && item.caution_id == cautionType
   )
   return allStats
@@ -51,19 +51,19 @@ function getTotalCautionType(schedules, cautionType = 1) {
 exports.getTotalCautionType = getTotalCautionType
 
 function getTotalGoals(schedules) {
-  const allStats = getTotalByType(schedules, "goals")
+  const allStats = getAllGameStatsByType(schedules, "goals")
   return allStats
 }
 exports.getTotalGoals = getTotalGoals
 
 function getTotalMom(schedules) {
-  const allStats = getTotalByType(schedules, "mom")
+  const allStats = getAllGameStatsByType(schedules, "mom")
   return allStats
 }
 exports.getTotalMom = getTotalMom
 
 function getTotalSaves(schedules) {
-  const allStats = getTotalByType(schedules, "keeper")
+  const allStats = getAllGameStatsByType(schedules, "keeper")
   return allStats
 }
 exports.getTotalMom = getTotalMom
@@ -124,12 +124,14 @@ function getPlayerTotalGoals(schedules, player_id) {
 }
 
 function getMosDetails(mos, season_id) {
-  const mosArr = mos.map(item => {
-    const teamName = item.seasons.find(item => item.season_id == season_id)
-      .playerInfo.team.teamName
-    return `${item.name} - ${teamName}`
-  })
-  return mosArr
+  // const mosSeason = mos.seasons.find(item => item.season_id == season_id)
+  console.log(mos.flat(), "--dfdf----")
+  // const mosArr = mos.map(item => {
+  //   const teamName = item.seasons.find(item => item.season_id == season_id)
+  //     .playerInfo.team.teamName
+  //   return `${item.name} - ${teamName}`
+  // })
+  return []
 }
 
 exports.getMosDetails = getMosDetails

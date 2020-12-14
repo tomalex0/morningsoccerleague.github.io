@@ -40,8 +40,7 @@ const SeasonsIndex = ({ data, path }) => {
               Yellow Card --{" "}
               {getTotalCautionType(season.schedules, Cautions.RED).length} Red
               Card --
-              {/*{getMosDetails(season.mos, season.season_id).join(",")}{" "}*/}
-              {/*Mos -{" "}*/}
+              {season.mos.map(item => item.name).join(",")} Mos
             </Link>
           </li>
         ))}
@@ -68,9 +67,8 @@ export const query = graphql`
           }
         }
         mos {
-          name
+          ...MslPlayersJsonFragment
           seasons {
-            isMos
             season_id
           }
         }

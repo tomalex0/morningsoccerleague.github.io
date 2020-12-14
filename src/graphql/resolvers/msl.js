@@ -48,6 +48,7 @@ module.exports = {
     },
     playerStats: {
       async resolve(source, args, context, info) {
+        // Get all Season
         const data = await context.nodeModel.runQuery({
           query: {
             filter: {
@@ -63,14 +64,18 @@ module.exports = {
           type: "MslSeasonsJson",
           firstOnly: false,
         })
+
+        // Get All Schedules
         const schedule_data = await context.nodeModel.runQuery({
           query: {},
           type: "MslSchedulesJson",
           firstOnly: false,
         })
+
         const scheduleBySeason = groupBy(schedule_data, "season")
 
         const playerId = source.player_id
+        // New Data List based on season
         const seasonStats = data.map(item => {
           const playerTeam = item.teams.find(item =>
             item.players.includes(playerId)
@@ -158,6 +163,7 @@ module.exports = {
     mos: {
       type: ["MslSeasonsJson"],
       async resolve(source, args, context, info) {
+        console.log(source, "---dfd---")
         const data = await context.nodeModel.runQuery({
           query: {
             filter: {
@@ -185,16 +191,6 @@ module.exports = {
     },
   },
   MslSeasonsJson: {
-    // Depends on Player ID
-    isMos: {
-      resolve(source, args, context, info) {
-        var isMos = false
-        if (source.player_id) {
-          isMos = source.mos.includes(source.player_id)
-        }
-        return isMos
-      },
-    },
     schedules: {
       type: ["MslSchedulesJson"],
       resolve(source, args, context, info) {
