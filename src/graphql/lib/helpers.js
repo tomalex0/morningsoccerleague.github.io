@@ -1,3 +1,4 @@
+const { Cautions } = require("./enum")
 /**
  * Generic Function to get file info based on relative path
  * @param context
@@ -127,7 +128,7 @@ function getPlayerTotalGoals(schedules, player_id) {
 
 function getMosDetails(mos, season_id) {
   // const mosSeason = mos.seasons.find(item => item.season_id == season_id)
-  console.log(mos.flat(), "--dfdf----")
+  // console.log(mos.flat(), "--dfdf----")
   // const mosArr = mos.map(item => {
   //   const teamName = item.seasons.find(item => item.season_id == season_id)
   //     .playerInfo.team.teamName
@@ -152,3 +153,45 @@ function getSum(data, key) {
   }, 0)
 }
 exports.getSum = getSum
+
+function getSeasonStats(seasons) {
+  const seasonArr = seasons.map(season => {
+    const totalGoals = getTotalGoals(season.schedules)
+    const totalPlayers = getTotalPlayers(season.teams)
+    const totalAssists = totalGoals.filter(item => item.assist)
+    const totalOwnGoals = totalGoals.filter(item => item.owngoal)
+    const totalFouls = getAllGameStatsByType(season.schedules, "fouls").reduce(
+      (a, b) => a + b,
+      0
+    )
+    const totalUniquePlayerGoals = [
+      ...new Set(
+        totalGoals
+          .filter(item => !item.owngoal)
+          .map(item => item.player.player_id)
+      ),
+    ]
+    const totalYellowCards = getTotalCautionType(
+      season.schedules,
+      Cautions.YELLOW
+    )
+    const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
+    season.seasonStats = {
+      games: season.schedules.length,
+      teams: season.teams.length,
+      goals: totalGoals.length,
+      assists: totalAssists.length,
+      players: totalPlayers,
+      owngoals: totalOwnGoals.length,
+      yellow_cards: totalYellowCards.length,
+      red_cards: totalRedCards.length,
+      unique_players_goals: totalUniquePlayerGoals.length,
+      unique_players_goals_list: totalUniquePlayerGoals,
+      fouls: totalFouls,
+    }
+    return season
+  })
+  return seasonArr
+}
+
+exports.getSeasonStats = getSeasonStats
