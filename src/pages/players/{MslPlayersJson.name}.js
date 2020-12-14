@@ -13,7 +13,6 @@ import {
 
 function Player({ data, path }) {
   const { player } = data
-  console.log(player)
   return (
     <Layout>
       <SEO title={player.name} path={path} />
