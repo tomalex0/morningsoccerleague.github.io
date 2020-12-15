@@ -160,6 +160,7 @@ function getSeasonStats(seasons) {
     const totalPlayers = getTotalPlayers(season.teams)
     const totalAssists = totalGoals.filter(item => item.assist)
     const totalOwnGoals = totalGoals.filter(item => item.owngoal)
+    const totalValidGoals = totalGoals.filter(item => !item.owngoal)
     const totalFouls = getAllGameStatsByType(season.schedules, "fouls").reduce(
       (a, b) => a + b,
       0
@@ -176,6 +177,26 @@ function getSeasonStats(seasons) {
       Cautions.YELLOW
     )
     const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
+
+    const playersScored = groupBy(
+      totalValidGoals.map(item => {
+        item.player_id = item.player.player_id
+        return item
+      }),
+      "player_id"
+    )
+    const playersScoredSort = Object.keys(playersScored)
+      .map(function (k) {
+        return {
+          ...playersScored[k][0].player,
+          goals: playersScored[k].length,
+          value: playersScored[k],
+        }
+      })
+      .sort(function (a, b) {
+        return b.goals - a.goals || a.name.localeCompare(b.name)
+      })
+
     season.seasonStats = {
       games: season.schedules.length,
       teams: season.teams.length,
@@ -188,6 +209,7 @@ function getSeasonStats(seasons) {
       unique_players_goals: totalUniquePlayerGoals.length,
       unique_players_goals_list: totalUniquePlayerGoals,
       fouls: totalFouls,
+      scorers: playersScoredSort,
     }
     return season
   })

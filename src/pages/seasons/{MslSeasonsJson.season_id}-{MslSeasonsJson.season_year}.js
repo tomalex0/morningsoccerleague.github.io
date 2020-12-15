@@ -16,9 +16,10 @@ import {
 
 function Season({ data, path }) {
   const { season } = data
-
   const seasonItem = getSeasonStats([season])[0]
   const title = `${season.season_id}-${season.season_year}`
+  const seasonStats = seasonItem.seasonStats
+
   return (
     <Layout>
       <SEO title={title} path={path} />
@@ -28,6 +29,15 @@ function Season({ data, path }) {
       <ul>
         <MslSeasonStatsItem season={seasonItem} />
       </ul>
+      <div>
+        <ul>
+          {seasonStats.scorers.map(stats => (
+            <li>
+              {stats.name} - {stats.goals}
+            </li>
+          ))}
+        </ul>
+      </div>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>
