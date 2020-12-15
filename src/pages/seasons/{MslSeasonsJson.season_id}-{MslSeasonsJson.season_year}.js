@@ -34,7 +34,7 @@ function Season({ data, path }) {
           {seasonStats.scorers.map(stats => (
             <li>
               <Link to={stats.playerPath}>
-              {stats.name} - {stats.goals}
+                {stats.name} - {stats.goals}
               </Link>
             </li>
           ))}
