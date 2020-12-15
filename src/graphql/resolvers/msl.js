@@ -1,4 +1,4 @@
-const { MslImgKey, Cautions } = require("../lib/enum")
+const { MslImgKey, Cautions, SCHEMA_TYPE_NAME } = require("../lib/enum")
 const {
   getFile,
   getPlayerGoals,
