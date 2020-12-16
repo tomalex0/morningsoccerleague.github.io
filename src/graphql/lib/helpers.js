@@ -154,6 +154,32 @@ function getSum(data, key) {
 }
 exports.getSum = getSum
 
+function getGoalScorers(totalGoals) {
+  const totalValidGoals = totalGoals.filter(item => !item.owngoal)
+  const playersScored = groupBy(
+    totalValidGoals.map(item => {
+      item.player_id = item.player.player_id
+      return item
+    }),
+    "player_id"
+  )
+  const playersScoredSort = Object.keys(playersScored)
+    .map(function (k) {
+      return {
+        ...playersScored[k][0].player,
+        goals: playersScored[k].length,
+        value: playersScored[k],
+      }
+    })
+    .sort(function (a, b) {
+      return b.goals - a.goals || a.name.localeCompare(b.name)
+    })
+
+  return playersScoredSort
+}
+
+exports.getGoalScorers = getGoalScorers
+
 function getSeasonStats(seasons) {
   const seasonArr = seasons.map(season => {
     const totalGoals = getAllGameStatsByType(season.schedules, "goals")
@@ -174,25 +200,7 @@ function getSeasonStats(seasons) {
     )
     const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
 
-    const playersScored = groupBy(
-      totalValidGoals.map(item => {
-        item.player_id = item.player.player_id
-        return item
-      }),
-      "player_id"
-    )
-    const playersScoredSort = Object.keys(playersScored)
-      .map(function (k) {
-        return {
-          ...playersScored[k][0].player,
-          goals: playersScored[k].length,
-          value: playersScored[k],
-        }
-      })
-      .sort(function (a, b) {
-        return b.goals - a.goals || a.name.localeCompare(b.name)
-      })
-
+    const playersScoredSort = getGoalScorers(totalGoals)
     season.seasonStats = {
       games: season.schedules.length,
       teams: season.teams.length,
