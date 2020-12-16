@@ -156,7 +156,7 @@ exports.getSum = getSum
 
 function getSeasonStats(seasons) {
   const seasonArr = seasons.map(season => {
-    const totalGoals = getTotalGoals(season.schedules)
+    const totalGoals = getAllGameStatsByType(season.schedules, "goals")
     const totalPlayers = getTotalPlayers(season.teams)
     const totalAssists = totalGoals.filter(item => item.assist)
     const totalOwnGoals = totalGoals.filter(item => item.owngoal)
@@ -166,11 +166,7 @@ function getSeasonStats(seasons) {
       0
     )
     const totalUniquePlayerGoals = [
-      ...new Set(
-        totalGoals
-          .filter(item => !item.owngoal)
-          .map(item => item.player.player_id)
-      ),
+      ...new Set(totalValidGoals.map(item => item.player.player_id)),
     ]
     const totalYellowCards = getTotalCautionType(
       season.schedules,
