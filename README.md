@@ -137,6 +137,7 @@ A quick look at the top-level files and directories you'll see in this project.
   - https://codepen.io/paulnoble/pen/PwOxOY
   - https://github.com/jalapic/jalapic.github.io
   - https://xbeat-gameserver.herokuapp.com/
+  - https://locomotivemtl.github.io/locomotive-scroll/
 - Create schedule data - Form Builder
 - Standings
   - https://codepen.io/Shayley/pen/NWqrvqQ
