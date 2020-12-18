@@ -44,8 +44,11 @@ jobs:
           curl \
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/${GITHUB_REPOSITORY}/dispatches \
+            -H "Authorization: ${DEPLOY_TOKEN}" \
+            https://api.github.com/repos/tomalex0/morningsoccerleague.github.io/dispatches \
             -d '{"event_type":"gh_pages_deployed", "client_payload": { "version": "1.0.0"}}'
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
   lhci:
     needs: ghpages
     name: Lighthouse
