@@ -3,8 +3,7 @@ on:
   repository_dispatch:
 jobs:
   lhci:
-    needs: ghpages
-    name: Lighthouse
+    name: Lighthouse Url
     runs-on: ubuntu-latest
     steps:
       - name: Event Information
