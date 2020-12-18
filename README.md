@@ -9,6 +9,7 @@
 </h1>
 
 ![Github Pages Deploy CI](https://github.com/tomalex0/morningsoccerleague.github.io/workflows/Github%20Pages%20Deploy%20CI/badge.svg)
+![LightHouse Url CI](https://github.com/tomalex0/morningsoccerleague.github.io/workflows/LightHouse%20Url%20CI/badge.svg)
 ![LightHouse CI](https://github.com/tomalex0/morningsoccerleague.github.io/workflows/LightHouse%20CI/badge.svg)
 ![Prettier CI](https://github.com/tomalex0/morningsoccerleague.github.io/workflows/Prettier%20CI/badge.svg)
 
