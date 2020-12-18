@@ -39,6 +39,13 @@ jobs:
           npx gh-pages -d public -b gh-pages -u "github-actions-bot <support+actions@github.com>" -r https://git:${DEPLOY_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+      - name: Deployed Event Trigger
+        run: |
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${GITHUB_REPOSITORY}/dispatches \
+            -d '{"event_type":"gh_pages_deployed"}'
   lhci:
     needs: ghpages
     name: Lighthouse
