@@ -2,6 +2,7 @@ name: LightHouse Url CI
 on:
   repository_dispatch:
     types: [gh_pages_deployed]
+  workflow_dispatch:
 jobs:
   lhci:
     name: Lighthouse Url
