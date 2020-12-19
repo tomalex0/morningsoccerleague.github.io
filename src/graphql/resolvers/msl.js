@@ -163,7 +163,7 @@ module.exports = {
     mos: {
       type: ["MslSeasonsJson"],
       async resolve(source, args, context, info) {
-        console.log(source, "---dfd---")
+        // console.log(source, "---dfd---")
         const data = await context.nodeModel.runQuery({
           query: {
             filter: {
