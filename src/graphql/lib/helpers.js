@@ -154,8 +154,7 @@ function getSum(data, key) {
 }
 exports.getSum = getSum
 
-function getGoalScorers(totalGoals) {
-  const totalValidGoals = totalGoals.filter(item => !item.owngoal)
+function getGoalScorers(totalValidGoals) {
   const playersScored = groupBy(
     totalValidGoals.map(item => {
       item.player_id = item.player.player_id
@@ -198,9 +197,10 @@ function getSeasonStats(seasons) {
       season.schedules,
       Cautions.YELLOW
     )
+    console.log(totalYellowCards, "----totalYellowCards---", totalValidGoals)
     const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
 
-    const playersScoredSort = getGoalScorers(totalGoals)
+    const playersScoredSort = getGoalScorers(totalValidGoals)
     season.seasonStats = {
       games: season.schedules.length,
       teams: season.teams.length,

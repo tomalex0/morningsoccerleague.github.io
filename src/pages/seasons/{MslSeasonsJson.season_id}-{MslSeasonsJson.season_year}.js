@@ -32,7 +32,7 @@ function Season({ data, path }) {
       <div>
         <ul>
           {seasonStats.scorers.map(stats => (
-            <li>
+            <li key={stats.player_id}>
               <Link to={stats.playerPath}>
                 {stats.name} - {stats.goals}
               </Link>
@@ -79,18 +79,21 @@ export const query = graphql`
           cautions {
             minute
             caution_id
+            player {
+              ...MslPlayersJsonFragment
+            }
           }
         }
       }
       mos {
         ...MslPlayersJsonFragment
         seasons {
-          season_id
+          ...MslSeasonsJsonFragment
         }
       }
       teams {
         players {
-          id
+          ...MslPlayersJsonFragment
         }
       }
     }
