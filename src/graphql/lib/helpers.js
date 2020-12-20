@@ -37,7 +37,14 @@ function getAllGameStatsByType(schedules, key) {
   const allStats = schedules
     .map(item => item.gamestats)
     .flat()
-    .map(item => item[key])
+    .map(item =>
+      item[key] && Array.isArray(item[key])
+        ? item[key].map(childitem => {
+            childitem.team = item.team
+            return childitem
+          })
+        : item[key]
+    )
     .flat()
     .filter(item => item !== undefined)
   return allStats
@@ -167,6 +174,7 @@ function getGoalScorers(totalValidGoals) {
       return {
         ...playersScored[k][0].player,
         goals: playersScored[k].length,
+        team: playersScored[k][0].team,
         value: playersScored[k],
       }
     })
@@ -197,7 +205,6 @@ function getSeasonStats(seasons) {
       season.schedules,
       Cautions.YELLOW
     )
-    console.log(totalYellowCards, "----totalYellowCards---", totalValidGoals)
     const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
 
     const playersScoredSort = getGoalScorers(totalValidGoals)

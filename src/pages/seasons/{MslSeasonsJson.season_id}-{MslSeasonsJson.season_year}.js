@@ -34,7 +34,7 @@ function Season({ data, path }) {
           {seasonStats.scorers.map(stats => (
             <li key={stats.player_id}>
               <Link to={stats.playerPath}>
-                {stats.name} - {stats.goals}
+                {stats.name} - {stats.goals} - {stats.team.teamName}
               </Link>
             </li>
           ))}
@@ -75,10 +75,19 @@ export const query = graphql`
               ...MslPlayersJsonFragment
             }
           }
+          team {
+            ...MslTeamsJsonFragment
+          }
           fouls
           cautions {
             minute
             caution_id
+            player {
+              ...MslPlayersJsonFragment
+            }
+          }
+          keeper {
+            saves
             player {
               ...MslPlayersJsonFragment
             }

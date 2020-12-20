@@ -55,6 +55,15 @@ export const query = graphql`
             cautions {
               minute
               caution_id
+              player {
+                ...MslPlayersJsonFragment
+              }
+            }
+            keeper {
+              saves
+              player {
+                ...MslPlayersJsonFragment
+              }
             }
           }
         }
