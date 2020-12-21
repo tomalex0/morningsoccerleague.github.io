@@ -30,6 +30,16 @@ function Season({ data, path }) {
         <MslSeasonStatsItem season={seasonItem} />
       </ul>
       <div>
+        <h3>Man of Series</h3>
+        <ul>
+          {seasonItem.mos.map(stats => (
+            <li key={stats.player_id}>
+              <Link to={stats.playerPath}>{stats.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
         <h3>Man of the Match</h3>
         <ul>
           {seasonStats.moms.map(stats => (
