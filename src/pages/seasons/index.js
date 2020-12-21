@@ -12,6 +12,7 @@ import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
+  MslSeasonsJsonStatsFragment,
 } from "data/fragments"
 
 const SeasonsIndex = ({ data, path }) => {
@@ -37,52 +38,7 @@ export const query = graphql`
   query {
     seasons: allMslSeasonsJson(sort: { order: ASC, fields: season_id }) {
       nodes {
-        ...MslSeasonsJsonFragment
-        schedules {
-          id
-          gamestats {
-            goals {
-              minute
-              owngoal
-              player {
-                ...MslPlayersJsonFragment
-              }
-              assist {
-                ...MslPlayersJsonFragment
-              }
-            }
-            fouls
-            cautions {
-              minute
-              caution_id
-              player {
-                ...MslPlayersJsonFragment
-              }
-            }
-            mom {
-              player {
-                ...MslPlayersJsonFragment
-              }
-            }
-            keeper {
-              saves
-              player {
-                ...MslPlayersJsonFragment
-              }
-            }
-          }
-        }
-        mos {
-          ...MslPlayersJsonFragment
-          seasons {
-            season_id
-          }
-        }
-        teams {
-          players {
-            id
-          }
-        }
+        ...MslSeasonsJsonStatsFragment
       }
     }
   }

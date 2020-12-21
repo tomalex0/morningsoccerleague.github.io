@@ -12,6 +12,7 @@ import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
+  MslSeasonsJsonStatsFragment,
 } from "data/fragments"
 
 function Season({ data, path }) {
@@ -19,7 +20,6 @@ function Season({ data, path }) {
   const seasonItem = getSeasonStats([season])[0]
   const title = `${season.season_id}-${season.season_year}`
   const seasonStats = seasonItem.seasonStats
-
   return (
     <Layout>
       <SEO title={title} path={path} />
@@ -29,6 +29,40 @@ function Season({ data, path }) {
       <ul>
         <MslSeasonStatsItem season={seasonItem} />
       </ul>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th width="5%">POS</th>
+              <th width="55%">TEAMS</th>
+              <th width="5%">P</th>
+              <th width="5%">W</th>
+              <th width="5%">D</th>
+              <th width="5%">L</th>
+              <th width="5%">GF</th>
+              <th width="5%">GA</th>
+              <th width="5%">GD</th>
+              <th width="5%">PTS</th>
+            </tr>
+          </thead>
+          <tbody>
+            {seasonStats.team_stats.map((stats, index) => (
+              <tr>
+                <td>{index + 1}</td>
+                <td>{stats.team.teamName}</td>
+                <td>{stats.played}</td>
+                <td>{stats.won}</td>
+                <td>{stats.draw}</td>
+                <td>{stats.lost}</td>
+                <td>{stats.goal_scored}</td>
+                <td>{stats.goal_allowed}</td>
+                <td>{stats.goal_diff}</td>
+                <td>{stats.points}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div>
         <h3>Man of Series</h3>
         <ul>
@@ -121,55 +155,7 @@ function Season({ data, path }) {
 export const query = graphql`
   query($id: String) {
     season: mslSeasonsJson(id: { eq: $id }) {
-      ...MslSeasonsJsonFragment
-      schedules {
-        id
-        gamestats {
-          goals {
-            minute
-            owngoal
-            player {
-              ...MslPlayersJsonFragment
-            }
-            assist {
-              ...MslPlayersJsonFragment
-            }
-          }
-          team {
-            ...MslTeamsJsonFragment
-          }
-          fouls
-          cautions {
-            minute
-            caution_id
-            player {
-              ...MslPlayersJsonFragment
-            }
-          }
-          mom {
-            player {
-              ...MslPlayersJsonFragment
-            }
-          }
-          keeper {
-            saves
-            player {
-              ...MslPlayersJsonFragment
-            }
-          }
-        }
-      }
-      mos {
-        ...MslPlayersJsonFragment
-        seasons {
-          ...MslSeasonsJsonFragment
-        }
-      }
-      teams {
-        players {
-          ...MslPlayersJsonFragment
-        }
-      }
+      ...MslSeasonsJsonStatsFragment
     }
   }
 `

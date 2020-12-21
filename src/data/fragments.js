@@ -112,3 +112,70 @@ export const MslSchedulesJsonGamestatsFragment = graphql`
     }
   }
 `
+
+export const MslGameStatsFragment = graphql`
+  fragment MslGameStatsFragment on MslSchedulesJsonGamestats {
+    team_type
+    goals {
+      minute
+      owngoal
+      player {
+        ...MslPlayersJsonFragment
+      }
+      assist {
+        ...MslPlayersJsonFragment
+      }
+    }
+    team {
+      ...MslTeamsJsonFragment
+    }
+    fouls
+    cautions {
+      minute
+      caution_id
+      player {
+        ...MslPlayersJsonFragment
+      }
+    }
+    mom {
+      player {
+        ...MslPlayersJsonFragment
+      }
+    }
+    keeper {
+      saves
+      player {
+        ...MslPlayersJsonFragment
+      }
+    }
+  }
+`
+export const MslSeasonsJsonStatsFragment = graphql`
+  fragment MslSeasonsJsonStatsFragment on MslSeasonsJson {
+    ...MslSeasonsJsonFragment
+    schedules {
+      id
+      completed
+      gamestats {
+        ...MslGameStatsFragment
+      }
+      away: stats(stats_type: away) {
+        ...MslGameStatsFragment
+      }
+      home: stats(stats_type: home) {
+        ...MslGameStatsFragment
+      }
+    }
+    mos {
+      ...MslPlayersJsonFragment
+      seasons {
+        ...MslSeasonsJsonFragment
+      }
+    }
+    teams {
+      players {
+        ...MslPlayersJsonFragment
+      }
+    }
+  }
+`

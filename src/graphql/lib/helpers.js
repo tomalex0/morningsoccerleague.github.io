@@ -12,6 +12,66 @@ function getFile(context, path) {
 }
 exports.getFile = getFile
 
+function predicate() {
+  var fields = [],
+    n_fields = arguments.length,
+    field,
+    name,
+    reverse,
+    cmp
+
+  var default_cmp = function (a, b) {
+      if (a === b) return 0
+      return a < b ? -1 : 1
+    },
+    getCmpFunc = function (primer, reverse) {
+      var dfc = default_cmp,
+        // closer in scope
+        cmp = default_cmp
+      if (primer) {
+        cmp = function (a, b) {
+          return dfc(primer(a), primer(b))
+        }
+      }
+      if (reverse) {
+        return function (a, b) {
+          return -1 * cmp(a, b)
+        }
+      }
+      return cmp
+    }
+
+  // preprocess sorting options
+  for (var i = 0; i < n_fields; i++) {
+    field = arguments[i]
+    if (typeof field === "string") {
+      name = field
+      cmp = default_cmp
+    } else {
+      name = field.name
+      cmp = getCmpFunc(field.primer, field.reverse)
+    }
+    fields.push({
+      name: name,
+      cmp: cmp,
+    })
+  }
+
+  // final comparison function
+  return function (A, B) {
+    var a, b, name, result
+    for (var i = 0; i < n_fields; i++) {
+      result = 0
+      field = fields[i]
+      name = field.name
+
+      result = field.cmp(A[name], B[name])
+      if (result !== 0) break
+    }
+    return result
+  }
+}
+
 // findInNested(12, [], 'players')
 // [{
 //  	"players": [1, 2, 3]
@@ -240,6 +300,105 @@ function grouByPlayerStatsSum(data, key) {
 
 exports.grouByPlayerStatsSum = grouByPlayerStatsSum
 
+function getDefaultScore() {
+  var defaultScore = {
+    played: 0,
+    won: 0,
+    lost: 0,
+    draw: 0,
+    goal_allowed: 0,
+    goal_scored: 0,
+  }
+
+  return defaultScore
+}
+
+function getTeamSeasonStats(schedules) {
+  var teamObj = {}
+  schedules.forEach(itemobj => {
+    const home = itemobj.home
+    const away = itemobj.away
+    if (home.goals && away.goals && itemobj.completed) {
+      if (teamObj[home.team.team_id]) {
+        teamObj[home.team.team_id].played =
+          teamObj[home.team.team_id].played + 1
+      } else {
+        teamObj[home.team.team_id] = getDefaultScore()
+        teamObj[home.team.team_id].team = home.team
+        teamObj[home.team.team_id].played = 1
+      }
+      if (teamObj[away.team.team_id]) {
+        teamObj[away.team.team_id].played =
+          teamObj[away.team.team_id].played + 1
+      } else {
+        teamObj[away.team.team_id] = getDefaultScore()
+        teamObj[away.team.team_id].team = away.team
+        teamObj[away.team.team_id].played = 1
+      }
+
+      if (home.goals.length == away.goals.length) {
+        teamObj[home.team.team_id].draw =
+          (teamObj[home.team.team_id].draw || 0) + 1
+        teamObj[away.team.team_id].draw =
+          (teamObj[away.team.team_id].draw || 0) + 1
+      } else if (home.goals.length > away.goals.length) {
+        teamObj[home.team.team_id].won =
+          (teamObj[home.team.team_id].won || 0) + 1
+        teamObj[away.team.team_id].lost =
+          (teamObj[away.team.team_id].lost || 0) + 1
+      } else if (away.goals.length > home.goals.length) {
+        teamObj[away.team.team_id].won =
+          (teamObj[away.team.team_id].won || 0) + 1
+        teamObj[home.team.team_id].lost =
+          (teamObj[home.team.team_id].lost || 0) + 1
+      }
+      teamObj[home.team.team_id].goal_allowed =
+        teamObj[home.team.team_id].goal_allowed + away.goals.length
+      teamObj[away.team.team_id].goal_allowed =
+        teamObj[away.team.team_id].goal_allowed + home.goals.length
+
+      teamObj[home.team.team_id].goal_scored =
+        teamObj[home.team.team_id].goal_scored + home.goals.length
+      teamObj[away.team.team_id].goal_scored =
+        teamObj[away.team.team_id].goal_scored + away.goals.length
+    } else {
+      if (!teamObj[home.team.team_id]) {
+        teamObj[home.team.team_id] = getDefaultScore()
+      }
+      if (!teamObj[away.team.team_id]) {
+        teamObj[away.team.team_id] = getDefaultScore()
+      }
+    }
+  })
+  teamObj = Object.values(teamObj)
+  teamObj = teamObj.map(itemobj => {
+    itemobj.goal_diff = itemobj.goal_scored - itemobj.goal_allowed
+    itemobj.points = itemobj.draw * 1 + itemobj.won * 3
+    return itemobj
+  })
+  teamObj.sort(
+    predicate(
+      {
+        name: "points",
+        reverse: true,
+      },
+      {
+        name: "goal_diff",
+        reverse: true,
+      },
+      {
+        name: "goal_scored",
+        reverse: true,
+      },
+      {
+        name: "teamName",
+        reverse: false,
+      }
+    )
+  )
+  return Object.values(teamObj)
+}
+
 function getSeasonStats(seasons) {
   const seasonArr = seasons.map(season => {
     const totalGoals = getAllGameStatsByType(season.schedules, "goals")
@@ -266,6 +425,7 @@ function getSeasonStats(seasons) {
       season.schedules,
       Cautions.YELLOW
     )
+    const teamStats = getTeamSeasonStats(season.schedules)
 
     const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
     const playerYellowCards = grouByPlayerStats(totalYellowCards)
@@ -289,6 +449,7 @@ function getSeasonStats(seasons) {
       goalkeepers: playersSaves,
       yellow_card_holders: playerYellowCards,
       red_card_holders: playerRedCards,
+      team_stats: teamStats,
     }
     return season
   })
