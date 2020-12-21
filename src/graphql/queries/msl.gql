@@ -54,6 +54,7 @@ type MslPlayerSeasonStats {
 		isOwner: Boolean
   isMos: Boolean
   mom: Int
+  red_cards: Int
   saves: Int
   season: MslSeasonsJson @link(by: "season")
   season_id: Int
