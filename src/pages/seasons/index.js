@@ -59,6 +59,11 @@ export const query = graphql`
                 ...MslPlayersJsonFragment
               }
             }
+            mom {
+              player {
+                ...MslPlayersJsonFragment
+              }
+            }
             keeper {
               saves
               player {

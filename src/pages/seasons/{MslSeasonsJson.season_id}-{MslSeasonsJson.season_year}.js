@@ -30,11 +30,61 @@ function Season({ data, path }) {
         <MslSeasonStatsItem season={seasonItem} />
       </ul>
       <div>
+        <h3>Man of the Match</h3>
+        <ul>
+          {seasonStats.moms.map(stats => (
+            <li key={stats.player_id}>
+              <Link to={stats.playerPath}>
+                {stats.name} - {stats.count} - {stats.team.teamName}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3>Goal Scorers</h3>
         <ul>
           {seasonStats.scorers.map(stats => (
             <li key={stats.player_id}>
               <Link to={stats.playerPath}>
-                {stats.name} - {stats.goals} - {stats.team.teamName}
+                {stats.name} - {stats.count} - {stats.team.teamName}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3>Goal Keeper Save</h3>
+        <ul>
+          {seasonStats.goalkeepers.map(stats => (
+            <li key={stats.player_id}>
+              <Link to={stats.playerPath}>
+                {stats.name} - {stats.count} - {stats.team.teamName} -{" "}
+                {stats.matches}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3>Yellow Card Holders</h3>
+        <ul>
+          {seasonStats.yellow_card_holders.map(stats => (
+            <li key={stats.player_id}>
+              <Link to={stats.playerPath}>
+                {stats.name} - {stats.count} - {stats.team.teamName}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3>Red Card Holders</h3>
+        <ul>
+          {seasonStats.red_card_holders.map(stats => (
+            <li key={stats.player_id}>
+              <Link to={stats.playerPath}>
+                {stats.name} - {stats.count} - {stats.team.teamName}
               </Link>
             </li>
           ))}
@@ -82,6 +132,11 @@ export const query = graphql`
           cautions {
             minute
             caution_id
+            player {
+              ...MslPlayersJsonFragment
+            }
+          }
+          mom {
             player {
               ...MslPlayersJsonFragment
             }

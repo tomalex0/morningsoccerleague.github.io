@@ -46,7 +46,7 @@ function getAllGameStatsByType(schedules, key) {
         : item[key]
     )
     .flat()
-    .filter(item => item !== undefined)
+    .filter(item => item)
   return allStats
 }
 
@@ -187,9 +187,63 @@ function getGoalScorers(totalValidGoals) {
 
 exports.getGoalScorers = getGoalScorers
 
+function grouByPlayerStats(data) {
+  const playerGroup = groupBy(
+    data.map(item => {
+      item.player_id = item.player.player_id
+      return item
+    }),
+    "player_id"
+  )
+  const sortedData = Object.keys(playerGroup)
+    .map(function (k) {
+      return {
+        ...playerGroup[k][0].player,
+        count: playerGroup[k].length,
+        team: playerGroup[k][0].team,
+        value: playerGroup[k],
+      }
+    })
+    .sort(function (a, b) {
+      return b.count - a.count || a.name.localeCompare(b.name)
+    })
+
+  return sortedData
+}
+
+exports.grouByPlayerStats = grouByPlayerStats
+
+function grouByPlayerStatsSum(data, key) {
+  const playerGroup = groupBy(
+    data.map(item => {
+      item.player_id = item.player.player_id
+      return item
+    }),
+    "player_id"
+  )
+  const sortedData = Object.keys(playerGroup)
+    .map(function (k) {
+      return {
+        ...playerGroup[k][0].player,
+        count: getSum(playerGroup[k], key),
+        matches: playerGroup[k].length,
+        team: playerGroup[k][0].team,
+        value: playerGroup[k],
+      }
+    })
+    .sort(function (a, b) {
+      return b.count - a.count || a.name.localeCompare(b.name)
+    })
+
+  return sortedData
+}
+
+exports.grouByPlayerStatsSum = grouByPlayerStatsSum
+
 function getSeasonStats(seasons) {
   const seasonArr = seasons.map(season => {
     const totalGoals = getAllGameStatsByType(season.schedules, "goals")
+    const totalMom = getAllGameStatsByType(season.schedules, "mom")
     const totalPlayers = getTotalPlayers(season.teams)
     const totalAssists = totalGoals.filter(item => item.assist)
     const totalOwnGoals = totalGoals.filter(item => item.owngoal)
@@ -198,6 +252,13 @@ function getSeasonStats(seasons) {
       (a, b) => a + b,
       0
     )
+    const totalSaves = getAllGameStatsByType(season.schedules, "keeper")
+    // console.log(season.schedules, "---season.schedules--")
+
+    const momPlayers = grouByPlayerStats(totalMom)
+
+    const playersSaves = grouByPlayerStatsSum(totalSaves, "saves")
+
     const totalUniquePlayerGoals = [
       ...new Set(totalValidGoals.map(item => item.player.player_id)),
     ]
@@ -205,9 +266,12 @@ function getSeasonStats(seasons) {
       season.schedules,
       Cautions.YELLOW
     )
-    const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
 
-    const playersScoredSort = getGoalScorers(totalValidGoals)
+    const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
+    const playerYellowCards = grouByPlayerStats(totalYellowCards)
+    const playerRedCards = grouByPlayerStats(totalRedCards)
+
+    const playersScoredSort = grouByPlayerStats(totalValidGoals)
     season.seasonStats = {
       games: season.schedules.length,
       teams: season.teams.length,
@@ -221,6 +285,10 @@ function getSeasonStats(seasons) {
       unique_players_goals_list: totalUniquePlayerGoals,
       fouls: totalFouls,
       scorers: playersScoredSort,
+      moms: momPlayers,
+      goalkeepers: playersSaves,
+      yellow_card_holders: playerYellowCards,
+      red_card_holders: playerRedCards,
     }
     return season
   })

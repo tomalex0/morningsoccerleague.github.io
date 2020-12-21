@@ -1,6 +1,6 @@
 enum ScheduleTeamStats {
-  home
   away
+  home
 }
 
 type MslSeasonsJsonTeams {
@@ -15,12 +15,12 @@ type MslSchedulesJsonGamestats {
 }
 
 type MslSchedulesJsonGamestatsMom {
-		player: [MslPlayersJson] @link(by: "player_id")
+		player: MslPlayersJson @link(by: "player_id")
 }
 
 type MslSchedulesJsonGamestatsGoals {
+		assist: MslPlayersJson @link(by: "player_id")
 		player: MslPlayersJson @link(by: "player_id")
-  assist: MslPlayersJson @link(by: "player_id")
 }
 
 type MslSchedulesJsonReferees {
@@ -34,42 +34,41 @@ type MslSchedulesJsonGamestatsKeeper {
 }
 
 type MslSchedulesJsonGamestatsPlayers {
-		player: [MslPlayersJson] @link(by: "player_id")
+		player: MslPlayersJson @link(by: "player_id")
 }
 
 type MslSchedulesJsonGamestatsCautions {
+		caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
 		player: MslPlayersJson @link(by: "player_id")
-  caution: MslCautionJson @link(by: "caution_id", from: "caution_id")
 }
 
 type MslTeamsJson implements Node {
+		image: File
   # List all seasons the team is part of
   seasons: [MslSeasonsJson] @link(by: "team.team_id", from: "team_id")
-  image: File
 }
 
 type MslPlayerSeasonStats {
-		team: MslTeamsJson @link(by: "team_id")
-		season: MslSeasonsJson @link(by: "season")
-		isOwner: Boolean
-		isMos: Boolean
-		goals: Int
-		yellow_cards: Int
-		red_cards: Int
-		season_id: Int
 		assists: Int
-		mom: Int
-		saves: Int
+		goals: Int
+		isOwner: Boolean
+  isMos: Boolean
+  mom: Int
+  saves: Int
+  season: MslSeasonsJson @link(by: "season")
+  season_id: Int
+		team: MslTeamsJson @link(by: "team_id")
+		yellow_cards: Int
 }
 
 type MslPlayerAllSeasonStats {
-		goals: Int
 		assists: Int
-		yellow_cards: Int
-		red_cards: Int
-		mos: Int
+		goals: Int
 		mom: Int
+		mos: Int
+		red_cards: Int
 		saves: Int
+		yellow_cards: Int
 }
 
 type MslPlayerStats {
@@ -79,8 +78,8 @@ type MslPlayerStats {
 
 type MslPlayersJson implements Node {
 		image: File
-		seasons: [MslSeasonsJson]
 		playerStats: MslPlayerStats
+		seasons: [MslSeasonsJson]
 }
 
 type MslSchedulesJson implements Node {
@@ -91,12 +90,12 @@ type MslSchedulesJson implements Node {
 }
 
 type MslSeasonStatsItem {
-		fouls: Int
 		assists: Int
-		yellow_cards: Int
-		red_cards: Int
+		fouls: Int
 		mom: Int
+		red_cards: Int
 		saves: Int
+		yellow_cards: Int
 }
 
 type MslSeasonStats {
