@@ -46,7 +46,7 @@ function Season({ data, path }) {
             </tr>
           </thead>
           <tbody>
-            {seasonStats.team_stats.map((stats, index) => (
+            {seasonStats.team_standing_stats.map((stats, index) => (
               <tr>
                 <td>{index + 1}</td>
                 <td>{stats.team.teamName}</td>
@@ -58,6 +58,28 @@ function Season({ data, path }) {
                 <td>{stats.goal_allowed}</td>
                 <td>{stats.goal_diff}</td>
                 <td>{stats.points}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th width="55%">TEAMS</th>
+              <th width="5%">#Fouls</th>
+              <th width="5%">#Matches</th>
+              <th width="5%">AVG</th>
+            </tr>
+          </thead>
+          <tbody>
+            {seasonStats.team_foul_stats.map((stats, index) => (
+              <tr>
+                <td>{stats.team.teamName}</td>
+                <td>{stats.fouls}</td>
+                <td>{stats.matches}</td>
+                <td>{stats.foulAvg}</td>
               </tr>
             ))}
           </tbody>

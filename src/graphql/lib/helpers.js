@@ -12,6 +12,53 @@ function getFile(context, path) {
 }
 exports.getFile = getFile
 
+/**
+ * Generic
+ * @param itemArr
+ * @param prop
+ * @returns {number}
+ */
+function getTotalChildArr(itemArr, prop) {
+  let sum = 0
+  itemArr.map(item => {
+    sum += item[prop].length
+  })
+  return sum
+}
+
+exports.getTotalChildArr = getTotalChildArr
+
+/**
+ * Generic
+ * @param xs
+ * @param key
+ * @returns {*}
+ */
+const groupBy = function (xs, key) {
+  return xs.reduce(function (rv, x) {
+    ;(rv[x[key]] = rv[x[key]] || []).push(x)
+    return rv
+  }, {})
+}
+exports.groupBy = groupBy
+
+/**
+ * Generic
+ * @param data
+ * @param key
+ * @returns {*}
+ */
+function getSum(data, key) {
+  return data.reduce(function (sum, item) {
+    return sum + item[key]
+  }, 0)
+}
+exports.getSum = getSum
+
+/**
+ * Generic
+ * @returns {function(*, *): *}
+ */
 function predicate() {
   var fields = [],
     n_fields = arguments.length,
@@ -72,26 +119,7 @@ function predicate() {
   }
 }
 
-// findInNested(12, [], 'players')
-// [{
-//  	"players": [1, 2, 3]
-//  }, {
-//  	"players": [12, 13]
-//  }]
-
-function findInNested(searchData, arr, parentProp, accum = [], parentArr) {
-  arr.forEach(f => {
-    if (f[parentProp]) {
-      findInNested(searchData, f[parentProp], parentProp, accum, f)
-    }
-    if (f == searchData) {
-      accum.push(parentArr)
-    }
-  })
-  return accum
-}
-
-exports.findInNested = findInNested
+exports.predicate = predicate
 
 function getAllGameStatsByType(schedules, key) {
   const allStats = schedules
@@ -168,58 +196,12 @@ function getPlayerSaves(schedules, player_id) {
 }
 exports.getPlayerSaves = getPlayerSaves
 
-function getTotalChildArr(itemArr, prop) {
-  let sum = 0
-  itemArr.map(item => {
-    sum += item[prop].length
-  })
-  return sum
-}
-
-exports.getTotalChildArr = getTotalChildArr
-
 function getTotalPlayers(teams) {
   const sum = getTotalChildArr(teams, "players")
   return sum
 }
 
 exports.getTotalPlayers = getTotalPlayers
-
-function getPlayerTotalGoals(schedules, player_id) {
-  // TODO: More null check
-  const allStats = getTotalGoals(schedules)
-    .flat()
-    .filter(item => item.player.player_id == player_id)
-  return allStats
-}
-
-function getMosDetails(mos, season_id) {
-  // const mosSeason = mos.seasons.find(item => item.season_id == season_id)
-  // console.log(mos.flat(), "--dfdf----")
-  // const mosArr = mos.map(item => {
-  //   const teamName = item.seasons.find(item => item.season_id == season_id)
-  //     .playerInfo.team.teamName
-  //   return `${item.name} - ${teamName}`
-  // })
-  return []
-}
-
-exports.getMosDetails = getMosDetails
-
-const groupBy = function (xs, key) {
-  return xs.reduce(function (rv, x) {
-    ;(rv[x[key]] = rv[x[key]] || []).push(x)
-    return rv
-  }, {})
-}
-exports.groupBy = groupBy
-
-function getSum(data, key) {
-  return data.reduce(function (sum, item) {
-    return sum + item[key]
-  }, 0)
-}
-exports.getSum = getSum
 
 function getGoalScorers(totalValidGoals) {
   const playersScored = groupBy(
@@ -399,6 +381,44 @@ function getTeamSeasonStats(schedules) {
   return Object.values(teamObj)
 }
 
+function getTeamSeasonFoulStats(schedules) {
+  const teamList = schedules
+    .map(item => item.gamestats)
+    .flat()
+    .map(item => {
+      item.team_id = item.team.team_id
+      return item
+    })
+  const groupTeam = groupBy(teamList, "team_id")
+  const teamListArr = Object.values(groupTeam)
+  const mappedData = teamListArr.map(item => {
+    const newitem = {}
+    const teamItem = item[0].team
+    const totalFouls = getSum(item, "fouls")
+    const matches = item.length
+    newitem.team = teamItem
+    newitem.teamName = teamItem.teamName
+    newitem.fouls = totalFouls
+    newitem.foulAvg = (totalFouls / matches).toFixed(2)
+    newitem.matches = matches
+    newitem.items = item
+    return newitem
+  })
+  mappedData.sort(
+    predicate(
+      {
+        name: "fouls",
+        reverse: false,
+      },
+      {
+        name: "teamName",
+        reverse: false,
+      }
+    )
+  )
+  return mappedData
+}
+
 function getSeasonStats(seasons) {
   const seasonArr = seasons.map(season => {
     const totalGoals = getAllGameStatsByType(season.schedules, "goals")
@@ -407,10 +427,8 @@ function getSeasonStats(seasons) {
     const totalAssists = totalGoals.filter(item => item.assist)
     const totalOwnGoals = totalGoals.filter(item => item.owngoal)
     const totalValidGoals = totalGoals.filter(item => !item.owngoal)
-    const totalFouls = getAllGameStatsByType(season.schedules, "fouls").reduce(
-      (a, b) => a + b,
-      0
-    )
+    const totalFouls = getAllGameStatsByType(season.schedules, "fouls")
+
     const totalSaves = getAllGameStatsByType(season.schedules, "keeper")
     // console.log(season.schedules, "---season.schedules--")
 
@@ -425,8 +443,10 @@ function getSeasonStats(seasons) {
       season.schedules,
       Cautions.YELLOW
     )
-    const teamStats = getTeamSeasonStats(season.schedules)
+    const teamStandingStats = getTeamSeasonStats(season.schedules)
+    const teamFoulStats = getTeamSeasonFoulStats(season.schedules)
 
+    const totalFoulsCount = totalFouls.reduce((a, b) => a + b, 0)
     const totalRedCards = getTotalCautionType(season.schedules, Cautions.RED)
     const playerYellowCards = grouByPlayerStats(totalYellowCards)
     const playerRedCards = grouByPlayerStats(totalRedCards)
@@ -443,13 +463,14 @@ function getSeasonStats(seasons) {
       red_cards: totalRedCards.length,
       unique_players_goals: totalUniquePlayerGoals.length,
       unique_players_goals_list: totalUniquePlayerGoals,
-      fouls: totalFouls,
+      fouls: totalFoulsCount,
       scorers: playersScoredSort,
       moms: momPlayers,
       goalkeepers: playersSaves,
       yellow_card_holders: playerYellowCards,
       red_card_holders: playerRedCards,
-      team_stats: teamStats,
+      team_standing_stats: teamStandingStats,
+      team_foul_stats: teamFoulStats,
     }
     return season
   })
