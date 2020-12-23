@@ -155,6 +155,7 @@ export const MslSeasonsJsonStatsFragment = graphql`
     ...MslSeasonsJsonFragment
     schedules {
       id
+      scheduled_date
       completed
       gamestats {
         ...MslGameStatsFragment
