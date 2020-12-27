@@ -20,6 +20,7 @@
     Navigate into your new site’s directory and start it up.
 
     ```shell
+    Install nodejs 14.15.3
     git clone
     cd project-folder/
     gatsby develop

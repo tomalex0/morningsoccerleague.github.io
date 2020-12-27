@@ -300,55 +300,55 @@ function getTeamSeasonStats(schedules) {
   schedules.forEach(itemobj => {
     const home = itemobj.home
     const away = itemobj.away
+    const homeTeamId = home?.team?.team_id
+    const awayTeamId = away?.team?.team_id
     if (home.goals && away.goals && itemobj.completed) {
-      if (teamObj[home.team.team_id]) {
-        teamObj[home.team.team_id].played =
-          teamObj[home.team.team_id].played + 1
+      if (teamObj[homeTeamId]) {
+        teamObj[homeTeamId].played += 1
       } else {
-        teamObj[home.team.team_id] = getDefaultScore()
-        teamObj[home.team.team_id].team = home.team
-        teamObj[home.team.team_id].played = 1
+        teamObj[homeTeamId] = getDefaultScore()
+        teamObj[homeTeamId].team = home.team
+        teamObj[homeTeamId].played = 1
       }
-      if (teamObj[away.team.team_id]) {
-        teamObj[away.team.team_id].played =
-          teamObj[away.team.team_id].played + 1
+      if (teamObj[awayTeamId]) {
+        teamObj[awayTeamId].played += 1
       } else {
-        teamObj[away.team.team_id] = getDefaultScore()
-        teamObj[away.team.team_id].team = away.team
-        teamObj[away.team.team_id].played = 1
+        teamObj[awayTeamId] = getDefaultScore()
+        teamObj[awayTeamId].team = away.team
+        teamObj[awayTeamId].played = 1
       }
 
       if (home.goals.length == away.goals.length) {
-        teamObj[home.team.team_id].draw =
-          (teamObj[home.team.team_id].draw || 0) + 1
-        teamObj[away.team.team_id].draw =
-          (teamObj[away.team.team_id].draw || 0) + 1
+        teamObj[homeTeamId].draw =
+          (teamObj[homeTeamId].draw || 0) + 1
+        teamObj[awayTeamId].draw =
+          (teamObj[awayTeamId].draw || 0) + 1
       } else if (home.goals.length > away.goals.length) {
-        teamObj[home.team.team_id].won =
-          (teamObj[home.team.team_id].won || 0) + 1
-        teamObj[away.team.team_id].lost =
-          (teamObj[away.team.team_id].lost || 0) + 1
+        teamObj[homeTeamId].won =
+          (teamObj[homeTeamId].won || 0) + 1
+        teamObj[awayTeamId].lost =
+          (teamObj[awayTeamId].lost || 0) + 1
       } else if (away.goals.length > home.goals.length) {
-        teamObj[away.team.team_id].won =
-          (teamObj[away.team.team_id].won || 0) + 1
-        teamObj[home.team.team_id].lost =
-          (teamObj[home.team.team_id].lost || 0) + 1
+        teamObj[awayTeamId].won =
+          (teamObj[awayTeamId].won || 0) + 1
+        teamObj[homeTeamId].lost =
+          (teamObj[homeTeamId].lost || 0) + 1
       }
-      teamObj[home.team.team_id].goal_allowed =
-        teamObj[home.team.team_id].goal_allowed + away.goals.length
-      teamObj[away.team.team_id].goal_allowed =
-        teamObj[away.team.team_id].goal_allowed + home.goals.length
+      teamObj[homeTeamId].goal_allowed =
+        teamObj[homeTeamId].goal_allowed + away.goals.length
+      teamObj[awayTeamId].goal_allowed =
+        teamObj[awayTeamId].goal_allowed + home.goals.length
 
-      teamObj[home.team.team_id].goal_scored =
-        teamObj[home.team.team_id].goal_scored + home.goals.length
-      teamObj[away.team.team_id].goal_scored =
-        teamObj[away.team.team_id].goal_scored + away.goals.length
+      teamObj[homeTeamId].goal_scored =
+        teamObj[homeTeamId].goal_scored + home.goals.length
+      teamObj[awayTeamId].goal_scored =
+        teamObj[awayTeamId].goal_scored + away.goals.length
     } else {
-      if (!teamObj[home.team.team_id]) {
-        teamObj[home.team.team_id] = getDefaultScore()
+      if (!teamObj[homeTeamId]) {
+        teamObj[homeTeamId] = getDefaultScore()
       }
-      if (!teamObj[away.team.team_id]) {
-        teamObj[away.team.team_id] = getDefaultScore()
+      if (!teamObj[awayTeamId]) {
+        teamObj[awayTeamId] = getDefaultScore()
       }
     }
   })
