@@ -81,6 +81,8 @@ type MslPlayersJson implements Node {
 		image: File
 		playerStats: MslPlayerStats
 		seasons: [MslSeasonsJson]
+		# isOwner: Boolean
+		# isMos: Boolean
 }
 
 type MslSchedulesJson implements Node {

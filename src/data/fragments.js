@@ -177,6 +177,12 @@ export const MslSeasonsJsonStatsFragment = graphql`
       players {
         ...MslPlayersJsonFragment
       }
+      team {
+        ...MslTeamsJsonFragment
+      }
+      owners {
+        ...MslPlayersJsonFragment
+      }
     }
   }
 `

@@ -2,13 +2,14 @@ const { MslImgKey, Cautions, SCHEMA_TYPE_NAME } = require("../lib/enum")
 const {
   getFile,
   getPlayerGoals,
-  groupBy,
   getPlayerAssists,
   getPlayerCautions,
-  getSum,
   getPlayerMom,
   getPlayerSaves,
+  getCurrentSeason,
 } = require("../lib/helpers")
+
+const { groupBy, getSum } = require("../lib/utility")
 
 module.exports = {
   MslTeamsJson: {
@@ -46,6 +47,31 @@ module.exports = {
         return record
       },
     },
+    // isOwner: {
+    //   resolve(source, args, context, info) {
+    //     // TODO: Find better approach by getting season info from parent context
+    //     const ancestor = {} //getCurrentSeason(context)
+    //     let status = null
+    //     if (ancestor.season) {
+    //       status = !!ancestor.teams.find(item =>
+    //         item.owners.includes(source.player_id)
+    //       )
+    //     }
+    //     // console.log(ancestor,'--sdfd--',nodeId)
+    //     return status
+    //   },
+    // },
+    // isMos: {
+    //   resolve(source, args, context, info) {
+    //     // TODO: Find better approach by getting season info from parent context
+    //     const ancestor = {} //getCurrentSeason(context)
+    //     let status = null
+    //     if (ancestor.season) {
+    //       status = ancestor.mos.includes(source.player_id)
+    //     }
+    //     return status
+    //   },
+    // },
     playerStats: {
       async resolve(source, args, context, info) {
         // Get all Season

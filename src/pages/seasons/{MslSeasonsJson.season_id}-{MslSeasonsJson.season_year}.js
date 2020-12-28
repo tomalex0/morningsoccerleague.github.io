@@ -6,7 +6,8 @@ import Image from "components/image"
 import SEO from "components/seo"
 import MslSeasonStatsItem from "components/msl/season-stats-item"
 
-import { getSeasonStats } from "graphql/lib/helpers"
+import { getSeasonStats, getSeasonTeams } from "graphql/lib/helpers"
+import { predicate } from "graphql/lib/utility"
 
 import {
   MslPlayersJsonFragment,
@@ -18,8 +19,10 @@ import {
 function Season({ data, path }) {
   const { season } = data
   const seasonItem = getSeasonStats([season])[0]
+
   const title = `${season.season_id}-${season.season_year}`
   const seasonStats = seasonItem.seasonStats
+  const teams = getSeasonTeams(seasonItem)
   return (
     <Layout>
       <SEO title={title} path={path} />
@@ -152,6 +155,25 @@ function Season({ data, path }) {
               <Link to={stats.playerPath}>
                 {stats.name} - {stats.count} - {stats.team.teamName}
               </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3>Teams</h3>
+        <ul>
+          {teams.map(stats => (
+            <li key={stats.team.team_id}>
+              <Link to={stats.team.teamPath}>{stats.team.teamName}</Link>
+              <ul>
+                {stats.players.map(player => (
+                  <li>
+                    {player.name} {player.isOwner == 1 ? "- Owner" : ""}{" "}
+                    {player.isMos == 1 ? " - Mos" : ""}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
