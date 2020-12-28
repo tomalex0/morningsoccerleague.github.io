@@ -92,19 +92,19 @@ type MslSchedulesJson implements Node {
   stats(stats_type: ScheduleTeamStats): MslSchedulesJsonGamestats
 }
 
-type MslSeasonStatsItem {
-		assists: Int
-		fouls: Int
-		mom: Int
-		red_cards: Int
-		saves: Int
-		yellow_cards: Int
-}
-
-type MslSeasonStats {
-		allseasonStats: MslSeasonStatsItem
-		seasonStats: [MslSeasonStatsItem]
-}
+#type MslSeasonStatsItem {
+#		assists: Int
+#		fouls: Int
+#		mom: Int
+#		red_cards: Int
+#		saves: Int
+#		yellow_cards: Int
+#}
+#
+#type MslSeasonStats {
+#		allseasonStats: MslSeasonStatsItem
+#		seasonStats: [MslSeasonStatsItem]
+#}
 
 
 type MslSeasonsJson implements Node {

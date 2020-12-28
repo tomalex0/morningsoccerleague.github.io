@@ -22,6 +22,10 @@ function Team({ path, data }) {
         Hi Team {team.teamName} - {team.team_id}
       </h1>
       <div>
+        Total Games, Total Goals, Total Mos, Total Yellow, Total Red, Total Mom,
+        Total Players
+      </div>
+      <div>
         <h3>Seasons Played</h3>
         <ul>
           {team.seasons.map(stats => (
@@ -29,6 +33,8 @@ function Team({ path, data }) {
               <Link to={stats.seasonPath}>
                 {stats.season_id} - {stats.season_year}
               </Link>
+              Total Games, Total Goals, Total Mos, Total Yellow, Total Red,
+              Total Mom, Total Players
             </li>
           ))}
         </ul>
