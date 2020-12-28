@@ -169,8 +169,10 @@ function Season({ data, path }) {
               <ul>
                 {stats.players.map(player => (
                   <li>
-                    {player.name} {player.isOwner == 1 ? "- Owner" : ""}{" "}
-                    {player.isMos == 1 ? " - Mos" : ""}
+                    <Link to={player.playerPath}>
+                      {player.name} {player.isOwner == 1 ? "- Owner" : ""}{" "}
+                      {player.isMos == 1 ? " - Mos" : ""}
+                    </Link>
                   </li>
                 ))}
               </ul>
