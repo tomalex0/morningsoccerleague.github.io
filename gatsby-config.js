@@ -3,6 +3,7 @@ const PATH_PREFIX = process.env.PATH_PREFIX
   ? `/${process.env.PATH_PREFIX}`
   : `/`
 const siteConfig = require("./src/data/config/index")
+const GA_ID = "UA-122366850-2"
 process.env.ENABLE_GATSBY_REFRESH_ENDPOINT = true
 module.exports = {
   pathPrefix: PATH_PREFIX,
@@ -68,6 +69,17 @@ module.exports = {
       resolve: "gatsby-plugin-sitemap",
       options: {
         sitemapSize: 5000,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: GA_ID,
+        // Defers execution of google analytics script after page load
+        defer: true,
+        // this option places the tracking script into the head of the DOM
+        head: true,
       },
     },
     {
