@@ -38,12 +38,8 @@ export const query = graphql`
     ) {
       nodes {
         ...MslPlayersJsonFragment
-        playerStats {
-          ...MslPlayerStatsFragment
-        }
         seasons {
-          season_year
-          season_id
+          ...MslSeasonsJsonFragment
         }
       }
     }

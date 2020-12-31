@@ -9,6 +9,14 @@ const {
   getPlayerMom,
   getPlayerSaves,
 } = require("../models/player-stats")
+
+const {
+  getTeamGoals,
+  getTeamAssists,
+  getTeamCautions,
+  getTeamMom,
+  getTeamSaves,
+} = require("../models/team-stats")
 /**
  * Generic Function to get file info based on relative path
  * @param context
@@ -50,3 +58,13 @@ exports.getPlayerSaves = getPlayerSaves
 exports.getSeasonStats = getSeasonStats
 
 exports.getSeasonTeams = getSeasonTeams
+
+exports.getTeamGoals = getTeamGoals
+
+exports.getTeamAssists = getTeamAssists
+
+exports.getTeamCautions = getTeamCautions
+
+exports.getTeamMom = getTeamMom
+
+exports.getTeamSaves = getTeamSaves

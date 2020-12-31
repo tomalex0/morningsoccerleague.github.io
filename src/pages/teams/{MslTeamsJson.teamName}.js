@@ -14,7 +14,9 @@ import {
 
 function Team({ path, data }) {
   const { team } = data
-  // console.log(team,'--54---')
+  const seasonStats = team.teamStats.seasonStats
+  const allSeasonStats = team.teamStats.allseasonStats
+
   return (
     <Layout>
       <SEO title={team.teamName} path={path} />
@@ -22,19 +24,23 @@ function Team({ path, data }) {
         Hi Team {team.teamName} - {team.team_id}
       </h1>
       <div>
-        Total Games, Total Goals, Total Mos, Total Yellow, Total Red, Total Mom,
+        Total Games, {allSeasonStats.goals}-Total Goals, {allSeasonStats.mos}
+        -Total Mos, {allSeasonStats.yellow_cards}-Total Yellow,{" "}
+        {allSeasonStats.red_cards}-Total Red, {allSeasonStats.mom}-Total Mom,
         Total Players
       </div>
       <div>
         <h3>Seasons Played</h3>
         <ul>
-          {team.seasons.map(stats => (
-            <li key={stats.season_id}>
-              <Link to={stats.seasonPath}>
-                {stats.season_id} - {stats.season_year}
+          {seasonStats.map(stats => (
+            <li key={stats.season.season_id}>
+              <Link to={stats.season.seasonPath}>
+                {stats.season.season_id} - {stats.season.season_year}
               </Link>
-              Total Games, Total Goals, Total Mos, Total Yellow, Total Red,
-              Total Mom, Total Players
+              Total Games, {stats.goals}-Total Goals, {stats.mos}-Total Mos,{" "}
+              {stats.yellow_cards}-Total Yellow, {stats.red_cards}-Total Red,
+              {stats.mom}-Total Mom, {stats.players}-Total Players, {stats.mom}
+              -Total Mom
             </li>
           ))}
         </ul>

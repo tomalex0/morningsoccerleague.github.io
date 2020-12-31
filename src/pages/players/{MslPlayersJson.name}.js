@@ -52,9 +52,6 @@ export const query = graphql`
   query($id: String) {
     player: mslPlayersJson(id: { eq: $id }) {
       ...MslPlayersJsonFragment
-      playerStats {
-        ...MslPlayerStatsFragment
-      }
     }
   }
 `

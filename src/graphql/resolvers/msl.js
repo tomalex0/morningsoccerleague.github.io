@@ -7,6 +7,11 @@ const {
   getPlayerMom,
   getPlayerSaves,
   getCurrentSeason,
+  getTeamGoals,
+  getTeamAssists,
+  getTeamCautions,
+  getTeamMom,
+  getTeamSaves,
 } = require("../lib/helpers")
 
 const { groupBy, getSum } = require("../lib/utility")
@@ -35,6 +40,87 @@ module.exports = {
         const imgPath = `${MslImgKey.TEAM}/${source.team_id}.png`
         const record = getFile(context, imgPath)
         return record
+      },
+    },
+    teamStats: {
+      async resolve(source, args, context, info) {
+        const teamId = source.team_id
+        const data = await context.nodeModel.runQuery({
+          query: {
+            filter: {
+              teams: { elemMatch: { team: { team_id: { eq: teamId } } } },
+            },
+          },
+          type: "MslSeasonsJson",
+          firstOnly: false,
+        })
+        // Get All Schedules
+        const schedule_data = await context.nodeModel.runQuery({
+          query: {},
+          type: "MslSchedulesJson",
+          firstOnly: false,
+        })
+        const scheduleBySeason = groupBy(schedule_data, "season")
+
+        // New Data List based on season
+        const seasonStats = data.map(item => {
+          let newItem = {}
+          const schedules = scheduleBySeason[item.season]
+          const teamGoals = getTeamGoals(schedules, teamId)
+          const teamAssists = getTeamAssists(schedules, teamId)
+          const teamSaves = getTeamSaves(schedules, teamId)
+          const teamMom = getTeamMom(schedules, teamId)
+          const currTeamObj = item.teams.find(item => item.team == teamId)
+          const mosPlayers = currTeamObj.players.filter(player =>
+            item.mos.includes(player)
+          )
+
+          const teamYellowCards = getTeamCautions(
+            schedules,
+            teamId,
+            Cautions.YELLOW
+          )
+          const teamRedCards = getTeamCautions(schedules, teamId, Cautions.RED)
+
+          newItem.season = item.season
+          newItem.season_id = item.season
+          newItem.goals = teamGoals.length
+          newItem.assists = teamAssists.length
+          newItem.team = currTeamObj.team
+          newItem.players = currTeamObj.players.length
+          newItem.mos = mosPlayers.length
+          newItem.saves = teamSaves.length
+          newItem.mom = teamMom.length
+          newItem.yellow_cards = teamYellowCards.length
+          newItem.red_cards = teamRedCards.length
+
+          return newItem
+        })
+        // console.log(JSON.stringify(seasonStats), "---seasonStats---")
+
+        const totalGoals = getSum(seasonStats, "goals")
+        const totalAssists = getSum(seasonStats, "assists")
+        const totalYellow = getSum(seasonStats, "yellow_cards")
+        const totalRed = getSum(seasonStats, "red_cards")
+        const totalMom = getSum(seasonStats, "mom")
+        const totalSaves = getSum(seasonStats, "saves")
+        const totalMos = getSum(seasonStats, "mos")
+
+        const allseasonStats = {
+          goals: totalGoals,
+          assists: totalAssists,
+          mom: totalMom,
+          mos: totalMos,
+          saves: totalSaves,
+          yellow_cards: totalYellow,
+          players: 0,
+          red_cards: totalRed,
+        }
+
+        return {
+          allseasonStats: allseasonStats,
+          seasonStats: seasonStats,
+        }
       },
     },
   },
@@ -74,6 +160,8 @@ module.exports = {
     // },
     playerStats: {
       async resolve(source, args, context, info) {
+        const playerId = source.player_id
+
         // Get all Season
         const data = await context.nodeModel.runQuery({
           query: {
@@ -81,7 +169,7 @@ module.exports = {
               teams: {
                 elemMatch: {
                   players: {
-                    elemMatch: { player_id: { eq: source.player_id } },
+                    elemMatch: { player_id: { eq: playerId } },
                   },
                 },
               },
@@ -100,7 +188,6 @@ module.exports = {
 
         const scheduleBySeason = groupBy(schedule_data, "season")
 
-        const playerId = source.player_id
         // New Data List based on season
         const seasonStats = data.map(item => {
           const playerTeam = item.teams.find(item =>

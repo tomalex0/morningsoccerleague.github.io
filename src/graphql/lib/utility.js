@@ -144,3 +144,16 @@ function getDefaultScore() {
   return defaultScore
 }
 exports.getDefaultScore = getDefaultScore
+
+function jsonArrayColumnSum(jsonArr, propArr) {
+  return jsonArr.reduce(
+    (sums, obj) =>
+      Object.keys(obj).reduce((s, k) => {
+        k === "id" || (s[k] = (s[k] || 0) + +obj[k])
+        return s
+      }, sums),
+    {}
+  )
+}
+
+exports.jsonArrayColumnSum = jsonArrayColumnSum
