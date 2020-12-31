@@ -102,6 +102,10 @@ A quick look at the top-level files and directories you'll see in this project.
 
 ## Reference
 
+##### Gatsby Build
+
+- https://dev.to/bytesizedcode/speed-up-your-gatsby-application-s-build-time-by-300-with-incremental-builds-3bhe
+
 ##### Gatsby Link Directive
 
 - https://hashinteractive.com/blog/gatsby-data-relationships-with-foreign-key-fields/

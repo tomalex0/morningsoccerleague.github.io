@@ -9,7 +9,7 @@ import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
-  MslPlayerStatsFragment
+  MslPlayerStatsFragment,
 } from "data/fragments"
 
 function Player({ data, path }) {
