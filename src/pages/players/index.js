@@ -34,6 +34,9 @@ export const query = graphql`
     ) {
       nodes {
         ...MslPlayersJsonFragment
+        playerStats {
+          ...MslPlayerStatsFragment
+        }
         seasons {
           ...MslSeasonsJsonFragment
         }

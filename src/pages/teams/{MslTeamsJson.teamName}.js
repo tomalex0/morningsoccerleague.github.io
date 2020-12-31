@@ -13,8 +13,8 @@ import {
 
 function Team({ path, data }) {
   const { team } = data
-  const seasonStats = team.teamStats.seasonStats
-  const allSeasonStats = team.teamStats.allseasonStats
+  const seasonStats = team?.teamStats?.seasonStats
+  const allSeasonStats = team?.teamStats?.allseasonStats
 
   return (
     <Layout>
@@ -52,6 +52,9 @@ export const query = graphql`
   query($id: String) {
     team: mslTeamsJson(id: { eq: $id }) {
       ...MslTeamsJsonFragment
+      teamStats {
+        ...MslTeamStatsFragment
+      }
       seasons {
         ...MslSeasonsJsonStatsFragment
       }

@@ -9,6 +9,7 @@ import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
+  MslPlayerStatsFragment
 } from "data/fragments"
 
 function Player({ data, path }) {
@@ -48,6 +49,9 @@ export const query = graphql`
   query($id: String) {
     player: mslPlayersJson(id: { eq: $id }) {
       ...MslPlayersJsonFragment
+      playerStats {
+        ...MslPlayerStatsFragment
+      }
     }
   }
 `
