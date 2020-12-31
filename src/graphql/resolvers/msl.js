@@ -44,6 +44,7 @@ module.exports = {
     },
     teamStats: {
       async resolve(source, args, context, info) {
+        // console.log(source,'---df---')
         const teamId = source.team_id
         const data = await context.nodeModel.runQuery({
           query: {
@@ -56,7 +57,11 @@ module.exports = {
         })
         // Get All Schedules
         const schedule_data = await context.nodeModel.runQuery({
-          query: {},
+          query: {
+            filter: {
+              gamestats: { elemMatch: { team: { team_id: { eq: teamId } } } },
+            },
+          },
           type: "MslSchedulesJson",
           firstOnly: false,
         })
