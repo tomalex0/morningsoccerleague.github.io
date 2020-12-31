@@ -27,7 +27,7 @@ function Team({ path, data }) {
         Total Games, {allSeasonStats.goals}-Total Goals, {allSeasonStats.mos}
         -Total Mos, {allSeasonStats.yellow_cards}-Total Yellow,{" "}
         {allSeasonStats.red_cards}-Total Red, {allSeasonStats.mom}-Total Mom,
-        Total Players
+        {allSeasonStats.players} - Unique Total Players
       </div>
       <div>
         <h3>Seasons Played</h3>

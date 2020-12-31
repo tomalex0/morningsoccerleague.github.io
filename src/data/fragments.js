@@ -17,6 +17,7 @@ export const MslTeamStatsFragment = graphql`
       goals
       mom
       mos
+      players
       red_cards
       saves
       yellow_cards
@@ -27,6 +28,7 @@ export const MslTeamStatsFragment = graphql`
       mom
       mos
       red_cards
+      players
       saves
       season_id
       yellow_cards

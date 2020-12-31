@@ -88,6 +88,7 @@ module.exports = {
           newItem.assists = teamAssists.length
           newItem.team = currTeamObj.team
           newItem.players = currTeamObj.players.length
+          newItem.players_list = currTeamObj.players
           newItem.mos = mosPlayers.length
           newItem.saves = teamSaves.length
           newItem.mom = teamMom.length
@@ -97,7 +98,9 @@ module.exports = {
           return newItem
         })
         // console.log(JSON.stringify(seasonStats), "---seasonStats---")
-
+        const totalPlayerList = [
+          ...new Set(seasonStats.map(item => item.players_list).flat()),
+        ]
         const totalGoals = getSum(seasonStats, "goals")
         const totalAssists = getSum(seasonStats, "assists")
         const totalYellow = getSum(seasonStats, "yellow_cards")
@@ -105,7 +108,7 @@ module.exports = {
         const totalMom = getSum(seasonStats, "mom")
         const totalSaves = getSum(seasonStats, "saves")
         const totalMos = getSum(seasonStats, "mos")
-
+        // console.log(totalPlayerList,'--totalPlayerList-----')
         const allseasonStats = {
           goals: totalGoals,
           assists: totalAssists,
@@ -113,7 +116,7 @@ module.exports = {
           mos: totalMos,
           saves: totalSaves,
           yellow_cards: totalYellow,
-          players: 0,
+          players: totalPlayerList.length,
           red_cards: totalRed,
         }
 
