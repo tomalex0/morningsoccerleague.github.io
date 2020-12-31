@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
-import Image from "components/image"
 import SEO from "components/seo"
 import MslPlayerStatsItem from "components/msl/player-stats-item"
 
@@ -19,9 +18,6 @@ const PlayersIndex = ({ data, path }) => {
     <Layout>
       <SEO title="Players" path={path} />
       <h1>Hi Players</h1>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
       <ul>
         {players.nodes.map(player => (
           <MslPlayerStatsItem player={player} key={player.player_id} />

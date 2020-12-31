@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "components/layout"
-import Image from "components/image"
 import SEO from "components/seo"
 import MslSeasonStatsItem from "components/msl/season-stats-item"
 
@@ -179,9 +178,6 @@ function Season({ data, path }) {
             </li>
           ))}
         </ul>
-      </div>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
       </div>
       <div>
         <div>

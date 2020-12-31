@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "components/layout"
-import Image from "components/image"
 import SEO from "components/seo"
 import MslPlayerStatsItem from "components/msl/player-stats-item"
 
@@ -22,9 +21,6 @@ function Player({ data, path }) {
       </h1>
       <div>
         <MslPlayerStatsItem player={player} />
-      </div>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
       </div>
       <ul>
         {player.playerStats.seasonStats.map(item => (
