@@ -27,14 +27,14 @@ function capturePageMetrics(
   })
 }
 
-export const wrapPageElement = ({ element, props }) => {
-  const path = props.path || ""
-  // See https://reactjs.org/docs/profiler.html#onrender-callback for onRender parameters
-  return (
-    <Profiler id={path} onRender={capturePageMetrics}>
-      {element}
-    </Profiler>
-  )
-}
+// export const wrapPageElement = ({ element, props }) => {
+//   const path = props.path || ""
+//   // See https://reactjs.org/docs/profiler.html#onrender-callback for onRender parameters
+//   return (
+//     <Profiler id={path} onRender={capturePageMetrics}>
+//       {element}
+//     </Profiler>
+//   )
+// }
 
 export const registerServiceWorker = () => true
