@@ -92,7 +92,7 @@ module.exports = {
         background_color: `#000000`,
         theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `src/images/msl-logo-8.svg`, // This path is relative to the root of the site.
+        icon: `src/images/msl-logo-11.svg`, // This path is relative to the root of the site.
         icon_options: {
           purpose: `any maskable`,
         },
