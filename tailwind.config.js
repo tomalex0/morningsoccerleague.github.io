@@ -1,5 +1,6 @@
 module.exports = {
   purge: {
+    enabled: true,
     content: [
       "./src/**/*.tsx",
       "./src/**/*.ts",
@@ -7,7 +8,7 @@ module.exports = {
       "./src/**/*.html",
     ],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {},
   },
