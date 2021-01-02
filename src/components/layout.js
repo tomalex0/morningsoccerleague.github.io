@@ -10,9 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import MslHero from "components/msl/hero"
 import MslContact from "components/msl/contact"
-// import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

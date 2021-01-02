@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "components/layout"
-import Image from "components/image"
 import SEO from "components/seo"
 import {
   MslPlayersJsonFragment,
@@ -16,12 +15,6 @@ const IndexPage = ({ path, data }) => {
     <Layout>
       <SEO title="Schedule" path={path} />
       <h1>Hi Schedule</h1>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <div>
-        <pre>{JSON.stringify(data, null, 4)}</pre>
-      </div>
     </Layout>
   )
 }

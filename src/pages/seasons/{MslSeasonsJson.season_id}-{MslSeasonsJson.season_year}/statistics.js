@@ -18,9 +18,6 @@ const StatsIndexPage = props => {
       <h1>
         Hi Statistics {pageContext.season_id}-{pageContext.season_year}
       </h1>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
     </Layout>
   )
 }

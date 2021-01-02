@@ -24,9 +24,6 @@ const FixturesIndexPage = props => {
       <h1>
         Hi Fixtures {pageContext.season_id}-{pageContext.season_year}
       </h1>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
       <ul>
         {fixtures.nodes.map(fixture => (
           <li key={fixture.schedule_id}>
