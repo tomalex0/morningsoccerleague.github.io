@@ -94,7 +94,7 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/msl-logo-12.svg`, // This path is relative to the root of the site.
         icon_options: {
-          purpose: `maskable`,
+          purpose: `any maskable`,
         },
       },
     },
