@@ -1,6 +1,7 @@
+const IS_GITHUB = process.env.CI === true
 module.exports = {
   purge: {
-    enabled: true,
+    enabled: IS_GITHUB,
     content: [
       "./src/**/*.tsx",
       "./src/**/*.ts",

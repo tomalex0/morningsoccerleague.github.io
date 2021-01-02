@@ -7,7 +7,7 @@ import SEO from "components/seo"
 
 const IndexPage = ({ path }) => (
   <Layout>
-    <SEO title="GMM" path={path} />
+    <SEO title="Guaranteed Minimum Minutes" path={path} />
     <h1>Hi GMM</h1>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
