@@ -27,9 +27,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
-        <main>{children}</main>
+      <div className="flex flex-col h-screen justify-between">
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <main className="flex-grow">{children}</main>
         <footer>
           <MslContact />
         </footer>

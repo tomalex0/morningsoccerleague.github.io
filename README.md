@@ -151,3 +151,7 @@ A quick look at the top-level files and directories you'll see in this project.
   - https://codemyui.com/soccer-ball-hexagon-pattern-loader/
   - https://codemyui.com/various-style-toggle-gravity-beer-pong-and-more/
   - https://codemyui.com/tennis-toggle-button-for-sports-websites/
+
+#### Snippets
+
+- https://play.tailwindcss.com/0zWIL4f17G
