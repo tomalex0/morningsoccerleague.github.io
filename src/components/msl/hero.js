@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-
+import { StaticImage } from "gatsby-plugin-image"
 import MslHero1 from "images/hero/1.jpg"
 
 const MslHero = () => {
@@ -49,10 +49,16 @@ const MslHero = () => {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
+        {/*<img*/}
+        {/*  className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"*/}
+        {/*  src={MslHero1}*/}
+        {/*  alt=""*/}
+        {/*/>*/}
+        <StaticImage
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src={MslHero1}
-          alt=""
+          layout="fluid"
+          src="../../images/hero/1.jpg"
+          alt="T-Rex"
         />
       </div>
     </div>
