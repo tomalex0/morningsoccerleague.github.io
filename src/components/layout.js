@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import MslHero from "./msl/hero"
+import MslHero from "components/msl/hero"
+import MslContact from "components/msl/contact"
 // import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -30,9 +31,7 @@ const Layout = ({ children }) => {
       <div>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <MslContact />
         </footer>
       </div>
     </>
