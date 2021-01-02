@@ -18,7 +18,7 @@ import {
 const SeasonsIndex = ({ data, path }) => {
   const { seasons } = data
   const seasonList = getSeasonStats(seasons.nodes)
-  console.log(seasonList)
+  // console.log(seasonList)
   return (
     <Layout>
       <SEO title="Seasons" path={path} />

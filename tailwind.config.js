@@ -1,8 +1,6 @@
-const IS_GITHUB = process.env.GITHUB_ACTIONS === true
-console.log(IS_GITHUB, "-IS_GITHUB-", process.env.GITHUB_ACTIONS)
 module.exports = {
   purge: {
-    enabled: IS_GITHUB,
+    enabled: process.env.GITHUB_ACTIONS,
     content: [
       "./src/**/*.tsx",
       "./src/**/*.ts",
