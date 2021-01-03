@@ -15,14 +15,19 @@ import {
 
 const PlayersIndex = ({ data, path }) => {
   const { players } = data
-  console.log(players)
   return (
     <Layout>
       <SEO title="Players" path={path} />
       <div className="mt-5 px-5 divide-y divide-gray-300">
         {players.nodes.map(player => (
           <div className="mb-7">
-            <MslPlayerItem player={player} />
+            <MslPlayerItem
+              player={player}
+              fontSize="text-md md:text-lg"
+              imageWidth="w-20"
+              imageHeight="w-20"
+              showImage={true}
+            />
             <MslPlayerStatsItem stats={player?.playerStats?.allseasonStats} />
           </div>
         ))}
