@@ -94,7 +94,7 @@ function Season({ data, path }) {
           </div>
         </div>
       </div>
-      <div className="mt-10 px-10">
+      <div className="mt-10 px-5">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {teams.map(stats => (
             <div>
