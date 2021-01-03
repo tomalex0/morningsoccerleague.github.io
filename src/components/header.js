@@ -133,7 +133,7 @@ const Header = () => {
     Menu open: "block", Menu closed: "hidden"
   */}
         <div
-          className={`bg-gray-50 dark:bg-gray-800 ${
+          className={`bg-gray-100 dark:bg-gray-800 ${
             menuOpenState ? "block" : "hidden"
           } md:hidden`}
         >
