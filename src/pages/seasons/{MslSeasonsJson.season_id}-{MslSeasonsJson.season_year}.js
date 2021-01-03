@@ -32,7 +32,7 @@ function Season({ data, path }) {
       <div className="mt-10">
         <MslSeasonStatsItem season={seasonItem} />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 px-5 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-2 px-5 mt-5">
         <div>
           <MslStandings standings={seasonStats.team_standing_stats} />
         </div>
@@ -40,7 +40,7 @@ function Season({ data, path }) {
           <MslStatsFouls fouls={seasonStats.team_foul_stats} />
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 px-5 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 px-5 mt-5">
         <div>
           {seasonItem.mos.length > 0 && (
             <div className="mb-5">
@@ -95,7 +95,7 @@ function Season({ data, path }) {
         </div>
       </div>
       <div className="mt-10 px-5">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
           {teams.map(stats => (
             <div>
               <MslTeamMembers data={stats} />

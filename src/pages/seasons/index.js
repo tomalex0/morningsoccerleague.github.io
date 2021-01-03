@@ -21,12 +21,15 @@ const SeasonsIndex = ({ data, path }) => {
   return (
     <Layout>
       <SEO title="Seasons" path={path} />
-      <h1>Hi Seasons</h1>
-      <ul>
+      <div>
         {seasonList.map(season => {
-          return <MslSeasonStatsItem season={season} key={season.season_id} />
+          return (
+            <div className="mt-10">
+              <MslSeasonStatsItem season={season} key={season.season_id} />
+            </div>
+          )
         })}
-      </ul>
+      </div>
     </Layout>
   )
 }
