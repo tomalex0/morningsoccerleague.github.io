@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
+import MslTeamListItem from "components/msl/team-list-item"
 import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
@@ -14,16 +15,11 @@ const TeamsIndex = ({ data, path }) => {
   return (
     <Layout>
       <SEO title="Teams" path={path} />
-      <h1>Hi Teams</h1>
-      <ul>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 px-5">
         {teams.nodes.map(team => (
-          <li key={team.teamName}>
-            <Link to={team.teamPath}>
-              {team.teamName} - {team.team_id}
-            </Link>
-          </li>
+          <MslTeamListItem team={team} />
         ))}
-      </ul>
+      </div>
     </Layout>
   )
 }
