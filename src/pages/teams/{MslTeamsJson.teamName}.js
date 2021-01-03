@@ -65,10 +65,7 @@ function Team({ path, data }) {
                 />
               </svg>
             </MslTotalStatsItem>
-            <MslTotalStatsItem
-              title={`Total Mos`}
-              value={allSeasonStats.mos}
-            >
+            <MslTotalStatsItem title={`Total Mos`} value={allSeasonStats.mos}>
               <svg
                 className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,10 +122,7 @@ function Team({ path, data }) {
                 />
               </svg>
             </MslTotalStatsItem>
-            <MslTotalStatsItem
-              title={`Total Mom`}
-              value={allSeasonStats.mom}
-            >
+            <MslTotalStatsItem title={`Total Mom`} value={allSeasonStats.mom}>
               <svg
                 className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
                 xmlns="http://www.w3.org/2000/svg"
