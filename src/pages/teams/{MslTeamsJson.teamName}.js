@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "components/layout"
 import SEO from "components/seo"
 import MslTotalStatsItem from "components/msl/total-stats-item"
+import MslTeamSeasonStats from "components/msl/team-season-stats"
 import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
@@ -162,21 +163,13 @@ function Team({ path, data }) {
           </div>
         </div>
       </div>
-      <div>
-        <h3>Seasons Played</h3>
-        <ul>
-          {seasonStats.map(stats => (
-            <li key={stats.season.season_id}>
-              <Link to={stats.season.seasonPath}>
-                {stats.season.season_id} - {stats.season.season_year}
-              </Link>
-              Total Games, {stats.goals}-Total Goals, {stats.mos}-Total Mos,{" "}
-              {stats.yellow_cards}-Total Yellow, {stats.red_cards}-Total Red,
-              {stats.mom}-Total Mom, {stats.players}-Total Players, {stats.mom}
-              -Total Mom
-            </li>
-          ))}
-        </ul>
+      <div className="px-5 mx-5 mt-5 pb-5 bg-white shadow overflow-hidden sm:rounded-lg ">
+        <div className="px-4 py-5 sm:px-6">
+          <h3 className="text-lg leading-6 font-medium text-gray-900">
+            Seasons
+          </h3>
+        </div>
+        <MslTeamSeasonStats seasons={seasonStats} />
       </div>
     </Layout>
   )
