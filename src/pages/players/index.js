@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "components/layout"
 import SEO from "components/seo"
 import MslPlayerStatsItem from "components/msl/player-stats-item"
+import MslPlayerItem from "components/msl/player-item"
 
 import {
   MslPlayersJsonFragment,
@@ -14,15 +15,18 @@ import {
 
 const PlayersIndex = ({ data, path }) => {
   const { players } = data
+  console.log(players)
   return (
     <Layout>
       <SEO title="Players" path={path} />
-      <h1>Hi Players</h1>
-      <ul>
+      <div className="mt-5 px-5 divide-y divide-gray-300">
         {players.nodes.map(player => (
-          <MslPlayerStatsItem player={player} key={player.player_id} />
+          <div className="mb-7">
+            <MslPlayerItem player={player} />
+            <MslPlayerStatsItem stats={player?.playerStats?.allseasonStats} />
+          </div>
         ))}
-      </ul>
+      </div>
     </Layout>
   )
 }

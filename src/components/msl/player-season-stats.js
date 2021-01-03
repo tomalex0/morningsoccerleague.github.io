@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
-
-const MslTeamSeasonStats = ({ seasons }) => {
+import MslTeamItem from "components/msl/team-item"
+const MslPlayerSeasonStats = ({ seasons }) => {
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -20,7 +20,7 @@ const MslTeamSeasonStats = ({ seasons }) => {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    #Games
+                    Team
                   </th>
                   <th
                     scope="col"
@@ -32,7 +32,13 @@ const MslTeamSeasonStats = ({ seasons }) => {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    #Mos
+                    Is FO
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Is Mos
                   </th>
                   <th
                     scope="col"
@@ -44,7 +50,13 @@ const MslTeamSeasonStats = ({ seasons }) => {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    #Players
+                    #Assists
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    #Saves
                   </th>
                   <th
                     scope="col"
@@ -69,19 +81,25 @@ const MslTeamSeasonStats = ({ seasons }) => {
                       </Link>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.assists}
+                      <MslTeamItem team={stats.team} />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {stats.goals}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.mos}
+                      {stats.isOwner ? "Yes" : "No"}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {stats.isMos ? "Yes" : "No"}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {stats.mom}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.players}
+                      {stats.assists}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {stats.saves}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {stats.yellow_cards}
@@ -100,4 +118,4 @@ const MslTeamSeasonStats = ({ seasons }) => {
   )
 }
 
-export default MslTeamSeasonStats
+export default MslPlayerSeasonStats

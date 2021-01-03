@@ -2,12 +2,11 @@ import { Link } from "gatsby"
 import React from "react"
 import MslTotalStatsItem from "components/msl/total-stats-item"
 
-const MslPlayerStatsItem = ({ stats }) => {
-  console.log(stats, "---sdsf--")
+const MslTeamStatsItem = ({ stats }) => {
   const allSeasonStats = stats
   return (
     <div className="mt-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-4">
-      <MslTotalStatsItem title={`Total Goals`} value={allSeasonStats.goals}>
+      <MslTotalStatsItem title={`Total Games`} value={allSeasonStats.goals}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +23,7 @@ const MslPlayerStatsItem = ({ stats }) => {
           />
         </svg>
       </MslTotalStatsItem>
-      <MslTotalStatsItem title={`Total Assists`} value={allSeasonStats.assists}>
+      <MslTotalStatsItem title={`Total Goals`} value={allSeasonStats.goals}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +114,7 @@ const MslPlayerStatsItem = ({ stats }) => {
           />
         </svg>
       </MslTotalStatsItem>
-      <MslTotalStatsItem title={`Total Saves`} value={allSeasonStats.saves}>
+      <MslTotalStatsItem title={`Total Players`} value={allSeasonStats.players}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -136,4 +135,4 @@ const MslPlayerStatsItem = ({ stats }) => {
   )
 }
 
-export default MslPlayerStatsItem
+export default MslTeamStatsItem

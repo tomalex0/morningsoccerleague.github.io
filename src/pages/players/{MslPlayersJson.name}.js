@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "components/layout"
 import SEO from "components/seo"
 import MslPlayerStatsItem from "components/msl/player-stats-item"
+import MslPlayerSeasonStats from "components/msl/player-season-stats"
 
 import {
   MslPlayersJsonFragment,
@@ -14,33 +15,27 @@ import {
 
 function Player({ data, path }) {
   const { player } = data
+  const seasonStats = player?.playerStats?.seasonStats
+  const allSeasonStats = player?.playerStats?.allseasonStats
   return (
     <Layout>
       <SEO title={player.name} path={path} />
-      <h1>
-        Hi Player {player.name} - {player.player_id}
-      </h1>
-      <div>
-        <MslPlayerStatsItem player={player} />
+      <div className="lg:flex lg:items-center lg:justify-between px-5 mt-5">
+        <div className="flex-1 min-w-0">
+          <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
+            Player {player.name}
+          </h1>
+          <MslPlayerStatsItem stats={allSeasonStats} />
+        </div>
       </div>
-      <ul>
-        {player.playerStats.seasonStats.map(item => (
-          <li key={item.season.season_id}>
-            <Link to={item.season.seasonPath}>
-              {item.season.season_id}-{item.season.season_year}
-            </Link>
-            {item.isOwner && <span>---Owner</span>}
-            <span>---{item.goals} Goals</span>
-            <span>---{item.team.teamName} Team</span>
-            <span>---{item.assists} Assist</span>
-            <span>---{item.yellow_cards} Yellow</span>
-            <span>---{item.red_cards} Red</span>
-            <span>---{item.mom} Mom</span>
-            <span>---{item.saves} Saves</span>
-            {item.isMos && <span>---Mos</span>}
-          </li>
-        ))}
-      </ul>
+      <div className="px-5 mx-5 mt-5 pb-5 bg-white shadow overflow-hidden sm:rounded-lg ">
+        <div className="px-4 py-5 sm:px-6">
+          <h3 className="text-lg leading-6 font-medium text-gray-900">
+            Seasons
+          </h3>
+        </div>
+        <MslPlayerSeasonStats seasons={seasonStats} />
+      </div>
     </Layout>
   )
 }

@@ -18,8 +18,8 @@ const NavList = [
     href: "/teams",
   },
   {
-    name: "Schedule",
-    href: "/schedule",
+    name: "Players",
+    href: "/players",
   },
   {
     name: "Register",
