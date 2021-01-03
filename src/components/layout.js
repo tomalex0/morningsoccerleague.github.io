@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
     <>
       <div className="flex flex-col h-screen justify-between">
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <main className="flex-grow mt-16 bg-gray-50 dark:bg-gray-700">
+        <main className="flex-grow mt-16 bg-gray-50 dark:bg-gray-700 pb-10">
           {children}
         </main>
         <footer>
