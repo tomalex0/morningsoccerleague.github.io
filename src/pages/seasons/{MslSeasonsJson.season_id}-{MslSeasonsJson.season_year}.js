@@ -4,6 +4,10 @@ import { graphql, Link } from "gatsby"
 import Layout from "components/layout"
 import SEO from "components/seo"
 import MslSeasonStatsItem from "components/msl/season-stats-item"
+import MslStandings from "components/msl/stats-standings"
+import MslStatsFouls from "components/msl/stats-fouls"
+import MslStatsPlayers from "components/msl/stats-players"
+import MslTeamMembers from "components/msl/team-members"
 
 import { getSeasonStats, getSeasonTeams } from "graphql/lib/helpers"
 import { predicate } from "graphql/lib/utility"
@@ -25,159 +29,79 @@ function Season({ data, path }) {
   return (
     <Layout>
       <SEO title={title} path={path} />
-      <h1>
-        Hi Season {season.season_id}-{season.season_year}
-      </h1>
-      <ul>
+      <div className="mt-10">
         <MslSeasonStatsItem season={seasonItem} />
-      </ul>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th width="5%">POS</th>
-              <th width="55%">TEAMS</th>
-              <th width="5%">P</th>
-              <th width="5%">W</th>
-              <th width="5%">D</th>
-              <th width="5%">L</th>
-              <th width="5%">GF</th>
-              <th width="5%">GA</th>
-              <th width="5%">GD</th>
-              <th width="5%">PTS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {seasonStats.team_standing_stats.map((stats, index) => (
-              <tr>
-                <td>{index + 1}</td>
-                <td>{stats.team.teamName}</td>
-                <td>{stats.played}</td>
-                <td>{stats.won}</td>
-                <td>{stats.draw}</td>
-                <td>{stats.lost}</td>
-                <td>{stats.goal_scored}</td>
-                <td>{stats.goal_allowed}</td>
-                <td>{stats.goal_diff}</td>
-                <td>{stats.points}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </div>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th width="55%">TEAMS</th>
-              <th width="5%">#Fouls</th>
-              <th width="5%">#Matches</th>
-              <th width="5%">AVG</th>
-            </tr>
-          </thead>
-          <tbody>
-            {seasonStats.team_foul_stats.map((stats, index) => (
-              <tr>
-                <td>{stats.team.teamName}</td>
-                <td>{stats.fouls}</td>
-                <td>{stats.matches}</td>
-                <td>{stats.foulAvg}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-10 mt-5">
+        <div>
+          <MslStandings standings={seasonStats.team_standing_stats} />
+        </div>
+        <div>
+          <MslStatsFouls fouls={seasonStats.team_foul_stats} />
+        </div>
       </div>
-      <div>
-        <h3>Man of Series</h3>
-        <ul>
-          {seasonItem.mos.map(stats => (
-            <li key={stats.player_id}>
-              <Link to={stats.playerPath}>{stats.name}</Link>
-            </li>
-          ))}
-        </ul>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 px-10 mt-5">
+        <div>
+          {seasonItem.mos.length > 0 && (
+            <div className="mb-5">
+              <MslStatsPlayers
+                data={seasonItem.mos}
+                playerColTitle={`Man of Series`}
+              />
+            </div>
+          )}
+          {seasonStats.moms.length > 0 && (
+            <div>
+              <MslStatsPlayers
+                data={seasonStats.moms}
+                playerColTitle={`Man of the Match`}
+              />
+            </div>
+          )}
+        </div>
+        <div>
+          {seasonStats.red_card_holders.length > 0 && (
+            <div className="mb-5">
+              <MslStatsPlayers
+                data={seasonStats.red_card_holders}
+                playerColTitle={`Red Card`}
+              />
+            </div>
+          )}
+          {seasonStats.yellow_card_holders.length > 0 && (
+            <div>
+              <MslStatsPlayers
+                data={seasonStats.yellow_card_holders}
+                playerColTitle={`Yellow Card`}
+              />
+            </div>
+          )}
+        </div>
+        <div>
+          {seasonStats.goalkeepers.length > 0 && (
+            <div>
+              <MslStatsPlayers
+                data={seasonStats.goalkeepers}
+                playerColTitle={`Goal Keepers`}
+              />
+            </div>
+          )}
+          <div>
+            <MslStatsPlayers
+              data={seasonStats.scorers}
+              playerColTitle={`Goal Scorers`}
+            />
+          </div>
+        </div>
       </div>
-      <div>
-        <h3>Man of the Match</h3>
-        <ul>
-          {seasonStats.moms.map(stats => (
-            <li key={stats.player_id}>
-              <Link to={stats.playerPath}>
-                {stats.name} - {stats.count} - {stats.team.teamName}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3>Goal Scorers</h3>
-        <ul>
-          {seasonStats.scorers.map(stats => (
-            <li key={stats.player_id}>
-              <Link to={stats.playerPath}>
-                {stats.name} - {stats.count} - {stats.team.teamName}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3>Goal Keeper Save</h3>
-        <ul>
-          {seasonStats.goalkeepers.map(stats => (
-            <li key={stats.player_id}>
-              <Link to={stats.playerPath}>
-                {stats.name} - {stats.count} - {stats.team.teamName} -{" "}
-                {stats.matches}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3>Yellow Card Holders</h3>
-        <ul>
-          {seasonStats.yellow_card_holders.map(stats => (
-            <li key={stats.player_id}>
-              <Link to={stats.playerPath}>
-                {stats.name} - {stats.count} - {stats.team.teamName}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3>Red Card Holders</h3>
-        <ul>
-          {seasonStats.red_card_holders.map(stats => (
-            <li key={stats.player_id}>
-              <Link to={stats.playerPath}>
-                {stats.name} - {stats.count} - {stats.team.teamName}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <h3>Teams</h3>
-        <ul>
+      <div className="mt-10 px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {teams.map(stats => (
-            <li key={stats.team.team_id}>
-              <Link to={stats.team.teamPath}>{stats.team.teamName}</Link>
-              <ul>
-                {stats.players.map(player => (
-                  <li>
-                    <Link to={player.playerPath}>
-                      {player.name} {player.isOwner == 1 ? "- Owner" : ""}{" "}
-                      {player.isMos == 1 ? " - Mos" : ""}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
+            <div>
+              <MslTeamMembers data={stats} />
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
       <div>
         <div>

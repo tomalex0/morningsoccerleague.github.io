@@ -41,7 +41,6 @@ const NavList = [
 
 const Header = () => {
   const [menuOpenState, setMenuOpenState] = useState(false)
-  console.log(menuOpenState, "---menuState--")
 
   const toggleMenuState = () => setMenuOpenState(value => !value)
 
@@ -106,7 +105,7 @@ const Header = () => {
               <div className="flex-shrink-0 flex items-center absolute top-0">
                 <Link to="/">
                   <img
-                    className="w-14 md:w-14 lg:w-20"
+                    className="w-14"
                     src={MslLogo}
                     alt="Morning Soccer League"
                   />
