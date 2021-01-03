@@ -101,11 +101,13 @@ const Header = ({ siteTitle }) => (
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center absolute top-0">
-              <img
-                className="w-14 md:w-20"
-                src={MslLogo}
-                alt="Morning Soccer League"
-              />
+              <Link to="/">
+                <img
+                  className="w-14 md:w-20"
+                  src={MslLogo}
+                  alt="Morning Soccer League"
+                />
+              </Link>
             </div>
             <div className="hidden sm:block sm:ml-24">
               <div className="flex space-x-4">
