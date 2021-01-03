@@ -17,7 +17,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.games}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -37,7 +37,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.teams}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -57,7 +57,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.players}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.goals}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -97,7 +97,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.fouls}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -117,7 +117,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.owngoals}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.assists}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -157,7 +157,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.unique_players_goals}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -177,7 +177,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.yellow_cards}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -197,7 +197,7 @@ const MslSeasonStatsItem = ({ season }) => {
             value={season.seasonStats.red_cards}
           >
             <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600"
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
