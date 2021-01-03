@@ -32,7 +32,7 @@ function Season({ data, path }) {
       <div className="mt-10">
         <MslSeasonStatsItem season={seasonItem} />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-10 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 px-5 mt-5">
         <div>
           <MslStandings standings={seasonStats.team_standing_stats} />
         </div>
@@ -40,7 +40,7 @@ function Season({ data, path }) {
           <MslStatsFouls fouls={seasonStats.team_foul_stats} />
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 px-10 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 px-5 mt-5">
         <div>
           {seasonItem.mos.length > 0 && (
             <div className="mb-5">
@@ -79,7 +79,7 @@ function Season({ data, path }) {
         </div>
         <div>
           {seasonStats.goalkeepers.length > 0 && (
-            <div>
+            <div className="mb-4">
               <MslStatsPlayers
                 data={seasonStats.goalkeepers}
                 playerColTitle={`Goal Keepers`}
@@ -103,17 +103,17 @@ function Season({ data, path }) {
           ))}
         </div>
       </div>
-      <div>
-        <div>
-          <Link to={season.fixturePath}>See Fixtures</Link>
-        </div>
-        <div>
-          <Link to={season.statsPath}>See Stats</Link>
-        </div>
-        <div>
-          <Link to={season.standingPath}>See Standings</Link>
-        </div>
-      </div>
+      {/*<div>*/}
+      {/*  <div>*/}
+      {/*    <Link to={season.fixturePath}>See Fixtures</Link>*/}
+      {/*  </div>*/}
+      {/*  <div>*/}
+      {/*    <Link to={season.statsPath}>See Stats</Link>*/}
+      {/*  </div>*/}
+      {/*  <div>*/}
+      {/*    <Link to={season.standingPath}>See Standings</Link>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
     </Layout>
   )
 }
