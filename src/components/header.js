@@ -10,8 +10,8 @@ const NavList = [
     href: "/",
   },
   {
-    name: "Stats",
-    href: "/stats",
+    name: "Seasons",
+    href: "/seasons",
   },
   {
     name: "Teams",
