@@ -3,15 +3,12 @@ import React from "react"
 
 const MslAllStats = ({ player }) => {
   return (
-    <div className="py-12 bg-white">
+    <div className="py-12 bg-gray-50 dark:bg-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
-            All Stats
+          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-600 dark:text-gray-200 sm:text-4xl">
+            Stats
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            A better way to send money
-          </p>
         </div>
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
@@ -36,10 +33,10 @@ const MslAllStats = ({ player }) => {
                 </div>
               </div>
               <div className="ml-4">
-                <dt className="text-lg leading-6 font-medium text-gray-900">
+                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
                   Games till now
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
+                <dd className="mt-2 text-base text-gray-600 dark:text-gray-400">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Maiores impedit perferendis suscipit eaque, iste dolor
                   cupiditate blanditiis ratione.
@@ -68,10 +65,10 @@ const MslAllStats = ({ player }) => {
                 </div>
               </div>
               <div className="ml-4">
-                <dt className="text-lg leading-6 font-medium text-gray-900">
+                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
                   Players
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
+                <dd className="mt-2 text-base text-gray-600 dark:text-gray-400">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Maiores impedit perferendis suscipit eaque, iste dolor
                   cupiditate blanditiis ratione.
@@ -100,10 +97,10 @@ const MslAllStats = ({ player }) => {
                 </div>
               </div>
               <div className="ml-4">
-                <dt className="text-lg leading-6 font-medium text-gray-900">
+                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
                   Goals Scored
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
+                <dd className="mt-2 text-base text-gray-600 dark:text-gray-400">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Maiores impedit perferendis suscipit eaque, iste dolor
                   cupiditate blanditiis ratione.
@@ -132,10 +129,10 @@ const MslAllStats = ({ player }) => {
                 </div>
               </div>
               <div className="ml-4">
-                <dt className="text-lg leading-6 font-medium text-gray-900">
+                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
                   Fouls
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
+                <dd className="mt-2 text-base text-gray-600 dark:text-gray-400">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Maiores impedit perferendis suscipit eaque, iste dolor
                   cupiditate blanditiis ratione.

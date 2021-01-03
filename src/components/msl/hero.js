@@ -5,11 +5,11 @@ import MslHero1 from "images/hero/1.jpg"
 
 const MslHero = () => {
   return (
-    <div className="relative bg-gray-100 overflow-hidden">
+    <div className="relative bg-gray-100 dark:bg-gray-800 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 bg-gray-100 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+        <div className="relative z-10 pb-8 bg-gray-100 dark:bg-gray-800 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
           <svg
-            className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-100 transform translate-x-1/2"
+            className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-100 dark:text-gray-800 transform translate-x-1/2"
             fill="currentColor"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
@@ -20,20 +20,15 @@ const MslHero = () => {
 
           <div className="hidden lg:block relative pt-6 px-4 sm:px-6 lg:px-8"></div>
 
-          <div className="mt-5 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <div className="mt-20 mx-auto max-w-7xl px-4 sm:mt-20 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block text-indigo-600 xl:inline">
+                <span className="block text-gray-600 dark:text-gray-300 xl:inline">
                   Morning Soccer League
                 </span>
                 {/*<span className="block xl:inline">Mission</span>*/}
               </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Morning Soccer League is a get together of friends dedicated to
-                the positive development through their participation in a safe,
-                healthy, and affordable soccer program that is fun and rewarding
-                for all.
-              </p>
+
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <Link
