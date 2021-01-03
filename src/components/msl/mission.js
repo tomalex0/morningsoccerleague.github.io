@@ -3,7 +3,7 @@ import React from "react"
 
 const MslMission = ({ player }) => {
   return (
-    <div className="py-12 bg-gray-50 dark:bg-gray-700">
+    <div className="pt-12 bg-gray-50 dark:bg-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-600 dark:text-gray-200 sm:text-4xl">

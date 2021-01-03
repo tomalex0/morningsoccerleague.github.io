@@ -20,7 +20,7 @@ const MslHero = () => {
 
           <div className="hidden lg:block relative pt-6 px-4 sm:px-6 lg:px-8"></div>
 
-          <div className="mt-20 mx-auto max-w-7xl px-4 sm:mt-20 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <div className="mt-10 mx-auto max-w-7xl px-4 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block text-gray-600 dark:text-gray-300 xl:inline">

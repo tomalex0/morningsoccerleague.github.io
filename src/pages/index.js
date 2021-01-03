@@ -14,7 +14,7 @@ const IndexPage = ({ path }) => (
     <MslMission />
     <MslAllStats />
     <SEO title="Home" path={path} />
-    <div className="mx-auto w-60 bg-gray-50">
+    <div className="my-12 mx-auto w-60 bg-gray-50">
       <Image />
     </div>
   </Layout>
