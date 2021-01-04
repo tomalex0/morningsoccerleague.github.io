@@ -21,14 +21,16 @@ const MslPlayerItem = ({
           {/*  alt=""*/}
           {/*/>*/}
           <div
-            className={`${imageWidth} ${imageHeight} rounded-full flex items-center justify-center bg-indigo-700 text-white uppercase`}
+            className={`${imageWidth} ${imageHeight} rounded-full flex items-center justify-center bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-900 uppercase`}
           >
             {playerInitials}
           </div>
         </div>
       )}
       <div>
-        <div className={`${fontSize} font-medium text-gray-900`}>
+        <div
+          className={`${fontSize} font-medium text-gray-600 dark:text-gray-300 `}
+        >
           <Link to={player.playerPath}>{player.name}</Link>
         </div>
       </div>
