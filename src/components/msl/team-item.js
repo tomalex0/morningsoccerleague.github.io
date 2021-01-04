@@ -11,7 +11,7 @@ const MslTeamItem = ({ team }) => {
           alt={team.teamName}
         />
       </div>
-      <div className="ml-4">
+      <div className="ml-1">
         <div className="text-sm font-medium text-gray-900">
           <Link to={team.teamPath}>{team.teamName}</Link>
         </div>
