@@ -12,10 +12,24 @@ const MslSeasonStatsItem = ({ season }) => {
           </Link>
         </h1>
         <div className="mt-1 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-4">
-          <MslTotalStatsItem
-            title={`Total Games`}
-            value={season.seasonStats.games}
-          >
+          <MslTotalStatsItem title={`Games`} value={season.seasonStats.games}>
+            <svg
+              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              />
+            </svg>
+          </MslTotalStatsItem>
+          <MslTotalStatsItem title={`Teams`} value={season.seasonStats.teams}>
             <svg
               className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
@@ -33,27 +47,7 @@ const MslSeasonStatsItem = ({ season }) => {
             </svg>
           </MslTotalStatsItem>
           <MslTotalStatsItem
-            title={`Total Teams`}
-            value={season.seasonStats.teams}
-          >
-            <svg
-              className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-              />
-            </svg>
-          </MslTotalStatsItem>
-          <MslTotalStatsItem
-            title={`Total Players`}
+            title={`Players`}
             value={season.seasonStats.players}
           >
             <svg
@@ -72,10 +66,7 @@ const MslSeasonStatsItem = ({ season }) => {
               />
             </svg>
           </MslTotalStatsItem>
-          <MslTotalStatsItem
-            title={`Total Goals`}
-            value={season.seasonStats.goals}
-          >
+          <MslTotalStatsItem title={`Goals`} value={season.seasonStats.goals}>
             <svg
               className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
@@ -92,10 +83,7 @@ const MslSeasonStatsItem = ({ season }) => {
               />
             </svg>
           </MslTotalStatsItem>
-          <MslTotalStatsItem
-            title={`Total Fouls`}
-            value={season.seasonStats.fouls}
-          >
+          <MslTotalStatsItem title={`Fouls`} value={season.seasonStats.fouls}>
             <svg
               className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
               xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +121,7 @@ const MslSeasonStatsItem = ({ season }) => {
             </svg>
           </MslTotalStatsItem>
           <MslTotalStatsItem
-            title={`Total Assists`}
+            title={`Assists`}
             value={season.seasonStats.assists}
           >
             <svg
@@ -153,7 +141,7 @@ const MslSeasonStatsItem = ({ season }) => {
             </svg>
           </MslTotalStatsItem>
           <MslTotalStatsItem
-            title={`Total Goals`}
+            title={`Goals`}
             value={season.seasonStats.unique_players_goals}
           >
             <svg
@@ -173,7 +161,7 @@ const MslSeasonStatsItem = ({ season }) => {
             </svg>
           </MslTotalStatsItem>
           <MslTotalStatsItem
-            title={`Total Yellow Cards`}
+            title={`Yellow Cards`}
             value={season.seasonStats.yellow_cards}
           >
             <svg
@@ -193,7 +181,7 @@ const MslSeasonStatsItem = ({ season }) => {
             </svg>
           </MslTotalStatsItem>
           <MslTotalStatsItem
-            title={`Total Red Cards`}
+            title={`Red Cards`}
             value={season.seasonStats.red_cards}
           >
             <svg
