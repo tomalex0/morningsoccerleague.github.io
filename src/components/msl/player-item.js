@@ -29,7 +29,7 @@ const MslPlayerItem = ({
       )}
       <div>
         <div
-          className={`${fontSize} font-medium text-gray-600 dark:text-gray-300 `}
+          className={`${fontSize} font-medium text-gray-600 dark:text-gray-600 `}
         >
           <Link to={player.playerPath}>{player.name}</Link>
         </div>
