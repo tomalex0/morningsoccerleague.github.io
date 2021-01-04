@@ -8,6 +8,7 @@ import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
+  MslTeamStatsFragment,
 } from "data/fragments"
 
 const TeamsIndex = ({ data, path }) => {
@@ -15,7 +16,7 @@ const TeamsIndex = ({ data, path }) => {
   return (
     <Layout>
       <SEO title="Teams" path={path} />
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 px-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10 px-5">
         {teams.nodes.map(team => (
           <MslTeamListItem team={team} />
         ))}
@@ -29,6 +30,9 @@ export const query = graphql`
     teams: allMslTeamsJson(sort: { fields: teamName, order: ASC }) {
       nodes {
         ...MslTeamsJsonFragment
+        teamStats {
+          ...MslTeamStatsFragment
+        }
       }
     }
   }

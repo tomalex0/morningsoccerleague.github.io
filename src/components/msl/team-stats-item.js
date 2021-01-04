@@ -2,11 +2,14 @@ import { Link } from "gatsby"
 import React from "react"
 import MslTotalStatsItem from "components/msl/total-stats-item"
 
-const MslTeamStatsItem = ({ stats }) => {
+const MslTeamStatsItem = ({
+  stats,
+  cssName = "mt-4 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 gap-4",
+}) => {
   const allSeasonStats = stats
   return (
-    <div className="mt-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-4">
-      <MslTotalStatsItem title={`Total Games`} value={allSeasonStats.goals}>
+    <div className={`${cssName}`}>
+      <MslTotalStatsItem title={`Games`} value={allSeasonStats.goals}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +26,7 @@ const MslTeamStatsItem = ({ stats }) => {
           />
         </svg>
       </MslTotalStatsItem>
-      <MslTotalStatsItem title={`Total Goals`} value={allSeasonStats.goals}>
+      <MslTotalStatsItem title={`Goals`} value={allSeasonStats.goals}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +43,7 @@ const MslTeamStatsItem = ({ stats }) => {
           />
         </svg>
       </MslTotalStatsItem>
-      <MslTotalStatsItem title={`Total Mos`} value={allSeasonStats.mos}>
+      <MslTotalStatsItem title={`Mos`} value={allSeasonStats.mos}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +61,7 @@ const MslTeamStatsItem = ({ stats }) => {
         </svg>
       </MslTotalStatsItem>
       <MslTotalStatsItem
-        title={`Total Yellow Cards`}
+        title={`Yellow Cards`}
         value={allSeasonStats.yellow_cards}
       >
         <svg
@@ -77,10 +80,7 @@ const MslTeamStatsItem = ({ stats }) => {
           />
         </svg>
       </MslTotalStatsItem>
-      <MslTotalStatsItem
-        title={`Total Red Cards`}
-        value={allSeasonStats.red_cards}
-      >
+      <MslTotalStatsItem title={`Red Cards`} value={allSeasonStats.red_cards}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ const MslTeamStatsItem = ({ stats }) => {
           />
         </svg>
       </MslTotalStatsItem>
-      <MslTotalStatsItem title={`Total Mom`} value={allSeasonStats.mom}>
+      <MslTotalStatsItem title={`Mom`} value={allSeasonStats.mom}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@ const MslTeamStatsItem = ({ stats }) => {
           />
         </svg>
       </MslTotalStatsItem>
-      <MslTotalStatsItem title={`Total Players`} value={allSeasonStats.players}>
+      <MslTotalStatsItem title={`Players`} value={allSeasonStats.players}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
