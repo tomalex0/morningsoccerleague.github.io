@@ -14,7 +14,7 @@ const MslAllStats = ({ player }) => {
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10">
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   <svg
                     className="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: scale */}
                   <svg
                     className="h-6 w-6"
@@ -73,7 +73,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: lightning-bolt */}
                   <svg
                     className="h-6 w-6"
@@ -103,7 +103,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: annotation */}
                   <svg
                     className="h-6 w-6"
@@ -133,7 +133,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: annotation */}
                   <svg
                     className="h-6 w-6"
@@ -163,7 +163,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: annotation */}
                   <svg
                     className="h-6 w-6"
@@ -193,7 +193,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: annotation */}
                   <svg
                     className="h-6 w-6"
@@ -223,7 +223,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: annotation */}
                   <svg
                     className="h-6 w-6"
@@ -253,7 +253,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: annotation */}
                   <svg
                     className="h-6 w-6"
@@ -283,7 +283,7 @@ const MslAllStats = ({ player }) => {
             </div>
             <div className="flex">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white">
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-200">
                   {/* Heroicon name: annotation */}
                   <svg
                     className="h-6 w-6"
