@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
@@ -15,24 +15,62 @@ import {
 
 const PlayersIndex = ({ data, path }) => {
   const { players } = data
+
+  const [playerList, setPlayerList] = useState(players.nodes)
+  const [searchQuery, setSearchQuery] = useState("")
+
+  function handleInputChange(event) {
+    const query = event.target.value
+    setSearchQuery(query)
+    const filteredData = players.nodes.filter(player => {
+      // destructure data from post frontmatter
+      const { name } = player
+      return (
+        // standardize data with .toLowerCase()
+        // return true if the description, title or tags
+        // contains the query string
+        name.toLowerCase().includes(query.toLowerCase())
+      )
+    })
+    setPlayerList(filteredData)
+  }
+
   return (
     <Layout>
       <SEO title="Players" path={path} />
       <div className="mt-5 px-5 divide-y divide-gray-300">
-        {players.nodes.map(player => (
-          <div className="mb-7">
-            <MslPlayerItem
-              player={player}
-              fontSize="text-md md:text-lg"
-              imageWidth="w-14"
-              imageHeight="h-14"
-              showImage={true}
-            />
-            <div>
-              <MslPlayerStatsItem stats={player?.playerStats?.allseasonStats} />
+        <div className="mb-3 text-center">
+          <input
+            type="text"
+            className="w-full md:w-4/12 p-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md"
+            aria-label="Search"
+            placeholder="Type to filter players..."
+            onChange={handleInputChange}
+          />
+        </div>
+
+        {playerList.length > 0 &&
+          playerList.map(player => (
+            <div className="mb-7">
+              <MslPlayerItem
+                player={player}
+                fontSize="text-md md:text-lg"
+                imageWidth="w-14"
+                imageHeight="h-14"
+                showImage={true}
+              />
+              <div>
+                <MslPlayerStatsItem
+                  stats={player?.playerStats?.allseasonStats}
+                />
+              </div>
             </div>
+          ))}
+        {playerList.length <= 0 && (
+          <div className="text-center p-4 text-white text-xl">
+            Player Not Found
           </div>
-        ))}
+        )}
       </div>
     </Layout>
   )
