@@ -157,3 +157,12 @@ function jsonArrayColumnSum(jsonArr, propArr) {
 }
 
 exports.jsonArrayColumnSum = jsonArrayColumnSum
+
+function getInitials(str, size = 2) {
+  return str
+    .split(" ")
+    .map(n => n[0])
+    .slice(0, size)
+    .join("")
+}
+exports.getInitials = getInitials

@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import MslLogo from "images/msl-logo-14.svg"
+import { getInitials } from "graphql/lib/utility"
 
 const MslPlayerItem = ({
   player,
@@ -9,15 +10,21 @@ const MslPlayerItem = ({
   imageHeight = "h-10",
   showImage = false,
 }) => {
+  const playerInitials = getInitials(player.name)
   return (
-    <div className="flex items-center">
+    <div className="flex items-center mt-5">
       {showImage && (
         <div className={`flex-shrink-0 mr-2 ${imageWidth} ${imageHeight}`}>
-          <img
-            className={`${imageWidth} ${imageHeight} rounded-full`}
-            src={MslLogo}
-            alt=""
-          />
+          {/*<img*/}
+          {/*  className={`${imageWidth} ${imageHeight} rounded-full`}*/}
+          {/*  src={MslLogo}*/}
+          {/*  alt=""*/}
+          {/*/>*/}
+          <div
+            className={`${imageWidth} ${imageHeight} rounded-full flex items-center justify-center bg-indigo-700 text-white uppercase`}
+          >
+            {playerInitials}
+          </div>
         </div>
       )}
       <div>

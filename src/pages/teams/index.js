@@ -16,7 +16,7 @@ const TeamsIndex = ({ data, path }) => {
   return (
     <Layout>
       <SEO title="Teams" path={path} />
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10 px-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-10 px-5">
         {teams.nodes.map(team => (
           <MslTeamListItem team={team} />
         ))}

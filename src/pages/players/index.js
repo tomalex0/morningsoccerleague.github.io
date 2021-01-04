@@ -24,11 +24,13 @@ const PlayersIndex = ({ data, path }) => {
             <MslPlayerItem
               player={player}
               fontSize="text-md md:text-lg"
-              imageWidth="w-20"
-              imageHeight="w-20"
+              imageWidth="w-14"
+              imageHeight="h-14"
               showImage={true}
             />
-            <MslPlayerStatsItem stats={player?.playerStats?.allseasonStats} />
+            <div>
+              <MslPlayerStatsItem stats={player?.playerStats?.allseasonStats} />
+            </div>
           </div>
         ))}
       </div>
