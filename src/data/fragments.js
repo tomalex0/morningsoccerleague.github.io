@@ -124,6 +124,9 @@ export const MslSchedulesJsonGamestatsFragment = graphql`
       owngoal
       penalty
       extra_min
+      player {
+        ...MslPlayersJsonFragment
+      }
       assist {
         ...MslPlayersJsonFragment
       }
