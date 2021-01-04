@@ -6,7 +6,7 @@ const cssName = "mt-4 grid grid-cols-2 md:grid-cols-2 gap-4"
 const MslTeamListItem = ({ team }) => {
   return (
     <Link to={team.teamPath}>
-      <div className="pt-8 px-2 bg-white  dark:bg-gray-800  rounded-xl shadow-md space-y-2 sm:py-3 sm:flex sm:items-center sm:space-y-0 rounded-b-none">
+      <div className="pt-5 pb-2 px-2 bg-gray-200  dark:bg-gray-800  rounded-xl shadow-md space-y-2 sm:py-3 sm:flex sm:items-center sm:space-y-0 rounded-b-none">
         <img
           className="block mx-auto h-20 rounded-full sm:mx-0 sm:flex-shrink-0"
           src={MslLogo}
@@ -20,7 +20,7 @@ const MslTeamListItem = ({ team }) => {
           </div>
         </div>
       </div>
-      <div className=" px-4 pb-4 bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl rounded-t-none">
+      <div className=" px-4 pb-4 bg-white dark:bg-gray-600 rounded-xl shadow-md overflow-hidden md:max-w-2xl rounded-t-none">
         <MslTeamStatsItem
           stats={team.teamStats.allseasonStats}
           cssName={cssName}
