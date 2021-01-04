@@ -71,6 +71,11 @@ export const MslTeamsJsonFragment = graphql`
     team_id
     teamName
     teamCls
+    image {
+      name
+      relativePath
+      publicURL
+    }
     teamPath: gatsbyPath(filePath: "/teams/{MslTeamsJson.teamName}")
   }
 `

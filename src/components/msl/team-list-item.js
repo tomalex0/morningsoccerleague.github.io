@@ -9,7 +9,7 @@ const MslTeamListItem = ({ team }) => {
       <div className="pt-5 pb-2 px-2 bg-gray-100  dark:bg-gray-800  rounded-xl shadow-md space-y-2 sm:py-3 sm:flex sm:items-center sm:space-y-0 rounded-b-none">
         <img
           className="block mx-auto h-20 rounded-full sm:mx-0 sm:flex-shrink-0"
-          src={MslLogo}
+          src={team.image.publicURL}
           alt={team.teamName}
         />
         <div className="text-center space-y-2 sm:text-left">

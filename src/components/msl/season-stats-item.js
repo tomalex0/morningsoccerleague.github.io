@@ -141,7 +141,7 @@ const MslSeasonStatsItem = ({ season }) => {
             </svg>
           </MslTotalStatsItem>
           <MslTotalStatsItem
-            title={`Goals`}
+            title={`Players Scored`}
             value={season.seasonStats.unique_players_goals}
           >
             <svg
