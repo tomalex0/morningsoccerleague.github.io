@@ -12,7 +12,7 @@ const MslTeamListItem = ({ team }) => {
           src={team.image.publicURL}
           alt={team.teamName}
         />
-        <div className="text-center space-y-2 sm:text-left">
+        <div className="text-center ml-2 space-y-2 sm:text-left">
           <div className="space-y-0.5">
             <div className="text-sm md:text-md text-black dark:text-white font-semibold">
               {team.teamName}
