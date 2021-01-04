@@ -23,7 +23,7 @@ function Season({ data, path }) {
   const { season } = data
   const seasonItem = getSeasonStats([season])[0]
 
-  const title = `${season.season_id}-${season.season_year}`
+  const title = `Season ${season.season_id} (${season.season_year})`
   const seasonStats = seasonItem.seasonStats
   const teams = getSeasonTeams(seasonItem)
   return (

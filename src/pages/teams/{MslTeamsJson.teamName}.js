@@ -23,7 +23,7 @@ function Team({ path, data }) {
       <div className="lg:flex lg:items-center lg:justify-between px-5 mt-10">
         <div className="flex-1 min-w-0">
           <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
-            Team {team.teamName}
+           {team.teamName}
           </h1>
           <MslTeamStatsItem stats={allSeasonStats} />
         </div>
