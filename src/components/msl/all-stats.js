@@ -43,7 +43,6 @@ const MslAllStats = () => {
   const totalPlayers = data.players.nodes.length
   const totalTeams = data.teams.nodes.length
   const schedules = data.matches.nodes
-  const gamestats = schedules.map(item => item.gamestats).flat()
   const allGoals = getAllGameStatsByType(schedules, "goals")
   const totalGoals = allGoals.length
   const ownGoals = allGoals.filter(item => item.owngoal)
@@ -71,7 +70,7 @@ const MslAllStats = () => {
           </h2>
         </div>
         <div className="mt-10">
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10">
+          <dl className="space-y-0 grid grid-cols-2 gap-y-4 sm:gap-x-3 sm:gap-y-4 sm:grid sm:grid-cols-2 md:grid md:grid-cols-4 md:gap-x-6 md:gap-y-6">
             <MslAllStatsItem
               title="Seasons"
               value={totalSeasons}

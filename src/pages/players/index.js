@@ -42,11 +42,14 @@ const PlayersIndex = ({ data, path }) => {
         <div className="mb-3 text-center">
           <input
             type="text"
-            className="w-full md:w-4/12 p-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md"
+            className="w-full md:w-5/12 p-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md"
             aria-label="Search"
             placeholder="Type to filter players..."
             onChange={handleInputChange}
           />
+          <div className="mt-2 text-gray-600 dark:text-gray-300 text-left">
+            {playerList.length} Results
+          </div>
         </div>
 
         {playerList.length > 0 &&
