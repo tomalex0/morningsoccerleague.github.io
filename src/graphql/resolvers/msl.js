@@ -71,6 +71,12 @@ module.exports = {
         const seasonStats = data.map(item => {
           let newItem = {}
           const schedules = scheduleBySeason[item.season]
+          const gamestats = schedules
+            .filter(item => item.completed)
+            .map(item => item.gamestats)
+            .flat()
+            .filter(item => item.team == teamId)
+
           const teamGoals = getTeamGoals(schedules, teamId)
           const teamAssists = getTeamAssists(schedules, teamId)
           const teamSaves = getTeamSaves(schedules, teamId)
@@ -99,6 +105,7 @@ module.exports = {
           newItem.mom = teamMom.length
           newItem.yellow_cards = teamYellowCards.length
           newItem.red_cards = teamRedCards.length
+          newItem.matches = gamestats.length
 
           return newItem
         })
@@ -113,6 +120,7 @@ module.exports = {
         const totalMom = getSum(seasonStats, "mom")
         const totalSaves = getSum(seasonStats, "saves")
         const totalMos = getSum(seasonStats, "mos")
+        const totalMatches = getSum(seasonStats, "matches")
         // console.log(totalPlayerList,'--totalPlayerList-----')
         const allseasonStats = {
           goals: totalGoals,
@@ -123,6 +131,7 @@ module.exports = {
           yellow_cards: totalYellow,
           players: totalPlayerList.length,
           red_cards: totalRed,
+          matches: totalMatches,
         }
 
         return {

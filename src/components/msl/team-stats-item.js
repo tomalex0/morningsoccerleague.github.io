@@ -9,7 +9,7 @@ const MslTeamStatsItem = ({
   const allSeasonStats = stats
   return (
     <div className={`${cssName}`}>
-      <MslTotalStatsItem title={`Games`} value={allSeasonStats.goals}>
+      <MslTotalStatsItem title={`Games`} value={allSeasonStats.matches}>
         <svg
           className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
           xmlns="http://www.w3.org/2000/svg"
