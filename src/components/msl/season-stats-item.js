@@ -11,7 +11,7 @@ const MslSeasonStatsItem = ({ season }) => {
             Season {season.season_id} ({season.season_year})
           </Link>
         </h1>
-        <div className="mt-1 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-4">
+        <div className="mt-3 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-4">
           <MslTotalStatsItem title={`Games`} value={season.seasonStats.games}>
             <svg
               className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
