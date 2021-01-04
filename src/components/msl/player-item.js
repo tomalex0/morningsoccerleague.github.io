@@ -12,7 +12,7 @@ const MslPlayerItem = ({
 }) => {
   const playerInitials = getInitials(player.name)
   return (
-    <div className="flex items-center mt-5">
+    <div className="flex items-center">
       {showImage && (
         <div className={`flex-shrink-0 mr-2 ${imageWidth} ${imageHeight}`}>
           {/*<img*/}

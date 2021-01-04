@@ -51,7 +51,7 @@ const PlayersIndex = ({ data, path }) => {
 
         {playerList.length > 0 &&
           playerList.map(player => (
-            <div className="mb-7">
+            <div className="mb-7 pt-5">
               <MslPlayerItem
                 player={player}
                 fontSize="text-md md:text-lg"

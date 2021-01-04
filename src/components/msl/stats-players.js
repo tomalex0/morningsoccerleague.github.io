@@ -15,6 +15,12 @@ const MslStatsPlayers = ({ data, playerColTitle }) => {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
+                    #
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
                     {playerColTitle}
                   </th>
                   <th
@@ -34,6 +40,9 @@ const MslStatsPlayers = ({ data, playerColTitle }) => {
               <tbody className="bg-white divide-y divide-gray-200">
                 {data.map((stats, index) => (
                   <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm">
+                      {index + 1}
+                    </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <MslPlayerItem player={stats} />
                     </td>
