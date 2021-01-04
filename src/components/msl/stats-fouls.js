@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
 import MslTeamItem from "components/msl/team-item"
+import MslTableDataCell from "components/msl/table-data-cell"
+import MslTableHeaderCell from "components/msl/table-header-cell"
 const MslStatsFouls = ({ fouls }) => {
   return (
     <div className="flex flex-col">
@@ -10,47 +12,21 @@ const MslStatsFouls = ({ fouls }) => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    TEAMS
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #Fouls
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #Matches
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    AVG
-                  </th>
+                  <MslTableHeaderCell>Teams</MslTableHeaderCell>
+                  <MslTableHeaderCell>#Fouls</MslTableHeaderCell>
+                  <MslTableHeaderCell>#Matches</MslTableHeaderCell>
+                  <MslTableHeaderCell>AVG</MslTableHeaderCell>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {fouls.map((stats, index) => (
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <MslTableDataCell>
                       <MslTeamItem team={stats.team} />
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.fouls}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.matches}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.foulAvg}
-                    </td>
+                    </MslTableDataCell>
+                    <MslTableDataCell>{stats.fouls}</MslTableDataCell>
+                    <MslTableDataCell>{stats.matches}</MslTableDataCell>
+                    <MslTableDataCell>{stats.foulAvg}</MslTableDataCell>
                   </tr>
                 ))}
               </tbody>

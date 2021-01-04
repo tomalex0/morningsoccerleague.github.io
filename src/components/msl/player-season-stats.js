@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
 import MslTeamItem from "components/msl/team-item"
+import MslTableDataCell from "components/msl/table-data-cell"
+import MslTableHeaderCell from "components/msl/table-header-cell"
 const MslPlayerSeasonStats = ({ seasons }) => {
   return (
     <div className="flex flex-col">
@@ -10,103 +12,41 @@ const MslPlayerSeasonStats = ({ seasons }) => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Season
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Team
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #Goals
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Is FO
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Is Mos
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #Mom
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #Assists
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #Saves
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #Yellow Cards
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #Red Cards
-                  </th>
+                  <MslTableHeaderCell>Season</MslTableHeaderCell>
+                  <MslTableHeaderCell>Team</MslTableHeaderCell>
+                  <MslTableHeaderCell>#Goals</MslTableHeaderCell>
+                  <MslTableHeaderCell>Is FO</MslTableHeaderCell>
+                  <MslTableHeaderCell>Is Mos</MslTableHeaderCell>
+                  <MslTableHeaderCell>#Mom</MslTableHeaderCell>
+                  <MslTableHeaderCell>#Assists</MslTableHeaderCell>
+                  <MslTableHeaderCell>#Saves</MslTableHeaderCell>
+                  <MslTableHeaderCell>#Yellow Cards</MslTableHeaderCell>
+                  <MslTableHeaderCell>#Red Cards</MslTableHeaderCell>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {seasons.map((stats, index) => (
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <MslTableDataCell>
                       <Link to={stats.season.seasonPath}>
                         {stats.season.season} - {stats.season.season_year}
                       </Link>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    </MslTableDataCell>
+                    <MslTableDataCell>
                       <MslTeamItem team={stats.team} />
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.goals}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    </MslTableDataCell>
+                    <MslTableDataCell>{stats.goals}</MslTableDataCell>
+                    <MslTableDataCell>
                       {stats.isOwner ? "Yes" : "No"}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    </MslTableDataCell>
+                    <MslTableDataCell>
                       {stats.isMos ? "Yes" : "No"}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.mom}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.assists}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.saves}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.yellow_cards}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.red_cards}
-                    </td>
+                    </MslTableDataCell>
+                    <MslTableDataCell>{stats.mom}</MslTableDataCell>
+                    <MslTableDataCell>{stats.assists}</MslTableDataCell>
+                    <MslTableDataCell>{stats.saves}</MslTableDataCell>
+                    <MslTableDataCell>{stats.yellow_cards}</MslTableDataCell>
+                    <MslTableDataCell>{stats.red_cards}</MslTableDataCell>
                   </tr>
                 ))}
               </tbody>

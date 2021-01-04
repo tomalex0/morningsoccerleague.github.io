@@ -2,6 +2,8 @@ import { Link } from "gatsby"
 import React from "react"
 import MslTeamItem from "components/msl/team-item"
 import MslPlayerItem from "components/msl/player-item"
+import MslTableDataCell from "components/msl/table-data-cell"
+import MslTableHeaderCell from "components/msl/table-header-cell"
 const MslStatsPlayers = ({ data, playerColTitle }) => {
   return (
     <div className="flex flex-col">
@@ -11,47 +13,23 @@ const MslStatsPlayers = ({ data, playerColTitle }) => {
             <table className="min-w-full divide-y divide-gray-200 ">
               <thead className="bg-gray-50">
                 <tr>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    #
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    {playerColTitle}
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Team
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider "
-                  >
-                    #
-                  </th>
+                  <MslTableHeaderCell>#</MslTableHeaderCell>
+                  <MslTableHeaderCell>{playerColTitle}</MslTableHeaderCell>
+                  <MslTableHeaderCell>Team</MslTableHeaderCell>
+                  <MslTableHeaderCell>#</MslTableHeaderCell>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {data.map((stats, index) => (
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm">
-                      {index + 1}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <MslTableDataCell>{index + 1}</MslTableDataCell>
+                    <MslTableDataCell>
                       <MslPlayerItem player={stats} />
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    </MslTableDataCell>
+                    <MslTableDataCell>
                       {stats.team && <MslTeamItem team={stats.team} />}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {stats.count}
-                    </td>
+                    </MslTableDataCell>
+                    <MslTableDataCell>{stats.count}</MslTableDataCell>
                   </tr>
                 ))}
               </tbody>
