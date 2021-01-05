@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Layout from "./layout"
 import MslLogo from "images/msl-logo.svg"
+import MslThemeSwitch from "components/msl/theme-switch"
 
 const NavList = [
   {
@@ -119,6 +120,9 @@ const Header = () => {
                     </Link>
                   ))}
                 </div>
+              </div>
+              <div className="flex-1 flex items-center justify-end sm:justify-end">
+                {/*<MslThemeSwitch/>*/}
               </div>
             </div>
           </div>

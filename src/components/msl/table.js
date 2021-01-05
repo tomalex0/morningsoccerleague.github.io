@@ -4,13 +4,6 @@ import MslTableHeaderCell from "components/msl/table-header-cell"
 import MslTableDataCell from "components/msl/table-data-cell"
 
 const MslTable = props => {
-  console.log(props, "-dfdf-")
-  function getComponent(key) {
-    return props.children.filter(comp => {
-      return comp.key === key
-    })
-  }
-
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
