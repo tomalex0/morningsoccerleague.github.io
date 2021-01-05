@@ -33,10 +33,6 @@ const NavList = [
     name: "GMM",
     href: "/gmm",
   },
-  {
-    name: "Contacts",
-    href: "/contacts",
-  },
 ]
 
 const Header = () => {

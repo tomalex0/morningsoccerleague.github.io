@@ -30,7 +30,7 @@ const MslPlayerItem = ({
       )}
       <div>
         <div className={`${fontSize} ${playerNameCss}`}>
-          <Link to={player.playerPath}>{player.name}</Link>
+          <Link to={player.playerPath}>{player.name} &rarr;</Link>
         </div>
       </div>
     </div>

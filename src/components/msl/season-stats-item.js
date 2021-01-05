@@ -8,7 +8,7 @@ const MslSeasonStatsItem = ({ season }) => {
       <div className="flex-1 min-w-0">
         <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
           <Link to={season.seasonPath}>
-            Season {season.season_id} ({season.season_year})
+            Season {season.season_id} ({season.season_year}) &rarr;
           </Link>
         </h1>
         <div className="mt-3 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-4">

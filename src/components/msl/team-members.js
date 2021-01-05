@@ -6,21 +6,24 @@ const MslTeamMembers = response => {
   const { team, players } = response.data
 
   return (
-    <div className="bg-white shadow overflow-hidden rounded-lg">
-      <div className="px-4 py-5 sm:px-6">
-        <h3 className="text-lg leading-6 font-medium text-gray-900 flex items-center">
+    <div className="bg-white dark:bg-gray-300 shadow overflow-hidden rounded-lg">
+      <div className="px-4 py-5 sm:px-6 dark:bg-gray-400">
+        <h3 className="text-lg leading-6 font-medium text-gray-900  flex items-center">
           <MslTeamItem team={team} />{" "}
           <span className="text-md ml-2">({players.length}) </span>
         </h3>
       </div>
-      <div className="border-t border-gray-200">
-        <ul className="divide-y divide-gray-200" aria-disabled="true">
+      <div className="border-t border-gray-200 dark:border-gray-400">
+        <ul
+          className="divide-y divide-gray-200 dark:divide-gray-400"
+          aria-disabled="true"
+        >
           {players.map(player => (
             <li>
               <Link to={player.playerPath} className="block hover:bg-gray-50">
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm font-medium text-indigo-600 truncate">
+                    <div className="text-sm font-medium text-indigo-600 dark:text-gray-900 truncate">
                       {player.name}
                     </div>
                     <div className="m-2 flex-shrink-0 flex">
