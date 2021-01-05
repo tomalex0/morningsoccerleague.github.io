@@ -58,6 +58,7 @@ const PlayersIndex = ({ data, path }) => {
               <MslPlayerItem
                 player={player}
                 fontSize="text-md md:text-lg"
+                playerNameCss="font-medium text-gray-600 dark:text-gray-300"
                 imageWidth="w-14"
                 imageHeight="h-14"
                 showImage={true}

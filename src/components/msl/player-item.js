@@ -8,6 +8,7 @@ const MslPlayerItem = ({
   fontSize = "text-sm",
   imageWidth = "w-10",
   imageHeight = "h-10",
+  playerNameCss = "font-medium text-gray-600 dark:text-gray-900",
   showImage = false,
 }) => {
   const playerInitials = getInitials(player.name)
@@ -28,9 +29,7 @@ const MslPlayerItem = ({
         </div>
       )}
       <div>
-        <div
-          className={`${fontSize} font-medium text-gray-600 dark:text-gray-600 `}
-        >
+        <div className={`${fontSize} ${playerNameCss}`}>
           <Link to={player.playerPath}>{player.name}</Link>
         </div>
       </div>

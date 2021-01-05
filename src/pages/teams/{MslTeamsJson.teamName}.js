@@ -24,7 +24,7 @@ function Team({ path, data }) {
         <div className="flex-1 min-w-0">
           <h1 className="text-2xl flex items-center font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
             <img
-              className="block h-16 pr-2 rounded-full sm:mx-0 sm:flex-shrink-0"
+              className="block h-16 pr-1   rounded-full sm:mx-0 sm:flex-shrink-0"
               src={team.image.publicURL}
               alt={team.teamName}
             />
@@ -33,9 +33,9 @@ function Team({ path, data }) {
           <MslTeamStatsItem stats={allSeasonStats} />
         </div>
       </div>
-      <div className="px-5 mx-5 mt-5 pb-5 bg-white shadow overflow-hidden rounded-lg ">
+      <div className="px-5 mx-5 mt-5 pb-5 bg-white dark:bg-gray-600 shadow overflow-hidden rounded-lg ">
         <div className="px-4 py-5 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">
+          <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
             Seasons
           </h3>
         </div>
