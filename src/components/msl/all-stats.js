@@ -95,7 +95,7 @@ const MslAllStats = () => {
               value={totalScoredPlayers}
             ></MslAllStatsItem>
             <MslAllStatsItem
-              title="Yellow Card"
+              title="Yellow Cards"
               value={totalYellowCards}
             ></MslAllStatsItem>
             <MslAllStatsItem
