@@ -155,4 +155,4 @@ A quick look at the top-level files and directories you'll see in this project.
 #### Snippets
 
 - https://play.tailwindcss.com/0zWIL4f17G
-- https://play.tailwindcss.com/TaBV1B9eYW
+- https://play.tailwindcss.com/6RpJXY1101
