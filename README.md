@@ -159,3 +159,5 @@ A quick look at the top-level files and directories you'll see in this project.
 - https://play.tailwindcss.com/lORBdGz1IF
 - https://play.tailwindcss.com/2ZO1QYpEvn
 - https://play.tailwindcss.com/RMo24SEeiz
+- https://play.tailwindcss.com/LU782EIVYK
+- https://play.tailwindcss.com/73rX59HMdN
