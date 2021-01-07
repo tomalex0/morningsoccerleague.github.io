@@ -11,6 +11,14 @@ const MslSeasonStatsItem = ({ season }) => {
             Season {season.season_id} ({season.season_year}) &rarr;
           </Link>
         </h1>
+        <div className="mt-4">
+          <Link
+            to={season.fixturePath}
+            className="text-base font-medium  text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 "
+          >
+            Fixtures &rarr;
+          </Link>
+        </div>
         <div className="mt-3 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-4">
           <MslTotalStatsItem
             title={`Games`}
