@@ -16,7 +16,6 @@ const FixturesIndexPage = props => {
   const path = props.path
   const pageContext = props.pageContext
   const fixtures = props.data.season.schedules
-  console.log(fixtures, "0d0fdf")
   return (
     <Layout>
       <SEO
