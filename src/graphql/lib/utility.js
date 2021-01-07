@@ -166,3 +166,14 @@ function getInitials(str, size = 2) {
     .join("")
 }
 exports.getInitials = getInitials
+
+function formatDateString(val) {
+  return new Date(val).toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+}
+
+exports.formatDateString = formatDateString
