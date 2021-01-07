@@ -2,8 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
-import Image from "components/image"
+
 import SEO from "components/seo"
+import MslFixtureItem from "components/msl/fixture-item"
 import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
@@ -15,7 +16,7 @@ const FixturesIndexPage = props => {
   const path = props.path
   const pageContext = props.pageContext
   const fixtures = props.data.season.schedules
-
+  console.log(fixtures, "0d0fdf")
   return (
     <Layout>
       <SEO
@@ -25,13 +26,11 @@ const FixturesIndexPage = props => {
       <h1>
         Hi Fixtures {pageContext.season_id}-{pageContext.season_year}
       </h1>
-      <ul>
+      <div>
         {fixtures.map(fixture => (
-          <li key={fixture.schedule_id}>
-            {fixture.scheduled_date}-{fixture.schedule_id}
-          </li>
+          <MslFixtureItem fixture={fixture} />
         ))}
-      </ul>
+      </div>
     </Layout>
   )
 }
