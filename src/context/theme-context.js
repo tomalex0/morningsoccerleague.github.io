@@ -27,15 +27,20 @@ const ThemeContextProvider = ({ children }) => {
     }
   }, [theme])
   useEffect(() => {
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", event => {
-        if (event.matches) {
-          setTheme("dark")
-        } else {
-          setTheme("light")
-        }
-      })
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)")
+    ) {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", event => {
+          if (event.matches) {
+            setTheme("dark")
+          } else {
+            setTheme("light")
+          }
+        })
+    }
   }, [])
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
