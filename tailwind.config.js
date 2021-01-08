@@ -25,7 +25,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ["dark"],
+      display: ["dark"],
+      fill: ["dark"],
+    },
   },
   plugins: [],
 }

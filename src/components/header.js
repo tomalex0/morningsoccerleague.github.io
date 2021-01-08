@@ -122,7 +122,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="flex-1 flex items-center justify-end sm:justify-end">
-                {/*<MslThemeSwitch/>*/}
+                <MslThemeSwitch />
               </div>
             </div>
           </div>
