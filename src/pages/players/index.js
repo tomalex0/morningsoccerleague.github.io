@@ -40,28 +40,79 @@ const PlayersIndex = ({ data, path }) => {
       <SEO title="Players" path={path} />
       <div className="mt-5 px-5 divide-y divide-gray-300">
         <div className="mb-3 text-center">
-          <div className="relative w-full md:w-3/6 mx-auto">
-            <svg
-              width="20"
-              height="20"
-              fill="currentColor"
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+          <form className="flex w-full max-w-lg mx-auto space-l-0 space-x-2 relative">
+            {/*<input className="flex-1 appearance-none border border-transparent w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded-md text-base focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" type="email" placeholder="Your email" />*/}
+            <div className="flex-1 ">
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                />
+              </svg>
+              <input
+                type="text"
+                className="appearance-none  focus:ring-2 focus:ring-indigo-600 w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-8 shadow-md"
+                aria-label="Search"
+                placeholder="Type to filter players..."
+                onChange={handleInputChange}
               />
-            </svg>
+            </div>
+            <select
+              id="sortby"
+              name="sortby"
+              autoComplete="sortby"
+              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-24"
+            >
+              <option>Sort By</option>
+              <option>Name</option>
+              <option>Goals</option>
+              <option>Assists</option>
+              <option>Mos</option>
+              <option>Yellow Cards</option>
+              <option>Red Cards</option>
+              <option>Mom</option>
+              <option>Saves</option>
+            </select>
 
-            <input
-              type="text"
-              className="focus:border-light-indigo-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10  shadow-md"
-              aria-label="Search"
-              placeholder="Type to filter players..."
-              onChange={handleInputChange}
-            />
-          </div>
+            <select
+              id="orderby"
+              name="orderby"
+              autoComplete="orderby"
+              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-18"
+            >
+              <option>ASC</option>
+              <option>DESC</option>
+            </select>
+          </form>
+
+          {/*<div className="relative w-full md:w-3/6 mx-auto">*/}
+          {/*  <svg*/}
+          {/*    width="20"*/}
+          {/*    height="20"*/}
+          {/*    fill="currentColor"*/}
+          {/*    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"*/}
+          {/*  >*/}
+          {/*    <path*/}
+          {/*      fill-rule="evenodd"*/}
+          {/*      clip-rule="evenodd"*/}
+          {/*      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"*/}
+          {/*    />*/}
+          {/*  </svg>*/}
+
+          {/*  <input*/}
+          {/*    type="text"*/}
+          {/*    className="focus:border-light-indigo-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10  shadow-md"*/}
+          {/*    aria-label="Search"*/}
+          {/*    placeholder="Type to filter players..."*/}
+          {/*    onChange={handleInputChange}*/}
+          {/*  />*/}
+          {/*</div>*/}
           <div className="mt-2 text-gray-600 dark:text-gray-300 text-left">
             {playerList.length} Results
           </div>
