@@ -33,9 +33,11 @@ const FixturesIndexPage = props => {
       </h1>
       <div>
         {Object.keys(fixtureGroup).map(item => {
+          console.log(item, "--343--")
+          const dateval = formatDateString(`${item}`)
           return (
             <div className="board-row">
-              <h1>{formatDateString(item)}</h1>
+              <h1>{dateval}</h1>
               {fixtureGroup[item].map(fixture => {
                 return <MslFixtureItem fixture={fixture} />
               })}

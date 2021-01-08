@@ -167,8 +167,10 @@ function getInitials(str, size = 2) {
 }
 exports.getInitials = getInitials
 
-function formatDateString(val) {
-  return new Date(val).toLocaleDateString("en-US", {
+function formatDateString(val, locale = "en") {
+  // fix this craziness https://stackoverflow.com/a/31732581
+  const dateVal = val.replace(/-/g, '\/')
+  return new Date(dateVal).toLocaleDateString(locale, {
     weekday: "long",
     year: "numeric",
     month: "long",
