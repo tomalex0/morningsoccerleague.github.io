@@ -29,7 +29,8 @@ const ThemeContextProvider = ({ children }) => {
   useEffect(() => {
     if (
       window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)")
+      window.matchMedia("(prefers-color-scheme: dark)") &&
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener
     ) {
       window
         .matchMedia("(prefers-color-scheme: dark)")
