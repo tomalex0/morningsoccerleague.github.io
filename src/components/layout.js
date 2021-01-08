@@ -5,9 +5,11 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+
+import { ThemeContext } from "context/theme-context"
 
 import Header from "./header"
 import MslContact from "components/msl/contact"
@@ -15,6 +17,7 @@ import MslContact from "components/msl/contact"
 import FbLogo from "images/social/facebook.svg"
 
 const Layout = ({ children }) => {
+  const { theme, setTheme } = useContext(ThemeContext)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,7 +30,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="flex flex-col h-screen justify-between">
+      <div className={`flex flex-col h-screen justify-between ${theme}`}>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main className="flex-grow mt-16 bg-gray-50 dark:bg-gray-700 pb-10">
           {children}
