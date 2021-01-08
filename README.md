@@ -160,4 +160,7 @@ A quick look at the top-level files and directories you'll see in this project.
 - https://play.tailwindcss.com/2ZO1QYpEvn
 - https://play.tailwindcss.com/RMo24SEeiz
 - https://play.tailwindcss.com/LU782EIVYK
-- https://play.tailwindcss.com/73rX59HMdN
+- Goal Stats https://play.tailwindcss.com/73rX59HMdN
+- Timeline https://play.tailwindcss.com/tURuNZWLWv
+- Timeline https://play.tailwindcss.com/L4TElyjsg6
+- Timeline https://play.tailwindcss.com/PljQLobaeo
