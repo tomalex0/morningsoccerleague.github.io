@@ -17,15 +17,14 @@ import {
 const SeasonsIndex = ({ data, path }) => {
   const { seasons } = data
   const seasonList = getSeasonStats(seasons.nodes)
-  // console.log(seasonList)
   return (
     <Layout>
       <SEO title="Seasons" path={path} />
       <div>
         {seasonList.map(season => {
           return (
-            <div className="mt-10">
-              <MslSeasonStatsItem season={season} key={season.season_id} />
+            <div className="mt-10" key={season.season_id}>
+              <MslSeasonStatsItem season={season} />
             </div>
           )
         })}

@@ -26,6 +26,17 @@ const ThemeContextProvider = ({ children }) => {
       document.querySelector("html").classList.remove("dark")
     }
   }, [theme])
+  useEffect(() => {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (event.matches) {
+          setTheme("dark")
+        } else {
+          setTheme("light")
+        }
+      })
+  }, [])
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
       {children}
