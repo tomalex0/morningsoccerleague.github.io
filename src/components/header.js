@@ -113,6 +113,7 @@ const Header = () => {
                   {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                   {NavList.map(item => (
                     <Link
+                      key={item.name}
                       to={item.href}
                       className="px-2 py-2 font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-red-700"
                     >
@@ -141,6 +142,7 @@ const Header = () => {
             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
             {NavList.map(item => (
               <Link
+                key={item.name}
                 to={item.href}
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-red-700 block px-3 py-2 text-base font-medium"
               >

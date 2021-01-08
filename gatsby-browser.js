@@ -6,6 +6,8 @@
 import * as React from "react"
 import { Profiler } from "react"
 import "./src/css/index.css"
+import ThemeContextProvider from "context/theme-context"
+
 function capturePageMetrics(
   id, // the "id" prop of the Profiler tree that has just committed
   phase, // either "mount" (if the tree just mounted) or "update" (if it re-rendered)
@@ -36,5 +38,9 @@ function capturePageMetrics(
 //     </Profiler>
 //   )
 // }
+
+export const wrapRootElement = ({ element }) => {
+  return <ThemeContextProvider>{element}</ThemeContextProvider>
+}
 
 export const registerServiceWorker = () => true
