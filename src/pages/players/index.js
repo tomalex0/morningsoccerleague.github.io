@@ -104,7 +104,7 @@ const PlayersIndex = ({ data, path }) => {
               </svg>
               <input
                 type="text"
-                className="appearance-none  focus:ring-2 focus:ring-indigo-600 w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-8 shadow-md"
+                className="appearance-none focus:ring-2 focus:ring-indigo-600 w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-8 shadow-md bg-white"
                 aria-label="Search"
                 placeholder="Type to filter players..."
                 onChange={e => setSearchQuery(e.target.value)}
@@ -115,7 +115,7 @@ const PlayersIndex = ({ data, path }) => {
               name="sortby"
               autoComplete="sortby"
               onChange={e => setSortState(e.target.value)}
-              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-24"
+              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-24 focus:ring-2 focus:ring-indigo-600 text-sm text-black placeholder-gray-500 border border-gray-200 bg-white"
             >
               <option value="name">Sort By</option>
               <option value="name">Name</option>
@@ -133,7 +133,7 @@ const PlayersIndex = ({ data, path }) => {
               name="orderby"
               autoComplete="orderby"
               onChange={e => setOrderState(e.target.value)}
-              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-18"
+              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-18 focus:ring-2 focus:ring-indigo-600 text-sm text-black placeholder-gray-500 border border-gray-200 bg-white"
             >
               <option value="0">ASC</option>
               <option value="1">DESC</option>
