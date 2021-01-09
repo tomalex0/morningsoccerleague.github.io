@@ -6,13 +6,13 @@ const cssName = "mt-4 grid grid-cols-2 md:grid-cols-2 gap-4"
 const MslTeamListItem = ({ team }) => {
   return (
     <Link to={team.teamPath}>
-      <div className="pt-5 pb-2 px-2 bg-gray-100  dark:bg-gray-800  rounded-xl shadow-md space-y-2 sm:py-3 sm:flex sm:items-center sm:space-y-0 rounded-b-none">
+      <div className="px-3 bg-gray-100  dark:bg-gray-800  rounded-xl shadow-md space-y-2 py-3 flex items-center space-y-0 rounded-b-none">
         <img
-          className="block mx-auto h-14 rounded-full sm:mx-0 sm:flex-shrink-0"
+          className="block  h-14 rounded-full mx-0 flex-shrink-0"
           src={team.image.publicURL}
           alt={team.teamName}
         />
-        <div className="text-center ml-2 space-y-2 sm:text-left">
+        <div className="text-center ml-2 space-y-2 text-left">
           <div className="space-y-0.5">
             <div className="text-sm md:text-md text-black dark:text-white font-semibold">
               {team.teamName} &rarr;

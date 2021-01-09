@@ -24,7 +24,7 @@ function Team({ path, data }) {
         <div className="flex-1 min-w-0">
           <h1 className="text-2xl flex items-center font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
             <img
-              className="block h-16 pr-1   rounded-full sm:mx-0 sm:flex-shrink-0"
+              className="block h-16 mr-2 rounded-full sm:mx-0 sm:flex-shrink-0"
               src={team.image.publicURL}
               alt={team.teamName}
             />
