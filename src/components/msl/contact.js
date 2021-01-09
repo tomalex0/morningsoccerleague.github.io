@@ -11,7 +11,7 @@ const MslContact = () => {
           </span>
         </h2>
         <div className="mt-8 lex lg:mt-0 lg:flex-shrink-0">
-          <div className="ml-3 inline-flex rounded-md shadow">
+          <div className="inline-flex rounded-md shadow">
             <a
               href="mailto:morningsoccerleague@gmail.com"
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
