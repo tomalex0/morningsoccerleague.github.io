@@ -103,17 +103,6 @@ function Season({ data, path }) {
           ))}
         </div>
       </div>
-      {/*<div>*/}
-      {/*  <div>*/}
-      {/*    <Link to={season.fixturePath}>See Fixtures</Link>*/}
-      {/*  </div>*/}
-      {/*  <div>*/}
-      {/*    <Link to={season.statsPath}>See Stats</Link>*/}
-      {/*  </div>*/}
-      {/*  <div>*/}
-      {/*    <Link to={season.standingPath}>See Standings</Link>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
     </Layout>
   )
 }

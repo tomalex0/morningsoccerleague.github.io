@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 
-const MslTeamItem = ({ team }) => {
+const MslTeamItem = ({ team, cssName = "text-gray-900" }) => {
   return (
     <div className="flex items-center">
       <div className="flex-shrink-0 h-10 w-10">
@@ -12,7 +12,7 @@ const MslTeamItem = ({ team }) => {
         />
       </div>
       <div className="ml-1">
-        <div className="text-sm font-medium text-gray-900">
+        <div className={`text-sm font-medium ${cssName}`}>
           <Link to={team.teamPath}>{team.teamName}</Link>
         </div>
       </div>

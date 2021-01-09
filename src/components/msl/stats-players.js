@@ -11,10 +11,12 @@ const MslStatsPlayers = ({ data, playerColTitle }) => {
     <MslTable>
       <>
         <tr>
-          <MslTableHeaderCell>#</MslTableHeaderCell>
-          <MslTableHeaderCell>{playerColTitle}</MslTableHeaderCell>
-          <MslTableHeaderCell>Team</MslTableHeaderCell>
-          <MslTableHeaderCell>#</MslTableHeaderCell>
+          <MslTableHeaderCell cssName="w-10">#</MslTableHeaderCell>
+          <MslTableHeaderCell cssName="w-20">
+            {playerColTitle}
+          </MslTableHeaderCell>
+          <MslTableHeaderCell cssName="w-20">Team</MslTableHeaderCell>
+          <MslTableHeaderCell cssName="w-10">#</MslTableHeaderCell>
         </tr>
       </>
       <>

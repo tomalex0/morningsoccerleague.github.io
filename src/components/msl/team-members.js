@@ -7,10 +7,10 @@ const MslTeamMembers = response => {
 
   return (
     <div className="bg-white dark:bg-gray-300 shadow overflow-hidden rounded-lg">
-      <div className="px-4 py-5 sm:px-6 dark:bg-gray-400">
-        <h3 className="text-lg leading-6 font-medium text-gray-900  flex items-center">
-          <MslTeamItem team={team} />{" "}
-          <span className="text-md ml-2">({players.length}) </span>
+      <div className="px-4 py-5 sm:px-6 bg-gray-50 dark:bg-gray-800">
+        <h3 className="text-lg leading-6 font-medium text-gray-500  dark:text-gray-400  flex items-center">
+          <MslTeamItem team={team} cssName="text-gray-500 dark:text-gray-400" />
+          <span className="text-sm ml-2">({players.length}) </span>
         </h3>
       </div>
       <div className="border-t border-gray-200 dark:border-gray-400">
@@ -23,7 +23,7 @@ const MslTeamMembers = response => {
               <Link to={player.playerPath} className="block hover:bg-gray-50">
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm font-medium text-indigo-600 dark:text-gray-900 truncate">
+                    <div className="text-sm font-medium text-gray-600 dark:text-gray-900 truncate">
                       {player.name}
                     </div>
                     <div className="m-2 flex-shrink-0 flex">
