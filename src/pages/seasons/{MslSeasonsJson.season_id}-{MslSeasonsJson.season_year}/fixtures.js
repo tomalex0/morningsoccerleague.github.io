@@ -63,7 +63,7 @@ const FixturesIndexPage = props => {
                               fill="none"
                               stroke-width="2"
                               stroke="currentColor"
-                              className="text-gray-300 dark:text-gray-400"
+                              className="text-gray-400 dark:text-gray-400"
                             ></path>
                           )}
                           {fixtureGroupArr.length > index + 1 && (
@@ -72,7 +72,7 @@ const FixturesIndexPage = props => {
                               fill="none"
                               strokeWidth={2}
                               stroke="currentColor"
-                              className="text-gray-300 dark:text-gray-400"
+                              className="text-gray-400 dark:text-gray-400"
                             />
                           )}
                         </svg>
