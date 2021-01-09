@@ -11,12 +11,20 @@ const MslPlayerStatsItem = ({ stats }) => {
         value={allSeasonStats.goals}
       ></MslTotalStatsItem>
       <MslTotalStatsItem
-        title={`Assists`}
-        value={allSeasonStats.assists}
+        title={`Mom`}
+        value={allSeasonStats.mom}
       ></MslTotalStatsItem>
       <MslTotalStatsItem
         title={`Mos`}
         value={allSeasonStats.mos}
+      ></MslTotalStatsItem>
+      <MslTotalStatsItem
+        title={`Assists`}
+        value={allSeasonStats.assists}
+      ></MslTotalStatsItem>
+      <MslTotalStatsItem
+        title={`Saves`}
+        value={allSeasonStats.saves}
       ></MslTotalStatsItem>
       <MslTotalStatsItem
         title={`Yellow Cards`}
@@ -25,14 +33,6 @@ const MslPlayerStatsItem = ({ stats }) => {
       <MslTotalStatsItem
         title={`Red Cards`}
         value={allSeasonStats.red_cards}
-      ></MslTotalStatsItem>
-      <MslTotalStatsItem
-        title={`Mom`}
-        value={allSeasonStats.mom}
-      ></MslTotalStatsItem>
-      <MslTotalStatsItem
-        title={`Saves`}
-        value={allSeasonStats.saves}
       ></MslTotalStatsItem>
     </div>
   )

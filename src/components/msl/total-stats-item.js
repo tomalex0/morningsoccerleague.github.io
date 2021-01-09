@@ -21,7 +21,7 @@ const MslTotalStatsItem = ({ title, value, children = icon }) => {
   return (
     <div className="flex py-2 px-2 bg-white  dark:bg-gray-800  rounded-xl shadow-md items-center ">
       <div>{children}</div>
-      <div className="ml-4">
+      <div className="ml-2 md:ml-4">
         <p className="text-base font-medium text-gray-900 dark:text-gray-300">
           {title}
         </p>
