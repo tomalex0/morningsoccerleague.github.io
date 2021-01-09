@@ -1,7 +1,10 @@
 import { Link } from "gatsby"
 import React from "react"
 
+const FbFrameLazy = React.lazy(() => import("components/msl/fb-frame"))
+
 const MslMission = ({ player }) => {
+  const isSSR = typeof window === "undefined"
   return (
     <div className="pt-12 bg-gray-50 dark:bg-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,18 +62,13 @@ const MslMission = ({ player }) => {
                         <p className="ml-2">Follow us on..</p>
                       </li>
                     </ul>
-                    <p>
-                      {" "}
-                      <iframe
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmorningsoccerleague%2F&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=108821693720"
-                        width="100%"
-                        height="100%"
-                        style={{ border: "none", overflow: "hidden" }}
-                        scrolling="no"
-                        frameBorder={0}
-                        allowTransparency="true"
-                      />
-                    </p>
+                    <div className="h-32">
+                      {!isSSR && (
+                        <React.Suspense fallback={<div>&nbsp;</div>}>
+                          <FbFrameLazy />
+                        </React.Suspense>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
