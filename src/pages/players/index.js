@@ -1,10 +1,12 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
 import MslPlayerStatsItem from "components/msl/player-stats-item"
 import MslPlayerItem from "components/msl/player-item"
+
+import { predicate } from "graphql/lib/utility"
 
 import {
   MslPlayersJsonFragment,
@@ -13,27 +15,72 @@ import {
   MslPlayerStatsFragment,
 } from "data/fragments"
 
+const sort_by = (field, reverse, primer) => {
+  const key = primer
+    ? function (x) {
+        return primer(x[field])
+      }
+    : function (x) {
+        return x[field]
+      }
+
+  reverse = !reverse ? 1 : -1
+
+  return function (a, b) {
+    return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a))
+  }
+}
+
 const PlayersIndex = ({ data, path }) => {
   const { players } = data
-
-  const [playerList, setPlayerList] = useState(players.nodes)
+  const playersFormatted = players.nodes.map(item => ({
+    ...item,
+    ...item?.playerStats?.allseasonStats,
+  }))
+  const [playerList, setPlayerList] = useState(playersFormatted)
   const [searchQuery, setSearchQuery] = useState("")
+  const [sortState, setSortState] = useState("name")
+  const [orderState, setOrderState] = useState(0)
 
   function handleInputChange(event) {
     const query = event.target.value
     setSearchQuery(query)
-    const filteredData = players.nodes.filter(player => {
-      // destructure data from post frontmatter
-      const { name } = player
-      return (
-        // standardize data with .toLowerCase()
-        // return true if the description, title or tags
-        // contains the query string
-        name.toLowerCase().includes(query.toLowerCase())
-      )
-    })
-    setPlayerList(filteredData)
   }
+
+  function handleSortChange(event) {
+    const sortKey = event.target.value
+    setSortState(sortKey)
+  }
+
+  function handleOrderChange(event) {
+    const sortOrder = event.target.value
+    setOrderState(sortOrder)
+  }
+  useEffect(() => {
+    function searchFilter(query, sortKey, sortOrder) {
+      var filteredData = [...playersFormatted].filter(player => {
+        // destructure data from post frontmatter
+        const { name } = player
+        return (
+          // standardize data with .toLowerCase()
+          // return true if the description, title or tags
+          // contains the query string
+          name.toLowerCase().includes(query.toLowerCase())
+        )
+      })
+
+      filteredData = filteredData.slice().sort(
+        predicate({
+          name: `${sortKey}`,
+          reverse: Boolean(parseInt(sortOrder)),
+        })
+      )
+
+      setPlayerList(filteredData)
+    }
+
+    searchFilter(searchQuery, sortState, orderState)
+  }, [searchQuery, sortState, orderState])
 
   return (
     <Layout>
@@ -60,34 +107,36 @@ const PlayersIndex = ({ data, path }) => {
                 className="appearance-none  focus:ring-2 focus:ring-indigo-600 w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-8 shadow-md"
                 aria-label="Search"
                 placeholder="Type to filter players..."
-                onChange={handleInputChange}
+                onChange={e => setSearchQuery(e.target.value)}
               />
             </div>
             <select
               id="sortby"
               name="sortby"
               autoComplete="sortby"
+              onChange={e => setSortState(e.target.value)}
               className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-24"
             >
-              <option>Sort By</option>
-              <option>Name</option>
-              <option>Goals</option>
-              <option>Assists</option>
-              <option>Mos</option>
-              <option>Yellow Cards</option>
-              <option>Red Cards</option>
-              <option>Mom</option>
-              <option>Saves</option>
+              <option value="name">Sort By</option>
+              <option value="name">Name</option>
+              <option value="goals">Goals</option>
+              <option value="assists">Assists</option>
+              <option value="mos">Mos</option>
+              <option value="yellow_cards">Yellow Cards</option>
+              <option value="red_cards">Red Cards</option>
+              <option value="mom">Mom</option>
+              <option value="saves">Saves</option>
             </select>
 
             <select
               id="orderby"
               name="orderby"
               autoComplete="orderby"
+              onChange={e => setOrderState(e.target.value)}
               className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-18"
             >
-              <option>ASC</option>
-              <option>DESC</option>
+              <option value="0">ASC</option>
+              <option value="1">DESC</option>
             </select>
           </form>
 
@@ -114,33 +163,37 @@ const PlayersIndex = ({ data, path }) => {
           {/*  />*/}
           {/*</div>*/}
           <div className="mt-2 text-gray-600 dark:text-gray-300 text-left">
-            {playerList.length} Results
+            {playerList.length} Results {searchQuery} {sortState.toString()}{" "}
+            {orderState.toString()}
           </div>
         </div>
-
-        {playerList.length > 0 &&
-          playerList.map(player => (
-            <div className="mb-7 pt-5" key={player.player_id}>
-              <MslPlayerItem
-                player={player}
-                fontSize="text-md md:text-lg"
-                playerNameCss="font-medium text-gray-600 dark:text-gray-300"
-                imageWidth="w-14"
-                imageHeight="h-14"
-                showImage={true}
-              />
-              <div>
-                <MslPlayerStatsItem
-                  stats={player?.playerStats?.allseasonStats}
+        <div>
+          {playerList.length > 0 &&
+            playerList.map(player => (
+              <div className="mb-7 pt-5" key={player.player_id}>
+                <MslPlayerItem
+                  player={player}
+                  fontSize="text-md md:text-lg"
+                  playerNameCss="font-medium text-gray-600 dark:text-gray-300"
+                  imageWidth="w-14"
+                  imageHeight="h-14"
+                  showImage={true}
                 />
+                <div>
+                  <MslPlayerStatsItem
+                    stats={player?.playerStats?.allseasonStats}
+                  />
+                </div>
               </div>
+            ))}
+        </div>
+        <div>
+          {playerList.length <= 0 && (
+            <div className="text-center p-4 text-white text-xl">
+              Player Not Found
             </div>
-          ))}
-        {playerList.length <= 0 && (
-          <div className="text-center p-4 text-white text-xl">
-            Player Not Found
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </Layout>
   )
