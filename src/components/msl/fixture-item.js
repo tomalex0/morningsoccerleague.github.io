@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import React from "react"
 
 const MslFixtureItem = ({ fixture }) => {
-  console.log(fixture)
   return (
     <div className="flex space-x-0 text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-2xl shadow-inner mb-4 p-2">
       <div className="rounded-l-md flex-grow space-x-1  flex-shrink-0 w-16 text-sm md:text-base flex items-center justify-center">
