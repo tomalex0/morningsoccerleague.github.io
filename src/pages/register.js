@@ -22,7 +22,7 @@ const IndexPage = ({ path }) => {
               <MslLazyFrame
                 src="https://docs.google.com/forms/d/e/1FAIpQLScU7tT25geKChwExgov8qDkwVlkPs1i_D7Otv9OGalAcKoPRA/viewform?embedded=true"
                 height="450"
-                className="rounded-md shadow-md bg-gray-800 py-10"
+                className="rounded-md shadow-md bg-gray-100 dark:bg-gray-800 py-10"
               />
             </React.Suspense>
           )}
