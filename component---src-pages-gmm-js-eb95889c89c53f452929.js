@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{QfMZ:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),r=t.n(a),u=(t("Wbzz"),t("Bl7J")),i=t("vrFN");n.default=function IndexPage(e){var n=e.path;return r.a.createElement(u.a,null,r.a.createElement(i.a,{title:"Guaranteed Minimum Minutes",path:n}),r.a.createElement("h1",null,"Hi GMM"))}}}]);
-//# sourceMappingURL=component---src-pages-gmm-js-eb95889c89c53f452929.js.map
