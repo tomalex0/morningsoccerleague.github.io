@@ -6,6 +6,7 @@ const MslLazyFrame = ({
   width = "100%",
   height = "100%",
   className = "",
+  scrolling = "no",
 }) => {
   return (
     <iframe
@@ -13,7 +14,7 @@ const MslLazyFrame = ({
       width={width}
       height={height}
       className={`object-cover w-full ${className}`}
-      scrolling="no"
+      scrolling={scrolling}
       frameBorder={0}
       allowTransparency="true"
     />
