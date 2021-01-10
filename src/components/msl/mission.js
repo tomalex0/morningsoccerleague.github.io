@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 
-const FbFrameLazy = React.lazy(() => import("components/msl/fb-frame"))
+const MslLazyFrame = React.lazy(() => import("components/msl/lazy-frame"))
 
 const MslMission = ({ player }) => {
   const isSSR = typeof window === "undefined"
@@ -65,7 +65,7 @@ const MslMission = ({ player }) => {
                     <div className="h-32">
                       {!isSSR && (
                         <React.Suspense fallback={<div>&nbsp;</div>}>
-                          <FbFrameLazy />
+                          <MslLazyFrame src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmorningsoccerleague%2F&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=108821693720" />
                         </React.Suspense>
                       )}
                     </div>

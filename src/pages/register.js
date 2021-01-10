@@ -11,18 +11,18 @@ const IndexPage = ({ path }) => {
   const isSSR = typeof window === "undefined"
   return (
     <Layout>
-      <SEO title="Rules" path={path} />
+      <SEO title="Register" path={path} />
       <div className=" mx-auto px-5 mt-10">
         <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate mb-4">
-          Rules
+          Register
         </h1>
         <div>
           {!isSSR && (
             <React.Suspense fallback={<div>&nbsp;</div>}>
               <MslLazyFrame
-                src="https://docs.google.com/document/d/e/2PACX-1vR--CaAYvakxKnHSqDpYqcWV0Rc-2BvqWX6Jph9ieH1P-11BIMWOtxDETui5vawTNcqB1ir5xaS-GwU/pub?embedded=true"
-                height="3550"
-                className="rounded-md shadow-md"
+                src="https://docs.google.com/forms/d/e/1FAIpQLScU7tT25geKChwExgov8qDkwVlkPs1i_D7Otv9OGalAcKoPRA/viewform?embedded=true"
+                height="450"
+                className="rounded-md shadow-md bg-gray-800 py-10"
               />
             </React.Suspense>
           )}
