@@ -8,7 +8,7 @@ const MslFixtureGroup = ({ item, fixtureGroupArr, index, fixtureGroup }) => {
   const toggleAccordionState = () => setIsOpen(value => !value)
   const dateval = formatDateString(`${item}`)
   return (
-    <li key={item}>
+    <li>
       <article>
         <div className="grid md:grid-cols-7 xl:grid-cols-7 items-start relative p-3 pl-1 sm:p-5  sm:pl-1 xl:p-6 xl:pl-1 overflow-hidden">
           <button
@@ -62,7 +62,8 @@ const MslFixtureGroup = ({ item, fixtureGroupArr, index, fixtureGroup }) => {
                 <MslFixtureItem
                   fixture={fixture}
                   index={index + 1}
-                  key={fixture.schedule_id}
+                  id={`schedule_${fixture?.schedule_id}`}
+                  key={`schedule_${fixture?.schedule_id}`}
                 />
               )
             })}

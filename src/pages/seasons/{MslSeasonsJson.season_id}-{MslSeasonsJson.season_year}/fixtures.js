@@ -48,6 +48,8 @@ const FixturesIndexPage = props => {
                   index={index}
                   fixtureGroupArr={fixtureGroupArr}
                   fixtureGroup={fixtureGroup}
+                  key={`fixture_${item}`}
+                  id={`fixture_${item}`}
                 />
               )
             })}

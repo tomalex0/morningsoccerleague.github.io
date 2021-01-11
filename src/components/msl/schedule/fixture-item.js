@@ -6,7 +6,7 @@ const MslFixtureItem = ({ fixture }) => {
   const home = fixture?.home
   const away = fixture?.away
   return (
-    <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-2xl shadow-inner my-4 p-2 ">
+    <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-2xl shadow-inner my-4 p-2">
       <div className="flex space-x-0 relative">
         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 absolute -left-3 -top-3">
           {fixture.pos}
@@ -23,10 +23,12 @@ const MslFixtureItem = ({ fixture }) => {
       <ul>
         <h2 className="text-lg font-bold">Referees</h2>
         {fixture.referees &&
-          fixture.referees.map(item => {
-            console.log(item?.team)
+          fixture.referees.map((item, index) => {
             return (
-              <li>
+              <li
+                id={`${fixture.schedule_id}_ref_${index}`}
+                key={`${fixture.schedule_id}_ref_${index}`}
+              >
                 {item?.player?.name} - {item?.team?.teamName}
               </li>
             )
@@ -34,10 +36,20 @@ const MslFixtureItem = ({ fixture }) => {
       </ul>
       <div className="flex space-x-0 relative">
         <div className="flex-grow space-x-1  flex-shrink-0 text-sm md:text-base flex">
-          <MslScheduleGameStats team={home} />
+          <MslScheduleGameStats
+            team={home}
+            fixture={fixture}
+            key={`home_${fixture.schedule_id}`}
+            id={`home_${fixture.schedule_id}`}
+          />
         </div>
         <div className="flex-grow space-x-1  flex-shrink-0 text-sm md:text-base flex">
-          <MslScheduleGameStats team={away} />
+          <MslScheduleGameStats
+            team={away}
+            fixture={fixture}
+            key={`away_${fixture.schedule_id}`}
+            id={`away_${fixture.schedule_id}`}
+          />
         </div>
       </div>
     </div>
