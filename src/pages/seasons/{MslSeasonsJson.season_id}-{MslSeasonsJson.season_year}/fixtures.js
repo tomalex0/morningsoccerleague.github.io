@@ -19,6 +19,7 @@ const FixturesIndexPage = props => {
   const fixtures = props.data.season.schedules
     .map(item => ({ ...item, sortdate: new Date(item.scheduled_date) }))
     .sort((a, b) => a.sortdate - b.sortdate)
+    .map((item, index) => ({ ...item, pos: index + 1 }))
 
   const fixtureGroup = groupBy(fixtures, "scheduled_date")
   const fixtureGroupArr = Object.keys(fixtureGroup)
@@ -33,6 +34,11 @@ const FixturesIndexPage = props => {
           <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate mb-4">
             Season {seasonData.season_id} ({seasonData.season_year}) Fixtures
           </h1>
+
+          <div className="my-2 text-gray-600 dark:text-gray-300 text-left">
+            Total Games {fixtures.length}
+          </div>
+
           <ul className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-2 sm:p-5 xl:p-6">
             {fixtureGroupArr.map((item, index) => {
               const dateval = formatDateString(`${item}`)
@@ -81,10 +87,11 @@ const FixturesIndexPage = props => {
                         </div>
                       </time>
                       <div className="col-span-7 ml-5 mt-2">
-                        {fixtureGroup[item].map(fixture => {
+                        {fixtureGroup[item].map((fixture, index) => {
                           return (
                             <MslFixtureItem
                               fixture={fixture}
+                              index={index + 1}
                               key={fixture.schedule_id}
                             />
                           )

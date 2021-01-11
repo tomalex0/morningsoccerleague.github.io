@@ -1,10 +1,13 @@
 import { Link } from "gatsby"
 import React from "react"
 
-const MslFixtureItem = ({ fixture }) => {
+const MslFixtureItem = ({ fixture, index }) => {
   return (
     <div className="flex space-x-0 text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-2xl shadow-inner mb-4 p-2">
       <div className="rounded-l-md flex-grow space-x-1  flex-shrink-0 w-16 text-sm md:text-base flex items-center justify-center">
+        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+          {fixture.pos}
+        </span>
         <div className="flex-grow h-16 rounded-md font-bold flex items-center justify-end pl-2">
           <Link to={fixture?.home?.team?.teamPath}>
             {fixture?.home?.team?.teamName}

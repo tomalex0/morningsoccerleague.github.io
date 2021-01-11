@@ -88,7 +88,6 @@ const PlayersIndex = ({ data, path }) => {
       <div className="mt-5 px-5 divide-y divide-gray-300">
         <div className="mb-3 text-center">
           <form className="flex w-full max-w-lg mx-auto space-l-0 space-x-2 relative">
-            {/*<input className="flex-1 appearance-none border border-transparent w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded-md text-base focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" type="email" placeholder="Your email" />*/}
             <div className="flex-1 ">
               <svg
                 width="20"
