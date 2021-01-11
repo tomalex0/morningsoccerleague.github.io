@@ -23,7 +23,7 @@ const IndexPage = ({ path }) => {
                 src="https://docs.google.com/document/d/e/2PACX-1vR--CaAYvakxKnHSqDpYqcWV0Rc-2BvqWX6Jph9ieH1P-11BIMWOtxDETui5vawTNcqB1ir5xaS-GwU/pub?embedded=true"
                 height="3550"
                 scrolling="yes"
-                className="rounded-md shadow-md"
+                className="rounded-md bg-gray-100 dark:bg-gray-800 shadow-md"
               />
             </React.Suspense>
           )}
