@@ -47,7 +47,7 @@ const FixturesIndexPage = props => {
                   <article>
                     <div className="grid md:grid-cols-7 xl:grid-cols-7 items-start relative rounded-xl p-3 sm:p-5 xl:p-6 overflow-hidden">
                       <time
-                        dateTime="2020-11-18T17:45:00.000Z"
+                        dateTime={item}
                         className="md:col-start-1 md:col-span-2 row-start-1 md:row-end-3 flex items-center font-medium mb-1 md:mb-0"
                       >
                         <svg
