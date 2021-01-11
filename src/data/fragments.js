@@ -89,6 +89,17 @@ export const MslCautionJsonFragment = graphql`
   }
 `
 
+export const MslSchedulesJsonRefereesFragment = graphql`
+  fragment MslSchedulesJsonRefereesFragment on MslSchedulesJsonReferees {
+    player {
+      ...MslPlayersJsonFragment
+    }
+    team {
+      ...MslTeamsJsonFragment
+    }
+  }
+`
+
 export const MslSeasonsJsonFragment = graphql`
   fragment MslSeasonsJsonFragment on MslSeasonsJson {
     season_year
@@ -195,6 +206,9 @@ export const MslSeasonsJsonStatsFragment = graphql`
       scheduled_date
       schedule_id
       completed
+      referees {
+        ...MslSchedulesJsonRefereesFragment
+      }
       gamestats {
         ...MslGameStatsFragment
       }

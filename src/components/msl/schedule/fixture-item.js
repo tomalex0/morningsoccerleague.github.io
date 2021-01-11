@@ -20,6 +20,18 @@ const MslFixtureItem = ({ fixture }) => {
       {/*<div className="justify-center items-center text-center">*/}
       {/*  <button>Collapse</button>*/}
       {/*</div>*/}
+      <ul>
+        <h2 className="text-lg font-bold">Referees</h2>
+        {fixture.referees &&
+          fixture.referees.map(item => {
+            console.log(item?.team)
+            return (
+              <li>
+                {item?.player?.name} - {item?.team?.teamName}
+              </li>
+            )
+          })}
+      </ul>
       <div className="flex space-x-0 relative">
         <div className="flex-grow space-x-1  flex-shrink-0 text-sm md:text-base flex">
           <MslScheduleGameStats team={home} />
