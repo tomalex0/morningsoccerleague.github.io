@@ -42,7 +42,7 @@ const FixturesIndexPage = props => {
             <div className="flex-grow text-gray-600 dark:text-gray-300 text-left items-center content-center py-2">
               {fixtures.length} Games{" "}
             </div>
-            <div className="flex-shrink w-12 mr-3">
+            <div className="flex-shrink w-12 space-x-2">
               <button
                 onClick={() => {
                   setIsOpen(true)
@@ -53,7 +53,7 @@ const FixturesIndexPage = props => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="w-8 h-8 mr-6 overflow-visible text-indigo-700 dark:text-indigo-400"
+                  className="w-8 h-8 overflow-visible text-indigo-700 dark:text-indigo-400"
                 >
                   <path
                     fill-rule="evenodd"
