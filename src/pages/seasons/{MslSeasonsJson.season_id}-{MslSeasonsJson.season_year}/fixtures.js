@@ -38,11 +38,11 @@ const FixturesIndexPage = props => {
             Season {seasonData.season_id} ({seasonData.season_year}) Fixtures
           </h1>
 
-          <div className="flex my-2">
+          <div className="flex my-2 space-x-2">
             <div className="flex-grow text-gray-600 dark:text-gray-300 text-left items-center content-center py-2">
               {fixtures.length} Games{" "}
             </div>
-            <div className="flex-shrink w-12 space-x-2">
+            <div className="flex-shrink w-12">
               <button
                 onClick={() => {
                   setIsOpen(true)
