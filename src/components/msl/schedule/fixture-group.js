@@ -1,12 +1,24 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import MslFixtureItem from "components/msl/schedule/fixture-item"
 import { formatDateString } from "graphql/lib/utility"
 
-const MslFixtureGroup = ({ item, fixtureGroupArr, index, fixtureGroup }) => {
-  const [isOpen, setIsOpen] = useState(true)
+const MslFixtureGroup = ({
+  item,
+  fixtureGroupArr,
+  index,
+  fixtureGroup,
+  openState,
+}) => {
+  const [isOpen, setIsOpen] = useState(openState)
   const toggleAccordionState = () => setIsOpen(value => !value)
   const dateval = formatDateString(`${item}`)
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    setIsOpen(openState)
+  }, [openState])
+
   return (
     <li>
       <article>
@@ -34,7 +46,7 @@ const MslFixtureGroup = ({ item, fixtureGroupArr, index, fixtureGroup }) => {
                 />
                 {index > 0 && (
                   <path
-                    d="M 6 -6 V -35"
+                    d="M 6 -6 V -38"
                     fill="none"
                     stroke-width="2"
                     stroke="currentColor"

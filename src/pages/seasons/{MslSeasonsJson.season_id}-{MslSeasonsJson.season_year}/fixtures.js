@@ -24,6 +24,8 @@ const FixturesIndexPage = props => {
   const fixtureGroup = groupBy(fixtures, "scheduled_date")
   const fixtureGroupArr = Object.keys(fixtureGroup)
 
+  const [isOpen, setIsOpen] = useState(true)
+
   return (
     <Layout>
       <SEO
@@ -36,16 +38,60 @@ const FixturesIndexPage = props => {
             Season {seasonData.season_id} ({seasonData.season_year}) Fixtures
           </h1>
 
-          <div className="my-2 text-gray-600 dark:text-gray-300 text-left">
-            Total Games {fixtures.length}
+          <div className="flex my-2">
+            <div className="flex-grow text-gray-600 dark:text-gray-300 text-left items-center content-center py-2">
+              {fixtures.length} Games{" "}
+            </div>
+            <div className="flex-shrink w-12 mr-3">
+              <button
+                onClick={() => {
+                  setIsOpen(true)
+                }}
+                className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="w-8 h-8 mr-6 overflow-visible text-indigo-700 dark:text-indigo-400"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="flex-shrink w-12">
+              <button
+                onClick={() => {
+                  setIsOpen(false)
+                }}
+                className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="w-8 h-8 overflow-visible text-indigo-700 dark:text-indigo-400"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-
           <ul className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-2 sm:p-5 xl:p-6">
             {fixtureGroupArr.map((item, index) => {
               return (
                 <MslFixtureGroup
                   item={item}
                   index={index}
+                  openState={isOpen}
                   fixtureGroupArr={fixtureGroupArr}
                   fixtureGroup={fixtureGroup}
                   key={`fixture_${item}`}
