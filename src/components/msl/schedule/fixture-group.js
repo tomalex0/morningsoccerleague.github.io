@@ -10,8 +10,11 @@ const MslFixtureGroup = ({ item, fixtureGroupArr, index, fixtureGroup }) => {
   return (
     <li key={item}>
       <article>
-        <div className="grid md:grid-cols-7 xl:grid-cols-7 items-start relative rounded-xl p-3 sm:p-5 xl:p-6 overflow-hidden">
-          <button className="w-max" onClick={toggleAccordionState}>
+        <div className="grid md:grid-cols-7 xl:grid-cols-7 items-start relative p-3 pl-1 sm:p-5  sm:pl-1 xl:p-6 xl:pl-1 overflow-hidden">
+          <button
+            className="w-max p-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
+            onClick={toggleAccordionState}
+          >
             <time
               dateTime={item}
               className="md:col-start-1 md:col-span-2 row-start-1 md:row-end-3 flex items-center font-medium mb-1 md:mb-0"
@@ -31,7 +34,7 @@ const MslFixtureGroup = ({ item, fixtureGroupArr, index, fixtureGroup }) => {
                 />
                 {index > 0 && (
                   <path
-                    d="M 6 -6 V -30"
+                    d="M 6 -6 V -35"
                     fill="none"
                     stroke-width="2"
                     stroke="currentColor"
@@ -52,7 +55,7 @@ const MslFixtureGroup = ({ item, fixtureGroupArr, index, fixtureGroup }) => {
             </time>
           </button>
           <div
-            className={`col-span-7 ml-5 mt-2 ${isOpen ? "block" : "hidden"}`}
+            className={`col-span-7 ml-7 mt-2 ${isOpen ? "block" : "hidden"}`}
           >
             {fixtureGroup[item].map((fixture, index) => {
               return (
