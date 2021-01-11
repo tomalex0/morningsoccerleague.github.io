@@ -164,3 +164,4 @@ A quick look at the top-level files and directories you'll see in this project.
 - Timeline https://play.tailwindcss.com/tURuNZWLWv
 - Timeline https://play.tailwindcss.com/L4TElyjsg6
 - Timeline https://play.tailwindcss.com/PljQLobaeo
+- Animation https://play.tailwindcss.com/Y9WxkoDmbl?file=css
