@@ -51,7 +51,7 @@ const MslFixtureItem = ({ fixture }) => {
       </div>
       <div>
         <h2 className="text-lg font-bold px-3 my-2 text-gray-800">Referees</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 px-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 px-3">
           {fixture.referees &&
             fixture.referees.map((item, index) => {
               return (
