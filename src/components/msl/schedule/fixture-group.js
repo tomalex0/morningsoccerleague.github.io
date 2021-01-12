@@ -10,13 +10,13 @@ const MslFixtureGroup = ({
   fixtureGroup,
   openState,
 }) => {
-  const [isOpen, setIsOpen] = useState(openState)
+  const [isOpen, setIsOpen] = useState(openState.val)
   const toggleAccordionState = () => setIsOpen(value => !value)
   const dateval = formatDateString(`${item}`)
 
   useEffect(() => {
     // Update the document title using the browser API
-    setIsOpen(openState)
+    setIsOpen(openState.val)
   }, [openState])
 
   return (

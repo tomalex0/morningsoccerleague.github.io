@@ -24,7 +24,7 @@ const FixturesIndexPage = props => {
   const fixtureGroup = groupBy(fixtures, "scheduled_date")
   const fixtureGroupArr = Object.keys(fixtureGroup)
 
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState({ val: true })
 
   return (
     <Layout>
@@ -45,7 +45,7 @@ const FixturesIndexPage = props => {
             <div className="flex-shrink w-12">
               <button
                 onClick={() => {
-                  setIsOpen(true)
+                  setIsOpen({ val: true })
                 }}
                 className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
               >
@@ -66,7 +66,7 @@ const FixturesIndexPage = props => {
             <div className="flex-shrink w-12">
               <button
                 onClick={() => {
-                  setIsOpen(false)
+                  setIsOpen({ val: false })
                 }}
                 className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
               >
