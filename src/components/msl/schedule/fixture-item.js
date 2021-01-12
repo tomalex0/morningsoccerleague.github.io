@@ -31,7 +31,7 @@ const MslFixtureItem = ({ fixture }) => {
       {/*  <button>Collapse</button>*/}
       {/*</div>*/}
 
-      <div className="flex space-x-0 relative">
+      <div className="flex flex-col sm:flex-row md:flex-row space-x-0 relative">
         <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base flex">
           <MslScheduleGameStats
             team={home}

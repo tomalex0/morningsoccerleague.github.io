@@ -26,7 +26,7 @@ const MslScheduleGameStats = ({ team, fixture, id }) => {
         {goalsSorted?.length > 0 && (
           <div className="border-t border-gray-200">
             <dl>
-              <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-2 sm:px-2">
                 <dt className="text-sm font-medium text-gray-500">Goals</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   <ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
@@ -60,7 +60,7 @@ const MslScheduleGameStats = ({ team, fixture, id }) => {
         {team?.cautions?.length > 0 && (
           <div className="border-t border-gray-200">
             <dl>
-              <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-2 sm:px-2">
                 <dt className="text-sm font-medium text-gray-500">Cautions</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   <ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
@@ -87,7 +87,7 @@ const MslScheduleGameStats = ({ team, fixture, id }) => {
         {team?.mom && (
           <div className="border-t border-gray-200">
             <dl>
-              <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-2 sm:px-2">
                 <dt className="text-sm font-medium text-gray-500">Mom</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   <ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
