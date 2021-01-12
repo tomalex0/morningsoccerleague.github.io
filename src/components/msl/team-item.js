@@ -13,7 +13,7 @@ const MslTeamItem = ({ team, cssName = "text-gray-900" }) => {
       </div>
       <div className="ml-1">
         <div className={`text-sm font-medium ${cssName}`}>
-          <Link to={team.teamPath}>{team.teamName}</Link>
+          <Link to={team.teamPath}>{team.teamName} &rarr;</Link>
         </div>
       </div>
     </div>

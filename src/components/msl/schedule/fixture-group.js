@@ -20,7 +20,7 @@ const MslFixtureGroup = ({
   }, [openState])
 
   return (
-    <li>
+    <li key={`fixture_${item}`} id={`fixture_${item}`}>
       <article>
         <div className="grid md:grid-cols-7 xl:grid-cols-7 items-start relative p-3 pl-1 sm:p-5  sm:pl-1 xl:p-6 xl:pl-1 overflow-hidden">
           <button

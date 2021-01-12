@@ -2,13 +2,22 @@ import { Link } from "gatsby"
 import React from "react"
 import MslGoalInfo from "components/msl/schedule/goal-info"
 import MslScheduleGameStats from "components/msl/schedule/game-stats"
+import MslTeamItem from "components/msl/team-item"
+import MslPlayerItem from "components/msl/player-item"
+
 const MslFixtureItem = ({ fixture }) => {
   const home = fixture?.home
   const away = fixture?.away
   return (
-    <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-2xl shadow-inner my-4 p-2">
-      <div>
-        {fixture.pos} - {fixture.scheduled_time}
+    <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-inner overflow-hidden my-4 p-2">
+      <div className="flex items-center flex-row -m-2 pt-2 px-2">
+        <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full">
+          {fixture.pos}
+        </div>
+        <div className="flex-grow "></div>
+        <div className="flex-shrink w-20 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full">
+          {fixture.scheduled_time}
+        </div>
       </div>
       <div className="flex space-x-0 relative">
         {/*<span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 absolute -left-3 -top-3"></span>*/}
@@ -21,20 +30,7 @@ const MslFixtureItem = ({ fixture }) => {
       {/*<div className="justify-center items-center text-center">*/}
       {/*  <button>Collapse</button>*/}
       {/*</div>*/}
-      <ul>
-        <h2 className="text-lg font-bold">Referees</h2>
-        {fixture.referees &&
-          fixture.referees.map((item, index) => {
-            return (
-              <li
-                id={`${fixture.schedule_id}_ref_${index}`}
-                key={`${fixture.schedule_id}_ref_${index}`}
-              >
-                {item?.player?.name} - {item?.team?.teamName}
-              </li>
-            )
-          })}
-      </ul>
+
       <div className="flex space-x-0 relative">
         <div className="flex-grow space-x-1  flex-shrink-0 text-sm md:text-base flex">
           <MslScheduleGameStats
@@ -51,6 +47,31 @@ const MslFixtureItem = ({ fixture }) => {
             key={`away_${fixture.schedule_id}`}
             id={`away_${fixture.schedule_id}`}
           />
+        </div>
+      </div>
+      <div>
+        <h2 className="text-lg font-bold px-3 my-2 text-gray-800">Referees</h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 px-3">
+          {fixture.referees &&
+            fixture.referees.map((item, index) => {
+              return (
+                <div
+                  className="text-sm rounded-md shadow-md p-2 bg-white  dark:bg-gray-800 text-gray-100"
+                  id={`${fixture.schedule_id}_ref_${index}`}
+                  key={`${fixture.schedule_id}_ref_${index}`}
+                >
+                  <MslPlayerItem
+                    player={item?.player}
+                    playerNameCss="font-medium text-gray-800 dark:text-gray-300"
+                  />
+                  <div className="mt-2"></div>
+                  <MslTeamItem
+                    team={item?.team}
+                    cssName="font-medium text-gray-800 dark:text-gray-300"
+                  />
+                </div>
+              )
+            })}
         </div>
       </div>
     </div>

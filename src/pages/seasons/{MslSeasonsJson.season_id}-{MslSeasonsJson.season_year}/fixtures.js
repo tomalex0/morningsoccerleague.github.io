@@ -16,7 +16,6 @@ const FixturesIndexPage = props => {
   const path = props.path
   const pageContext = props.pageContext
   const seasonData = props.data.season
-  console.log(props.data.season.schedules, "--34-3-")
   const fixtures = props.data.season.schedules
     .map(item => ({
       ...item,
@@ -29,7 +28,6 @@ const FixturesIndexPage = props => {
   const fixtureGroupArr = Object.keys(fixtureGroup)
 
   const [isOpen, setIsOpen] = useState({ val: true })
-
   return (
     <Layout>
       <SEO
@@ -98,8 +96,6 @@ const FixturesIndexPage = props => {
                   openState={isOpen}
                   fixtureGroupArr={fixtureGroupArr}
                   fixtureGroup={fixtureGroup}
-                  key={`fixture_${item}`}
-                  id={`fixture_${item}`}
                 />
               )
             })}

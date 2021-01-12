@@ -11,7 +11,7 @@ const MslPlayerItem = ({
   playerNameCss = "font-medium text-gray-600 dark:text-gray-900",
   showImage = false,
 }) => {
-  const playerInitials = getInitials(player.name)
+  const playerInitials = getInitials(player?.name)
   return (
     <div className="flex items-center">
       {showImage && (
@@ -30,7 +30,7 @@ const MslPlayerItem = ({
       )}
       <div>
         <div className={`${fontSize} ${playerNameCss}`}>
-          <Link to={player.playerPath}>{player.name} &rarr;</Link>
+          {player && <Link to={player?.playerPath}>{player?.name} &rarr;</Link>}
         </div>
       </div>
     </div>
