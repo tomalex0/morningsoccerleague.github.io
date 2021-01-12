@@ -38,7 +38,6 @@ const MslScheduleGameStats = ({ team, fixture, id }) => {
                           key={`goal_${index}_${id}_${item?.player?.player_id}`}
                         >
                           <div className="w-0 flex-1 flex items-center">
-                            {" "}
                             <MslPlayerItem player={item?.player} />
                           </div>
                           <div className="flex-shrink-0">

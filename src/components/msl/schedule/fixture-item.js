@@ -32,7 +32,7 @@ const MslFixtureItem = ({ fixture }) => {
       {/*</div>*/}
 
       <div className="flex space-x-0 relative">
-        <div className="flex-grow space-x-1  flex-shrink-0 text-sm md:text-base flex">
+        <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base flex">
           <MslScheduleGameStats
             team={home}
             fixture={fixture}
@@ -40,7 +40,7 @@ const MslFixtureItem = ({ fixture }) => {
             id={`home_${fixture.schedule_id}`}
           />
         </div>
-        <div className="flex-grow space-x-1  flex-shrink-0 text-sm md:text-base flex">
+        <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base flex">
           <MslScheduleGameStats
             team={away}
             fixture={fixture}
