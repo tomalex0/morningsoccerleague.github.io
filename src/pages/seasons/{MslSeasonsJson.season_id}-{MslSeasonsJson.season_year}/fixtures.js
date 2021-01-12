@@ -16,8 +16,12 @@ const FixturesIndexPage = props => {
   const path = props.path
   const pageContext = props.pageContext
   const seasonData = props.data.season
+  console.log(props.data.season.schedules, "--34-3-")
   const fixtures = props.data.season.schedules
-    .map(item => ({ ...item, sortdate: new Date(item.scheduled_date) }))
+    .map(item => ({
+      ...item,
+      sortdate: new Date(`${item.scheduled_date} ${item.scheduled_time}`),
+    }))
     .sort((a, b) => a.sortdate - b.sortdate)
     .map((item, index) => ({ ...item, pos: index + 1 }))
   // TODO: sort based on game start time

@@ -167,9 +167,16 @@ function getInitials(str, size = 2) {
 }
 exports.getInitials = getInitials
 
-function formatDateString(val, locale = "en") {
+function preapareDateString(val) {
   // fix this craziness https://stackoverflow.com/a/31732581
   const dateVal = val.replace(/-/g, "/")
+  return dateVal
+}
+exports.preapareDateString = preapareDateString
+
+function formatDateString(val, locale = "en") {
+  // fix this craziness https://stackoverflow.com/a/31732581
+  const dateVal = preapareDateString(val)
   return new Date(dateVal).toLocaleDateString(locale, {
     weekday: "long",
     year: "numeric",

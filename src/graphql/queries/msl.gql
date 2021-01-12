@@ -120,6 +120,7 @@ type MslPlayersJson implements Node {
 type MslSchedulesJson implements Node {
 		# Schedule to Season Mapping
   season: MslSeasonsJson @link(by: "season")
+  scheduled_time: String
   # custom field with filter capability to get stats of home & away
   stats(stats_type: ScheduleTeamStats): MslSchedulesJsonGamestats
 }

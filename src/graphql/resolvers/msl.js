@@ -319,6 +319,11 @@ module.exports = {
         return source.gamestats.find(item => item.team_type == args.stats_type)
       },
     },
+    scheduled_time: {
+      resolve(source, args, context, info) {
+        return source.scheduled_time || "6:20 AM"
+      },
+    },
   },
   MslSeasonsJson: {
     schedules: {

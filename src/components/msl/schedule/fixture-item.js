@@ -7,10 +7,11 @@ const MslFixtureItem = ({ fixture }) => {
   const away = fixture?.away
   return (
     <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-2xl shadow-inner my-4 p-2">
+      <div>
+        {fixture.pos} - {fixture.scheduled_time}
+      </div>
       <div className="flex space-x-0 relative">
-        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 absolute -left-3 -top-3">
-          {fixture.pos}
-        </span>
+        {/*<span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 absolute -left-3 -top-3"></span>*/}
         <MslGoalInfo game={fixture?.home} pos="home" />
         <div className="flex-shrink flex-shrink-0 w-2 font-bold flex items-center justify-center">
           -
