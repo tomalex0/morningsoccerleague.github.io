@@ -39,7 +39,7 @@ const FixturesIndexPage = props => {
           </h1>
 
           <div className="flex my-2 space-x-2">
-            <div className="flex-grow text-gray-600 dark:text-gray-300 text-left items-center content-center py-2">
+            <div className="flex-grow text-gray-600 dark:text-gray-300 text-left items-center content-center py-3">
               {fixtures.length} Games{" "}
             </div>
             <div className="flex-shrink w-12">
