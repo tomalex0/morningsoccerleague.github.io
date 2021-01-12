@@ -11,11 +11,11 @@ const MslFixtureItem = ({ fixture }) => {
   return (
     <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-inner overflow-hidden my-4 p-2">
       <div className="flex items-center flex-row -m-2 pt-2 px-2">
-        <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full">
+        <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-inner shadow-md">
           {fixture.pos}
         </div>
         <div className="flex-grow "></div>
-        <div className="flex-shrink w-20 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full">
+        <div className="flex-shrink w-20 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-inner shadow-md">
           {fixture.scheduled_time}
         </div>
       </div>
