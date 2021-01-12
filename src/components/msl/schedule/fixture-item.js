@@ -56,18 +56,18 @@ const MslFixtureItem = ({ fixture }) => {
             fixture.referees.map((item, index) => {
               return (
                 <div
-                  className="text-sm rounded-md shadow-md p-2 bg-white  dark:bg-gray-800 text-gray-100"
+                  className="text-sm rounded-md shadow-md p-2 bg-white dark:bg-gray-100 text-gray-100"
                   id={`${fixture.schedule_id}_ref_${index}`}
                   key={`${fixture.schedule_id}_ref_${index}`}
                 >
                   <MslPlayerItem
                     player={item?.player}
-                    playerNameCss="font-medium text-gray-800 dark:text-gray-300"
+                    playerNameCss="font-medium text-gray-800 dark:text-gray-800"
                   />
                   <div className="mt-2"></div>
                   <MslTeamItem
                     team={item?.team}
-                    cssName="font-medium text-gray-800 dark:text-gray-300"
+                    cssName="font-medium text-gray-800 dark:text-gray-800"
                   />
                 </div>
               )
