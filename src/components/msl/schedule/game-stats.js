@@ -16,9 +16,9 @@ const MslScheduleGameStats = ({ team, fixture, id, pos }) => {
       <div className="bg-white dark:bg-gray-100 shadow overflow-hidden rounded-md m-3">
         <div className="border-t border-gray-200">
           <dl>
-            <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-2 sm:px-2">
+            <div className="px-2 py-2 grid grid-cols-3 gap-2 px-2">
               <dt className="text-sm font-medium text-gray-500">Fouls</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <dd className="text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {team.fouls}
               </dd>
             </div>
