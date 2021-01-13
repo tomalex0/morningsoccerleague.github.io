@@ -1,20 +1,56 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState } from "react"
 import MslGoalInfo from "components/msl/schedule/goal-info"
 import MslScheduleGameStats from "components/msl/schedule/game-stats"
 import MslTeamItem from "components/msl/team-item"
 import MslPlayerItem from "components/msl/player-item"
 
 const MslFixtureItem = ({ fixture }) => {
+  const [isOpen, setIsOpen] = useState(true)
+
   const home = fixture?.home
   const away = fixture?.away
   return (
     <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-md shadow-inner overflow-hidden my-4 p-2">
-      <div className="flex items-center flex-row -m-2 pt-2 px-2">
+      <div className="flex items-center flex-row -m-2 p-2">
         <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg">
           {fixture.pos}
         </div>
-        <div className="flex-grow "></div>
+        <div className="flex-grow text-center">
+          <button
+            className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
+            onClick={() => setIsOpen(prevState => !prevState)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className={`w-6 h-6 overflow-visible text-indigo-700 dark:text-indigo-400 ${
+                isOpen ? "hidden" : "block"
+              }`}
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className={`w-6 h-6 overflow-visible text-indigo-700 dark:text-indigo-400 ${
+                isOpen ? "block" : "hidden"
+              }`}
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
         <div className="flex-shrink w-20 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg">
           {fixture.scheduled_time}
         </div>
@@ -39,13 +75,15 @@ const MslFixtureItem = ({ fixture }) => {
                 {fixture?.home?.goals?.length}
               </div>
             </div>
-            <MslScheduleGameStats
-              team={home}
-              pos="home"
-              fixture={fixture}
-              key={`home_${fixture.schedule_id}`}
-              id={`home_${fixture.schedule_id}`}
-            />
+            <div className={`${isOpen ? "block" : "hidden"}`}>
+              <MslScheduleGameStats
+                team={home}
+                pos="home"
+                fixture={fixture}
+                key={`home_${fixture.schedule_id}`}
+                id={`home_${fixture.schedule_id}`}
+              />
+            </div>
           </div>
           <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
             <div className="flex-grow flex px-4 block sm:hidden mt-4">
@@ -54,16 +92,18 @@ const MslFixtureItem = ({ fixture }) => {
                 {fixture?.away?.goals?.length}
               </div>
             </div>
-            <MslScheduleGameStats
-              team={away}
-              pos="away"
-              fixture={fixture}
-              key={`away_${fixture.schedule_id}`}
-              id={`away_${fixture.schedule_id}`}
-            />
+            <div className={`${isOpen ? "block" : "hidden"}`}>
+              <MslScheduleGameStats
+                team={away}
+                pos="away"
+                fixture={fixture}
+                key={`away_${fixture.schedule_id}`}
+                id={`away_${fixture.schedule_id}`}
+              />
+            </div>
           </div>
         </div>
-        <div>
+        <div className={`${isOpen ? "block" : "hidden"}`}>
           <h2 className="text-lg font-bold px-3 my-2 text-gray-800">
             Referees
           </h2>
