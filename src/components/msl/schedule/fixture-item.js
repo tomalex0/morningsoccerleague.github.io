@@ -30,62 +30,65 @@ const MslFixtureItem = ({ fixture }) => {
       {/*<div className="justify-center items-center text-center">*/}
       {/*  <button>Collapse</button>*/}
       {/*</div>*/}
-
-      <div className="flex flex-col sm:flex-row space-x-0 relative">
-        <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
-          <div className="flex-grow flex px-4 block sm:hidden mt-4">
-            <MslTeamItem team={fixture?.home?.team} />
-            <div className="items-center flex text-lg ml-5">
-              {fixture?.home?.goals?.length}
-            </div>
-          </div>
-          <MslScheduleGameStats
-            team={home}
-            pos="home"
-            fixture={fixture}
-            key={`home_${fixture.schedule_id}`}
-            id={`home_${fixture.schedule_id}`}
-          />
-        </div>
-        <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
-          <div className="flex-grow flex px-4 block sm:hidden mt-4">
-            <MslTeamItem team={fixture?.away?.team} />
-            <div className="items-center flex text-lg ml-5">
-              {fixture?.away?.goals?.length}
-            </div>
-          </div>
-          <MslScheduleGameStats
-            team={away}
-            pos="away"
-            fixture={fixture}
-            key={`away_${fixture.schedule_id}`}
-            id={`away_${fixture.schedule_id}`}
-          />
-        </div>
-      </div>
       <div>
-        <h2 className="text-lg font-bold px-3 my-2 text-gray-800">Referees</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 px-3">
-          {fixture.referees &&
-            fixture.referees.map((item, index) => {
-              return (
-                <div
-                  className="text-sm rounded-md shadow-md p-2 bg-white dark:bg-gray-100 text-gray-100"
-                  id={`${fixture.schedule_id}_ref_${index}`}
-                  key={`${fixture.schedule_id}_ref_${index}`}
-                >
-                  <MslPlayerItem
-                    player={item?.player}
-                    playerNameCss="font-medium text-gray-800 dark:text-gray-800"
-                  />
-                  <div className="mt-2"></div>
-                  <MslTeamItem
-                    team={item?.team}
-                    cssName="font-medium text-gray-800 dark:text-gray-800"
-                  />
-                </div>
-              )
-            })}
+        <div className="flex flex-col sm:flex-row space-x-0 relative">
+          <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
+            <div className="flex-grow flex px-4 block sm:hidden mt-4">
+              <MslTeamItem team={fixture?.home?.team} />
+              <div className="items-center flex text-lg ml-5">
+                {fixture?.home?.goals?.length}
+              </div>
+            </div>
+            <MslScheduleGameStats
+              team={home}
+              pos="home"
+              fixture={fixture}
+              key={`home_${fixture.schedule_id}`}
+              id={`home_${fixture.schedule_id}`}
+            />
+          </div>
+          <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
+            <div className="flex-grow flex px-4 block sm:hidden mt-4">
+              <MslTeamItem team={fixture?.away?.team} />
+              <div className="items-center flex text-lg ml-5">
+                {fixture?.away?.goals?.length}
+              </div>
+            </div>
+            <MslScheduleGameStats
+              team={away}
+              pos="away"
+              fixture={fixture}
+              key={`away_${fixture.schedule_id}`}
+              id={`away_${fixture.schedule_id}`}
+            />
+          </div>
+        </div>
+        <div>
+          <h2 className="text-lg font-bold px-3 my-2 text-gray-800">
+            Referees
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 px-3">
+            {fixture.referees &&
+              fixture.referees.map((item, index) => {
+                return (
+                  <div
+                    className="text-sm rounded-md shadow-md p-2 bg-white dark:bg-gray-100 text-gray-100"
+                    id={`${fixture.schedule_id}_ref_${index}`}
+                    key={`${fixture.schedule_id}_ref_${index}`}
+                  >
+                    <MslPlayerItem
+                      player={item?.player}
+                      playerNameCss="font-medium text-gray-800 dark:text-gray-800"
+                    />
+                    <div className="mt-2"></div>
+                    <MslTeamItem
+                      team={item?.team}
+                      cssName="font-medium text-gray-800 dark:text-gray-800"
+                    />
+                  </div>
+                )
+              })}
+          </div>
         </div>
       </div>
     </div>
