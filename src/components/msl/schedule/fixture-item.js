@@ -6,7 +6,7 @@ import MslTeamItem from "components/msl/team-item"
 import MslPlayerItem from "components/msl/player-item"
 
 const MslFixtureItem = ({ fixture }) => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   const home = fixture?.home
   const away = fixture?.away
@@ -21,7 +21,7 @@ const MslFixtureItem = ({ fixture }) => {
         </div>
         <div className="flex-grow text-right">
           <button
-            className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
+            className="bg-gray-100 dark:bg-gray-800 text-lg p-1 shadow-md rounded-md"
             onClick={() => setIsOpen(prevState => !prevState)}
           >
             <svg
