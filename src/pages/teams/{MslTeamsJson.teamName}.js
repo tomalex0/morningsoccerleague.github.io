@@ -33,8 +33,8 @@ function Team({ path, data }) {
           <MslTeamStatsItem stats={allSeasonStats} />
         </div>
       </div>
-      <div className="px-5 mx-5 mt-5 pb-5 bg-white dark:bg-gray-600 shadow overflow-hidden rounded-lg ">
-        <div className="px-4 py-5 sm:px-6">
+      <div className="mx-5 mt-5 pb-5 overflow-hidden">
+        <div className="py-5">
           <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
             Seasons
           </h3>
