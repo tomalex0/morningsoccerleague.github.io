@@ -27,6 +27,10 @@ const MslPlayerStatsItem = ({ stats }) => {
         value={allSeasonStats.saves}
       ></MslTotalStatsItem>
       <MslTotalStatsItem
+        title={`Referee`}
+        value={allSeasonStats.referees}
+      ></MslTotalStatsItem>
+      <MslTotalStatsItem
         title={`Yellow Cards`}
         value={allSeasonStats.yellow_cards}
       ></MslTotalStatsItem>

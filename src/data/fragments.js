@@ -47,6 +47,7 @@ export const MslPlayerStatsFragment = graphql`
       mos
       mom
       saves
+      referees
     }
     seasonStats {
       isOwner
@@ -55,6 +56,7 @@ export const MslPlayerStatsFragment = graphql`
       assists
       yellow_cards
       red_cards
+      referees
       mom
       saves
       season_id

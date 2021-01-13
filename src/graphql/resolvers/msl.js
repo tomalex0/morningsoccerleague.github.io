@@ -213,8 +213,15 @@ module.exports = {
           const playerOwner = item.teams.filter(item =>
             item.owners.includes(playerId)
           )
+
           const playerMos = item.mos.includes(playerId)
           const schedules = scheduleBySeason[item.season]
+
+          const playerReferees = schedules
+            .map(item => item.referees)
+            .flat()
+            .filter(item => item?.player == playerId)
+          // console.log(JSON.stringify(playerReferees),'---referees---')
           const playerGoals = getPlayerGoals(schedules, playerId)
           const playerAssists = getPlayerAssists(schedules, playerId)
           const playerMom = getPlayerMom(schedules, playerId)
@@ -243,6 +250,7 @@ module.exports = {
             red_cards: playerRedCards.length,
             season_id: item.season,
             season: item.season,
+            referees: playerReferees.length,
           }
         })
         const totalGoals = getSum(seasonStats, "goals")
@@ -251,6 +259,7 @@ module.exports = {
         const totalRed = getSum(seasonStats, "red_cards")
         const totalMom = getSum(seasonStats, "mom")
         const totalSaves = getSum(seasonStats, "saves")
+        const totalReferees = getSum(seasonStats, "referees")
         const totalMos = seasonStats.filter(item => item.isMos == true)
 
         const allseasonStats = {
@@ -261,6 +270,7 @@ module.exports = {
           saves: totalSaves,
           yellow_cards: totalYellow,
           red_cards: totalRed,
+          referees: totalReferees,
         }
         return {
           allseasonStats,

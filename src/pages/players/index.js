@@ -125,6 +125,7 @@ const PlayersIndex = ({ data, path }) => {
               <option value="red_cards">Red Cards</option>
               <option value="mom">Mom</option>
               <option value="saves">Saves</option>
+              <option value="referees">Referee</option>
             </select>
 
             <select

@@ -92,6 +92,7 @@ type MslPlayerSeasonStats {
   season_id: Int
 		team: MslTeamsJson @link(by: "team_id")
 		yellow_cards: Int
+		referees: Int
 }
 
 type MslPlayerAllSeasonStats {
@@ -102,6 +103,7 @@ type MslPlayerAllSeasonStats {
 		red_cards: Int
 		saves: Int
 		yellow_cards: Int
+		referees: Int
 }
 
 type MslPlayerStats {
