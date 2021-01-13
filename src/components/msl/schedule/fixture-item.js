@@ -9,40 +9,54 @@ const MslFixtureItem = ({ fixture }) => {
   const home = fixture?.home
   const away = fixture?.away
   return (
-    <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-sm shadow-inner overflow-hidden my-4 p-2">
+    <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-md shadow-inner overflow-hidden my-4 p-2">
       <div className="flex items-center flex-row -m-2 pt-2 px-2">
-        <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-inner shadow-md">
+        <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg">
           {fixture.pos}
         </div>
         <div className="flex-grow "></div>
-        <div className="flex-shrink w-20 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-inner shadow-md">
+        <div className="flex-shrink w-20 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg">
           {fixture.scheduled_time}
         </div>
       </div>
-      <div className="flex space-x-0 relative">
+      <div className="flex space-x-0 relative hidden sm:flex">
         {/*<span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 absolute -left-3 -top-3"></span>*/}
-        <MslGoalInfo game={fixture?.home} pos="home" />
+        <MslGoalInfo game={fixture?.home} pos="home" view={1} />
         <div className="flex-shrink flex-shrink-0 w-2 font-bold flex items-center justify-center">
           -
         </div>
-        <MslGoalInfo game={fixture?.away} pos="away" />
+        <MslGoalInfo game={fixture?.away} pos="away" view={2} />
       </div>
       {/*<div className="justify-center items-center text-center">*/}
       {/*  <button>Collapse</button>*/}
       {/*</div>*/}
 
-      <div className="flex flex-col sm:flex-row md:flex-row space-x-0 relative">
-        <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base flex">
+      <div className="flex flex-col sm:flex-row space-x-0 relative">
+        <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
+          <div className="flex-grow flex px-4 block sm:hidden mt-4">
+            <MslTeamItem team={fixture?.home?.team} />
+            <div className="items-center flex text-lg ml-5">
+              {fixture?.home?.goals?.length}
+            </div>
+          </div>
           <MslScheduleGameStats
             team={home}
+            pos="home"
             fixture={fixture}
             key={`home_${fixture.schedule_id}`}
             id={`home_${fixture.schedule_id}`}
           />
         </div>
-        <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base flex">
+        <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
+          <div className="flex-grow flex px-4 block sm:hidden mt-4">
+            <MslTeamItem team={fixture?.away?.team} />
+            <div className="items-center flex text-lg ml-5">
+              {fixture?.away?.goals?.length}
+            </div>
+          </div>
           <MslScheduleGameStats
             team={away}
+            pos="away"
             fixture={fixture}
             key={`away_${fixture.schedule_id}`}
             id={`away_${fixture.schedule_id}`}

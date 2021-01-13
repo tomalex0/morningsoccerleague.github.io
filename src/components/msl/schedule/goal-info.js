@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 
-const MslGoalInfo = ({ game, pos }) => {
+const MslGoalInfo = ({ game, pos, view = 1 }) => {
   const teamPath = game?.team?.teamPath
   const teamName = game?.team?.teamName
   const teamLogo = game?.team?.image?.publicURL
@@ -22,7 +22,7 @@ const MslGoalInfo = ({ game, pos }) => {
 
   return (
     <>
-      {pos == "home" && (
+      {view == 1 && (
         <>
           <div className={wrapperCls}>
             <div
@@ -35,7 +35,7 @@ const MslGoalInfo = ({ game, pos }) => {
           <GoalEl />
         </>
       )}
-      {pos == "away" && (
+      {view == 2 && (
         <>
           <GoalEl />
           <div className={wrapperCls}>
