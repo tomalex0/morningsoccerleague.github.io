@@ -17,9 +17,9 @@ const MslPlayerSeasonStats = ({ seasons }) => {
           <MslTableHeaderCell>#Mom</MslTableHeaderCell>
           <MslTableHeaderCell>#Assists</MslTableHeaderCell>
           <MslTableHeaderCell>#Saves</MslTableHeaderCell>
+          <MslTableHeaderCell>#Referee</MslTableHeaderCell>
           <MslTableHeaderCell>#Yellow Cards</MslTableHeaderCell>
           <MslTableHeaderCell>#Red Cards</MslTableHeaderCell>
-          <MslTableHeaderCell>#Referee</MslTableHeaderCell>
         </tr>
       </>
       <>
@@ -39,9 +39,9 @@ const MslPlayerSeasonStats = ({ seasons }) => {
             <MslTableDataCell>{stats.mom}</MslTableDataCell>
             <MslTableDataCell>{stats.assists}</MslTableDataCell>
             <MslTableDataCell>{stats.saves}</MslTableDataCell>
+            <MslTableDataCell>{stats.referees}</MslTableDataCell>
             <MslTableDataCell>{stats.yellow_cards}</MslTableDataCell>
             <MslTableDataCell>{stats.red_cards}</MslTableDataCell>
-            <MslTableDataCell>{stats.referees}</MslTableDataCell>
           </tr>
         ))}
       </>
