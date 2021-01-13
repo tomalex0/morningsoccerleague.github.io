@@ -16,7 +16,10 @@ const MslFixtureItem = ({ fixture }) => {
         <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg">
           {fixture.pos}
         </div>
-        <div className="flex-grow text-center">
+        <div className="flex-shrink w-20 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg ml-2">
+          {fixture.scheduled_time}
+        </div>
+        <div className="flex-grow text-right">
           <button
             className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
             onClick={() => setIsOpen(prevState => !prevState)}
@@ -25,34 +28,22 @@ const MslFixtureItem = ({ fixture }) => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className={`w-6 h-6 overflow-visible text-indigo-700 dark:text-indigo-400 ${
-                isOpen ? "hidden" : "block"
-              }`}
+              className={`w-6 h-6 overflow-visible text-indigo-700 dark:text-indigo-400`}
             >
               <path
                 fill-rule="evenodd"
+                className={`${isOpen ? "hidden" : "block"}`}
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
                 clip-rule="evenodd"
               />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className={`w-6 h-6 overflow-visible text-indigo-700 dark:text-indigo-400 ${
-                isOpen ? "block" : "hidden"
-              }`}
-            >
               <path
                 fill-rule="evenodd"
+                className={`${isOpen ? "block" : "hidden"}`}
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
                 clip-rule="evenodd"
               />
             </svg>
           </button>
-        </div>
-        <div className="flex-shrink w-20 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg">
-          {fixture.scheduled_time}
         </div>
       </div>
       <div className="flex space-x-0 relative hidden sm:flex">
@@ -68,7 +59,7 @@ const MslFixtureItem = ({ fixture }) => {
       {/*</div>*/}
       <div>
         <div className="flex flex-col sm:flex-row space-x-0 relative">
-          <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
+          <div className="flex-grow flex-1 flex-shrink-0 text-sm md:text-base">
             <div className="flex-grow flex px-4 block sm:hidden mt-4">
               <MslTeamItem team={fixture?.home?.team} />
               <div className="items-center flex text-lg ml-5">
@@ -85,7 +76,7 @@ const MslFixtureItem = ({ fixture }) => {
               />
             </div>
           </div>
-          <div className="flex-grow flex-1 space-x-1  flex-shrink-0 text-sm md:text-base">
+          <div className="flex-grow flex-1 flex-shrink-0 text-sm md:text-base">
             <div className="flex-grow flex px-4 block sm:hidden mt-4">
               <MslTeamItem team={fixture?.away?.team} />
               <div className="items-center flex text-lg ml-5">
