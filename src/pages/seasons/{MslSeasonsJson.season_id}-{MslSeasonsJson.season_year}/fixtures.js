@@ -35,9 +35,12 @@ const FixturesIndexPage = props => {
         path={path}
       />
       <div>
-        <section className="p-3 mx-2 md:mx-12 my-4">
-          <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate mb-4">
-            Season {seasonData.season_id} ({seasonData.season_year}) Fixtures
+        <section className="p-3 mx-2 my-4">
+          <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
+            <Link to={seasonData.seasonPath}>
+              Season {seasonData.season_id} ({seasonData.season_year}) &rarr;
+            </Link>
+            <span className="block mt-2">Fixtures</span>
           </h1>
 
           <div className="flex my-2 space-x-2">
