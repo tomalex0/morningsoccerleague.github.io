@@ -32,7 +32,7 @@ function Season({ data, path }) {
       <div className="mt-10">
         <MslSeasonStatsItem season={seasonItem} />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-2 px-5 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-4 px-5 mt-5">
         <div>
           <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
             Standings
@@ -46,7 +46,7 @@ function Season({ data, path }) {
           <MslStatsFouls fouls={seasonStats.team_foul_stats} />
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 px-5 mt-5 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-5 mt-5 ">
         <div>
           {seasonItem.mos.length > 0 && (
             <div className="mb-5">
