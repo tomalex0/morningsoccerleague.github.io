@@ -40,17 +40,18 @@ const MslHero = () => {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src={MslHero1}
-          alt=""
-        />
-        {/*<StaticImage*/}
+        {/*<img*/}
         {/*  className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"*/}
-        {/*  layout="fluid"*/}
-        {/*  src="../../images/hero/1.jpg"*/}
-        {/*  alt="T-Rex"*/}
+        {/*  src={MslHero1}*/}
+        {/*  alt=""*/}
         {/*/>*/}
+        <StaticImage
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          layout="fluid"
+          placeholder="none"
+          src="../../images/hero/1.jpg"
+          alt="MSL"
+        />
       </div>
     </div>
   )
