@@ -21,12 +21,12 @@ const MslTeamMembers = response => {
           {players.map(player => (
             <li key={player.player_id}>
               <Link to={player.playerPath} className="block hover:bg-gray-50">
-                <div className="px-4 py-4 sm:px-6">
+                <div className="px-2 py-2">
                   <div className="flex items-center justify-between">
                     <div className="text-sm font-medium text-gray-600 dark:text-gray-900 truncate">
                       {player.name}
                     </div>
-                    <div className="m-2 flex-shrink-0 flex">
+                    <div className="flex-shrink-0 flex">
                       {player.isOwner == 1 && (
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                           FO
