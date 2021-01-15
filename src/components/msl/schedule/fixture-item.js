@@ -11,7 +11,7 @@ const MslFixtureItem = ({ fixture }) => {
   const home = fixture?.home
   const away = fixture?.away
   return (
-    <div className="text-gray-900 bg-gray-50 dark:bg-gray-300 rounded-md shadow-inner overflow-hidden my-4 p-2">
+    <div className="text-gray-900 bg-light-50 dark:bg-dark-300 rounded-md shadow-inner overflow-hidden my-4 p-2">
       <div className="flex items-center flex-row -m-2 p-2">
         <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg">
           {fixture.pos}
@@ -21,14 +21,14 @@ const MslFixtureItem = ({ fixture }) => {
         </div>
         <div className="flex-grow text-right">
           <button
-            className="bg-gray-100 dark:bg-gray-800 text-lg p-1 shadow-md rounded-md"
+            className="bg-light-800 dark:bg-dark-800 text-lg p-1 shadow-md rounded-md"
             onClick={() => setIsOpen(prevState => !prevState)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className={`w-6 h-6 overflow-visible text-indigo-700 dark:text-indigo-400`}
+              className={`w-6 h-6 overflow-visible text-light-50 dark:text-light-50`}
             >
               <path
                 fill-rule="evenodd"
@@ -103,7 +103,7 @@ const MslFixtureItem = ({ fixture }) => {
               fixture.referees.map((item, index) => {
                 return (
                   <div
-                    className="text-sm rounded-md shadow-md p-2 bg-white dark:bg-gray-100 text-gray-100"
+                    className="text-sm rounded-md shadow-md p-2 bg-white dark:bg-dark-100 text-gray-100"
                     id={`${fixture.schedule_id}_ref_${index}`}
                     key={`${fixture.schedule_id}_ref_${index}`}
                   >

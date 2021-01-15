@@ -6,8 +6,8 @@ const MslTeamMembers = response => {
   const { team, players } = response.data
 
   return (
-    <div className="bg-white dark:bg-gray-300 shadow overflow-hidden rounded-lg">
-      <div className="px-4 py-5 sm:px-6 bg-gray-50 dark:bg-gray-800">
+    <div className="bg-white dark:bg-dark-300 shadow overflow-hidden rounded-lg">
+      <div className="px-4 py-5 sm:px-6 bg-gray-50 dark:bg-dark-800">
         <h3 className="text-lg leading-6 font-medium text-gray-500  dark:text-gray-400  flex items-center">
           <MslTeamItem team={team} cssName="text-gray-500 dark:text-gray-400" />
           <span className="text-sm ml-2">({players.length}) </span>

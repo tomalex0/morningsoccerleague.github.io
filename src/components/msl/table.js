@@ -10,10 +10,10 @@ const MslTable = props => {
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 dark:border-gray-400 rounded-lg">
             <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-400">
-              <thead className="bg-gray-50 dark:bg-gray-800">
+              <thead className="bg-light-800 dark:bg-dark-800">
                 {props.children[0]}
               </thead>
-              <tbody className="bg-white dark:bg-gray-300 divide-y divide-gray-200 dark:divide-gray-400">
+              <tbody className="bg-dark_alt dark:bg-dark-300 divide-y divide-dark-200 dark:divide-dark-400">
                 {props.children[1]}
               </tbody>
             </table>

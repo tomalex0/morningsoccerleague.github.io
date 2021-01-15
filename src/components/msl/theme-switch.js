@@ -20,7 +20,7 @@ const MslThemeSwitch = props => {
       <label htmlFor="toggle" className="cursor-pointer block p-2">
         <button
           type="button"
-          className="text-gray-900  dark:text-yellow-400 pointer-events-none group rounded-md border border-transparent focus:bg-gray-100 focus:outline-none dark:focus:bg-black dark:focus:border-gray-800 text-gray-400 block"
+          className="text-light-50 dark:text-dark-300 pointer-events-none group rounded-md border border-transparent focus:bg-dark-100 focus:outline-none dark:focus:bg-black dark:focus:border-dark-800  block"
         >
           <span className="sr-only">
             <span className="dark:hidden">Switch to dark theme</span>
@@ -34,7 +34,7 @@ const MslThemeSwitch = props => {
             stroke="currentColor"
             className="w-6"
           >
-            <g className="transition delay-200 duration-200 ease-in-out opacity-0 dark:opacity-100">
+            <g className="ease-in-out opacity-0 dark:opacity-100">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -42,7 +42,7 @@ const MslThemeSwitch = props => {
                 d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
               />
             </g>
-            <g className="transition delay-200 duration-200 ease-in-out dark:opacity-0">
+            <g className="dark:opacity-0">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

@@ -21,15 +21,15 @@ const MslAllStatsItem = ({ title, value, children = icon }) => {
   return (
     <div className="flex">
       <div className="flex-shrink-0">
-        <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 dark:bg-gray-800 text-white dark:text-indigo-400 shadow-md">
+        <div className="flex items-center justify-center h-12 w-12 rounded-md bg-light-800 dark:bg-dark-800 text-light-50 dark:text-light-50 shadow-md">
           {children}
         </div>
       </div>
       <div className="ml-4">
-        <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
+        <dt className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300">
           {title}
         </dt>
-        <dd className="mt-2 text-base text-gray-600 dark:text-gray-400">
+        <dd className="mt-2 text-base text-dark-600 dark:text-dark-400">
           {value}
         </dd>
       </div>

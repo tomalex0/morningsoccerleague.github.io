@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-dark-light-medium {
+    @apply text-yellow-50 dark:text-gray-700;
+}
+
+.text-light {
+    @apply text-yellow-50;
+}
+.text-dark {
+    @apply dark:text-gray-700;
+}
+.bg-light {
+    @apply bg-yellow-50;
+}
+
+.bg-dark {
+    @apply dark:bg-gray-800;
+}
+
+.text-dark-light-high {
+    @apply text-yellow-50 dark:text-gray-300
+}
+
+.text-dark-light-low {
+    @apply text-yellow-800 dark:text-gray-300
+}
+
+.hover-dark-light-high {
+    @apply hover:text-yellow-50 dark:hover:text-gray-300;
+}
+
+.bg-dark-light-high {
+    @apply bg-yellow-800 dark:bg-gray-800;
+    @apply text-dark-light-high;
+}
+
+
+.bg-dark-light-medium {
+    @apply bg-yellow-50 dark:bg-gray-700;
+    @apply text-dark-light-medium
+}
+
+.bg-dark-light-low {
+    @apply bg-yellow-800 dark:bg-gray-800;
+}
+
+
+

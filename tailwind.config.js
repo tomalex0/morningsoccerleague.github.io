@@ -22,6 +22,10 @@ module.exports = {
       green: colors.green,
       red: colors.red,
       yellow: colors.yellow,
+      light: colors.yellow,
+      light_alt: colors.red,
+      dark: colors.gray,
+      dark_alt: colors.white,
     },
   },
   variants: {

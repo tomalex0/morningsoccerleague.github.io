@@ -13,7 +13,7 @@ const MslScheduleGameStats = ({ team, fixture, id, pos }) => {
   )
   return (
     <div className="divide-y flex-grow">
-      <div className="bg-white dark:bg-gray-100 shadow overflow-hidden rounded-md m-3">
+      <div className="bg-white dark:bg-dark-100 shadow overflow-hidden rounded-md m-3">
         <div className="border-t border-gray-200">
           <dl>
             <div className="px-2 py-2 grid grid-cols-3 gap-2 px-2">

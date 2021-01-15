@@ -6,15 +6,18 @@ const MslSeasonStatsItem = ({ season }) => {
   return (
     <div className="lg:flex lg:items-center lg:justify-between px-5">
       <div className="flex-1 min-w-0">
-        <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
-          <Link to={season.seasonPath}>
+        <h1 className="text-2xl font-bold leading-7  sm:text-3xl sm:truncate">
+          <Link
+            to={season.seasonPath}
+            className="text-dark-600 dark:text-dark-300 hover:text-light-800 dark:hover:text-dark-100"
+          >
             Season {season.season_id} ({season.season_year}) &rarr;
           </Link>
         </h1>
         <div className="mt-4">
           <Link
             to={season.fixturePath}
-            className="text-base font-medium  text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 "
+            className="text-base font-medium  text-light-800 dark:text-dark-200 hover:text-dark-800 dark:hover:text-dark-100"
           >
             Fixtures &rarr;
           </Link>

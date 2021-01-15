@@ -33,7 +33,7 @@ const MslFixtureGroup = ({
             >
               <svg
                 viewBox="0 0 12 12"
-                className="w-3 h-3 mr-6 overflow-visible text-indigo-700 dark:text-indigo-400"
+                className="w-3 h-3 mr-6 overflow-visible text-light-800 dark:text-light-50"
               >
                 <circle cx={6} cy={6} r={6} fill="currentColor" />
                 <circle
@@ -50,7 +50,7 @@ const MslFixtureGroup = ({
                     fill="none"
                     stroke-width="2"
                     stroke="currentColor"
-                    className="text-gray-400 dark:text-gray-400"
+                    className="text-dark-400 dark:text-dark-400"
                   ></path>
                 )}
                 {fixtureGroupArr.length > index + 1 && (
@@ -59,11 +59,11 @@ const MslFixtureGroup = ({
                     fill="none"
                     strokeWidth={2}
                     stroke="currentColor"
-                    className="text-gray-400 dark:text-gray-400"
+                    className="text-dark-400 dark:text-dark-400"
                   />
                 )}
               </svg>
-              <div className="text-gray-800 dark:text-gray-300">{dateval}</div>
+              <div className="text-dark-800 dark:text-dark-300">{dateval}</div>
             </time>
           </button>
           <div

@@ -32,15 +32,15 @@ const Layout = ({ children }) => {
     <>
       <div className={`flex flex-col h-screen justify-between ${theme}`}>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <main className="flex-grow mt-16 bg-gray-50 dark:bg-gray-700 pb-10">
+        <main className="flex-grow mt-16 bg-light-50 dark:bg-dark-700 pb-10">
           {children}
         </main>
-        <footer className="bg-gray-100 dark:bg-gray-800">
+        <footer className="bg-dark-light-high">
           <MslContact />
           <div className="pt-2">
             <div
               className="flex pb-5 px-3 m-auto pt-5
-      border-t border-gray-500 text-gray-400 text-sm
+      border-t border-yellow-50 text-sm
       flex-col md:flex-row max-w-6xl"
             >
               <div className="mt-2">

@@ -9,17 +9,17 @@ const MslMission = ({ player }) => {
     <div className="pt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-600 dark:text-gray-200 sm:text-4xl">
+          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-dark-700 dark:text-dark-300 sm:text-4xl">
             Mission
           </h2>
         </div>
         <div className="flex flex-col justify-center my-12">
           <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-yellow-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl" />
-            <div className="relative px-4 py-5 bg-white shadow-lg sm:rounded-3xl sm:p-8 dark:bg-gray-600">
+            <div className="absolute inset-0 bg-gradient-to-r from-light_alt-800 to-light-400 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl" />
+            <div className="relative px-4 py-5 bg-dark_alt shadow-lg sm:rounded-3xl sm:p-8 dark:bg-dark-600">
               <div className="max-w-md mx-auto">
-                <div className="divide-y divide-gray-200">
-                  <div className="py-4 text-base leading-6 space-y-4 text-gray-700 dark:text-gray-100 sm:text-lg sm:leading-7">
+                <div className="divide-y divide-dark-200">
+                  <div className="py-4 text-base leading-6 space-y-4 text-dark-700 dark:text-dark-100 sm:text-lg sm:leading-7">
                     <p>
                       Morning Soccer League is a get together of friends
                       dedicated to the positive development through their
@@ -30,7 +30,7 @@ const MslMission = ({ player }) => {
                       <li className="flex items-start">
                         <span className="h-6 flex items-center sm:h-7">
                           <svg
-                            className="flex-shrink-0 h-5 w-5 text-indigo-700 dark:text-indigo-400"
+                            className="flex-shrink-0 h-5 w-5 text-light_alt-700 dark:text-dark-400"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                           >
@@ -48,7 +48,7 @@ const MslMission = ({ player }) => {
                       <li className="flex items-start">
                         <span className="h-6 flex items-center sm:h-7">
                           <svg
-                            className="flex-shrink-0 h-5 w-5 text-indigo-700 dark:text-indigo-400"
+                            className="flex-shrink-0 h-5 w-5 text-light_alt-700 dark:text-dark-400"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                           >

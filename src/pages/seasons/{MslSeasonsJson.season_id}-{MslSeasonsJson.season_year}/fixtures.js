@@ -36,15 +36,18 @@ const FixturesIndexPage = props => {
       />
       <div>
         <section className="p-3 mx-2 my-4">
-          <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
-            <Link to={seasonData.seasonPath}>
+          <h1 className="text-2xl font-bold leading-7 sm:text-3xl sm:truncate text-dark-600 dark:text-dark-300">
+            <Link
+              to={seasonData.seasonPath}
+              className="text-dark-600 dark:text-dark-300 hover:text-light-800 dark:hover:text-dark-100"
+            >
               Season {seasonData.season_id} ({seasonData.season_year}) &rarr;
             </Link>
             <span className="block mt-2">Fixtures</span>
           </h1>
 
           <div className="flex my-2 space-x-2">
-            <div className="flex-grow text-gray-600 dark:text-gray-300 text-left items-center content-center py-3">
+            <div className="flex-grow text-dark-600 dark:text-dark-300 text-left items-center content-center py-3">
               {fixtures.length} Games{" "}
             </div>
             <div className="flex-shrink w-12">
@@ -52,13 +55,13 @@ const FixturesIndexPage = props => {
                 onClick={() => {
                   setIsOpen({ val: true })
                 }}
-                className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
+                className="bg-light-800 dark:bg-dark-800 p-2 shadow-md rounded-md"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="w-8 h-8 overflow-visible text-indigo-700 dark:text-indigo-400"
+                  className="w-8 h-8 overflow-visible text-light-50 dark:text-light-50"
                 >
                   <path
                     fill-rule="evenodd"
@@ -73,13 +76,13 @@ const FixturesIndexPage = props => {
                 onClick={() => {
                   setIsOpen({ val: false })
                 }}
-                className="bg-gray-100 dark:bg-gray-800 p-2 shadow-md rounded-md"
+                className="bg-light-800 dark:bg-dark-800 p-2 shadow-md rounded-md"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="w-8 h-8 overflow-visible text-indigo-700 dark:text-indigo-400"
+                  className="w-8 h-8 overflow-visible text-light-50 dark:text-light-50"
                 >
                   <path
                     fill-rule="evenodd"
@@ -90,7 +93,7 @@ const FixturesIndexPage = props => {
               </button>
             </div>
           </div>
-          <ul className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-2 sm:p-5 xl:p-6">
+          <ul className="bg-dark_alt dark:bg-dark-800 shadow-md rounded-lg p-2 sm:p-5 xl:p-6">
             {fixtureGroupArr.map((item, index) => {
               return (
                 <MslFixtureGroup

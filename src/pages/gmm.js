@@ -13,8 +13,8 @@ const IndexPage = ({ path }) => {
     <Layout>
       <SEO title="Register" path={path} />
       <div className=" mx-auto px-5 mt-10">
-        <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate mb-4">
-          Register
+        <h1 className="text-2xl font-bold leading-7 text-dark-600 dark:text-dark-300  sm:text-3xl sm:truncate mb-4">
+          GMM
         </h1>
         <div>
           {!isSSR && (
@@ -22,7 +22,7 @@ const IndexPage = ({ path }) => {
               <MslLazyFrame
                 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSkhnl-a0mDjmAVegjluGNV4C0LnRsxNzvMV3hIlz9JIeiQyg6qrog6ZBIln0TamI7Uao0A5J2RYjCW/pubhtml?gid=629921127&single=true&widget=true&headers=false"
                 height="1800"
-                className="rounded-md shadow-md bg-gray-100 dark:bg-gray-800 py-10"
+                className="rounded-md shadow-md bg-dark_alt dark:bg-dark-800 py-10"
               />
             </React.Suspense>
           )}

@@ -65,7 +65,7 @@ const MslAllStats = () => {
     <div className="pt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-600 dark:text-gray-200 sm:text-4xl">
+          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-dark-700 dark:text-dark-300 sm:text-4xl">
             All Time Stats
           </h2>
         </div>

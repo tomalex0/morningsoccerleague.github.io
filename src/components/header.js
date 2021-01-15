@@ -43,13 +43,13 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="bg-gray-100 dark:bg-gray-800 fixed z-30">
+      <nav className="bg-light-800 dark:bg-dark-800 fixed z-30">
         <div className="w-screen mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               {/* Mobile menu button*/}
               <button
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center p-2 rounded-md text-light-50 dark:text-dark-300  hover:text-light-50 dark:hover:text-dark-300  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-expanded="false"
                 onClick={toggleMenuState}
               >
@@ -99,10 +99,10 @@ const Header = () => {
               </button>
             </div>
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="flex-shrink-0 flex items-center absolute top-0">
+              <div className="flex-shrink-0 flex items-center absolute top-0 p-2 bg-dark-800 rounded-b-md">
                 <Link to="/">
                   <img
-                    className="w-14"
+                    className="w-10"
                     src={MslLogo}
                     alt="Morning Soccer League"
                   />
@@ -110,12 +110,11 @@ const Header = () => {
               </div>
               <div className="hidden sm:block sm:ml-14 md:ml-16 lg:ml-24">
                 <div className="flex space-x-4">
-                  {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                   {NavList.map(item => (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="px-2 py-2 font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-red-700"
+                      className="px-2 py-2 font-medium text-light-50 dark:text-dark-300 hover:text-yellow-400 dark:hover:text-red-400"
                     >
                       {item.name}
                     </Link>
@@ -134,7 +133,7 @@ const Header = () => {
     Menu open: "block", Menu closed: "hidden"
   */}
         <div
-          className={`bg-gray-100 dark:bg-gray-800 ${
+          className={`bg-dark-light-high ${
             menuOpenState ? "block" : "hidden"
           } md:hidden`}
         >
@@ -144,7 +143,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-red-700 block px-3 py-2 text-base font-medium"
+                className="text-dark-light-high hover:text-light-400 dark:hover:text-yellow-400 block px-3 py-2 text-base font-medium"
               >
                 {item.name}
               </Link>

@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 const icon = (
   <svg
-    className="flex-shrink-0 h-6 w-6 text-indigo-600 dark:text-indigo-400"
+    className="flex-shrink-0 h-6 w-6 text-light-800 dark:text-light-50"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -19,13 +19,13 @@ const icon = (
 )
 const MslTotalStatsItem = ({ title, value, children = icon }) => {
   return (
-    <div className="flex py-2 px-2 bg-white  dark:bg-gray-800  rounded-xl shadow-md items-center ">
+    <div className="flex py-2 px-2 bg-dark_alt  dark:bg-dark-800  rounded-xl shadow-md items-center ">
       <div>{children}</div>
       <div className="ml-2 md:ml-4">
-        <p className="text-base font-medium text-gray-900 dark:text-gray-300">
+        <p className="text-base font-medium text-dark-900 dark:text-dark-300">
           {title}
         </p>
-        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{value}</p>
+        <p className="mt-1 text-sm text-dark-500 dark:text-dark-400">{value}</p>
       </div>
     </div>
   )

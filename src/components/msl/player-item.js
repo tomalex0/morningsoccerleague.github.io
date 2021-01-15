@@ -22,7 +22,7 @@ const MslPlayerItem = ({
           {/*  alt=""*/}
           {/*/>*/}
           <div
-            className={`${imageWidth} ${imageHeight} rounded-full flex items-center justify-center bg-indigo-700 dark:bg-indigo-400 text-white dark:text-gray-900 uppercase`}
+            className={`${imageWidth} ${imageHeight} rounded-full flex items-center justify-center bg-light-800 dark:bg-light-50 text-white dark:text-gray-900 uppercase`}
           >
             {playerInitials}
           </div>
