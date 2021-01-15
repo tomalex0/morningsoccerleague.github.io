@@ -39,6 +39,11 @@ jobs:
           npx gh-pages -d public -b gh-pages -u "github-actions-bot <support+actions@github.com>" -r https://git:${DEPLOY_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+      - name: Push Gatsby Public Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: gatsby-public
+          path: public
   deploy_status:
     needs: ghpages
     name: Deployment Status
