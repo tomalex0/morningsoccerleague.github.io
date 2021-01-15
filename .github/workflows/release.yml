@@ -32,7 +32,9 @@ jobs:
       - name: Build Application
         run: |
           npm run build -- --prefix-paths  --log-pages
-          zip --junk-paths gatsby-build public
+      - name: Zip Public Folder
+        run: |
+          zip -r gatsby-build.zip public
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
