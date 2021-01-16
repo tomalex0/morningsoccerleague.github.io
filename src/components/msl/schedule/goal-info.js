@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
+import MslTeamImg from "components/msl/team/team-image"
 
 const MslGoalInfo = ({ game, pos, view = 1 }) => {
   const teamPath = game?.team?.teamPath
@@ -8,7 +9,8 @@ const MslGoalInfo = ({ game, pos, view = 1 }) => {
   const teamGoals = game?.goals?.length
   const LogoEl = () => (
     <div className="flex-none w-10 md:w-16 flex items-center justify-center">
-      <img src={teamLogo} className="w-8 md:w-12 mr-1 rounded-full" />
+      {/*<img src={teamLogo} className="w-8 md:w-12 mr-1 rounded-full" />*/}
+      <MslTeamImg team={game?.team} className="w-8 md:w-12 mr-1 rounded-full" />
     </div>
   )
   const GoalEl = () => (

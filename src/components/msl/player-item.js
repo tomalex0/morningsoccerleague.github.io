@@ -8,7 +8,7 @@ const MslPlayerItem = ({
   fontSize = "text-sm",
   imageWidth = "w-10",
   imageHeight = "h-10",
-  playerNameCss = "font-medium text-gray-600 dark:text-gray-900",
+  playerNameCss = "font-medium text-dark-600 dark:text-dark-900",
   showImage = false,
 }) => {
   const playerInitials = getInitials(player?.name)
@@ -22,7 +22,7 @@ const MslPlayerItem = ({
           {/*  alt=""*/}
           {/*/>*/}
           <div
-            className={`${imageWidth} ${imageHeight} rounded-full flex items-center justify-center bg-light-800 dark:bg-light-50 text-white dark:text-gray-900 uppercase`}
+            className={`${imageWidth} ${imageHeight} rounded-full flex items-center justify-center bg-light-800 dark:bg-dark-300 text-dark_alt dark:text-dark-900 uppercase`}
           >
             {playerInitials}
           </div>

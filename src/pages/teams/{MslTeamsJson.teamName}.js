@@ -5,6 +5,8 @@ import Layout from "components/layout"
 import SEO from "components/seo"
 import MslTeamSeasonStats from "components/msl/team-season-stats"
 import MslTeamStatsItem from "components/msl/team-stats-item"
+import MslTeamImg from "components/msl/team/team-image"
+
 import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,
@@ -22,20 +24,19 @@ function Team({ path, data }) {
       <SEO title={team.teamName} path={path} />
       <div className="lg:flex lg:items-center lg:justify-between px-5 mt-10">
         <div className="flex-1 min-w-0">
-          <h1 className="text-2xl flex items-center font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
-            <img
-              className="block h-16 mr-2 rounded-full sm:mx-0 sm:flex-shrink-0"
-              src={team.image.publicURL}
-              alt={team.teamName}
+          <h1 className="text-2xl flex items-center font-bold leading-7 text-dark-600 dark:text-dark-300  sm:text-3xl sm:truncate">
+            <MslTeamImg
+              team={team}
+              className="block h-16 w-16 rounded-full sm:mx-0 sm:flex-shrink-0"
             />
-            {team.teamName}
+            <span className="pl-2">{team.teamName}</span>
           </h1>
           <MslTeamStatsItem stats={allSeasonStats} />
         </div>
       </div>
       <div className="mx-5 mt-5 pb-5 overflow-hidden">
         <div className="py-5">
-          <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
+          <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300">
             Seasons
           </h3>
         </div>

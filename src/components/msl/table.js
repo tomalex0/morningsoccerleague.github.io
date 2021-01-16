@@ -8,8 +8,8 @@ const MslTable = props => {
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-          <div className="shadow overflow-hidden border-b border-gray-200 dark:border-gray-400 rounded-lg">
-            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-400">
+          <div className="shadow overflow-hidden border-b border-dark-200 dark:border-dark-400 rounded-lg">
+            <table className="min-w-full divide-y divide-dark-200 dark:divide-dark-400">
               <thead className="bg-light-800 dark:bg-dark-800">
                 {props.children[0]}
               </thead>

@@ -23,7 +23,9 @@ const Image = () => {
       }
     }
   `)
+  console.log(data.placeholderImage, "--placeholderImage--")
   const imageData = getImage(data.placeholderImage)
+  console.log(imageData, "--imageData--")
   if (!imageData) {
     return <div>Picture not found</div>
   }

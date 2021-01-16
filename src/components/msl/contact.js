@@ -12,7 +12,7 @@ const MslContact = () => {
           <div className="inline-flex rounded-md shadow">
             <a
               href="mailto:morningsoccerleague@gmail.com"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-light-800 bg-white hover:bg-light-50 dark:text-dark-800 dark:hover:bg-dark-50"
+              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-light-800 bg-dark_alt hover:bg-light-50 dark:text-dark-800 dark:hover:bg-dark-50"
             >
               Contact Us
             </a>

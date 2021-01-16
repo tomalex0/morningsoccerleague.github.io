@@ -14,16 +14,16 @@ const MslRulesIndex = () => {
             <li className="relative">
               <button
                 type="button"
-                className="block w-full relative z-10 px-2 py-1 leading-6 text-sm md:text-base font-semibold focus:outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-offset-white focus-visible:ring-gray-300 hover:text-gray-900 rounded-full text-gray-400"
+                className="block w-full relative z-10 px-2 py-1 leading-6 text-sm md:text-base font-semibold focus:outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-offset-dark_alt focus-visible:ring-dark-300 hover:text-dark-900 rounded-full text-dark-400"
               >
                 Format & Logistics
               </button>
             </li>
             <li className="relative">
-              <div className="absolute inset-0 bg-gray-100 rounded-full" />
+              <div className="absolute inset-0 bg-dark-100 rounded-full" />
               <button
                 type="button"
-                className="block w-full relative z-10 px-2 py-1 leading-6 text-sm md:text-base font-semibold focus:outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-offset-white focus-visible:ring-gray-300 hover:text-gray-900 rounded-full text-gray-900"
+                className="block w-full relative z-10 px-2 py-1 leading-6 text-sm md:text-base font-semibold focus:outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-offset-dark_alt focus-visible:ring-dark-300 hover:text-dark-900 rounded-full text-dark-900"
               >
                 Timing Chart
               </button>
@@ -31,7 +31,7 @@ const MslRulesIndex = () => {
             <li className="relative">
               <button
                 type="button"
-                className="block w-full relative z-10 px-2 py-1 leading-6 text-sm md:text-base font-semibold focus:outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-offset-white focus-visible:ring-gray-300 hover:text-gray-900 rounded-full text-gray-400"
+                className="block w-full relative z-10 px-2 py-1 leading-6 text-sm md:text-base font-semibold focus:outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-offset-dark_alt focus-visible:ring-dark-300 hover:text-dark-900 rounded-full text-dark-400"
               >
                 Rules
               </button>

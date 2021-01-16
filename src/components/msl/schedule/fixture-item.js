@@ -11,7 +11,7 @@ const MslFixtureItem = ({ fixture }) => {
   const home = fixture?.home
   const away = fixture?.away
   return (
-    <div className="text-gray-900 bg-light-50 dark:bg-dark-300 rounded-md shadow-inner overflow-hidden my-4 p-2">
+    <div className="text-dark-900 bg-light-50 dark:bg-dark-300 rounded-md shadow-inner overflow-hidden my-4 p-2">
       <div className="flex items-center flex-row -m-2 p-2">
         <div className="flex-shrink w-6 text-center text-sm font-semibold bg-green-100 text-green-800 rounded-full shadow-lg">
           {fixture.pos}
@@ -95,7 +95,7 @@ const MslFixtureItem = ({ fixture }) => {
           </div>
         </div>
         <div className={`${isOpen ? "block" : "hidden"}`}>
-          <h2 className="text-lg font-bold px-3 my-2 text-gray-800">
+          <h2 className="text-lg font-bold px-3 my-2 text-dark-800">
             Referees
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 px-3">
@@ -103,18 +103,18 @@ const MslFixtureItem = ({ fixture }) => {
               fixture.referees.map((item, index) => {
                 return (
                   <div
-                    className="text-sm rounded-md shadow-md p-2 bg-white dark:bg-dark-100 text-gray-100"
+                    className="text-sm rounded-md shadow-md p-2 bg-dark_alt dark:bg-dark-100 text-dark-100"
                     id={`${fixture.schedule_id}_ref_${index}`}
                     key={`${fixture.schedule_id}_ref_${index}`}
                   >
                     <MslPlayerItem
                       player={item?.player}
-                      playerNameCss="font-medium text-gray-800 dark:text-gray-800"
+                      playerNameCss="font-medium text-dark-800 dark:text-dark-800"
                     />
                     <div className="mt-2"></div>
                     <MslTeamItem
                       team={item?.team}
-                      cssName="font-medium text-gray-800 dark:text-gray-800"
+                      cssName="font-medium text-dark-800 dark:text-dark-800"
                     />
                   </div>
                 )

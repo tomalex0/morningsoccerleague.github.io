@@ -49,7 +49,7 @@ const Header = () => {
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               {/* Mobile menu button*/}
               <button
-                className="inline-flex items-center justify-center p-2 rounded-md text-light-50 dark:text-dark-300  hover:text-light-50 dark:hover:text-dark-300  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center p-2 rounded-md text-light-50 dark:text-dark-300  hover:text-light-50 dark:hover:text-dark-300  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dark_alt"
                 aria-expanded="false"
                 onClick={toggleMenuState}
               >
@@ -132,18 +132,14 @@ const Header = () => {
 
     Menu open: "block", Menu closed: "hidden"
   */}
-        <div
-          className={`bg-dark-light-high ${
-            menuOpenState ? "block" : "hidden"
-          } md:hidden`}
-        >
+        <div className={`${menuOpenState ? "block" : "hidden"} md:hidden`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+            {/* Current: "bg-dark-900 text-dark_alt", Default: "text-dark-300 hover:bg-dark-700 hover:text-dark_alt" */}
             {NavList.map(item => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-dark-light-high hover:text-light-400 dark:hover:text-yellow-400 block px-3 py-2 text-base font-medium"
+                className="text-light-50 dark:text-dark-300 hover:text-light-400 dark:hover:text-yellow-400 block px-3 py-2 text-base font-medium"
               >
                 {item.name}
               </Link>

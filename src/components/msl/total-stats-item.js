@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 const icon = (
   <svg
-    className="flex-shrink-0 h-6 w-6 text-light-800 dark:text-light-50"
+    className="flex-shrink-0 h-6 w-6 text-light-800 dark:text-dark-300"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"

@@ -75,6 +75,11 @@ export const MslTeamsJsonFragment = graphql`
     team_id
     teamName
     teamCls
+    imagedata: image {
+      childImageSharp {
+        gatsbyImageData(maxWidth: 100, layout: FLUID, placeholder: TRACED_SVG)
+      }
+    }
     image {
       name
       relativePath

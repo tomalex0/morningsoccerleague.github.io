@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         <main className="flex-grow mt-16 bg-light-50 dark:bg-dark-700 pb-10">
           {children}
         </main>
-        <footer className="bg-dark-light-high">
+        <footer className="bg-light-50 dark:bg-dark-800 text-light-800 dark:text-dark-300">
           <MslContact />
           <div className="pt-2">
             <div

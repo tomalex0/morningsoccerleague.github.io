@@ -25,7 +25,7 @@ const MslStandings = ({ standings }) => {
         {standings.map((stats, index) => (
           <tr>
             <MslTableDataCell>
-              <div className="text-sm text-gray-900">{index + 1}</div>
+              <div className="text-sm text-dark-900">{index + 1}</div>
             </MslTableDataCell>
             <MslTableDataCell>
               <MslTeamItem team={stats.team} />

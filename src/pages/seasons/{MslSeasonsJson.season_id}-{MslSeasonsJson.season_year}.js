@@ -34,13 +34,13 @@ function Season({ data, path }) {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-4 px-5 mt-5">
         <div>
-          <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+          <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
             Standings
           </h3>
           <MslStandings standings={seasonStats.team_standing_stats} />
         </div>
         <div>
-          <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+          <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
             Fouls
           </h3>
           <MslStatsFouls fouls={seasonStats.team_foul_stats} />
@@ -50,7 +50,7 @@ function Season({ data, path }) {
         <div>
           {seasonItem.mos.length > 0 && (
             <div className="mb-5">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Man of Series
               </h3>
               <MslStatsPlayers
@@ -61,7 +61,7 @@ function Season({ data, path }) {
           )}
           {seasonStats.moms.length > 0 && (
             <div>
-              <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Man of Matches
               </h3>
               <MslStatsPlayers
@@ -74,7 +74,7 @@ function Season({ data, path }) {
         <div>
           {seasonStats.red_card_holders.length > 0 && (
             <div className="mb-5">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Red Cards
               </h3>
               <MslStatsPlayers
@@ -85,7 +85,7 @@ function Season({ data, path }) {
           )}
           {seasonStats.yellow_card_holders.length > 0 && (
             <div>
-              <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Yellow Cards
               </h3>
               <MslStatsPlayers
@@ -98,7 +98,7 @@ function Season({ data, path }) {
         <div>
           {seasonStats.goalkeepers.length > 0 && (
             <div className="mb-4">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Goal Keepers
               </h3>
               <MslStatsPlayers
@@ -108,7 +108,7 @@ function Season({ data, path }) {
             </div>
           )}
           <div>
-            <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+            <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
               Goal Scorers
             </h3>
             <MslStatsPlayers
@@ -119,7 +119,7 @@ function Season({ data, path }) {
         </div>
       </div>
       <div className="mt-10 px-5">
-        <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300 mb-3">
+        <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
           Teams
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">

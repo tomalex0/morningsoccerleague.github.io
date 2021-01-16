@@ -56,7 +56,7 @@ const MslThemeSwitch = props => {
           {/*  fill="none"*/}
           {/*  viewBox="0 0 24 24"*/}
           {/*  stroke="currentColor"*/}
-          {/*  className="text-gray-900 w-6 inline dark:opacity-0 transition duration-500 ease-in-out"*/}
+          {/*  className="text-dark-900 w-6 inline dark:opacity-0 transition duration-500 ease-in-out"*/}
           {/*>*/}
           {/*  <g>*/}
           {/*  <path*/}
@@ -80,13 +80,13 @@ const MslThemeSwitch = props => {
   )
   // return (
   //   <div
-  //     className={`w-14 h-8 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out ${
+  //     className={`w-14 h-8 flex items-center bg-dark-300 rounded-full p-1 duration-300 ease-in-out ${
   //       toggleActive ? "bg-green-400" : ""
   //     }`}
   //     onClick={toggleState}
   //   >
   //     <div
-  //       className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out ${
+  //       className={`bg-dark_alt w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out ${
   //         toggleActive ? "translate-x-6" : ""
   //       }`}
   //     ></div>

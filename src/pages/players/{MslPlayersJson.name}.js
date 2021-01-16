@@ -22,7 +22,7 @@ function Player({ data, path }) {
       <SEO title={player.name} path={path} />
       <div className="lg:flex lg:items-center lg:justify-between px-5 mt-5">
         <div className="flex-1 min-w-0">
-          <h1 className="text-2xl font-bold leading-7 text-gray-600 dark:text-gray-300  sm:text-3xl sm:truncate">
+          <h1 className="text-2xl font-bold leading-7 text-dark-600 dark:text-dark-300  sm:text-3xl sm:truncate">
             Player {player.name}
           </h1>
           <MslPlayerStatsItem stats={allSeasonStats} />
@@ -30,7 +30,7 @@ function Player({ data, path }) {
       </div>
       <div className="mx-5 mt-5 pb-5 overflow-hidden">
         <div className="py-5">
-          <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300">
+          <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300">
             Seasons
           </h3>
         </div>

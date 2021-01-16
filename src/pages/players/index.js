@@ -85,7 +85,7 @@ const PlayersIndex = ({ data, path }) => {
   return (
     <Layout>
       <SEO title="Players" path={path} />
-      <div className="mt-5 px-5 divide-y divide-gray-300">
+      <div className="mt-5 px-5 divide-y divide-dark-300">
         <div className="mb-3 text-center">
           <form className="flex w-full max-w-lg mx-auto space-l-0 space-x-2 relative">
             <div className="flex-1 ">
@@ -93,7 +93,7 @@ const PlayersIndex = ({ data, path }) => {
                 width="20"
                 height="20"
                 fill="currentColor"
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-dark-400"
               >
                 <path
                   fill-rule="evenodd"
@@ -103,7 +103,7 @@ const PlayersIndex = ({ data, path }) => {
               </svg>
               <input
                 type="text"
-                className="appearance-none focus:ring-2 focus:ring-indigo-600 w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-8 shadow-md bg-white"
+                className="appearance-none focus:ring-2 focus:ring-light-800 dark:focus:ring-dark-800  focus:outline-none w-full text-sm text-black placeholder-dark-500 border border-dark-200 rounded-md py-2 pl-8 shadow-md bg-dark_alt"
                 aria-label="Search"
                 placeholder="Type to filter players..."
                 onChange={e => setSearchQuery(e.target.value)}
@@ -114,7 +114,7 @@ const PlayersIndex = ({ data, path }) => {
               name="sortby"
               autoComplete="sortby"
               onChange={e => setSortState(e.target.value)}
-              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-24 focus:ring-2 focus:ring-indigo-600 text-sm text-black placeholder-gray-500 border border-gray-200 bg-white"
+              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-24 focus:ring-2 focus:ring-light-800 dark:focus:ring-dark-800 focus:outline-none text-sm text-black placeholder-dark-500 border border-dark-200 bg-dark_alt"
             >
               <option value="name">Sort By</option>
               <option value="name">Name</option>
@@ -133,13 +133,13 @@ const PlayersIndex = ({ data, path }) => {
               name="orderby"
               autoComplete="orderby"
               onChange={e => setOrderState(e.target.value)}
-              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-18 focus:ring-2 focus:ring-indigo-600 text-sm text-black placeholder-gray-500 border border-gray-200 bg-white"
+              className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-18 focus:ring-2 focus:ring-light-800 dark:focus:ring-dark-800 focus:outline-none text-sm text-black placeholder-dark-500 border border-dark-200 bg-dark_alt"
             >
               <option value="0">ASC</option>
               <option value="1">DESC</option>
             </select>
           </form>
-          <div className="mt-2 text-gray-600 dark:text-gray-300 text-left">
+          <div className="mt-2 text-dark-600 dark:text-dark-300 text-left">
             {playerList.length} Results
           </div>
         </div>
@@ -150,7 +150,7 @@ const PlayersIndex = ({ data, path }) => {
                 <MslPlayerItem
                   player={player}
                   fontSize="text-md md:text-lg"
-                  playerNameCss="font-medium text-gray-600 dark:text-gray-300"
+                  playerNameCss="font-medium text-dark-600 dark:text-dark-300"
                   imageWidth="w-14"
                   imageHeight="h-14"
                   showImage={true}
@@ -165,7 +165,7 @@ const PlayersIndex = ({ data, path }) => {
         </div>
         <div>
           {playerList.length <= 0 && (
-            <div className="text-center p-4 text-white text-xl">
+            <div className="text-center p-4 text-dark_alt text-xl">
               Player Not Found
             </div>
           )}
