@@ -99,19 +99,19 @@ module.exports = {
         shortcuts: [
           {
             name: "View Seasons",
-            short_name: "Play Later",
+            short_name: "Seasons",
             description: "View all Seasons and Stats",
             url: "/seasons?utm_source=homescreen",
           },
           {
             name: "View Teams",
-            short_name: "Subscriptions",
+            short_name: "Teams",
             description: "View all Teams and Stats",
             url: "/teams?utm_source=homescreen",
           },
           {
             name: "View Players",
-            short_name: "Subscriptions",
+            short_name: "Players",
             description: "View all Players and Stats",
             url: "/players?utm_source=homescreen",
           },
