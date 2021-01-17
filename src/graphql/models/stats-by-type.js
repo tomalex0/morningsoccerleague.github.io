@@ -16,3 +16,9 @@ function getAllGameStatsByType(schedules, key) {
 }
 
 exports.getAllGameStatsByType = getAllGameStatsByType
+
+function getReferees(schedules) {
+  const allData = schedules.map(item => item.referees).flat()
+  return allData
+}
+exports.getReferees = getReferees

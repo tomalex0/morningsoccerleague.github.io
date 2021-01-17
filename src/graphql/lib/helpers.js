@@ -8,6 +8,7 @@ const {
   getPlayerCautions,
   getPlayerMom,
   getPlayerSaves,
+  getPlayerReferees,
 } = require("../models/player-stats")
 
 const {
@@ -68,3 +69,5 @@ exports.getTeamCautions = getTeamCautions
 exports.getTeamMom = getTeamMom
 
 exports.getTeamSaves = getTeamSaves
+
+exports.getPlayerReferees = getPlayerReferees

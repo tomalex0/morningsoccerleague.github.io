@@ -12,6 +12,7 @@ const {
   getTeamCautions,
   getTeamMom,
   getTeamSaves,
+  getPlayerReferees,
 } = require("../lib/helpers")
 
 const { groupBy, getSum } = require("../lib/utility")
@@ -217,10 +218,7 @@ module.exports = {
           const playerMos = item.mos.includes(playerId)
           const schedules = scheduleBySeason[item.season]
 
-          const playerReferees = schedules
-            .map(item => item.referees)
-            .flat()
-            .filter(item => item?.player == playerId)
+          const playerReferees = getPlayerReferees(schedules, playerId)
           // console.log(JSON.stringify(playerReferees),'---referees---')
           const playerGoals = getPlayerGoals(schedules, playerId)
           const playerAssists = getPlayerAssists(schedules, playerId)

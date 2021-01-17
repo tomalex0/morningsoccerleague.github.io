@@ -1,5 +1,5 @@
 const { groupBy, getSum } = require("../lib/utility")
-const { getAllGameStatsByType } = require("./stats-by-type")
+const { getAllGameStatsByType, getReferees } = require("./stats-by-type")
 const { getTotalCautionType } = require("./caution-stats")
 
 function groupPlayers(data) {
@@ -81,3 +81,9 @@ function getPlayerSaves(schedules, player_id) {
   return allData.filter(item => item.player == player_id)
 }
 exports.getPlayerSaves = getPlayerSaves
+
+function getPlayerReferees(schedules, player_id) {
+  const allData = getReferees(schedules)
+  return allData.filter(item => item.player == player_id)
+}
+exports.getPlayerReferees = getPlayerReferees

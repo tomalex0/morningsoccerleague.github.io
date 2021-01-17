@@ -2,10 +2,16 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import React from "react"
 import MslAllStatsItem from "components/msl/stats/all-stats-item"
 
-import { getAllGameStatsByType } from "graphql/models/stats-by-type"
+import {
+  getAllGameStatsByType,
+  getReferees,
+} from "graphql/models/stats-by-type"
 import { getTotalCautionType } from "graphql/models/caution-stats"
 import { Cautions } from "graphql/lib/enum"
-import { MslSchedulesJsonGamestatsFragment } from "data/fragments"
+import {
+  MslSchedulesJsonGamestatsFragment,
+  MslSchedulesJsonRefereesFragment,
+} from "data/fragments"
 
 const MslAllStats = () => {
   const data = useStaticQuery(graphql`
@@ -31,6 +37,9 @@ const MslAllStats = () => {
         nodes {
           schedule_id
           completed
+          referees {
+            ...MslSchedulesJsonRefereesFragment
+          }
           gamestats {
             ...MslSchedulesJsonGamestatsFragment
           }
@@ -38,11 +47,18 @@ const MslAllStats = () => {
       }
     }
   `)
+
   const totalSeasons = data.seasons.nodes.length
   const totalMatches = data.matches.nodes.length
   const totalPlayers = data.players.nodes.length
   const totalTeams = data.teams.nodes.length
   const schedules = data.matches.nodes
+  const allRefs = getReferees(schedules)
+  const totalRefs = [
+    ...new Set(
+      allRefs.map(item => item?.player?.player_id).filter(item => item)
+    ),
+  ].length
   const allGoals = getAllGameStatsByType(schedules, "goals")
   const totalGoals = allGoals.length
   const ownGoals = allGoals.filter(item => item.owngoal)
@@ -93,6 +109,10 @@ const MslAllStats = () => {
             <MslAllStatsItem
               title="Players Scored"
               value={totalScoredPlayers}
+            ></MslAllStatsItem>
+            <MslAllStatsItem
+              title="Referees"
+              value={totalRefs}
             ></MslAllStatsItem>
             <MslAllStatsItem
               title="Yellow Cards"
