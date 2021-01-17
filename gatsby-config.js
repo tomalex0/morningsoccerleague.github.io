@@ -88,7 +88,7 @@ module.exports = {
         name: siteConfig.title,
         short_name: siteConfig.short_name,
         lang: `en`,
-        start_url: `/`,
+        start_url: `/?utm_source=homescreen`,
         background_color: `#000000`,
         theme_color: `#000000`,
         display: `minimal-ui`,
@@ -96,6 +96,26 @@ module.exports = {
         icon_options: {
           purpose: `any maskable`,
         },
+        shortcuts: [
+          {
+            name: "View Seasons",
+            short_name: "Play Later",
+            description: "View all Seasons and Stats",
+            url: "/seasons?utm_source=homescreen",
+          },
+          {
+            name: "View Teams",
+            short_name: "Subscriptions",
+            description: "View all Teams and Stats",
+            url: "/teams?utm_source=homescreen",
+          },
+          {
+            name: "View Players",
+            short_name: "Subscriptions",
+            description: "View all Players and Stats",
+            url: "/players?utm_source=homescreen",
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
