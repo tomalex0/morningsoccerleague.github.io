@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
-import MslTeamListItem from "components/msl/team-list-item"
+import MslTeamListItem from "components/msl/team/team-list-item"
 import {
   MslPlayersJsonFragment,
   MslTeamsJsonFragment,

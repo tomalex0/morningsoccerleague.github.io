@@ -3,8 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
-import MslPlayerStatsItem from "components/msl/player-stats-item"
-import MslPlayerItem from "components/msl/player-item"
+import MslPlayerStatsItem from "components/msl/player/player-stats-item"
+import MslPlayerItem from "components/msl/player/player-item"
 
 import { predicate } from "graphql/lib/utility"
 

@@ -5,7 +5,7 @@ import Layout from "components/layout"
 import Image from "components/image"
 import SEO from "components/seo"
 import MslHero from "components/msl/hero"
-import MslAllStats from "components/msl/all-stats"
+import MslAllStats from "components/msl/stats/all-stats"
 import MslMission from "components/msl/mission"
 
 const IndexPage = ({ path }) => (

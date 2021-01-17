@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
-import MslSeasonStatsItem from "components/msl/season-stats-item"
+import MslSeasonStatsItem from "components/msl/season/season-stats-item"
 
 import { getSeasonStats } from "graphql/lib/helpers"
 

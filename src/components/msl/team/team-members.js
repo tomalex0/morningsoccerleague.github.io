@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import MslTeamItem from "components/msl/team-item"
+import MslTeamItem from "components/msl/team/team-item"
 
 const MslTeamMembers = response => {
   const { team, players } = response.data

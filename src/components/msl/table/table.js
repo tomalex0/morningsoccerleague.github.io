@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
-import MslTableHeaderCell from "components/msl/table-header-cell"
-import MslTableDataCell from "components/msl/table-data-cell"
+import MslTableHeaderCell from "components/msl/table/table-header-cell"
+import MslTableDataCell from "components/msl/table/table-data-cell"
 
 const MslTable = props => {
   return (

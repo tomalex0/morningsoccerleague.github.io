@@ -1,8 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
-import MslTableDataCell from "components/msl/table-data-cell"
-import MslTableHeaderCell from "components/msl/table-header-cell"
-import MslTable from "components/msl/table"
+import MslTableDataCell from "components/msl/table/table-data-cell"
+import MslTableHeaderCell from "components/msl/table/table-header-cell"
+import MslTable from "components/msl/table/table"
 
 const MslTeamSeasonStats = ({ seasons }) => {
   return (

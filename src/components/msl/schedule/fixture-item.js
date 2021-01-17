@@ -2,8 +2,8 @@ import { Link } from "gatsby"
 import React, { useState } from "react"
 import MslGoalInfo from "components/msl/schedule/goal-info"
 import MslScheduleGameStats from "components/msl/schedule/game-stats"
-import MslTeamItem from "components/msl/team-item"
-import MslPlayerItem from "components/msl/player-item"
+import MslTeamItem from "components/msl/team/team-item"
+import MslPlayerItem from "components/msl/player/player-item"
 
 const MslFixtureItem = ({ fixture }) => {
   const [isOpen, setIsOpen] = useState(false)

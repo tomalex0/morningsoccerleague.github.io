@@ -3,8 +3,8 @@ import { graphql, Link } from "gatsby"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
-import MslTeamSeasonStats from "components/msl/team-season-stats"
-import MslTeamStatsItem from "components/msl/team-stats-item"
+import MslTeamSeasonStats from "components/msl/team/team-season-stats"
+import MslTeamStatsItem from "components/msl/team/team-stats-item"
 import MslTeamImg from "components/msl/team/team-image"
 
 import {

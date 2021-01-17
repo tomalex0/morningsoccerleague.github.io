@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import MslTotalStatsItem from "components/msl/total-stats-item"
+import MslTotalStatsItem from "components/msl/player/total-stats-item"
 
 const MslPlayerStatsItem = ({ stats }) => {
   const allSeasonStats = stats

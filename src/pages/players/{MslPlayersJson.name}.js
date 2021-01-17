@@ -3,8 +3,8 @@ import { graphql, Link } from "gatsby"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
-import MslPlayerStatsItem from "components/msl/player-stats-item"
-import MslPlayerSeasonStats from "components/msl/player-season-stats"
+import MslPlayerStatsItem from "components/msl/player/player-stats-item"
+import MslPlayerSeasonStats from "components/msl/player/player-season-stats"
 
 import {
   MslPlayersJsonFragment,
