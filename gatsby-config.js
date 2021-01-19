@@ -2,6 +2,8 @@ const SITE_URL = process.env.SITE_URL || "http://localhost:8000"
 const PATH_PREFIX = process.env.PATH_PREFIX
   ? `/${process.env.PATH_PREFIX}`
   : `/`
+
+const BASE_PATH = !PATH_PREFIX.endsWith("/") ? `${PATH_PREFIX}/` : PATH_PREFIX
 const siteConfig = require("./src/data/config/index")
 const GA_ID = "UA-122366850-2"
 process.env.ENABLE_GATSBY_REFRESH_ENDPOINT = true
@@ -88,11 +90,11 @@ module.exports = {
         name: siteConfig.title,
         short_name: siteConfig.short_name,
         lang: `en`,
-        start_url: `/?utm_source=homescreen`,
+        start_url: `${BASE_PATH}?utm_source=homescreen`,
         background_color: `#000000`,
         theme_color: `#000000`,
-        display: `minimal-ui`,
-        icon: `src/images/msl-logo-14.svg`, // This path is relative to the root of the site.
+        display: `standalone`,
+        icon: `src/images/msl-logo-pwa.svg`, // This path is relative to the root of the site.
         icon_options: {
           purpose: `any maskable`,
         },
@@ -101,19 +103,19 @@ module.exports = {
             name: "View Seasons",
             short_name: "Seasons",
             description: "View all Seasons and Stats",
-            url: "/seasons?utm_source=homescreen",
+            url: `${BASE_PATH}seasons?utm_source=homescreen`,
           },
           {
             name: "View Teams",
             short_name: "Teams",
             description: "View all Teams and Stats",
-            url: "/teams?utm_source=homescreen",
+            url: `${BASE_PATH}teams?utm_source=homescreen`,
           },
           {
             name: "View Players",
             short_name: "Players",
             description: "View all Players and Stats",
-            url: "/players?utm_source=homescreen",
+            url: `${BASE_PATH}players?utm_source=homescreen`,
           },
         ],
       },
