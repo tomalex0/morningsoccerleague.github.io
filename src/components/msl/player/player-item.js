@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import React from "react"
-import MslLogo from "images/msl-logo-14.svg"
 import { getInitials } from "graphql/lib/utility"
 
 const MslPlayerItem = ({

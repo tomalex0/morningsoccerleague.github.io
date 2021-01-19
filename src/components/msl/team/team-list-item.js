@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import React from "react"
-import MslLogo from "images/msl-logo-14.svg"
 import MslTeamStatsItem from "components/msl/team/team-stats-item"
 import MslTeamImg from "components/msl/team/team-image"
 
