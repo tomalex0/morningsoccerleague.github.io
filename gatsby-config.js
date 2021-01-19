@@ -90,7 +90,7 @@ module.exports = {
         name: siteConfig.title,
         short_name: siteConfig.short_name,
         lang: `en`,
-        start_url: `${BASE_PATH}?utm_source=homescreen`,
+        start_url: `/?utm_source=homescreen`,
         background_color: `#000000`,
         theme_color: `#000000`,
         display: `standalone`,
