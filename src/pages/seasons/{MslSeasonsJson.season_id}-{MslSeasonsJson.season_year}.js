@@ -7,6 +7,7 @@ import MslSeasonStatsItem from "components/msl/season/season-stats-item"
 import MslStandings from "components/msl/season/stats-standings"
 import MslStatsFouls from "components/msl/season/stats-fouls"
 import MslStatsPlayers from "components/msl/season/stats-players"
+import MslStatsMos from "components/msl/season/stats-mos"
 import MslTeamMembers from "components/msl/team/team-members"
 
 import { getSeasonStats, getSeasonTeams } from "graphql/lib/helpers"
@@ -22,7 +23,6 @@ import {
 function Season({ data, path }) {
   const { season } = data
   const seasonItem = getSeasonStats([season])[0]
-
   const title = `Season ${season.season_id} (${season.season_year})`
   const seasonStats = seasonItem.seasonStats
   const teams = getSeasonTeams(seasonItem)
@@ -48,13 +48,13 @@ function Season({ data, path }) {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-5 mt-5 ">
         <div>
-          {seasonItem.mos.length > 0 && (
+          {seasonItem.moslist.length > 0 && (
             <div className="mb-5">
               <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Man of Series
               </h3>
-              <MslStatsPlayers
-                data={seasonItem.mos}
+              <MslStatsMos
+                data={seasonItem.moslist}
                 playerColTitle={`Man of Series`}
               />
             </div>

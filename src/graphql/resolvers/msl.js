@@ -349,6 +349,18 @@ module.exports = {
     },
   },
   MslSeasonsJson: {
+    moslist: {
+      type: ["MslMosListItem"],
+      resolve(source, args, context, info) {
+        const moslist = source.mos
+        const teams = source.teams
+        const mos = moslist.map(item => {
+          var team = teams.find(teamitem => teamitem.players.includes(item))
+          return { player: item, team: team.team }
+        })
+        return mos
+      },
+    },
     schedules: {
       type: ["MslSchedulesJson"],
       resolve(source, args, context, info) {

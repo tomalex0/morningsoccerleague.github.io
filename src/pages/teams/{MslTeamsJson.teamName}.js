@@ -12,6 +12,7 @@ import {
   MslTeamsJsonFragment,
   MslSeasonsJsonFragment,
   MslSeasonsJsonStatsFragment,
+  MslTeamStatsFragment,
 } from "data/fragments"
 
 function Team({ path, data }) {

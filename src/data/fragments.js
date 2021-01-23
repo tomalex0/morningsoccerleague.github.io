@@ -235,6 +235,14 @@ export const MslSeasonsJsonStatsFragment = graphql`
         ...MslGameStatsFragment
       }
     }
+    moslist {
+      player {
+        ...MslPlayersJsonFragment
+      }
+      team {
+        ...MslTeamsJsonFragment
+      }
+    }
     mos {
       ...MslPlayersJsonFragment
       seasons {

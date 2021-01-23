@@ -4,7 +4,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import MslTeamImg from "components/msl/team/team-image"
 
 const MslTeamItem = ({ team, cssName = "text-dark-900" }) => {
-  console.log(team, "--34-3")
   return (
     <div className="flex items-center">
       <div className="flex-shrink-0 h-10 w-10">
