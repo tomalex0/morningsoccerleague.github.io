@@ -7,9 +7,9 @@ const MslTeamMembers = response => {
 
   return (
     <div className="bg-dark_alt dark:bg-dark-300 shadow overflow-hidden rounded-lg">
-      <div className="px-4 py-5 sm:px-6 bg-dark-50 dark:bg-dark-800">
-        <h3 className="text-lg leading-6 font-medium text-dark-500  dark:text-dark-400  flex items-center">
-          <MslTeamItem team={team} cssName="text-dark-500 dark:text-dark-400" />
+      <div className="px-4 py-5 sm:px-6 bg-light-800 dark:bg-dark-800">
+        <h3 className="text-lg leading-6 font-medium text-light-50  dark:text-dark-200  flex items-center">
+          <MslTeamItem team={team} cssName="text-light-50 dark:text-dark-200" />
           <span className="text-sm ml-2">({players.length}) </span>
         </h3>
       </div>
