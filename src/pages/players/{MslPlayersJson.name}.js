@@ -23,7 +23,7 @@ function Player({ data, path }) {
       <div className="lg:flex lg:items-center lg:justify-between px-5 mt-5">
         <div className="flex-1 min-w-0">
           <h1 className="text-2xl font-bold leading-7 text-dark-600 dark:text-dark-300  sm:text-3xl sm:truncate">
-            Player {player.name}
+            {player.name}
           </h1>
           <MslPlayerStatsItem stats={allSeasonStats} />
         </div>
