@@ -53,7 +53,11 @@ type MslTeamSeasonStats {
   players: Int
   season_id: Int
 		yellow_cards: Int
-			matches: Int
+		matches: Int
+  won: Int
+  lost: Int
+  draw: Int
+  goal_allowed: Int
 }
 
 type MslTeamAllSeasonStats {
@@ -65,7 +69,11 @@ type MslTeamAllSeasonStats {
 		saves: Int
 		players: Int
 		yellow_cards: Int
-			matches: Int
+		matches: Int
+  won: Int
+  lost: Int
+  draw: Int
+  goal_allowed: Int
 }
 
 type MslTeamStats {

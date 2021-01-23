@@ -66,3 +66,45 @@ function getTeamSeasonStats(schedules, teams) {
 }
 
 exports.getTeamSeasonStats = getTeamSeasonStats
+
+function getTeamStandings(schedules, teams) {
+  var teamObj = {}
+  teams.forEach(item => {
+    teamObj[item] = getDefaultScore()
+  })
+  schedules.forEach(itemobj => {
+    const home = itemobj.gamestats.find(
+      gameitem => gameitem.team_type == "home"
+    )
+    const away = itemobj.gamestats.find(
+      gameitem => gameitem.team_type == "away"
+    )
+    const homeTeamId = home?.team
+    const awayTeamId = away?.team
+
+    // if game is completed
+    if (itemobj.completed) {
+      teamObj[homeTeamId].played += 1
+      teamObj[awayTeamId].played += 1
+
+      if (home.goals.length == away.goals.length) {
+        teamObj[homeTeamId].draw += 1
+        teamObj[awayTeamId].draw += 1
+      } else if (home.goals.length > away.goals.length) {
+        teamObj[homeTeamId].won += 1
+        teamObj[awayTeamId].lost += 1
+      } else if (away.goals.length > home.goals.length) {
+        teamObj[awayTeamId].won += 1
+        teamObj[homeTeamId].lost += 1
+      }
+      teamObj[homeTeamId].goal_allowed += away.goals.length
+      teamObj[awayTeamId].goal_allowed += home.goals.length
+
+      teamObj[homeTeamId].goal_scored += home.goals.length
+      teamObj[awayTeamId].goal_scored += away.goals.length
+    }
+  })
+  return teamObj
+}
+
+exports.getTeamStandings = getTeamStandings

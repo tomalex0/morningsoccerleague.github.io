@@ -10,12 +10,28 @@ const MslTeamStatsItem = ({
   return (
     <div className={`${cssName}`}>
       <MslTotalStatsItem
-        title={`Games`}
+        title={`Played`}
         value={allSeasonStats.matches}
       ></MslTotalStatsItem>
       <MslTotalStatsItem
-        title={`Goals`}
+        title={`Won`}
+        value={allSeasonStats.won}
+      ></MslTotalStatsItem>
+      <MslTotalStatsItem
+        title={`Drawn`}
+        value={allSeasonStats.draw}
+      ></MslTotalStatsItem>
+      <MslTotalStatsItem
+        title={`Lost`}
+        value={allSeasonStats.lost}
+      ></MslTotalStatsItem>
+      <MslTotalStatsItem
+        title={`For`}
         value={allSeasonStats.goals}
+      ></MslTotalStatsItem>
+      <MslTotalStatsItem
+        title={`Against`}
+        value={allSeasonStats.goal_allowed}
       ></MslTotalStatsItem>
       <MslTotalStatsItem
         title={`Players`}
@@ -28,6 +44,10 @@ const MslTeamStatsItem = ({
       <MslTotalStatsItem
         title={`Mom`}
         value={allSeasonStats.mom}
+      ></MslTotalStatsItem>
+      <MslTotalStatsItem
+        title={`Assists`}
+        value={allSeasonStats.assists}
       ></MslTotalStatsItem>
       <MslTotalStatsItem
         title={`Yellow Cards`}

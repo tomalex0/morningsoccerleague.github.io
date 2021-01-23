@@ -19,6 +19,10 @@ export const MslTeamStatsFragment = graphql`
       saves
       yellow_cards
       matches
+      won
+      lost
+      draw
+      goal_allowed
     }
     seasonStats {
       assists
@@ -31,6 +35,10 @@ export const MslTeamStatsFragment = graphql`
       season_id
       yellow_cards
       matches
+      won
+      lost
+      draw
+      goal_allowed
       season {
         ...MslSeasonsJsonFragment
       }

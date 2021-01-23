@@ -16,6 +16,7 @@ const {
 } = require("../lib/helpers")
 
 const { groupBy, getSum } = require("../lib/utility")
+const { getTeamStandings } = require("../models/team-season-stats")
 
 module.exports = {
   MslTeamsJson: {
@@ -72,12 +73,14 @@ module.exports = {
         const seasonStats = data.map(item => {
           let newItem = {}
           const schedules = scheduleBySeason[item.season]
+          const teamList = item.teams.map(teamitem => teamitem.team)
           const gamestats = schedules
             .filter(item => item.completed)
             .map(item => item.gamestats)
             .flat()
             .filter(item => item.team == teamId)
-
+          const teamStandings = getTeamStandings(schedules, teamList)
+          // console.log(teamStandings,'--343---', teamId)
           const teamGoals = getTeamGoals(schedules, teamId)
           const teamAssists = getTeamAssists(schedules, teamId)
           const teamSaves = getTeamSaves(schedules, teamId)
@@ -93,7 +96,7 @@ module.exports = {
             Cautions.YELLOW
           )
           const teamRedCards = getTeamCautions(schedules, teamId, Cautions.RED)
-
+          newItem = { ...teamStandings[teamId] }
           newItem.season = item.season
           newItem.season_id = item.season
           newItem.goals = teamGoals.length
@@ -122,6 +125,12 @@ module.exports = {
         const totalSaves = getSum(seasonStats, "saves")
         const totalMos = getSum(seasonStats, "mos")
         const totalMatches = getSum(seasonStats, "matches")
+        const totalPlayed = getSum(seasonStats, "played")
+        const totalWon = getSum(seasonStats, "won")
+        const totalLost = getSum(seasonStats, "lost")
+        const totalDraw = getSum(seasonStats, "draw")
+        const totalGoalAllowed = getSum(seasonStats, "goal_allowed")
+        const totalGoalScored = getSum(seasonStats, "goal_scored")
         // console.log(totalPlayerList,'--totalPlayerList-----')
         const allseasonStats = {
           goals: totalGoals,
@@ -133,6 +142,12 @@ module.exports = {
           players: totalPlayerList.length,
           red_cards: totalRed,
           matches: totalMatches,
+          won: totalWon,
+          played: totalPlayed,
+          lost: totalLost,
+          draw: totalDraw,
+          goal_allowed: totalGoalAllowed,
+          goal_scored: totalGoalScored,
         }
 
         return {
