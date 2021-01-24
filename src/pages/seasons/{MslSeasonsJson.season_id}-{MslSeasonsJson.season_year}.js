@@ -33,95 +33,95 @@ function Season({ data, path }) {
         <MslSeasonStatsItem season={seasonItem} />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-4 px-5 mt-5">
-        <div>
-          <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+        <section>
+          <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
             Standings
-          </h3>
+          </h2>
           <MslStandings standings={seasonStats.team_standing_stats} />
-        </div>
-        <div>
-          <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+        </section>
+        <section>
+          <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
             Fouls
-          </h3>
+          </h2>
           <MslStatsFouls fouls={seasonStats.team_foul_stats} />
-        </div>
+        </section>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-5 mt-5 ">
         <div>
           {seasonItem.moslist.length > 0 && (
-            <div className="mb-5">
-              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+            <section className="mb-5">
+              <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Man of Series
-              </h3>
+              </h2>
               <MslStatsMos
                 data={seasonItem.moslist}
                 playerColTitle={`Man of Series`}
               />
-            </div>
+            </section>
           )}
           {seasonStats.moms.length > 0 && (
-            <div>
-              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+            <section>
+              <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Man of Matches
-              </h3>
+              </h2>
               <MslStatsPlayers
                 data={seasonStats.moms}
                 playerColTitle={`Man of the Match`}
               />
-            </div>
+            </section>
           )}
         </div>
         <div>
           {seasonStats.red_card_holders.length > 0 && (
-            <div className="mb-5">
-              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+            <section className="mb-5">
+              <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Red Cards
-              </h3>
+              </h2>
               <MslStatsPlayers
                 data={seasonStats.red_card_holders}
                 playerColTitle={`Red Card`}
               />
-            </div>
+            </section>
           )}
           {seasonStats.yellow_card_holders.length > 0 && (
-            <div>
-              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+            <section>
+              <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Yellow Cards
-              </h3>
+              </h2>
               <MslStatsPlayers
                 data={seasonStats.yellow_card_holders}
                 playerColTitle={`Yellow Card`}
               />
-            </div>
+            </section>
           )}
         </div>
         <div>
           {seasonStats.goalkeepers.length > 0 && (
-            <div className="mb-4">
-              <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+            <section className="mb-4">
+              <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
                 Goal Keepers
-              </h3>
+              </h2>
               <MslStatsPlayers
                 data={seasonStats.goalkeepers}
                 playerColTitle={`Goal Keepers`}
               />
-            </div>
+            </section>
           )}
-          <div>
-            <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+          <section>
+            <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
               Goal Scorers
-            </h3>
+            </h2>
             <MslStatsPlayers
               data={seasonStats.scorers}
               playerColTitle={`Goal Scorers`}
             />
-          </div>
+          </section>
         </div>
       </div>
-      <div className="mt-10 px-5">
-        <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
+      <section className="mt-10 px-5">
+        <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300 mb-3">
           Teams
-        </h3>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
           {teams.map(stats => (
             <div>
@@ -129,7 +129,7 @@ function Season({ data, path }) {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </Layout>
   )
 }
