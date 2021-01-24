@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{ItRV:function(e,r,a){"use strict";a.r(r);a("Wbzz");var o=a("q1tI"),i=a.n(o);r.default=function MslLazyFrame(e){var r=e.src,a=e.width,o=void 0===a?"100%":a,n=e.height,t=void 0===n?"100%":n,c=e.className,s=void 0===c?"":c,l=e.scrolling,d=void 0===l?"no":l;return i.a.createElement("iframe",{src:r,width:o,height:t,className:"object-cover w-full "+s,scrolling:d,frameBorder:0,allowTransparency:"true"})}}}]);
-//# sourceMappingURL=2-a549c864adb8fda0c6ca.js.map
