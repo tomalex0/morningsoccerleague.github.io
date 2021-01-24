@@ -60,9 +60,9 @@ const MslFixtureItem = ({ fixture }) => {
       <div>
         <div className="flex flex-col sm:flex-row space-x-0 relative">
           <div className="flex-grow flex-1 flex-shrink-0 text-sm md:text-base">
-            <div className="flex-grow flex px-4 block sm:hidden mt-4">
+            <div className="flex-grow flex px-4 block sm:hidden mt-4 items-center">
               <MslTeamItem team={fixture?.home?.team} />
-              <div className="items-center flex text-lg ml-5">
+              <div className=" flex-grow text-base ml-5 text-right font-bold">
                 {fixture?.home?.goals?.length}
               </div>
             </div>
@@ -77,9 +77,9 @@ const MslFixtureItem = ({ fixture }) => {
             </div>
           </div>
           <div className="flex-grow flex-1 flex-shrink-0 text-sm md:text-base">
-            <div className="flex-grow flex px-4 block sm:hidden mt-4">
+            <div className="flex-grow flex px-4 block sm:hidden mt-4 items-center ">
               <MslTeamItem team={fixture?.away?.team} />
-              <div className="items-center flex text-lg ml-5">
+              <div className="flex-grow text-base ml-5 text-right font-bold">
                 {fixture?.away?.goals?.length}
               </div>
             </div>
