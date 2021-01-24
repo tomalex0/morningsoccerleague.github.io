@@ -8,7 +8,12 @@ module.exports = {
         "https://tomalex0.github.io/morningsoccerleague.github.io/players/kartik-pisupati/",
         "https://tomalex0.github.io/morningsoccerleague.github.io/seasons/",
         "https://tomalex0.github.io/morningsoccerleague.github.io/seasons/3-2019/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/seasons/3-2019/fixtures/",
         "https://tomalex0.github.io/morningsoccerleague.github.io/teams/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/teams/rabona-fc/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/register/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/gmm/",
+        "https://tomalex0.github.io/morningsoccerleague.github.io/rules/",
       ],
       isSinglePageApplication: true,
       settings: {

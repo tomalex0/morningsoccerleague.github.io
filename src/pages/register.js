@@ -20,6 +20,7 @@ const IndexPage = ({ path }) => {
           {!isSSR && (
             <React.Suspense fallback={<div>&nbsp;</div>}>
               <MslLazyFrame
+                title="Register"
                 src="https://docs.google.com/forms/d/e/1FAIpQLScU7tT25geKChwExgov8qDkwVlkPs1i_D7Otv9OGalAcKoPRA/viewform?embedded=true"
                 height="450"
                 className="rounded-md shadow-md bg-dark_alt dark:bg-dark-800 py-10"

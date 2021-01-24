@@ -65,7 +65,10 @@ const MslMission = ({ player }) => {
                     <div className="h-32">
                       {!isSSR && (
                         <React.Suspense fallback={<div>&nbsp;</div>}>
-                          <MslLazyFrame src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmorningsoccerleague%2F&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=108821693720" />
+                          <MslLazyFrame
+                            title="MSL Facebook"
+                            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmorningsoccerleague%2F&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=108821693720"
+                          />
                         </React.Suspense>
                       )}
                     </div>

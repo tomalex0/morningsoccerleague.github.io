@@ -86,7 +86,7 @@ const MslAllStats = () => {
           </h2>
         </div>
         <div className="mt-10">
-          <dl className="space-y-0 grid grid-cols-2 gap-y-4 sm:gap-x-3 sm:gap-y-4 sm:grid sm:grid-cols-2 md:grid md:grid-cols-4 md:gap-x-6 md:gap-y-6">
+          <div className="space-y-0 grid grid-cols-2 gap-y-4 sm:gap-x-3 sm:gap-y-4 sm:grid sm:grid-cols-2 md:grid md:grid-cols-4 md:gap-x-6 md:gap-y-6">
             <MslAllStatsItem
               title="Seasons"
               value={totalSeasons}
@@ -126,7 +126,7 @@ const MslAllStats = () => {
               title="Own Goals"
               value={totalOwnGoals}
             ></MslAllStatsItem>
-          </dl>
+          </div>
         </div>
       </div>
     </div>

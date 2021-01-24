@@ -50,6 +50,7 @@ const Layout = ({ children }) => {
               <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
                 <a
                   href="https://www.facebook.com/morningsoccerleague/"
+                  rel="noreferrer"
                   target="_blank"
                   className="w-8 mx-1"
                 >

@@ -24,6 +24,7 @@ const MslFixtureGroup = ({
       <article>
         <div className="grid md:grid-cols-7 xl:grid-cols-7 items-start relative p-3 pl-1 sm:p-5  sm:pl-1 xl:p-6 xl:pl-1 overflow-hidden">
           <button
+            aria-label="Toggle Fixture Group View"
             className="w-max p-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
             onClick={toggleAccordionState}
           >

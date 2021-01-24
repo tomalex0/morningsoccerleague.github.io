@@ -7,6 +7,7 @@ const MslLazyFrame = ({
   height = "100%",
   className = "",
   scrolling = "no",
+  title,
 }) => {
   return (
     <iframe
@@ -17,6 +18,7 @@ const MslLazyFrame = ({
       scrolling={scrolling}
       frameBorder={0}
       allowTransparency="true"
+      title={title}
     />
   )
 }

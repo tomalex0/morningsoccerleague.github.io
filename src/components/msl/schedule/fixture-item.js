@@ -21,6 +21,7 @@ const MslFixtureItem = ({ fixture }) => {
         </div>
         <div className="flex-grow text-right">
           <button
+            aria-label="Toggle"
             className="bg-light-800 dark:bg-dark-800 text-lg p-1 shadow-md rounded-md"
             onClick={() => setIsOpen(prevState => !prevState)}
           >

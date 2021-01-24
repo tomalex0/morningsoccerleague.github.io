@@ -52,6 +52,7 @@ const FixturesIndexPage = props => {
             </div>
             <div className="flex-shrink w-12">
               <button
+                aria-label="Expand"
                 onClick={() => {
                   setIsOpen({ val: true })
                 }}
@@ -73,6 +74,7 @@ const FixturesIndexPage = props => {
             </div>
             <div className="flex-shrink w-12">
               <button
+                aria-label="Collapse"
                 onClick={() => {
                   setIsOpen({ val: false })
                 }}
