@@ -37,9 +37,9 @@ function Team({ path, data }) {
       </div>
       <div className="mx-5 mt-5 pb-5 overflow-hidden">
         <div className="py-5">
-          <h3 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300">
+          <h2 className="text-lg leading-6 font-medium text-dark-900 dark:text-dark-300">
             Seasons
-          </h3>
+          </h2>
         </div>
         <MslTeamSeasonStats seasons={seasonStats} />
       </div>

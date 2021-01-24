@@ -112,6 +112,7 @@ const PlayersIndex = ({ data, path }) => {
             <select
               id="sortby"
               name="sortby"
+              aria-label="Sort By"
               autoComplete="sortby"
               onChange={e => setSortState(e.target.value)}
               className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-24 focus:ring-2 focus:ring-light-800 dark:focus:ring-dark-800 focus:outline-none text-sm text-black placeholder-dark-500 border border-dark-200 bg-dark_alt"
@@ -131,6 +132,7 @@ const PlayersIndex = ({ data, path }) => {
             <select
               id="orderby"
               name="orderby"
+              aria-label="Order By"
               autoComplete="orderby"
               onChange={e => setOrderState(e.target.value)}
               className="flex-shrink-0 py-2 px-2 rounded-md shadow-md w-18 focus:ring-2 focus:ring-light-800 dark:focus:ring-dark-800 focus:outline-none text-sm text-black placeholder-dark-500 border border-dark-200 bg-dark_alt"
