@@ -8,7 +8,11 @@ const MslTeamImg = ({ team, className }) => {
   // <img className={className} src={publicImgUrl} alt={team.teamName} />
   const imageData = getImage(img)
   return (
-    <GatsbyImage image={imageData} alt={team.teamName} className={className} />
+    <div
+      className={`${className} bg-dark_alt overflow-hidden ring-1 ring-light-800 dark:ring-dark-900`}
+    >
+      <img src={publicImgUrl} alt={team.teamName} />
+    </div>
   )
 }
 

@@ -25,7 +25,7 @@ function Team({ path, data }) {
       <SEO title={team.teamName} path={path} />
       <div className="lg:flex lg:items-center lg:justify-between px-5 mt-10">
         <div className="flex-1 min-w-0">
-          <h1 className="text-2xl flex items-center font-bold leading-7 text-dark-600 dark:text-dark-300  sm:text-3xl sm:truncate">
+          <h1 className="text-2xl flex items-center font-bold leading-7 text-dark-600 dark:text-dark-300  sm:text-3xl sm:truncate p-2">
             <MslTeamImg
               team={team}
               className="block h-16 w-16 rounded-full sm:mx-0 sm:flex-shrink-0"

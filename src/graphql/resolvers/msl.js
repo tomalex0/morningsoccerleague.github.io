@@ -39,7 +39,7 @@ module.exports = {
     image: {
       type: "File",
       resolve(source, args, context, info) {
-        const imgPath = `${MslImgKey.TEAM}/${source.team_id}.png`
+        const imgPath = `${MslImgKey.TEAM}/svg/${source.team_id}.svg`
         const record = getFile(context, imgPath)
         return record
       },

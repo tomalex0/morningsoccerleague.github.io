@@ -78,16 +78,16 @@ export const MslPlayerStatsFragment = graphql`
   }
 `
 
+// imagedata: image {
+//   childImageSharp {
+//     gatsbyImageData(maxWidth: 100, layout: FLUID, placeholder: TRACED_SVG)
+//   }
+// }
 export const MslTeamsJsonFragment = graphql`
   fragment MslTeamsJsonFragment on MslTeamsJson {
     team_id
     teamName
     teamCls
-    imagedata: image {
-      childImageSharp {
-        gatsbyImageData(maxWidth: 100, layout: FLUID, placeholder: TRACED_SVG)
-      }
-    }
     image {
       name
       relativePath
