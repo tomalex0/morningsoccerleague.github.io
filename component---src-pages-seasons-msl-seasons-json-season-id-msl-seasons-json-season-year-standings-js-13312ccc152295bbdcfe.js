@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{PQ4W:function(e,n,a){"use strict";a.r(n);var t=a("q1tI"),s=a.n(t),i=a("Bl7J"),r=a("vrFN");n.default=function StandingsIndexPage(e){var n=e.path,a=e.pageContext;return s.a.createElement(i.a,null,s.a.createElement(r.a,{title:"Standings "+a.season_id+"-"+a.season_year,path:n}),s.a.createElement("h1",null,"Hi Standings ",a.season_id,"-",a.season_year))}}}]);
+//# sourceMappingURL=component---src-pages-seasons-msl-seasons-json-season-id-msl-seasons-json-season-year-standings-js-13312ccc152295bbdcfe.js.map
