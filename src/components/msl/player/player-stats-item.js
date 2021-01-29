@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import MslTotalStatsItem from "components/msl/player/total-stats-item"
 

@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import MslTeamItem from "components/msl/team/team-item"
 import MslPlayerItem from "components/msl/player/player-item"

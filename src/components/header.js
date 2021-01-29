@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import Layout from "./layout"
 import MslLogo from "images/msl-logo.svg"
 import MslThemeSwitch from "components/msl/theme-switch"
 

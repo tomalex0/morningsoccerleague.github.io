@@ -10,7 +10,6 @@ exports.Cautions = {
 exports.SCHEMA_TYPE_NAME = {
   MslSeasonsJson: "MslSeasonsJson",
   MslSchedulesJson: "MslSchedulesJson",
-  MslSeasonsJson: "MslSeasonsJson",
   MslTeamsJson: "MslTeamsJson",
   MslPlayersJson: "MslPlayersJson",
 }

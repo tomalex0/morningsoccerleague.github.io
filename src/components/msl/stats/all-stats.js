@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import MslAllStatsItem from "components/msl/stats/all-stats-item"
 
@@ -6,7 +6,6 @@ import {
   getAllGameStatsByType,
   getReferees,
 } from "graphql/models/stats-by-type"
-import { getTotalCautionType } from "graphql/models/caution-stats"
 import { Cautions } from "graphql/lib/enum"
 import {
   MslSchedulesJsonGamestatsFragment,

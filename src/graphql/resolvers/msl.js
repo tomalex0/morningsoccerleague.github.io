@@ -6,7 +6,6 @@ const {
   getPlayerCautions,
   getPlayerMom,
   getPlayerSaves,
-  getCurrentSeason,
   getTeamGoals,
   getTeamAssists,
   getTeamCautions,

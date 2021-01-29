@@ -1,7 +1,5 @@
-import { Link } from "gatsby"
 import React from "react"
 import MslPlayerItem from "components/msl/player/player-item"
-import MslGoalInfo from "components/msl/schedule/goal-info"
 import { predicate } from "graphql/lib/utility"
 
 const MslScheduleGameStats = ({ team, fixture, id, pos }) => {

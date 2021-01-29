@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import MslTeamImg from "components/msl/team/team-image"
 
 const MslTeamItem = ({ team, cssName = "text-dark-900" }) => {

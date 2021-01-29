@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "components/layout"
-import { groupBy, formatDateString } from "graphql/lib/utility"
+import { groupBy } from "graphql/lib/utility"
 
 import SEO from "components/seo"
 import MslFixtureGroup from "components/msl/schedule/fixture-group"

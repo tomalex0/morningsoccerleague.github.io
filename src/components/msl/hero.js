@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import MslHero1 from "images/hero/1.jpg"
 
 const MslHero = () => {
   return (

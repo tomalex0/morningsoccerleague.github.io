@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import MslFixtureItem from "components/msl/schedule/fixture-item"
 import { formatDateString } from "graphql/lib/utility"

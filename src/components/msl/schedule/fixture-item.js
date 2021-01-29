@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React, { useState } from "react"
 import MslGoalInfo from "components/msl/schedule/goal-info"
 import MslScheduleGameStats from "components/msl/schedule/game-stats"

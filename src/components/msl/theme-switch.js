@@ -1,11 +1,10 @@
-import { Link } from "gatsby"
-import React, { useState, useContext } from "react"
+import React, { useContext } from "react"
 import { ThemeContext } from "context/theme-context"
 
 const MslThemeSwitch = props => {
-  const [toggleActive, setToggleActive] = useState(false)
+  // const [toggleActive, setToggleActive] = useState(false)
   const { theme, setTheme } = useContext(ThemeContext)
-  const toggleState = () => setToggleActive(value => !value)
+  // const toggleState = () => setToggleActive(value => !value)
 
   const handleThemeToggle = () => {
     if (theme === "dark") {
@@ -28,7 +27,6 @@ const MslThemeSwitch = props => {
           </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

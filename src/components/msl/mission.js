@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 
 const MslLazyFrame = React.lazy(() => import("components/msl/lazy-frame"))

@@ -17,7 +17,7 @@ import MslContact from "components/msl/contact"
 import FbLogo from "images/social/facebook.svg"
 
 const Layout = ({ children }) => {
-  const { theme, setTheme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

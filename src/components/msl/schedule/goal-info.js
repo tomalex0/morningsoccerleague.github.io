@@ -5,7 +5,7 @@ import MslTeamImg from "components/msl/team/team-image"
 const MslGoalInfo = ({ game, pos, view = 1 }) => {
   const teamPath = game?.team?.teamPath
   const teamName = game?.team?.teamName
-  const teamLogo = game?.team?.image?.publicURL
+  // const teamLogo = game?.team?.image?.publicURL
   const teamGoals = game?.goals?.length
   const LogoEl = () => (
     <div className="flex-none w-10 md:w-16 flex items-center justify-center">

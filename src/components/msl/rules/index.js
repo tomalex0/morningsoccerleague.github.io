@@ -1,9 +1,7 @@
-import { Link } from "gatsby"
 import React from "react"
 import MslFormatLogistics from "components/msl/rules/format-logistics"
 import MslTimingChart from "components/msl/rules/timing-chart"
 import MslRules from "components/msl/rules/rules"
-import Layout from "components/layout"
 
 const MslRulesIndex = () => {
   return (

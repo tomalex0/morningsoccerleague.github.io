@@ -1,5 +1,3 @@
-const { getTotalCautionType } = require("../models/caution-stats")
-const { getAllGameStatsByType } = require("../models/stats-by-type")
 const { getSeasonStats } = require("../models/season-stats")
 const { getSeasonTeams } = require("../models/season-teams")
 const {

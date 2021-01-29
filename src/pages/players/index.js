@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
@@ -15,22 +15,6 @@ import {
   MslPlayerStatsFragment,
 } from "data/fragments"
 
-const sort_by = (field, reverse, primer) => {
-  const key = primer
-    ? function (x) {
-        return primer(x[field])
-      }
-    : function (x) {
-        return x[field]
-      }
-
-  reverse = !reverse ? 1 : -1
-
-  return function (a, b) {
-    return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a))
-  }
-}
-
 const PlayersIndex = ({ data, path }) => {
   const { players } = data
   const playersFormatted = players.nodes.map(item => ({
@@ -42,20 +26,6 @@ const PlayersIndex = ({ data, path }) => {
   const [sortState, setSortState] = useState("name")
   const [orderState, setOrderState] = useState(0)
 
-  function handleInputChange(event) {
-    const query = event.target.value
-    setSearchQuery(query)
-  }
-
-  function handleSortChange(event) {
-    const sortKey = event.target.value
-    setSortState(sortKey)
-  }
-
-  function handleOrderChange(event) {
-    const sortOrder = event.target.value
-    setOrderState(sortOrder)
-  }
   useEffect(() => {
     function searchFilter(query, sortKey, sortOrder) {
       var filteredData = [...playersFormatted].filter(player => {
