@@ -126,12 +126,6 @@ export const MslSeasonsJsonFragment = graphql`
     fixturePath: gatsbyPath(
       filePath: "/seasons/{MslSeasonsJson.season_id}-{MslSeasonsJson.season_year}/fixtures"
     )
-    statsPath: gatsbyPath(
-      filePath: "/seasons/{MslSeasonsJson.season_id}-{MslSeasonsJson.season_year}/statistics"
-    )
-    standingPath: gatsbyPath(
-      filePath: "/seasons/{MslSeasonsJson.season_id}-{MslSeasonsJson.season_year}/standings"
-    )
   }
 `
 export const MslSchedulesJsonGamestatsFragment = graphql`
