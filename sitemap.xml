@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/gmm/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/page-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/register/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/rules/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/schedule/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/stats/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/using-typescript/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/players/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -139,12 +136,6 @@
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/1-2017/fixtures/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/2-2018/fixtures/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/3-2019/fixtures/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/1-2017/standings/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/2-2018/standings/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/3-2019/standings/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/1-2017/statistics/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/2-2018/statistics/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/seasons/3-2019/statistics/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/teams/1-touchables/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/teams/atletico-vista/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://tomalex0.github.io/morningsoccerleague.github.io/teams/benchwarmers-fc/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
