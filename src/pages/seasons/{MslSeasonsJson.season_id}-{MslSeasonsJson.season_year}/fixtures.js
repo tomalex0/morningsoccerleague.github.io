@@ -14,7 +14,7 @@ import {
 
 const FixturesIndexPage = props => {
   const path = props.path
-  const pageContext = props.pageContext
+  // const pageContext = props.pageContext
   const seasonData = props.data.season
   const fixtures = props.data.season.schedules
     .map(item => ({
