@@ -35,5 +35,5 @@ module.exports = {
       fill: ["dark"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 }
