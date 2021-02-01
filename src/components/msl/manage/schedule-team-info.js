@@ -1,18 +1,18 @@
 import React from "react"
 
-const MslScheduleTeamInfo = () => {
+const MslScheduleTeamInfo = ({ team_type = "away" }) => {
   return (
     <div className="grid grid-cols-6 gap-6">
       <div className="col-span-6 sm:col-span-2">
         <label
-          htmlFor="ref_teams"
+          htmlFor={`game_team_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Teams
         </label>
         <select
-          id="ref_teams"
-          name="ref_team"
+          id={`game_team_${team_type}`}
+          name={`game_team_${team_type}`}
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
           <option>Team 1</option>
@@ -22,13 +22,14 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-2">
         <label
-          htmlFor="ref_players"
+          htmlFor={`game_players_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Players
         </label>
         <select
-          name="ref_players"
+          id={`game_players_${team_type}`}
+          name={`game_players_${team_type}`}
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
           <option>Player 1</option>
@@ -38,15 +39,15 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-2">
         <label
-          htmlFor="scheduled_date"
+          htmlFor={`game_fouls_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Fouls
         </label>
         <input
           type="number"
-          name="scheduled_date"
-          id="scheduled_date"
+          name={`game_fouls_${team_type}`}
+          id={`game_fouls_${team_type}`}
           className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
         />
       </div>
@@ -55,14 +56,14 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-3">
         <label
-          htmlFor="ref_players"
+          htmlFor={`game_goal_scorer_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Players
         </label>
         <select
-          id="ref_players"
-          name="ref_players"
+          id={`game_goal_scorer_${team_type}`}
+          name={`game_goal_scorer_${team_type}`}
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
           <option>Player 1</option>
@@ -72,15 +73,15 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-3">
         <label
-          htmlFor="scheduled_date"
+          htmlFor={`game_goal_scorer_min_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Minute
         </label>
         <input
           type="number"
-          name="scheduled_date"
-          id="scheduled_date"
+          name={`game_goal_scorer_min_${team_type}`}
+          id={`game_goal_scorer_min_${team_type}`}
           className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
         />
       </div>
@@ -97,14 +98,14 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-3">
         <label
-          htmlFor="ref_players"
+          htmlFor={`game_keeper_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Players
         </label>
         <select
-          id="ref_players"
-          name="ref_players"
+          id={`game_keeper_${team_type}`}
+          name={`game_keeper_${team_type}`}
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
           <option>Player 1</option>
@@ -114,15 +115,15 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-3">
         <label
-          htmlFor="scheduled_date"
+          htmlFor={`game_saves_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Saves
         </label>
         <input
           type="number"
-          name="scheduled_date"
-          id="scheduled_date"
+          name={`game_saves_${team_type}`}
+          id={`game_saves_${team_type}`}
           className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
         />
       </div>
@@ -139,14 +140,14 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-2">
         <label
-          htmlFor="ref_players"
+          htmlFor={`game_caution_type_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Caution
         </label>
         <select
-          id="ref_players"
-          name="ref_players"
+          id={`game_caution_type_${team_type}`}
+          name={`game_caution_type_${team_type}`}
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
           <option>Yellow</option>
@@ -155,14 +156,14 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-2">
         <label
-          htmlFor="ref_players"
+          htmlFor={`game_caution_player_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
           Players
         </label>
         <select
-          id="ref_players"
-          name="ref_players"
+          id={`game_caution_player_${team_type}`}
+          name={`game_caution_player_${team_type}`}
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
           <option>Player 1</option>
@@ -172,15 +173,15 @@ const MslScheduleTeamInfo = () => {
       </div>
       <div className="col-span-6 sm:col-span-2">
         <label
-          htmlFor="scheduled_date"
+          htmlFor={`game_caution_min_${team_type}`}
           className="block text-sm font-medium text-gray-700"
         >
-          Saves
+          Minute
         </label>
         <input
           type="number"
-          name="scheduled_date"
-          id="scheduled_date"
+          name={`game_caution_min_${team_type}`}
+          id={`game_caution_min_${team_type}`}
           className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
         />
       </div>
