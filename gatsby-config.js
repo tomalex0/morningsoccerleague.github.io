@@ -85,6 +85,26 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-tinacms",
+      options: {
+        enabled: process.env.NODE_ENV !== "production",
+        sidebar: true,
+        plugins: [
+          "gatsby-tinacms-git",
+          "gatsby-tinacms-remark",
+          "gatsby-tinacms-json",
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/markdown/pages`,
+        name: `markdown-pages`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: siteConfig.title,
