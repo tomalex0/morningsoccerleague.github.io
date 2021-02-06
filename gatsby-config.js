@@ -87,7 +87,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-tinacms",
       options: {
-        enabled: true,
+        enabled: process.env.NODE_ENV !== "production",
         sidebar: true,
         plugins: [
           "gatsby-tinacms-git",
