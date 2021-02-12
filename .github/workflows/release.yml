@@ -6,8 +6,7 @@ name: Upload Release Asset
 on:
   push:
     # Sequence of patterns matched against refs/tags
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+    branches: [ gatsby ]
 
 jobs:
   release:
@@ -26,6 +25,16 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - name: Get Package Version
+        id: getpkgversion
+        run: |
+          content=`cat ./path/to/package.json`
+          # the following lines are only required for multi line json
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          # end of optional handling for multi line json
+          echo "::set-output name=packageJson::$content"
       - name: Install Dependencies
         run: |
           npm ci
@@ -41,8 +50,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{fromJson(steps.getpkgversion.outputs.packageJson).version}}
+          release_name: Release ${{fromJson(steps.getpkgversion.outputs.packageJson).version}}
           draft: false
           prerelease: false
       - name: Upload Release Asset
