@@ -12,6 +12,7 @@
 ![LightHouse Url CI](https://github.com/tomalex0/morningsoccerleague.github.io/workflows/LightHouse%20Url%20CI/badge.svg)
 ![LightHouse CI](https://github.com/tomalex0/morningsoccerleague.github.io/workflows/LightHouse%20CI/badge.svg)
 ![Prettier CI](https://github.com/tomalex0/morningsoccerleague.github.io/workflows/Prettier%20CI/badge.svg)
+![Create Release](https://github.com/tomalex0/morningsoccerleague.github.io/workflows/Create%20Release/badge.svg)
 
 ## 🚀 Quick start
 
