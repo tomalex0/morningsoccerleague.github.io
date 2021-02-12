@@ -2,7 +2,7 @@
   "name": "morningsoccerleague.github.io",
   "private": true,
   "description": "Morning Soccer League Web Codebase using Gatsby",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Thomas Alexander <tomalex0@gmail.com>",
   "dependencies": {
     "@tailwindcss/forms": "^0.2.1",
