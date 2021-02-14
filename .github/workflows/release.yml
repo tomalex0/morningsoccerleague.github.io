@@ -42,7 +42,7 @@ jobs:
         run: |
           REF_RESPONSE=0.3.0
           VER=${{fromJson(steps.getpkgversion.outputs.packageJson).version}}
-          echo $(git --version)
+          echo $(git show-ref)
           echo $REF_RESPONSE
           echo $VER
           if [[ "$REF_RESPONSE" == *"$VER"* ]]; then
