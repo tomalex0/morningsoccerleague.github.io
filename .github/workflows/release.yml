@@ -45,7 +45,7 @@ jobs:
           echo $REF_RESPONSE
           echo $VER
           if [[ "$REF_RESPONSE" == *"$VER"* ]]; then
-            echo "Version Found"
+            exit 0;
           fi
       - name: Install Dependencies
         run: |
