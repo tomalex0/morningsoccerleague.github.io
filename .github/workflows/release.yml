@@ -42,11 +42,13 @@ jobs:
         run: |
           REF_RESPONSE=$(git ls-remote --tags)
           VER=${{fromJson(steps.getpkgversion.outputs.packageJson).version}}
-          echo $REF_RESPONSE
-          echo $VER
+          # echo $REF_RESPONSE
+          # echo $VER
           if [[ "$REF_RESPONSE" == *"$VER"* ]]; then
-            echo "Release Tag Found Matching Package Version"
+            echo "Release Tag $VER Already Exists"
             exit 1
+          else
+            echo "Release Tag $VER does not Exists"
           fi
       - name: Install Dependencies
         run: |
