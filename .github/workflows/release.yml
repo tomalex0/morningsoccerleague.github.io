@@ -40,9 +40,9 @@ jobs:
           echo "${{fromJson(steps.getpkgversion.outputs.packageJson).version}}"
       - name: Verify Release Tag
         run: |
-          REF_RESPONSE=$(git ls-remote --tags)
+          REF_RESPONSE=$(git tag)
           VER=${{fromJson(steps.getpkgversion.outputs.packageJson).version}}
-          # echo $REF_RESPONSE
+          echo $REF_RESPONSE
           # echo $VER
           if [[ "$REF_RESPONSE" == *"$VER"* ]]; then
             echo "Release Tag $VER Already Exists"
