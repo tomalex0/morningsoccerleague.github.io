@@ -41,6 +41,15 @@ jobs:
       - name: Install Dependencies
         run: |
           npm ci
+      - name: Verify Release Tag
+        run: |
+          REF_REPONSE=$(git show-ref 0.3.0)
+          VER=${{fromJson(steps.getpkgversion.outputs.packageJson).version}}
+          echo $REF_RESPONSE
+          echo $VER
+          if [[ "$REF_REPONSE" != *"$VER"* ]]; then
+            exit 0;
+          fi
       - name: Build Application
         run: |
           npm run build -- --prefix-paths  --log-pages
