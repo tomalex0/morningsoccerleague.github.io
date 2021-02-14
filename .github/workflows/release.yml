@@ -42,10 +42,10 @@ jobs:
         run: |
           REF_RESPONSE=0.3.0
           VER=${{fromJson(steps.getpkgversion.outputs.packageJson).version}}
-          echo $(git show-ref ${{fromJson(steps.getpkgversion.outputs.packageJson).version}})
+          echo $(git show-ref 0.3.0)
           echo $REF_RESPONSE
           echo $VER
-          if [[ "$REF_REPONSE" == *"$VER"* ]]; then
+          if [[ "$REF_RESPONSE" == *"$VER"* ]]; then
             echo "Version Found"
           fi
       - name: Install Dependencies
