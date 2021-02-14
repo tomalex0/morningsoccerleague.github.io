@@ -46,7 +46,7 @@ const MslHero = () => {
         {/*/>*/}
         <StaticImage
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          layout="fluid"
+          layout="fullWidth"
           placeholder="none"
           src="../../images/hero/1.jpg"
           alt="MSL"

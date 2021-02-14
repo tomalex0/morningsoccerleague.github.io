@@ -7,7 +7,11 @@ const MslAvatar = () => {
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
         childImageSharp {
-          gatsbyImageData(maxWidth: 300, layout: FLUID, placeholder: TRACED_SVG)
+          gatsbyImageData(
+            width: 300
+            layout: FULL_WIDTH
+            placeholder: TRACED_SVG
+          )
         }
       }
     }
