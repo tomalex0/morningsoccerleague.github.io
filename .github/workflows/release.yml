@@ -45,7 +45,8 @@ jobs:
           echo $REF_RESPONSE
           echo $VER
           if [[ "$REF_RESPONSE" == *"$VER"* ]]; then
-            exit 0;
+            echo "Release Tag Found Matching Package Version"
+            exit 1
           fi
       - name: Install Dependencies
         run: |
