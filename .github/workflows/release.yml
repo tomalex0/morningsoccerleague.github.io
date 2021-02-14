@@ -40,9 +40,8 @@ jobs:
           echo "${{fromJson(steps.getpkgversion.outputs.packageJson).version}}"
       - name: Verify Release Tag
         run: |
-          REF_RESPONSE=0.3.0
+          REF_RESPONSE=$(git ls-remote --tags)
           VER=${{fromJson(steps.getpkgversion.outputs.packageJson).version}}
-          echo $(git show-ref)
           echo $REF_RESPONSE
           echo $VER
           if [[ "$REF_RESPONSE" == *"$VER"* ]]; then
