@@ -26,7 +26,13 @@
     cd project-folder/
     gatsby develop
     ```
-
+1. **Release Steps**
+        
+    Follow https://docs.npmjs.com/cli/v6/commands/npm-version#synopsis
+    
+    1. `npm version patch|minor|major`
+    2. `git push` to `gatsby` branch
+    
 1.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
