@@ -107,6 +107,24 @@ A quick look at the top-level files and directories you'll see in this project.
 
 - https://tomalex0.github.io/morningsoccerleague.github.io
 
+
+## Docker Compose
+
+- `docker-compose build`
+- `docker-compose up`
+
+## Docker
+
+#### Build
+
+- `docker build -f devops/docker/Dockerfile . -t msl-build`
+- `docker run --rm -it -p 9001:9000 msl-build`
+
+#### Preview
+ 
+- `docker build -f devops/docker/preview.Dockerfile . -t msl-preview`
+- `docker run --rm -it -p 8001:8000 msl-preview`
+
 ## Reference
 
 ##### Gatsby Build
