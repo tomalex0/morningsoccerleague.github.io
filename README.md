@@ -26,13 +26,14 @@
     cd project-folder/
     gatsby develop
     ```
-1. **Release Steps**
-        
+
+1.  **Release Steps**
+
     Follow https://docs.npmjs.com/cli/v6/commands/npm-version#synopsis
-    
+
     1. `npm version patch|minor|major`
     2. `git push` to `gatsby` branch
-    
+
 1.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
@@ -107,7 +108,6 @@ A quick look at the top-level files and directories you'll see in this project.
 
 - https://tomalex0.github.io/morningsoccerleague.github.io
 
-
 ## Docker Compose
 
 - `docker-compose build`
@@ -121,7 +121,7 @@ A quick look at the top-level files and directories you'll see in this project.
 - `docker run --rm -it -p 9001:9000 msl-build`
 
 #### Preview
- 
+
 - `docker build -f devops/docker/preview.Dockerfile . -t msl-preview`
 - `docker run --rm -it -p 8001:8000 msl-preview`
 

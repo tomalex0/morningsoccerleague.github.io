@@ -1,0 +1,14 @@
+{
+  "ignoreTestFiles": "examples/*",
+  "env": {
+    "appUrl": "https://tomalex0.github.io/morningsoccerleague.github.io"
+  },
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results/e2e",
+    "reportFilename": "e2e",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
+}

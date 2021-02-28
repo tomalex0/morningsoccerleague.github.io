@@ -1,0 +1,23 @@
+{
+   "all": true,
+   "exclude": [
+      "cypress",
+      "coverage",
+      "assets",
+      "bkp",
+      "data",
+      "devops",
+      "helpers",
+      "public",
+      "static",
+      "lighthouserc.js",
+      "lighthouserc-url.js",
+      ".cache",
+      "mochawesome-report",
+      "test"
+   ],
+   "reporter": [
+     "html",
+     "text"
+   ]
+}
