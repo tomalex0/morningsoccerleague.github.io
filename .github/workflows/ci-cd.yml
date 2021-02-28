@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - id: foo
+      - id: composite-id
         name: Composite Actions
         uses: ./.github/actions/dispatch
         with:
           event_type: 'gh_pages_deployed'
           token: ${{ secrets.DEPLOY_TOKEN }}
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+      - run: echo Event Type ${{ steps.composite-id.outputs.event_type }}
         shell: bash
   lint:
     runs-on: ubuntu-latest

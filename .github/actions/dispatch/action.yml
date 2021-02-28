@@ -12,11 +12,11 @@ inputs:
 outputs:
   random-number:
     description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+    value: ${{ steps.random-number-generator.outputs.event_type }}
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.event_type }}.
+    - run: echo Event is ${{ inputs.event_type }}.
       name: Event Type
       shell: bash
     - id: dispatch-events
@@ -32,8 +32,7 @@ runs:
         DEPLOY_TOKEN: ${{ inputs.token }}
       shell: bash
     - id: random-number-generator
-      name: Random Generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      run: echo "::set-output name=event_type::${{ inputs.event_type }}"
       shell: bash
     - run: ${{ github.action_path }}/api.sh
       name: Bash Script
