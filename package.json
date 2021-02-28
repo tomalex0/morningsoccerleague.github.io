@@ -35,6 +35,7 @@
     "typescript": "^4.2.2"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.12.13",
     "@cypress/code-coverage": "^3.9.2",
     "@typescript-eslint/parser": "^4.15.2",
     "babel-plugin-istanbul": "^6.0.0",
