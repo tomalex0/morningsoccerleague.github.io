@@ -16,7 +16,7 @@ jobs:
         with:
           event_type: 'gh_pages_deployed'
           token: ${{ secrets.DEPLOY_TOKEN }}
-      - run: echo Event Type ${{ steps.composite-id.outputs.event_type }}
+      - run: echo Event Type ${{ steps.composite-id.outputs.random-number }}
         shell: bash
   lint:
     runs-on: ubuntu-latest
