@@ -16,44 +16,72 @@ jobs:
         with:
           event_type: 'gh_pages_deployed'
           token: ${{ secrets.DEPLOY_TOKEN }}
-      - run: echo Event Type ${{ steps.composite-id.outputs.random-number }}
+      - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
         shell: bash
   lint:
     runs-on: ubuntu-latest
     name: Lint
     steps:
-      - name: Lint
-        run: echo "Lint"
+      - id: composite-id
+        name: Lint
+        uses: ./.github/actions/dispatch
+        with:
+          event_type: 'msl_lint'
+          token: ${{ secrets.DEPLOY_TOKEN }}
+      - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
+        shell: bash
   unit-test:
     runs-on: ubuntu-latest
     needs: lint
-    name: Unit Test
+    name: Lint
     steps:
-      - name: Unit Test
-        id: unit_test
-        run: echo "Unit Test"
-  e2e:
+      - id: composite-id
+        name: Unit Test
+        uses: ./.github/actions/dispatch
+        with:
+          event_type: 'msl_unit_test'
+          token: ${{ secrets.DEPLOY_TOKEN }}
+      - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
+        shell: bash
+  e2e-test:
     runs-on: ubuntu-latest
-    needs: unit-test
     name: E2E Test
+    needs: unit-test
     steps:
-      - name: UI Test
-        id: ui_test
-        run: echo "UI Test"
+      - id: composite-id
+        name: Line
+        uses: ./.github/actions/dispatch
+        with:
+          event_type: 'msl_e2e_test'
+          token: ${{ secrets.DEPLOY_TOKEN }}
+      - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
+        shell: bash
   deploy:
     runs-on: ubuntu-latest
-    needs: e2e
     name: Deploy
+    needs: e2e-test
     environment:
       name: dev
-      url: https://tomalex0.github.io/morningsoccerleague.github.io/
+      url: https://tomalex0.github.io/morningsoccerleague.github.io
     steps:
-      - name: Deploy
-        run: echo "Deploy"
+      - id: composite-id
+        name: Line
+        uses: ./.github/actions/dispatch
+        with:
+          event_type: 'msl_deploy'
+          token: ${{ secrets.DEPLOY_TOKEN }}
+      - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
+        shell: bash
   lhci:
     runs-on: ubuntu-latest
     needs: deploy
     name: Light House
     steps:
-      - name: Light House
-        run: echo "Light House"
+      - id: composite-id
+        name: Deploy
+        uses: ./.github/actions/dispatch
+        with:
+          event_type: 'gh_pages_deployed'
+          token: ${{ secrets.DEPLOY_TOKEN }}
+      - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
+        shell: bash

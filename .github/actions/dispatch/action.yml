@@ -10,7 +10,7 @@ inputs:
     required: true
     default: 'none'
 outputs:
-  random-number:
+  event-info:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.event_type }}
 runs:
