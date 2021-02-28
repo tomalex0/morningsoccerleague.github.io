@@ -195,3 +195,4 @@ A quick look at the top-level files and directories you'll see in this project.
 ### Icons
 
 - https://www.iconfinder.com/iconsets/football-outline-14
+- https://github.com/tinacms/tinacms/issues/771
