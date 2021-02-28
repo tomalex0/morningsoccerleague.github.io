@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint
     steps:
+      - uses: actions/checkout@v2
       - id: composite-id
         name: Lint
         uses: ./.github/actions/dispatch
@@ -35,6 +36,7 @@ jobs:
     needs: lint
     name: Lint
     steps:
+      - uses: actions/checkout@v2
       - id: composite-id
         name: Unit Test
         uses: ./.github/actions/dispatch
@@ -48,6 +50,7 @@ jobs:
     name: E2E Test
     needs: unit-test
     steps:
+      - uses: actions/checkout@v2
       - id: composite-id
         name: Line
         uses: ./.github/actions/dispatch
@@ -64,6 +67,7 @@ jobs:
       name: dev
       url: https://tomalex0.github.io/morningsoccerleague.github.io
     steps:
+      - uses: actions/checkout@v2
       - id: composite-id
         name: Line
         uses: ./.github/actions/dispatch
@@ -77,6 +81,7 @@ jobs:
     needs: deploy
     name: Light House
     steps:
+      - uses: actions/checkout@v2
       - id: composite-id
         name: Deploy
         uses: ./.github/actions/dispatch
