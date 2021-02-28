@@ -1,10 +1,6 @@
 name: 'Dispatch CI/CD Events'
 description: 'Use this actions to trigger other workflows'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
   event_type:  # id of input
     description: 'Event Type to Trigger'
     required: true
@@ -20,9 +16,11 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - run: echo Hello ${{ inputs.event_type }}.
+      name: Event Type
       shell: bash
-    - id: random-number-generator
+    - id: dispatch-events
+      name: Dispatch Events
       run: |
         curl \
           -X POST \
@@ -33,5 +31,10 @@ runs:
       env:
         DEPLOY_TOKEN: ${{ inputs.token }}
       shell: bash
+    - id: random-number-generator
+      name: Random Generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash
     - run: ${{ github.action_path }}/api.sh
+      name: Bash Script
       shell: bash

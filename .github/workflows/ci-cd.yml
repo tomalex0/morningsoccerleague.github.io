@@ -14,7 +14,6 @@ jobs:
         name: Composite Actions
         uses: ./.github/actions/dispatch
         with:
-          who-to-greet: 'Mona the Octocat'
           event_type: 'gh_pages_deployed'
           token: ${{ secrets.DEPLOY_TOKEN }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
