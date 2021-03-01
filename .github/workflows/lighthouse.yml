@@ -1,7 +1,7 @@
 name: LightHouse CI
 on:
   repository_dispatch:
-    types: [gh_pages_deployed]
+    types: [msl_lhci_build]
   workflow_dispatch:
 jobs:
   lhci:
