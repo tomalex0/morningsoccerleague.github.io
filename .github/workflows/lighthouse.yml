@@ -1,11 +1,7 @@
 name: LightHouse CI
 on:
-  push:
-    branches: [gatsby]
-    paths:
-      - 'src/**'
-      - 'static/**'
-      - 'package.json'
+  repository_dispatch:
+    types: [gh_pages_deployed]
   workflow_dispatch:
 jobs:
   lhci:

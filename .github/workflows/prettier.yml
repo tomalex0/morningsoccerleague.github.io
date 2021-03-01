@@ -4,8 +4,8 @@
 name: Lint + Prettier CI
 
 on:
-  push:
-    branches: [ gatsby ]
+  repository_dispatch:
+    types: [msl_lint]
   workflow_dispatch:
 jobs:
   build:

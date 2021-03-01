@@ -2,22 +2,17 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: CI/CD
-
-on: [push,pull_request,workflow_dispatch]
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - '**.js'
+      - 'static/**'
+      - 'package.json'
+      - '!lighthouserc.js'
+  workflow_dispatch:
 jobs:
-  composite:
-    name: Composite
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - id: composite-id
-        name: Composite Actions
-        uses: ./.github/actions/dispatch
-        with:
-          event_type: 'gh_pages_deployed'
-          token: ${{ secrets.DEPLOY_TOKEN }}
-      - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
-        shell: bash
   lint:
     runs-on: ubuntu-latest
     name: Lint

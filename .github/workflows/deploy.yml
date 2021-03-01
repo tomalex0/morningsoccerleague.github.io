@@ -1,13 +1,7 @@
 name: Github Pages Deploy CI
 on:
-  push:
-    branches: [gatsby]
-    paths:
-      - 'src/**'
-      - '**.js'
-      - 'static/**'
-      - 'package.json'
-      - '!lighthouserc.js'
+  repository_dispatch:
+    types: [msl_deploy]
   workflow_dispatch:
 jobs:
   ghpages:

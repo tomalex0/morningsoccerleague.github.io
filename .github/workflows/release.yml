@@ -4,10 +4,9 @@
 name: Create Release
 
 on:
-  push:
-    # Sequence of patterns matched against refs/tags
-    branches: [ gatsby ]
-
+  repository_dispatch:
+    types: [msl_release]
+  workflow_dispatch:
 jobs:
   release:
     name: Upload Release Asset
