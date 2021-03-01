@@ -99,17 +99,3 @@ jobs:
           token: ${{ secrets.DEPLOY_TOKEN }}
       - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
         shell: bash
-  lhci-url:
-    runs-on: ubuntu-latest
-    needs: deploy
-    name: Light House Url
-    steps:
-      - uses: actions/checkout@v2
-      - id: composite-id
-        name: Deploy
-        uses: ./.github/actions/dispatch
-        with:
-          event_type: 'msl_lhci_url'
-          token: ${{ secrets.DEPLOY_TOKEN }}
-      - run: echo Event Type ${{ steps.composite-id.outputs.event-info }}
-        shell: bash
