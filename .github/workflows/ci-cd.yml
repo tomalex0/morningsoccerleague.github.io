@@ -71,7 +71,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
-    needs: e2e-test
+    needs: lhci-build
     environment:
       name: dev
       url: https://tomalex0.github.io/morningsoccerleague.github.io
