@@ -1,4 +1,4 @@
-const { resolve } = require("path")
+const { resolve } = require("path-browserify")
 module.exports = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
