@@ -19,7 +19,7 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-nodev1-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-nodev1-
       - name: Install Dependencies
         run: npm ci
       - name: Build Application

@@ -23,7 +23,7 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-nodev1-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-nodev1-
       - name: Set Package Version
         id: getpkgversion
         run: |
