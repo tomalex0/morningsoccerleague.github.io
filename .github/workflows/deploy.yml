@@ -21,15 +21,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nodev1-
       - name: Caching Gatsby
-          id: gatsby-cache-build
-          uses: actions/cache@v2
-          with:
-            path: |
-              public
-              .cache
-            key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
-            restore-keys: |
-              ${{ runner.os }}-gatsby-build-
+        id: gatsby-cache-build
+        uses: actions/cache@v2
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-build-
       - name: Install Dependencies
         run: npm ci
       - name: Build Application
