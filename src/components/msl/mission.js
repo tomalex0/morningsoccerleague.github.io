@@ -23,7 +23,7 @@ const MslMission = ({ player }) => {
                       Morning Soccer League is a get together of friends
                       dedicated to the positive development through their
                       participation in a safe, healthy, and affordable soccer
-                      program that is fun and rewarding for all.
+                      program that is fun and rewarding for all
                     </p>
                     <ul className="list-disc space-y-2">
                       <li className="flex items-start">
