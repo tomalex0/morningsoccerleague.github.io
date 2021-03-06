@@ -13,7 +13,7 @@ const IndexPage = ({ path }) => {
       <SEO title="GMM" path={path} />
       <div className=" mx-auto px-5 mt-10">
         <h1 className="text-2xl font-bold leading-7 text-dark-600 dark:text-dark-300  sm:text-3xl sm:truncate mb-4">
-          GMM Page
+          GMM
         </h1>
         <div>
           {!isSSR && (
