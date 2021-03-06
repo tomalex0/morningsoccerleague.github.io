@@ -38,7 +38,6 @@ jobs:
         env:
           PATH_PREFIX: morningsoccerleague.github.io
           SITE_URL: https://tomalex0.github.io
-          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           CI: true
       - name: Deploy to gh-pages
         run: |
