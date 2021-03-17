@@ -24,6 +24,7 @@
     Install nodejs 14.15.3
     git clone
     cd project-folder/
+    npm install
     gatsby develop
     ```
 
