@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useLocation } from "@reach/router";
 
 import DefaultOpenGraphImage from "../../src/images/og.jpg"
 
@@ -26,6 +27,7 @@ function isValidUrl(string) {
 }
 
 function SEO({ description, lang, meta, title, image, path }) {
+  const { pathname } = useLocation();
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -48,7 +50,7 @@ function SEO({ description, lang, meta, title, image, path }) {
   const defaultTitle = site.siteMetadata?.title
   const metaImage = image || DefaultOpenGraphImage
   const fullImage = isValidUrl(metaImage) ? metaImage : `${siteUrl}${metaImage}`
-  const pathJoined = join(pathPrefix, path || "/")
+  const pathJoined = join(pathPrefix, pathname || "/")
   const canonicalUrl = new URL(pathJoined, siteUrl).href
 
   // console.log(pathJoined, "pathJoined")
