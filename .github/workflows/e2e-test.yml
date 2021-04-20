@@ -35,20 +35,20 @@ jobs:
         env:
           cypress_appUrl: ${{ github.event.inputs.APP_URL || env.DEFAULT_APP_URL}}
       - name: Upload Test Screenshots
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
       # Test run video was always captured, so this action uses "always()" condition
       - name: Upload Test Videos
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: always()
         with:
           name: cypress-videos
           path: cypress/videos
       - name: Mocha Report
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: always()
         with:
           name: mochawesome-report
