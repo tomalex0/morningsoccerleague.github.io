@@ -24,12 +24,13 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          command: npm run unit-test && ls
+          command: npm run unit-test
           config-file: cypress-unit-test.json
       - name: Upload Code Coverage
         uses: actions/upload-artifact@v2
         if: always()
         with:
+          command: ls
           name: codecov
           path: coverage
       - name: Mocha Report
