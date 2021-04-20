@@ -26,13 +26,13 @@ jobs:
         with:
           command: npm run unit-test
       - name: Upload Code Coverage
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: always()
         with:
           name: codecov
           path: coverage
       - name: Mocha Report
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: always()
         with:
           name: mochawesome-report
