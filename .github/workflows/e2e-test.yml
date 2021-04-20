@@ -31,7 +31,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          command: npm run cy:run:headless
+          command: npm run e2e-test
         env:
           cypress_appUrl: ${{ github.event.inputs.APP_URL || env.DEFAULT_APP_URL}}
       - name: Upload Test Screenshots
