@@ -24,7 +24,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          command: npm run unit-test
+          command: npm run unit-test && ls
           config-file: cypress-unit-test.json
       - name: Upload Code Coverage
         uses: actions/upload-artifact@v2
