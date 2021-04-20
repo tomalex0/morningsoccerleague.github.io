@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { useLocation } from "@reach/router";
+import { useLocation } from "@reach/router"
 
 import DefaultOpenGraphImage from "../../src/images/og.jpg"
 
@@ -27,7 +27,7 @@ function isValidUrl(string) {
 }
 
 function SEO({ description, lang, meta, title, image, path }) {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
   const { site } = useStaticQuery(
     graphql`
       query {

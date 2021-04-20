@@ -3,10 +3,10 @@ module.exports = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       fallback: {
-        fs: false
+        fs: false,
       },
       alias: {
-        path: require.resolve("path-browserify")
+        path: require.resolve("path-browserify"),
       },
       modules: [resolve(__dirname, "src"), "node_modules"],
     },

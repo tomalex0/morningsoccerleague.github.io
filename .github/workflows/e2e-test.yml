@@ -1,0 +1,55 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: E2E Test
+
+on:
+  push:
+    branches: [gatsby]
+  pull_request:
+    branches: [gatsby]
+  workflow_dispatch:
+    inputs:
+      APP_URL:
+        description: Embed Url
+        default: https://tomalex0.github.io/morningsoccerleague.github.io/
+        required: true
+env:
+  DEFAULT_APP_URL: https://tomalex0.github.io/morningsoccerleague.github.io/
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run cy:run:headless
+        env:
+          cypress_appUrl: ${{ github.event.inputs.APP_URL || env.DEFAULT_APP_URL}}
+      - name: Upload Test Screenshots
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      # Test run video was always captured, so this action uses "always()" condition
+      - name: Upload Test Videos
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+      - name: Mocha Report
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: mochawesome-report
+          path: mochawesome-report

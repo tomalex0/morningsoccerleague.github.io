@@ -201,6 +201,7 @@ A quick look at the top-level files and directories you'll see in this project.
 ### Shell Script
 
 1. List files and folder in root folder
+
 ```angular2
 find ./ -maxdepth 1 -name node_modules -prune -o  -type d -o -type f -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 ```
