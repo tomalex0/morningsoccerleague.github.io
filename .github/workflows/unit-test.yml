@@ -25,6 +25,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           command: npm run unit-test
+          config-file: cypress-unit-test.json
       - name: Upload Code Coverage
         uses: actions/upload-artifact@v2
         if: always()
