@@ -27,7 +27,7 @@ jobs:
           command: npm run unit-test
           config-file: cypress-unit-test.json
       - name: List
-          run: |
+        run: |
             ls
       - name: Upload Code Coverage
         uses: actions/upload-artifact@v2
