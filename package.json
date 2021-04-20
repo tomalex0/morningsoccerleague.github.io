@@ -79,7 +79,7 @@
     "preunit-test": "npm run delete-unit:reports",
     "pree2e-test": "npm run delete-e2e:reports",
     "e2e-test": "cypress run --spec  'cypress/integration/ui-test/**/*' --headless --env coverage=false && npm run e2e-merge && npm run e2e-report",
-    "unit-test": "cypress run --spec  'cypress/integration/unit-test/**/*' --env coverage=true && npm run unit-merge && npm run unit-report",
+    "unit-test": "cypress run --config-file cypress-unit-test.json --spec  'cypress/integration/unit-test/**/*' --env coverage=true && npm run unit-merge && npm run unit-report",
     "e2e-merge": "mochawesome-merge cypress/results/e2e/*.json > e2e-mochawesome.json",
     "unit-merge": "mochawesome-merge cypress/results/unit/*.json > unit-mochawesome.json",
     "e2e-report": "npx marge e2e-mochawesome.json",
