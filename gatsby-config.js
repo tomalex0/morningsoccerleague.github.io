@@ -89,6 +89,7 @@ module.exports = {
       options: {
         enabled: process.env.NODE_ENV !== "production",
         sidebar: true,
+        manualInit: true,
         plugins: [
           "gatsby-tinacms-git",
           "gatsby-tinacms-remark",

@@ -5,3 +5,6 @@ public
 .lighthouseci
 .codesandbox
 mochawesome-report
+coverage
+cypress/results/*
+.nyc_output/*

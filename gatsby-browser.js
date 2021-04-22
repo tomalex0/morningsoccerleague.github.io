@@ -6,6 +6,7 @@
 import * as React from "react"
 // import { Profiler } from "react"
 import "./src/css/index.css"
+import { TinaProvider, TinaCMS } from "tinacms"
 import ThemeContextProvider from "context/theme-context"
 
 // function capturePageMetrics(
@@ -40,7 +41,15 @@ import ThemeContextProvider from "context/theme-context"
 // }
 
 export const wrapRootElement = ({ element }) => {
-  return <ThemeContextProvider>{element}</ThemeContextProvider>
+  const cms = new TinaCMS({
+    sidebar: true,
+    enabled: true,
+  })
+  return (
+    <TinaProvider cms={cms}>
+      <ThemeContextProvider>{element}</ThemeContextProvider>
+    </TinaProvider>
+  )
 }
 
 export const registerServiceWorker = () => true
