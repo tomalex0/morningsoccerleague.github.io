@@ -43,7 +43,7 @@ import ThemeContextProvider from "context/theme-context"
 export const wrapRootElement = ({ element }) => {
   const cms = new TinaCMS({
     sidebar: true,
-    enabled: true,
+    enabled: process.env.NODE_ENV !== "production",
   })
   return (
     <TinaProvider cms={cms}>
