@@ -39,6 +39,7 @@
     "@babel/preset-react": "^7.13.13",
     "@cypress/code-coverage": "^3.9.5",
     "@typescript-eslint/parser": "^4.22.0",
+    "babel-eslint": "^10.1.0",
     "babel-plugin-istanbul": "^6.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cypress": "^6.9.1",
