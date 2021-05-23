@@ -24,7 +24,7 @@ module.exports = {
       target: "temporary-public-storage",
     },
     assert: {
-      // preset: "lighthouse:no-pwa",
+      preset: "lighthouse:recommended",
       // assertions: {
       //   "uses-rel-preload": "off",
       //   "uses-rel-preconnect": "off",
