@@ -11,7 +11,8 @@ module.exports = {
       autodiscoverUrlBlocklist: ["404.html", "404/index.html", "report.html"],
     },
     upload: {
-      target: "temporary-public-storage",
+      target: "filesystem",
+      outputDir: "lighthouse-report",
     },
     assert: {
       preset: "lighthouse:recommended",

@@ -20,3 +20,9 @@ jobs:
         run: |
           npm install -g @lhci/cli@0.7.x
           lhci autorun --config=./lighthouserc-url.js
+      - name: LightHouse Report
+          uses: actions/upload-artifact@v2
+          if: always()
+          with:
+            name: lighthouse-report
+            path: lighthouse-report
