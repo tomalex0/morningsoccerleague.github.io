@@ -41,15 +41,30 @@ import ThemeContextProvider from "context/theme-context"
 // }
 
 export const wrapRootElement = ({ element }) => {
-  const cms = new TinaCMS({
-    sidebar: true,
-    enabled: process.env.NODE_ENV !== "production",
-  })
-  return (
-    <TinaProvider cms={cms}>
-      <ThemeContextProvider>{element}</ThemeContextProvider>
-    </TinaProvider>
-  )
-}
 
+  if(process.env.NODE_ENV == "production") {
+
+    const cms = new TinaCMS({
+      sidebar: true,
+      enabled: true
+    })
+    return (
+      <TinaProvider cms={cms}>
+        <ThemeContextProvider>{element}</ThemeContextProvider>
+      </TinaProvider>
+    )
+  } else {
+    return (
+      <ThemeContextProvider>{element}</ThemeContextProvider>
+    )
+  }
+
+}
+// export const onClientEntry = (_, options) => {
+//   window.tinacms = new TinaCMS({
+//     sidebar: true,
+//     enabled: process.env.NODE_ENV !== "production"
+//   })
+//   console.log("We've started!", options)
+// }
 export const registerServiceWorker = () => true

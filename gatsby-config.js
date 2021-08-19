@@ -67,12 +67,7 @@ module.exports = {
         analyzerMode: "static",
       },
     },
-    {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        sitemapSize: 5000,
-      },
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -88,7 +83,7 @@ module.exports = {
       resolve: "gatsby-plugin-tinacms",
       options: {
         enabled: process.env.NODE_ENV !== "production",
-        sidebar: true,
+        sidebar: process.env.NODE_ENV !== "production",
         manualInit: true,
         plugins: [
           "gatsby-tinacms-git",
