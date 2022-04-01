@@ -79,19 +79,19 @@ module.exports = {
         head: true,
       },
     },
-    {
-      resolve: "gatsby-plugin-tinacms",
-      options: {
-        enabled: process.env.NODE_ENV !== "production",
-        sidebar: process.env.NODE_ENV !== "production",
-        manualInit: true,
-        plugins: [
-          "gatsby-tinacms-git",
-          "gatsby-tinacms-remark",
-          "gatsby-tinacms-json",
-        ],
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-tinacms",
+    //   options: {
+    //     enabled: process.env.NODE_ENV !== "production",
+    //     sidebar: process.env.NODE_ENV !== "production",
+    //     manualInit: true,
+    //     plugins: [
+    //       "gatsby-tinacms-git",
+    //       "gatsby-tinacms-remark",
+    //       "gatsby-tinacms-json",
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
