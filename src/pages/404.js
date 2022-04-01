@@ -1,7 +1,7 @@
 import React from "react"
-import { remarkForm, liveRemarkForm, RemarkForm } from "gatsby-tinacms-remark"
-import { Wysiwyg } from "@tinacms/fields"
-import { TinaField } from "tinacms"
+// import { remarkForm, liveRemarkForm, RemarkForm } from "gatsby-tinacms-remark"
+// import { Wysiwyg } from "@tinacms/fields"
+// import { TinaField } from "tinacms"
 import { graphql } from "gatsby"
 
 import Layout from "components/layout"

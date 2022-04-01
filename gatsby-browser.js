@@ -6,7 +6,7 @@
 import * as React from "react"
 // import { Profiler } from "react"
 import "./src/css/index.css"
-import { TinaProvider, TinaCMS } from "tinacms"
+// import { TinaProvider, TinaCMS } from "tinacms"
 import ThemeContextProvider from "context/theme-context"
 
 // function capturePageMetrics(
@@ -41,23 +41,9 @@ import ThemeContextProvider from "context/theme-context"
 // }
 
 export const wrapRootElement = ({ element }) => {
-
-  if(process.env.NODE_ENV == "production") {
-
-    const cms = new TinaCMS({
-      sidebar: true,
-      enabled: true
-    })
-    return (
-      <TinaProvider cms={cms}>
-        <ThemeContextProvider>{element}</ThemeContextProvider>
-      </TinaProvider>
-    )
-  } else {
-    return (
-      <ThemeContextProvider>{element}</ThemeContextProvider>
-    )
-  }
+  return (
+    <ThemeContextProvider>{element}</ThemeContextProvider>
+  )
 
 }
 // export const onClientEntry = (_, options) => {
