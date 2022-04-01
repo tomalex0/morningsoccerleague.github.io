@@ -1,15 +1,12 @@
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  purge: {
-    enabled: process.env.GITHUB_ACTIONS,
-    content: [
-      "./src/**/*.tsx",
-      "./src/**/*.ts",
-      "./src/**/*.js",
-      "./src/**/*.html",
-    ],
-  },
+  content: [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.js",
+    "./src/**/*.html",
+  ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {},
@@ -17,7 +14,7 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       white: colors.white,
-      gray: colors.trueGray,
+      gray: colors.neutral,
       indigo: colors.indigo,
       green: colors.green,
       red: colors.red,
