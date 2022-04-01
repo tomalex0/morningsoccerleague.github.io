@@ -79,3 +79,6 @@ yarn-error.log
 .codesandbox
 
 cypress/results
+
+e2e-mochawesome.json
+unit-mochawesome.json
