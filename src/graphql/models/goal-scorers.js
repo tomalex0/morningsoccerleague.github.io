@@ -1,4 +1,4 @@
-const { groupBy } = require("../lib/utility")
+import { groupBy } from "../lib/utility.js"
 
 function getGoalScorers(totalValidGoals) {
   const playersScored = groupBy(
@@ -6,7 +6,7 @@ function getGoalScorers(totalValidGoals) {
       item.player_id = item.player.player_id
       return item
     }),
-    "player_id"
+    "player_id",
   )
   const playersScoredSort = Object.keys(playersScored)
     .map(function (k) {
@@ -24,4 +24,4 @@ function getGoalScorers(totalValidGoals) {
   return playersScoredSort
 }
 
-exports.getGoalScorers = getGoalScorers
+export { getGoalScorers }

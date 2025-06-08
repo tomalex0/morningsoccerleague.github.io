@@ -31,16 +31,16 @@ const MslFixtureItem = ({ fixture }) => {
               className={`w-6 h-6 overflow-visible text-light-50 dark:text-light-50`}
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 className={`${isOpen ? "hidden" : "block"}`}
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 className={`${isOpen ? "block" : "hidden"}`}
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </button>

@@ -48,7 +48,7 @@ const MslFixtureGroup = ({
                   <path
                     d="M 6 -6 V -38"
                     fill="none"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     className="text-dark-400 dark:text-dark-400"
                   ></path>

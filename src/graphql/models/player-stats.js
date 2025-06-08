@@ -1,6 +1,6 @@
-const { groupBy, getSum } = require("../lib/utility")
-const { getAllGameStatsByType, getReferees } = require("./stats-by-type")
-const { getTotalCautionType } = require("./caution-stats")
+import { groupBy, getSum } from "../lib/utility.js"
+import { getAllGameStatsByType, getReferees } from "./stats-by-type.js"
+import { getTotalCautionType } from "./caution-stats.js"
 
 function groupPlayers(data) {
   const playerGroup = groupBy(
@@ -8,7 +8,7 @@ function groupPlayers(data) {
       item.player_id = item.player.player_id
       return item
     }),
-    "player_id"
+    "player_id",
   )
   return playerGroup
 }
@@ -33,8 +33,6 @@ function grouByPlayerStats(data) {
   return sortPlayers(sortedData)
 }
 
-exports.grouByPlayerStats = grouByPlayerStats
-
 function grouByPlayerStatsSum(data, key) {
   const playerGroup = groupPlayers(data)
   const sortedData = Object.keys(playerGroup).map(function (k) {
@@ -50,40 +48,43 @@ function grouByPlayerStatsSum(data, key) {
   return sortPlayers(sortedData)
 }
 
-exports.grouByPlayerStatsSum = grouByPlayerStatsSum
-
 function getPlayerGoals(schedules, player_id) {
   const allData = getAllGameStatsByType(schedules, "goals")
   return allData.filter(item => !item.owngoal && item.player == player_id)
 }
-exports.getPlayerGoals = getPlayerGoals
 
 function getPlayerAssists(schedules, player_id) {
   const allData = getAllGameStatsByType(schedules, "goals")
   return allData.filter(item => item.assist == player_id)
 }
-exports.getPlayerAssists = getPlayerAssists
 
 function getPlayerCautions(schedules, player_id, caution_type) {
   const allData = getTotalCautionType(schedules, caution_type)
   return allData.filter(item => item.player == player_id)
 }
-exports.getPlayerCautions = getPlayerCautions
 
 function getPlayerMom(schedules, player_id) {
   const allData = getAllGameStatsByType(schedules, "mom")
   return allData.filter(item => item.player == player_id)
 }
-exports.getPlayerMom = getPlayerMom
 
 function getPlayerSaves(schedules, player_id) {
   const allData = getAllGameStatsByType(schedules, "keeper")
   return allData.filter(item => item.player == player_id)
 }
-exports.getPlayerSaves = getPlayerSaves
 
 function getPlayerReferees(schedules, player_id) {
   const allData = getReferees(schedules)
   return allData.filter(item => item.player == player_id)
 }
-exports.getPlayerReferees = getPlayerReferees
+
+export {
+  grouByPlayerStats,
+  grouByPlayerStatsSum,
+  getPlayerGoals,
+  getPlayerAssists,
+  getPlayerCautions,
+  getPlayerMom,
+  getPlayerSaves,
+  getPlayerReferees,
+}

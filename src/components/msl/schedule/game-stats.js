@@ -7,7 +7,7 @@ const MslScheduleGameStats = ({ team, fixture, id, pos }) => {
     predicate({
       name: "minute",
       reverse: false,
-    })
+    }),
   )
   return (
     <div className="divide-y flex-grow">

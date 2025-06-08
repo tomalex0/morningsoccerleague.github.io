@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 export const ThemeContext = React.createContext({
   theme: "",
-  setTheme: () => {},
+  setTheme: () => {
+    /* // No-op: Placeholder for context default */
+  },
 })
 const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState("")

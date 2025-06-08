@@ -1,5 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require("fs")
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const season1 = require("../src/data/raw/schedule/1")
 // const season2 = require("../src/data/raw/schedule/2")
 // const season3 = require("../src/data/raw/schedule/3")
@@ -22,7 +24,7 @@ function generateFile(data) {
     delete item.stats
     fs.writeFileSync(
       `../src/data/msl/msl-schedules/${data.season}_${position}.json`,
-      JSON.stringify(item)
+      JSON.stringify(item),
     )
   })
 }

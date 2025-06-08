@@ -8,17 +8,16 @@ function getAllGameStatsByType(schedules, key) {
             childitem.team = item.team
             return childitem
           })
-        : item[key]
+        : item[key],
     )
     .flat()
     .filter(item => item)
   return allStats
 }
 
-exports.getAllGameStatsByType = getAllGameStatsByType
-
 function getReferees(schedules) {
   const allData = schedules.map(item => item.referees).flat()
   return allData
 }
-exports.getReferees = getReferees
+
+export { getAllGameStatsByType, getReferees }

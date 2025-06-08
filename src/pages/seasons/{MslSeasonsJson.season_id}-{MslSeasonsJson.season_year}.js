@@ -2,7 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "components/layout"
-import SEO from "components/seo"
+// import SEO from "components/seo"; // Removed
+import { useSeoData } from "../../../hooks/useSeoData" // Adjusted path
 import MslSeasonStatsItem from "components/msl/season/season-stats-item"
 import MslStandings from "components/msl/season/stats-standings"
 import MslStatsFouls from "components/msl/season/stats-fouls"
@@ -22,12 +23,12 @@ import {
 function Season({ data, path }) {
   const { season } = data
   const seasonItem = getSeasonStats([season])[0]
-  const title = `Season ${season.season_id} (${season.season_year})`
+  // const title = `Season ${season.season_id} (${season.season_year})`; // Title generation moved to Head
   const seasonStats = seasonItem.seasonStats
   const teams = getSeasonTeams(seasonItem)
   return (
     <Layout>
-      <SEO title={title} path={path} />
+      {/* <SEO title={title} path={path} /> */} {/* Removed */}
       <div className="mt-10">
         <MslSeasonStatsItem season={seasonItem} />
       </div>
@@ -134,7 +135,7 @@ function Season({ data, path }) {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     season: mslSeasonsJson(id: { eq: $id }) {
       ...MslSeasonsJsonStatsFragment
     }
@@ -142,3 +143,45 @@ export const query = graphql`
 `
 
 export default Season
+
+export const Head = ({ data, location }) => {
+  const season = data?.season
+  const title = season
+    ? `Season ${season.season_id} (${season.season_year})`
+    : "Season Details"
+  const description = season
+    ? `Stats and details for MSL Season ${season.season_id} (${season.season_year})`
+    : "Season statistics and details."
+
+  const seoData = useSeoData({
+    title: title,
+    description: description,
+    pathname: location.pathname,
+  })
+
+  return (
+    <>
+      {seoData.htmlAttributes.lang && (
+        <html lang={seoData.htmlAttributes.lang} />
+      )}
+      {seoData.title && (
+        <title id="title">
+          {seoData.defaultSiteTitle
+            ? seoData.titleTemplate.replace("%s", seoData.title)
+            : seoData.title}
+        </title>
+      )}
+      {seoData.meta.map((tag, index) => (
+        <meta
+          key={index}
+          name={tag.name}
+          property={tag.property}
+          content={tag.content}
+        />
+      ))}
+      {seoData.links.map((link, index) => (
+        <link key={index} rel={link.rel} href={link.href} id={link.id} />
+      ))}
+    </>
+  )
+}

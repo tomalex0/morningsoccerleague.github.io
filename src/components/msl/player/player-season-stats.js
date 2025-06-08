@@ -24,7 +24,7 @@ const MslPlayerSeasonStats = ({ seasons }) => {
       </>
       <>
         {seasons.map((stats, index) => (
-          <tr>
+          <tr key={stats.season?.season_id || index}>
             <MslTableDataCell>
               <Link to={stats.season.seasonPath}>
                 {stats.season.season} - {stats.season.season_year}

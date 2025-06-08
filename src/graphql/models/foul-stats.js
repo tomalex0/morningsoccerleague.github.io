@@ -1,4 +1,4 @@
-const { groupBy, predicate, getSum } = require("../lib/utility")
+import { groupBy, predicate, getSum } from "../lib/utility.js"
 
 function getTeamSeasonFoulStats(schedules) {
   const teamList = schedules
@@ -32,10 +32,10 @@ function getTeamSeasonFoulStats(schedules) {
       {
         name: "teamName",
         reverse: false,
-      }
-    )
+      },
+    ),
   )
   return mappedData
 }
 
-exports.getTeamSeasonFoulStats = getTeamSeasonFoulStats
+export { getTeamSeasonFoulStats }

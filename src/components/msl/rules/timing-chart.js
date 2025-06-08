@@ -60,7 +60,7 @@ const MslTimingChart = () => {
         </tr>
         <tr>
           <td>No Game</td>
-          <td>>7:50</td>
+          <td>&gt;7:50</td>
           <td colSpan="6" className="text-center">
             Forfeit by Team having less than 5 players OR Postponed in case of
             any unavailability

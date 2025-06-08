@@ -1,10 +1,10 @@
-const { getTotalChildArr } = require("../lib/utility")
-const { grouByPlayerStats, grouByPlayerStatsSum } = require("./player-stats")
-const { getTotalCautionType } = require("./caution-stats")
-const { getAllGameStatsByType } = require("./stats-by-type")
-const { getTeamSeasonFoulStats } = require("./foul-stats")
-const { getTeamSeasonStats } = require("./team-season-stats")
-const { Cautions } = require("../lib/enum")
+import { getTotalChildArr } from "../lib/utility.js"
+import { grouByPlayerStats, grouByPlayerStatsSum } from "./player-stats.js"
+import { getTotalCautionType } from "./caution-stats.js"
+import { getAllGameStatsByType } from "./stats-by-type.js"
+import { getTeamSeasonFoulStats } from "./foul-stats.js"
+import { getTeamSeasonStats } from "./team-season-stats.js"
+import { Cautions } from "../lib/enum.js"
 
 function getSeasonStats(seasons) {
   const seasonArr = seasons.map(season => {
@@ -28,7 +28,7 @@ function getSeasonStats(seasons) {
     ]
     const totalYellowCards = getTotalCautionType(
       season.schedules,
-      Cautions.YELLOW
+      Cautions.YELLOW,
     )
     const teamStandingStats = getTeamSeasonStats(season.schedules, season.teams)
     const teamFoulStats = getTeamSeasonFoulStats(season.schedules)
@@ -64,4 +64,4 @@ function getSeasonStats(seasons) {
   return seasonArr
 }
 
-exports.getSeasonStats = getSeasonStats
+export { getSeasonStats }

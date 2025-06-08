@@ -1,21 +1,22 @@
-const { getSeasonStats } = require("../models/season-stats")
-const { getSeasonTeams } = require("../models/season-teams")
-const {
+import { getSeasonStats } from "../models/season-stats.js"
+import { getSeasonTeams } from "../models/season-teams.js"
+import {
   getPlayerGoals,
   getPlayerAssists,
   getPlayerCautions,
   getPlayerMom,
   getPlayerSaves,
   getPlayerReferees,
-} = require("../models/player-stats")
+} from "../models/player-stats.js"
 
-const {
+import {
   getTeamGoals,
   getTeamAssists,
   getTeamCautions,
   getTeamMom,
   getTeamSaves,
-} = require("../models/team-stats")
+} from "../models/team-stats.js"
+
 /**
  * Generic Function to get file info based on relative path
  * @param context
@@ -27,7 +28,6 @@ function getFile(context, path) {
   const record = data.find(item => item.relativePath == path)
   return record
 }
-exports.getFile = getFile
 
 function getCurrentSeason(context) {
   // If queried in context of season
@@ -42,30 +42,20 @@ function getCurrentSeason(context) {
   return season
 }
 
-exports.getCurrentSeason = getCurrentSeason
-
-exports.getPlayerGoals = getPlayerGoals
-
-exports.getPlayerAssists = getPlayerAssists
-
-exports.getPlayerCautions = getPlayerCautions
-
-exports.getPlayerMom = getPlayerMom
-
-exports.getPlayerSaves = getPlayerSaves
-
-exports.getSeasonStats = getSeasonStats
-
-exports.getSeasonTeams = getSeasonTeams
-
-exports.getTeamGoals = getTeamGoals
-
-exports.getTeamAssists = getTeamAssists
-
-exports.getTeamCautions = getTeamCautions
-
-exports.getTeamMom = getTeamMom
-
-exports.getTeamSaves = getTeamSaves
-
-exports.getPlayerReferees = getPlayerReferees
+export {
+  getFile,
+  getCurrentSeason,
+  getPlayerGoals,
+  getPlayerAssists,
+  getPlayerCautions,
+  getPlayerMom,
+  getPlayerSaves,
+  getSeasonStats,
+  getSeasonTeams,
+  getTeamGoals,
+  getTeamAssists,
+  getTeamCautions,
+  getTeamMom,
+  getTeamSaves,
+  getPlayerReferees,
+}

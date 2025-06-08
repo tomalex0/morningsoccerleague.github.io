@@ -1,14 +1,15 @@
-const { predicate } = require("../lib/utility")
+import { predicate } from "../lib/utility.js"
+
 function getSeasonTeams(seasonItem) {
   const teams = seasonItem.teams
     .map(item => {
       item.teamName = item.team.teamName
       item.players.map(newitem => {
         newitem.isOwner = +!!item.owners.find(
-          owner => owner.player_id == newitem.player_id
+          owner => owner.player_id == newitem.player_id,
         )
         newitem.isMos = +!!seasonItem.mos.find(
-          mos => mos.player_id == newitem.player_id
+          mos => mos.player_id == newitem.player_id,
         )
         return newitem
       })
@@ -25,8 +26,8 @@ function getSeasonTeams(seasonItem) {
           {
             name: "name",
             reverse: false,
-          }
-        )
+          },
+        ),
       )
       return item
     })
@@ -34,9 +35,9 @@ function getSeasonTeams(seasonItem) {
       predicate({
         name: "teamName",
         reverse: false,
-      })
+      }),
     )
   return teams
 }
 
-exports.getSeasonTeams = getSeasonTeams
+export { getSeasonTeams }

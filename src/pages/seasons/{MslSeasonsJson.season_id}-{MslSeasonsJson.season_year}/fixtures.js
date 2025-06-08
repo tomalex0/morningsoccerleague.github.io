@@ -4,7 +4,8 @@ import { Link, graphql } from "gatsby"
 import Layout from "components/layout"
 import { groupBy } from "graphql/lib/utility"
 
-import SEO from "components/seo"
+// import SEO from "components/seo"; // Removed
+import { useSeoData } from "../../../../hooks/useSeoData" // Adjusted path
 import MslFixtureGroup from "components/msl/schedule/fixture-group"
 import {
   MslPlayersJsonFragment,
@@ -30,10 +31,11 @@ const FixturesIndexPage = props => {
   const [isOpen, setIsOpen] = useState({ val: true })
   return (
     <Layout>
-      <SEO
+      {/* <SEO
         title={`Fixtures ${seasonData.season_id}-${seasonData.season_year}`}
         path={path}
-      />
+      /> */}{" "}
+      {/* Removed */}
       <div>
         <section className="p-3 mx-2 my-4">
           <h1 className="text-2xl font-bold leading-7 sm:text-3xl sm:truncate text-dark-600 dark:text-dark-300">
@@ -65,9 +67,9 @@ const FixturesIndexPage = props => {
                   className="w-8 h-8 overflow-visible text-light-50 dark:text-light-50"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
               </button>
@@ -87,9 +89,9 @@ const FixturesIndexPage = props => {
                   className="w-8 h-8 overflow-visible text-light-50 dark:text-light-50"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
               </button>
@@ -99,6 +101,7 @@ const FixturesIndexPage = props => {
             {fixtureGroupArr.map((item, index) => {
               return (
                 <MslFixtureGroup
+                  key={item} // Added key here
                   item={item}
                   index={index}
                   openState={isOpen}
@@ -115,7 +118,7 @@ const FixturesIndexPage = props => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     season: mslSeasonsJson(id: { eq: $id }) {
       ...MslSeasonsJsonStatsFragment
     }
@@ -123,3 +126,45 @@ export const query = graphql`
 `
 
 export default FixturesIndexPage
+
+export const Head = ({ data, location }) => {
+  const season = data?.season
+  const title = season
+    ? `Fixtures ${season.season_id}-${season.season_year}`
+    : "Season Fixtures"
+  const description = season
+    ? `Fixtures and schedule for MSL Season ${season.season_id} (${season.season_year})`
+    : "Season fixtures and schedule."
+
+  const seoData = useSeoData({
+    title: title,
+    description: description,
+    pathname: location.pathname,
+  })
+
+  return (
+    <>
+      {seoData.htmlAttributes.lang && (
+        <html lang={seoData.htmlAttributes.lang} />
+      )}
+      {seoData.title && (
+        <title id="title">
+          {seoData.defaultSiteTitle
+            ? seoData.titleTemplate.replace("%s", seoData.title)
+            : seoData.title}
+        </title>
+      )}
+      {seoData.meta.map((tag, index) => (
+        <meta
+          key={index}
+          name={tag.name}
+          property={tag.property}
+          content={tag.content}
+        />
+      ))}
+      {seoData.links.map((link, index) => (
+        <link key={index} rel={link.rel} href={link.href} id={link.id} />
+      ))}
+    </>
+  )
+}

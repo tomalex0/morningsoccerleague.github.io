@@ -2,7 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "components/layout"
-import SEO from "components/seo"
+// import SEO from "components/seo"; // Removed
+import { useSeoData } from "../../../hooks/useSeoData" // Adjusted path
 import MslTeamSeasonStats from "components/msl/team/team-season-stats"
 import MslTeamStatsItem from "components/msl/team/team-stats-item"
 import MslTeamImg from "components/msl/team/team-image"
@@ -20,7 +21,7 @@ function Team({ path, data }) {
 
   return (
     <Layout>
-      <SEO title={team.teamName} path={path} />
+      {/* <SEO title={team.teamName} path={path} /> */} {/* Removed */}
       <div className="lg:flex lg:items-center lg:justify-between px-5 mt-10">
         <div className="flex-1 min-w-0">
           <h1 className="text-2xl flex items-center font-bold leading-7 text-dark-600 dark:text-dark-300  sm:text-3xl sm:truncate p-2">
@@ -46,7 +47,7 @@ function Team({ path, data }) {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     team: mslTeamsJson(id: { eq: $id }) {
       ...MslTeamsJsonFragment
       teamStats {
@@ -60,3 +61,39 @@ export const query = graphql`
 `
 
 export default Team
+
+export const Head = ({ data, location }) => {
+  const teamName = data?.team?.teamName || "Team Details"
+  const seoData = useSeoData({
+    title: teamName,
+    description: `Stats and details for team ${teamName}`,
+    pathname: location.pathname,
+    // You might want to add a team-specific image here if available in data.team
+  })
+
+  return (
+    <>
+      {seoData.htmlAttributes.lang && (
+        <html lang={seoData.htmlAttributes.lang} />
+      )}
+      {seoData.title && (
+        <title id="title">
+          {seoData.defaultSiteTitle
+            ? seoData.titleTemplate.replace("%s", seoData.title)
+            : seoData.title}
+        </title>
+      )}
+      {seoData.meta.map((tag, index) => (
+        <meta
+          key={index}
+          name={tag.name}
+          property={tag.property}
+          content={tag.content}
+        />
+      ))}
+      {seoData.links.map((link, index) => (
+        <link key={index} rel={link.rel} href={link.href} id={link.id} />
+      ))}
+    </>
+  )
+}

@@ -14,10 +14,7 @@ const MslTeamMembers = response => {
         </h3>
       </div>
       <div className="border-t border-dark-200 dark:border-dark-400">
-        <ul
-          className="divide-y divide-dark-200 dark:divide-dark-400"
-          aria-disabled="true"
-        >
+        <ul className="divide-y divide-dark-200 dark:divide-dark-400">
           {players.map(player => (
             <li key={player.player_id}>
               <Link to={player.playerPath} className="block hover:bg-dark-50">

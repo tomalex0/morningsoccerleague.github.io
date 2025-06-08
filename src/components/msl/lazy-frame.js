@@ -16,7 +16,6 @@ const MslLazyFrame = ({
       className={`object-cover w-full ${className}`}
       scrolling={scrolling}
       frameBorder={0}
-      allowTransparency="true"
       title={title}
     />
   )

@@ -1,9 +1,10 @@
-const { getAllGameStatsByType } = require("./stats-by-type")
+import { getAllGameStatsByType } from "./stats-by-type.js"
 
 function getTotalCautionType(schedules, cautionType = 1) {
   const allStats = getAllGameStatsByType(schedules, "cautions").filter(
-    item => item && item.caution_id == cautionType
+    item => item && item.caution_id == cautionType,
   )
   return allStats
 }
-exports.getTotalCautionType = getTotalCautionType
+
+export { getTotalCautionType }

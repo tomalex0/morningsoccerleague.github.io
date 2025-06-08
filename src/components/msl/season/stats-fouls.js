@@ -16,7 +16,7 @@ const MslStatsFouls = ({ fouls }) => {
       </>
       <>
         {fouls.map((stats, index) => (
-          <tr>
+          <tr key={stats.team?.team_id || index}>
             <MslTableDataCell>
               <MslTeamItem team={stats.team} />
             </MslTableDataCell>

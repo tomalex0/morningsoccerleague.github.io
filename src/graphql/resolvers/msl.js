@@ -1,4 +1,5 @@
-const { MslImgKey, Cautions, SCHEMA_TYPE_NAME } = require("../lib/enum")
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { MslImgKey, Cautions, SCHEMA_TYPE_NAME } = require("../lib/enum.js") // Added .js extension
 const {
   getFile,
   getPlayerGoals,
@@ -12,10 +13,10 @@ const {
   getTeamMom,
   getTeamSaves,
   getPlayerReferees,
-} = require("../lib/helpers")
+} = require("../lib/helpers.js") // Added .js extension
 
-const { groupBy, getSum } = require("../lib/utility")
-const { getTeamStandings } = require("../models/team-season-stats")
+const { groupBy, getSum } = require("../lib/utility.js") // Added .js extension
+const { getTeamStandings } = require("../models/team-season-stats.js") // Added .js extension
 
 module.exports = {
   MslTeamsJson: {
@@ -86,13 +87,13 @@ module.exports = {
           const teamMom = getTeamMom(schedules, teamId)
           const currTeamObj = item.teams.find(item => item.team == teamId)
           const mosPlayers = currTeamObj.players.filter(player =>
-            item.mos.includes(player)
+            item.mos.includes(player),
           )
 
           const teamYellowCards = getTeamCautions(
             schedules,
             teamId,
-            Cautions.YELLOW
+            Cautions.YELLOW,
           )
           const teamRedCards = getTeamCautions(schedules, teamId, Cautions.RED)
           newItem = { ...teamStandings[teamId] }
@@ -223,10 +224,10 @@ module.exports = {
         // New Data List based on season
         const seasonStats = data.map(item => {
           const playerTeam = item.teams.find(item =>
-            item.players.includes(playerId)
+            item.players.includes(playerId),
           )
           const playerOwner = item.teams.filter(item =>
-            item.owners.includes(playerId)
+            item.owners.includes(playerId),
           )
 
           const playerMos = item.mos.includes(playerId)
@@ -243,12 +244,12 @@ module.exports = {
           const playerYellowCards = getPlayerCautions(
             schedules,
             playerId,
-            Cautions.YELLOW
+            Cautions.YELLOW,
           )
           const playerRedCards = getPlayerCautions(
             schedules,
             playerId,
-            Cautions.RED
+            Cautions.RED,
           )
           return {
             team: playerTeam ? playerTeam.team : null,

@@ -62,8 +62,6 @@ function predicate() {
   }
 }
 
-exports.predicate = predicate
-
 /**
  * Another json arryy sort, less performant than predicate
  * @param sortBy
@@ -79,14 +77,13 @@ function propComparator(sortBy) {
         (a[sortBy[i].name].toString() < b[sortBy[i].name].toString()
           ? -1
           : a[sortBy[i].name].toString() > b[sortBy[i].name].toString()
-          ? 1
-          : 0)
+            ? 1
+            : 0)
       i++
     }
     return result
   }
 }
-exports.propComparator = propComparator
 
 /**
  * Generic
@@ -102,8 +99,6 @@ function getTotalChildArr(itemArr, prop) {
   return sum
 }
 
-exports.getTotalChildArr = getTotalChildArr
-
 /**
  * Generic
  * @param xs
@@ -116,7 +111,6 @@ const groupBy = function (xs, key) {
     return rv
   }, {})
 }
-exports.groupBy = groupBy
 
 /**
  * Generic
@@ -129,7 +123,6 @@ function getSum(data, key) {
     return sum + item[key]
   }, 0)
 }
-exports.getSum = getSum
 
 function getDefaultScore() {
   var defaultScore = {
@@ -143,7 +136,6 @@ function getDefaultScore() {
 
   return defaultScore
 }
-exports.getDefaultScore = getDefaultScore
 
 function jsonArrayColumnSum(jsonArr, propArr) {
   return jsonArr.reduce(
@@ -152,11 +144,9 @@ function jsonArrayColumnSum(jsonArr, propArr) {
         k === "id" || (s[k] = (s[k] || 0) + +obj[k])
         return s
       }, sums),
-    {}
+    {},
   )
 }
-
-exports.jsonArrayColumnSum = jsonArrayColumnSum
 
 function getInitials(str, size = 2) {
   return str
@@ -165,14 +155,12 @@ function getInitials(str, size = 2) {
     ?.slice(0, size)
     ?.join("")
 }
-exports.getInitials = getInitials
 
 function preapareDateString(val) {
   // fix this craziness https://stackoverflow.com/a/31732581
   const dateVal = val.replace(/-/g, "/")
   return dateVal
 }
-exports.preapareDateString = preapareDateString
 
 function formatDateString(val, locale = "en") {
   // fix this craziness https://stackoverflow.com/a/31732581
@@ -185,4 +173,15 @@ function formatDateString(val, locale = "en") {
   })
 }
 
-exports.formatDateString = formatDateString
+export {
+  predicate,
+  propComparator,
+  getTotalChildArr,
+  groupBy,
+  getSum,
+  getDefaultScore,
+  jsonArrayColumnSum,
+  getInitials,
+  preapareDateString,
+  formatDateString,
+}

@@ -1,13 +1,14 @@
 import React from "react"
 
 import Layout from "components/layout"
-import SEO from "components/seo"
+// import SEO from "components/seo"; // Removed
+import { useSeoData } from "../../../hooks/useSeoData" // Adjusted path
 import MslScheduleCommon from "components/msl/manage/schedule-common"
 import MslScheduleTeamInfo from "components/msl/manage/schedule-team-info"
 
 const ManageSchedule = ({ path }) => (
   <Layout>
-    <SEO title="Manage Schedule" path={path} />
+    {/* <SEO title="Manage Schedule" path={path} /> */} {/* Removed */}
     <div className="mx-auto justify-center items-center ">
       <div className="rounded-t-xl overflow-hidden bg-gradient-to-r gray-50 to-gray-100 p-10">
         <div className="grid grid-rows-3 grid-flow-col gap-4">
@@ -51,3 +52,36 @@ const ManageSchedule = ({ path }) => (
 )
 
 export default ManageSchedule
+
+export const Head = ({ location }) => {
+  const seoData = useSeoData({
+    title: "Manage Schedule",
+    pathname: location.pathname,
+  })
+
+  return (
+    <>
+      {seoData.htmlAttributes.lang && (
+        <html lang={seoData.htmlAttributes.lang} />
+      )}
+      {seoData.title && (
+        <title id="title">
+          {seoData.defaultSiteTitle
+            ? seoData.titleTemplate.replace("%s", seoData.title)
+            : seoData.title}
+        </title>
+      )}
+      {seoData.meta.map((tag, index) => (
+        <meta
+          key={index}
+          name={tag.name}
+          property={tag.property}
+          content={tag.content}
+        />
+      ))}
+      {seoData.links.map((link, index) => (
+        <link key={index} rel={link.rel} href={link.href} id={link.id} />
+      ))}
+    </>
+  )
+}

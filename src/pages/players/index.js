@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 
 import Layout from "components/layout"
-import SEO from "components/seo"
+// import SEO from "components/seo"; // Removed
+import { useSeoData } from "../../hooks/useSeoData" // Adjusted path
 import MslPlayerStatsItem from "components/msl/player/player-stats-item"
 import MslPlayerItem from "components/msl/player/player-item"
 
@@ -43,7 +44,7 @@ const PlayersIndex = ({ data, path }) => {
         predicate({
           name: `${sortKey}`,
           reverse: Boolean(parseInt(sortOrder)),
-        })
+        }),
       )
 
       setPlayerList(filteredData)
@@ -54,7 +55,7 @@ const PlayersIndex = ({ data, path }) => {
 
   return (
     <Layout>
-      <SEO title="Players" path={path} />
+      {/* <SEO title="Players" path={path} /> */} {/* Removed */}
       <div className="mt-5 px-5 divide-y divide-dark-300">
         <div className="mb-3 text-center">
           <form className="flex w-full max-w-lg mx-auto space-l-0 space-x-2 relative">
@@ -66,8 +67,8 @@ const PlayersIndex = ({ data, path }) => {
                 className="absolute left-2 top-1/2 transform -translate-y-1/2 text-dark-400"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                 />
               </svg>
@@ -148,10 +149,8 @@ const PlayersIndex = ({ data, path }) => {
 }
 
 export const query = graphql`
-  query {
-    players: allMslPlayersJson(
-      sort: { fields: name, order: ASC } # filter: { player_id: { in: [1, 45, 54, 2] } }
-    ) {
+  {
+    players: allMslPlayersJson(sort: { name: ASC }) {
       nodes {
         ...MslPlayersJsonFragment
         playerStats {
@@ -166,3 +165,36 @@ export const query = graphql`
 `
 
 export default PlayersIndex
+
+export const Head = ({ location }) => {
+  const seoData = useSeoData({
+    title: "Players",
+    pathname: location.pathname,
+  })
+
+  return (
+    <>
+      {seoData.htmlAttributes.lang && (
+        <html lang={seoData.htmlAttributes.lang} />
+      )}
+      {seoData.title && (
+        <title id="title">
+          {seoData.defaultSiteTitle
+            ? seoData.titleTemplate.replace("%s", seoData.title)
+            : seoData.title}
+        </title>
+      )}
+      {seoData.meta.map((tag, index) => (
+        <meta
+          key={index}
+          name={tag.name}
+          property={tag.property}
+          content={tag.content}
+        />
+      ))}
+      {seoData.links.map((link, index) => (
+        <link key={index} rel={link.rel} href={link.href} id={link.id} />
+      ))}
+    </>
+  )
+}

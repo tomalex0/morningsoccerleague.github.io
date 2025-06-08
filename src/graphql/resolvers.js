@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const PostResolver = require("./resolvers/post")
 const MslResolver = require("./resolvers/msl")
 const TestResolver = require("./resolvers/test")

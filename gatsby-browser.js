@@ -41,10 +41,7 @@ import ThemeContextProvider from "context/theme-context"
 // }
 
 export const wrapRootElement = ({ element }) => {
-  return (
-    <ThemeContextProvider>{element}</ThemeContextProvider>
-  )
-
+  return <ThemeContextProvider>{element}</ThemeContextProvider>
 }
 // export const onClientEntry = (_, options) => {
 //   window.tinacms = new TinaCMS({

@@ -20,7 +20,7 @@ const MslStatsPlayers = ({ data, playerColTitle }) => {
       </>
       <>
         {data.map((stats, index) => (
-          <tr>
+          <tr key={stats.player_id || index}>
             <MslTableDataCell>{index + 1}</MslTableDataCell>
             <MslTableDataCell>
               <MslPlayerItem player={stats} />

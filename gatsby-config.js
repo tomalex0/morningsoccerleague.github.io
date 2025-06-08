@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const SITE_URL = process.env.SITE_URL || "http://localhost:8000"
 const PATH_PREFIX = process.env.PATH_PREFIX
   ? `/${process.env.PATH_PREFIX}`
@@ -14,18 +15,18 @@ module.exports = {
     siteUrl: SITE_URL,
     pathPrefix: PATH_PREFIX,
   },
+  trailingSlash: "never", // Explicitly set trailingSlash behavior
   flags: {
-    LAZY_IMAGES: true,
+    // LAZY_IMAGES: true, // Obsolete
     FAST_DEV: true,
     DEV_SSR: true,
-    QUERY_ON_DEMAND: true,
-    FAST_REFRESH: true,
-    PRESERVE_WEBPACK_CACHE: true,
+    // QUERY_ON_DEMAND: true, // Obsolete
+    FAST_REFRESH: true, // Keeping for now, though often default
+    // PRESERVE_WEBPACK_CACHE: true, // Obsolete
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
     PARALLEL_SOURCING: true,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     `gatsby-transformer-json`,
     {
@@ -69,14 +70,16 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: GA_ID,
-        // Defers execution of google analytics script after page load
-        defer: true,
-        // this option places the tracking script into the head of the DOM
-        head: true,
+        trackingIds: [GA_ID],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+        },
       },
     },
     // {

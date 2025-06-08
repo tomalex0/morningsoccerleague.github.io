@@ -55,7 +55,7 @@ const MslAllStats = () => {
   const allRefs = getReferees(schedules)
   const totalRefs = [
     ...new Set(
-      allRefs.map(item => item?.player?.player_id).filter(item => item)
+      allRefs.map(item => item?.player?.player_id).filter(item => item),
     ),
   ].length
   const allGoals = getAllGameStatsByType(schedules, "goals")
@@ -66,11 +66,11 @@ const MslAllStats = () => {
   const fouls = getAllGameStatsByType(schedules, "fouls")
   const totalFouls = fouls.reduce((a, b) => a + b, 0)
   const yellowCards = getAllGameStatsByType(schedules, "cautions").filter(
-    item => item?.caution?.caution_id == Cautions.YELLOW
+    item => item?.caution?.caution_id == Cautions.YELLOW,
   )
   const totalYellowCards = yellowCards.length
   const redCards = getAllGameStatsByType(schedules, "cautions").filter(
-    item => item?.caution?.caution_id == Cautions.RED
+    item => item?.caution?.caution_id == Cautions.RED,
   )
   const totalRedCards = redCards.length
   const scoredPlayers = allGoals.map(item => item?.player?.player_id)

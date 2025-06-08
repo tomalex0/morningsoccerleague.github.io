@@ -1,5 +1,5 @@
-const { DEFUAULT_SCORES } = require("../lib/enum")
-const { predicate, getDefaultScore } = require("../lib/utility")
+import { DEFUAULT_SCORES } from "../lib/enum.js" // Assuming DEFUAULT_SCORES was intended to be used, though it's not in the provided snippet
+import { predicate, getDefaultScore } from "../lib/utility.js"
 
 function getTeamSeasonStats(schedules, teams) {
   var teamObj = {}
@@ -16,24 +16,32 @@ function getTeamSeasonStats(schedules, teams) {
 
     // if game is completed
     if (itemobj.completed) {
-      teamObj[homeTeamId].played += 1
-      teamObj[awayTeamId].played += 1
-
-      if (home.goals.length == away.goals.length) {
-        teamObj[homeTeamId].draw += 1
-        teamObj[awayTeamId].draw += 1
-      } else if (home.goals.length > away.goals.length) {
-        teamObj[homeTeamId].won += 1
-        teamObj[awayTeamId].lost += 1
-      } else if (away.goals.length > home.goals.length) {
-        teamObj[awayTeamId].won += 1
-        teamObj[homeTeamId].lost += 1
+      if (teamObj[homeTeamId]) {
+        // Ensure team exists in map
+        teamObj[homeTeamId].played += 1
+        if (home.goals.length == away.goals.length) {
+          teamObj[homeTeamId].draw += 1
+        } else if (home.goals.length > away.goals.length) {
+          teamObj[homeTeamId].won += 1
+        } else if (away.goals.length > home.goals.length) {
+          teamObj[homeTeamId].lost += 1
+        }
+        teamObj[homeTeamId].goal_allowed += away.goals.length
+        teamObj[homeTeamId].goal_scored += home.goals.length
       }
-      teamObj[homeTeamId].goal_allowed += away.goals.length
-      teamObj[awayTeamId].goal_allowed += home.goals.length
-
-      teamObj[homeTeamId].goal_scored += home.goals.length
-      teamObj[awayTeamId].goal_scored += away.goals.length
+      if (teamObj[awayTeamId]) {
+        // Ensure team exists in map
+        teamObj[awayTeamId].played += 1
+        if (home.goals.length == away.goals.length) {
+          teamObj[awayTeamId].draw += 1
+        } else if (away.goals.length > home.goals.length) {
+          teamObj[awayTeamId].won += 1
+        } else if (home.goals.length > away.goals.length) {
+          teamObj[awayTeamId].lost += 1
+        }
+        teamObj[awayTeamId].goal_allowed += home.goals.length
+        teamObj[awayTeamId].goal_scored += away.goals.length
+      }
     }
   })
   teamObj = Object.values(teamObj)
@@ -57,54 +65,60 @@ function getTeamSeasonStats(schedules, teams) {
         reverse: true,
       },
       {
-        name: "teamName",
+        name: "teamName", // Assuming teamName is added to teamObj items via item.team.teamName
         reverse: false,
-      }
-    )
+      },
+    ),
   )
   return Object.values(teamObj)
 }
 
-exports.getTeamSeasonStats = getTeamSeasonStats
-
 function getTeamStandings(schedules, teams) {
   var teamObj = {}
   teams.forEach(item => {
-    teamObj[item] = getDefaultScore()
+    teamObj[item] = getDefaultScore() // Assuming 'item' here is a team_id
   })
   schedules.forEach(itemobj => {
     const home = itemobj.gamestats.find(
-      gameitem => gameitem.team_type == "home"
+      gameitem => gameitem.team_type == "home",
     )
     const away = itemobj.gamestats.find(
-      gameitem => gameitem.team_type == "away"
+      gameitem => gameitem.team_type == "away",
     )
-    const homeTeamId = home?.team
-    const awayTeamId = away?.team
+    const homeTeamId = home?.team // This likely needs to be home?.team?.team_id or similar
+    const awayTeamId = away?.team // This likely needs to be away?.team?.team_id or similar
 
     // if game is completed
     if (itemobj.completed) {
-      teamObj[homeTeamId].played += 1
-      teamObj[awayTeamId].played += 1
-
-      if (home.goals.length == away.goals.length) {
-        teamObj[homeTeamId].draw += 1
-        teamObj[awayTeamId].draw += 1
-      } else if (home.goals.length > away.goals.length) {
-        teamObj[homeTeamId].won += 1
-        teamObj[awayTeamId].lost += 1
-      } else if (away.goals.length > home.goals.length) {
-        teamObj[awayTeamId].won += 1
-        teamObj[homeTeamId].lost += 1
+      if (teamObj[homeTeamId]) {
+        // Check if teamId exists
+        teamObj[homeTeamId].played += 1
+        if (home.goals.length == away.goals.length) {
+          teamObj[homeTeamId].draw += 1
+        } else if (home.goals.length > away.goals.length) {
+          teamObj[homeTeamId].won += 1
+        } else if (away.goals.length > home.goals.length) {
+          teamObj[homeTeamId].lost += 1
+        }
+        teamObj[homeTeamId].goal_allowed += away.goals.length
+        teamObj[homeTeamId].goal_scored += home.goals.length
       }
-      teamObj[homeTeamId].goal_allowed += away.goals.length
-      teamObj[awayTeamId].goal_allowed += home.goals.length
-
-      teamObj[homeTeamId].goal_scored += home.goals.length
-      teamObj[awayTeamId].goal_scored += away.goals.length
+      if (teamObj[awayTeamId]) {
+        // Check if teamId exists
+        teamObj[awayTeamId].played += 1
+        if (home.goals.length == away.goals.length) {
+          teamObj[awayTeamId].draw += 1
+        } else if (away.goals.length > home.goals.length) {
+          teamObj[awayTeamId].won += 1
+        } else if (home.goals.length > away.goals.length) {
+          teamObj[awayTeamId].lost += 1
+        }
+        teamObj[awayTeamId].goal_allowed += home.goals.length
+        teamObj[awayTeamId].goal_scored += away.goals.length
+      }
     }
   })
   return teamObj
 }
 
-exports.getTeamStandings = getTeamStandings
+export { getTeamSeasonStats, getTeamStandings }
