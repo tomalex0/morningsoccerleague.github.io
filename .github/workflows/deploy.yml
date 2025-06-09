@@ -14,14 +14,14 @@ jobs:
         with:
           node-version: 18.x
       - name: Cache Npm
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-nodev1-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nodev1-
       - name: Gatsby Public Folder
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         id: gatsby-public-folder
         with:
           path: public/
@@ -29,7 +29,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-public-gatsby
       - name: Gatsby Cache Folder
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         id: gatsby-cache-folder
         with:
           path: .cache
