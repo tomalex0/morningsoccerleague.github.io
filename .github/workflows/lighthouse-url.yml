@@ -12,10 +12,10 @@ jobs:
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.version }}'"
       - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 18.x
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.7.x
