@@ -8,13 +8,13 @@ jobs:
     name: Lighthouse
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js 18.x
         uses: actions/setup-node@v1
         with:
           node-version: 18.x
       - name: Cache Npm
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-nodev1-${{ hashFiles('**/package-lock.json') }}
@@ -31,7 +31,7 @@ jobs:
           npm install -g @lhci/cli@0.7.x
           lhci autorun --config=./lighthouserc.js
       - name: LightHouse Report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: lighthouse-report

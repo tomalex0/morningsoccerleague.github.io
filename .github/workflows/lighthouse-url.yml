@@ -11,7 +11,7 @@ jobs:
       - name: Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.version }}'"
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js 18.x
         uses: actions/setup-node@v1
         with:
@@ -21,7 +21,7 @@ jobs:
           npm install -g @lhci/cli@0.7.x
           lhci autorun --config=./lighthouserc-url.js
       - name: LightHouse Report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: lighthouse-report

@@ -12,13 +12,13 @@ jobs:
     name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js 18.x
         uses: actions/setup-node@v1
         with:
           node-version: 18.x
       - name: Cache Npm
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-nodev1-${{ hashFiles('**/package-lock.json') }}
